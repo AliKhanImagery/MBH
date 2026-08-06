@@ -10,8 +10,7 @@ export default function Hero() {
     <section
       className="text-white"
       style={{
-        background:
-          "linear-gradient(135deg, #1A3F9E 0%, #2B5CC8 55%, #4A7FD4 100%)",
+        background: "#000028",
       }}
     >
       <div className="mx-auto max-w-[1400px] px-6 pt-24 pb-16 md:px-12 md:pt-40">
