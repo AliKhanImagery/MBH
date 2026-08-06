@@ -1,5 +1,4 @@
-import UtilityBar from "@/components/UtilityBar";
-import Nav from "@/components/Nav";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import ServiceSplit from "@/components/ServiceSplit";
@@ -12,8 +11,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <UtilityBar />
-      <Nav />
+      <Header />
       <Hero />
       <About />
       <ServiceSplit
