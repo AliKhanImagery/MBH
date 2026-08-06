@@ -25,7 +25,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="https://wa.me/"
-            className="text-nav-link hidden rounded-full border border-white/10 px-3 py-1 text-white/60 transition-colors hover:border-white/20 hover:text-white sm:inline-block"
+            className="text-cta hidden rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/20 hover:bg-white/5 sm:inline-block"
           >
             WhatsApp
           </a>
@@ -56,10 +56,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Row 2 — nav links, left-aligned (desktop only) */}
+      {/* Row 2 — nav links, right-aligned (desktop only) */}
       <div className="hidden border-t border-white/10 lg:block">
         <nav className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <ul className="flex items-center gap-8 py-4">
+          <ul className="flex items-center justify-end gap-8 py-4">
             {LINKS.map((link) => (
               <li key={link.href}>
                 <a
@@ -94,7 +94,7 @@ export default function Header() {
             <a
               href="https://wa.me/"
               onClick={() => setOpen(false)}
-              className="text-nav-link rounded-md border border-white/10 px-3 py-3 text-center text-white/70 transition-colors hover:border-white/20 hover:text-white"
+              className="text-cta rounded-md border border-white/10 px-[22px] py-3 text-center text-white transition-colors hover:border-white/20 hover:bg-white/5"
             >
               WhatsApp
             </a>
