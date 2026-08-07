@@ -19,9 +19,9 @@ const TILES: Tile[] = [
 ];
 
 // Card dimensions (update here if changed):
-// CSS: 200 × 253 px  |  2× asset: 400 × 506 px  |  padding inset: 24 px all sides
+// CSS: 200 × 278 px  |  2× asset: 400 × 556 px  |  padding inset: 24 px all sides
 const TILE_WIDTH  = 200;
-const TILE_HEIGHT = 253; // 220 × 1.15 = 253
+const TILE_HEIGHT = 278; // 253 × 1.10 = 278
 
 export default function ProcessSpine() {
   return (
@@ -101,14 +101,14 @@ export default function ProcessSpine() {
                       minWidth: TILE_WIDTH,
                       height: TILE_HEIGHT,
                       padding: 24,
+                      position: "relative",   // anchor for absolute bottom group
                       display: "flex",
                       flexDirection: "column",
-                      justifyContent: "space-between", // code top, name+desc bottom
                       flexShrink: 0,
                       borderRight: isLast ? "none" : "1px solid #1E3352",
                     }}
                   >
-                    {/* Stage code — pinned top */}
+                    {/* Stage code — normal flow, top-left */}
                     <span style={{
                       fontFamily: "var(--font-ibm-plex-mono)",
                       fontWeight: 500,
@@ -119,8 +119,10 @@ export default function ProcessSpine() {
                       {tile.code}
                     </span>
 
-                    {/* Name + descriptor — pinned bottom */}
-                    <div>
+                    {/* Name + descriptor — absolutely pinned to bottom edge
+                        Every card's title lands at the same Y regardless of
+                        how many lines the descriptor wraps to. */}
+                    <div style={{ position: "absolute", bottom: 24, left: 24, right: 24 }}>
                       <span style={{
                         display: "block",
                         fontWeight: 500,
