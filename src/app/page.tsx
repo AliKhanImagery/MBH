@@ -3,10 +3,7 @@ import Hero from "@/components/Hero";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
-import About from "@/components/About";
 import ServiceSplit from "@/components/ServiceSplit";
-import Clients from "@/components/Clients";
-import Industries from "@/components/Industries";
 import CaseStudy from "@/components/CaseStudy";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -18,7 +15,6 @@ export default function Home() {
       <Hero />
       <SolutionsShowcase />
       <ProcessSpine />
-      <About />
       <ServiceSplit
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
@@ -38,23 +34,6 @@ export default function Home() {
         imagePlaceholderTag="CTRL.SYS · IMG"
       />
       <FabricationSection />
-      <ServiceSplit
-        id="monitoring"
-        eyebrow="Live Monitoring"
-        title="Giving Plant Management Real-Time Visibility"
-        paragraphs={[
-          "Providing SCADA-based monitoring platforms that surface OEE, downtime, and alarm data from the plant floor to management in real time – supporting faster decisions and reduced unplanned downtime.",
-        ]}
-        points={[
-          "WinCC and SCADA dashboard deployment",
-          "OEE and downtime tracking across lines",
-          "Remote alerting for critical process states",
-        ]}
-        imageSide="left"
-        variant="dark"
-      />
-      <Clients />
-      <Industries />
       <CaseStudy />
       <Contact />
       <Footer />
