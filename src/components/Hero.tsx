@@ -1,15 +1,15 @@
 const SERVICE_STRIP = [
   {
-    name: "Process Systems & Automation",
-    desc: "Turnkey CSD, juice, and CIP process lines — Siemens-certified PLC, SCADA, and control engineering",
+    name: "Beverage Process Systems & Modernisation",
+    desc: "Turnkey CSD, juice, and CIP process lines — plus retrofit, upgradation, and automation integration for existing syrup rooms and production systems",
   },
   {
     name: "Process Equipment & Spares",
     desc: "Pumps, valves, instruments, analyzers, switchgear, and spare parts procurement",
   },
   {
-    name: "Fabrication & Commissioning",
-    desc: "Stainless steel tanks, vessels, piping, and site erection",
+    name: "Projects & References",
+    desc: "Commissioned process systems and automation upgrades for Coca-Cola, Pepsi, Fauji Foods, Dalda Foods, and leading manufacturers across three countries",
   },
 ];
 
