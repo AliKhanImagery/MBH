@@ -1,58 +1,105 @@
 const INDUSTRIES = [
-  {
-    name: "Food & Beverage",
-    desc: "Delivering hygienic-design control systems for bottling, dairy, and packaged food lines.",
-  },
-  {
-    name: "FMCG",
-    desc: "Integrating high-speed line control and OEE monitoring across fast-moving consumer goods plants.",
-  },
-  {
-    name: "Power Generation",
-    desc: "Providing SCADA and control panel engineering for captive and grid-connected power plants.",
-  },
-  {
-    name: "Process Manufacturing",
-    desc: "Automating batch and continuous processes across chemical and industrial process lines.",
-  },
+  "Food & Beverage",
+  "FMCG",
+  "Pharmaceutical",
+  "Power Generation",
+  "Process Manufacturing",
 ];
 
 export default function Industries() {
   return (
-    <section id="industries" className="bg-off-white">
-      <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">
-        <span className="text-eyebrow inline-block rounded-full border border-amber/30 bg-amber/10 px-3 py-1 text-amber">
-          Industries Served
-        </span>
-        <h2 className="text-h2 mt-4 max-w-xl text-near-black">
-          Automating Pakistan&rsquo;s Manufacturing Sector
-        </h2>
+    <>
+      <style>{`
+        /* Industry list row */
+        .mbh-ind-list {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+        }
 
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {INDUSTRIES.map((industry) => (
-            <div
-              key={industry.name}
-              className="rounded-lg border border-black/5 bg-white p-6"
-            >
-              <div className="text-data text-steel-signal">
-                {industry.name.slice(0, 2).toUpperCase()}.SEC
-              </div>
-              <h3
-                className="mt-3 text-near-black"
-                style={{ fontWeight: 500, fontSize: 18 }}
-              >
-                {industry.name}
-              </h3>
-              <p
-                className="mt-2 text-[#4a5568]"
-                style={{ fontWeight: 400, fontSize: 13, lineHeight: 1.6 }}
-              >
-                {industry.desc}
-              </p>
-            </div>
-          ))}
+        /* Each industry link */
+        .mbh-ind-item {
+          padding: 0 32px;
+          border-right: 1px solid #E2E8F0;
+          color: #080B0F;
+          font-weight: 500;
+          font-size: 18px;
+          text-decoration: none;
+          transition: color 200ms ease;
+          cursor: pointer;
+          white-space: nowrap;
+        }
+        .mbh-ind-item:first-child { padding-left: 0; }
+        .mbh-ind-item:last-child  { border-right: none; }
+        .mbh-ind-item:hover       { color: #C87D00; }
+
+        /* Footer link */
+        .mbh-ind-link { color: #9BAAB5; text-decoration: none; transition: color 200ms ease; }
+        .mbh-ind-link:hover { color: #C87D00; }
+
+        /* Mobile — vertical stack */
+        @media (max-width: 767px) {
+          .mbh-ind-list { flex-direction: column; align-items: flex-start; }
+          .mbh-ind-item {
+            padding: 16px 0;
+            border-right: none;
+            border-bottom: 1px solid #E2E8F0;
+            width: 100%;
+            white-space: normal;
+          }
+          .mbh-ind-item:first-child { padding-left: 0; }
+          .mbh-ind-item:last-child  { border-bottom: none; }
+        }
+      `}</style>
+
+      <section style={{ background: "#ffffff", paddingTop: 96, paddingBottom: 96 }}>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+
+          {/* ── Header block — left-aligned ── */}
+          <p
+            style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontWeight: 500,
+              fontSize: 10,
+              letterSpacing: "0.5px",
+              textTransform: "uppercase",
+              color: "#C87D00",
+            }}
+          >
+            Industries Served
+          </p>
+
+          <h2
+            style={{
+              fontWeight: 500,
+              fontSize: 28,
+              letterSpacing: "-0.8px",
+              lineHeight: 1.25,
+              color: "#080B0F",
+              marginTop: 16,
+            }}
+          >
+            Delivering Engineered Solutions Across Process-Driven Industries
+          </h2>
+
+          {/* ── Industry row ── */}
+          <div className="mbh-ind-list" style={{ marginTop: 48 }}>
+            {INDUSTRIES.map((name) => (
+              <a key={name} href="/industries" className="mbh-ind-item">
+                {name}
+              </a>
+            ))}
+          </div>
+
+          {/* ── Footer link ── */}
+          <p style={{ marginTop: 32 }}>
+            <a href="/industries" className="mbh-ind-link" style={{ fontSize: 14, fontWeight: 400 }}>
+              Explore industry solutions →
+            </a>
+          </p>
+
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
