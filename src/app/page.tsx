@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
+import ProcessSpine from "@/components/ProcessSpine";
 import About from "@/components/About";
 import ServiceSplit from "@/components/ServiceSplit";
 import Clients from "@/components/Clients";
@@ -15,6 +16,7 @@ export default function Home() {
       <Header />
       <Hero />
       <SolutionsShowcase />
+      <ProcessSpine />
       <About />
       <ServiceSplit
         id="automation"
