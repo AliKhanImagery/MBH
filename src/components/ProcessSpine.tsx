@@ -5,6 +5,7 @@ type Tile = {
   highlight?: boolean;
 };
 
+// S7 ↔ S8 content swapped (codes unchanged)
 const TILES: Tile[] = [
   { code: "S1", name: "Raw Material Intake",    desc: "Sugar silos, big-bag receiving, bulk handling" },
   { code: "S2", name: "Water Treatment",         desc: "RO filtration, de-aeration, microbiological treatment" },
@@ -12,10 +13,15 @@ const TILES: Tile[] = [
   { code: "S4", name: "Filtration",              desc: "Kieselguhr filtration, decolourisation, bag filters" },
   { code: "S5", name: "Pasteurisation",          desc: "Flash pasteurisers, plate and tubular heat exchangers" },
   { code: "S6", name: "Mixing & Blending",       desc: "Concentrate stations, continuous blenders, dosing skids" },
-  { code: "S7", name: "CIP Cleaning",            desc: "Multi-circuit CIP, automated cleaning cycles" },
-  { code: "S8", name: "Syrup Storage",           desc: "Simple syrup and final syrup storage tanks" },
+  { code: "S7", name: "Syrup Storage",           desc: "Simple syrup and final syrup storage tanks" },
+  { code: "S8", name: "CIP Cleaning",            desc: "Multi-circuit CIP, automated cleaning cycles" },
   { code: "S9", name: "Automation & Control",    desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
 ];
+
+// Card dimensions (update here if changed):
+// CSS: 200 × 253 px  |  2× asset: 400 × 506 px  |  padding inset: 24 px all sides
+const TILE_WIDTH  = 200;
+const TILE_HEIGHT = 253; // 220 × 1.15 = 253
 
 export default function ProcessSpine() {
   return (
@@ -56,14 +62,14 @@ export default function ProcessSpine() {
             Process Systems
           </p>
 
-          {/* H2 */}
+          {/* H2 — tighter gap to subtitle */}
           <h2 style={{
             fontWeight: 500,
             fontSize: 28,
             letterSpacing: "-0.8px",
             lineHeight: 1.25,
             color: "#ffffff",
-            marginBottom: 12,
+            marginBottom: 6,
           }}>
             Nine Engineered Modules. One Complete Beverage Line.
           </h2>
@@ -91,17 +97,18 @@ export default function ProcessSpine() {
                     href="/solutions"
                     className={hi ? "mbh-tile mbh-tile-s9" : "mbh-tile"}
                     style={{
-                      width: 200,
-                      minWidth: 200,
-                      height: 220,
+                      width: TILE_WIDTH,
+                      minWidth: TILE_WIDTH,
+                      height: TILE_HEIGHT,
                       padding: 24,
                       display: "flex",
                       flexDirection: "column",
+                      justifyContent: "space-between", // code top, name+desc bottom
                       flexShrink: 0,
                       borderRight: isLast ? "none" : "1px solid #1E3352",
                     }}
                   >
-                    {/* Stage code */}
+                    {/* Stage code — pinned top */}
                     <span style={{
                       fontFamily: "var(--font-ibm-plex-mono)",
                       fontWeight: 500,
@@ -112,35 +119,36 @@ export default function ProcessSpine() {
                       {tile.code}
                     </span>
 
-                    {/* Stage name */}
-                    <span style={{
-                      fontWeight: 500,
-                      fontSize: 16,
-                      lineHeight: 1.3,
-                      color: "#ffffff",
-                      marginTop: 16,
-                    }}>
-                      {tile.name}
-                    </span>
-
-                    {/* Descriptor */}
-                    <span style={{
-                      fontWeight: 400,
-                      fontSize: 13,
-                      lineHeight: 1.5,
-                      color: "#9BAAB5",
-                      marginTop: 8,
-                    }}>
-                      {tile.desc}
-                    </span>
+                    {/* Name + descriptor — pinned bottom */}
+                    <div>
+                      <span style={{
+                        display: "block",
+                        fontWeight: 500,
+                        fontSize: 16,
+                        lineHeight: 1.3,
+                        color: "#ffffff",
+                      }}>
+                        {tile.name}
+                      </span>
+                      <span style={{
+                        display: "block",
+                        fontWeight: 400,
+                        fontSize: 13,
+                        lineHeight: 1.5,
+                        color: "#9BAAB5",
+                        marginTop: 8,
+                      }}>
+                        {tile.desc}
+                      </span>
+                    </div>
                   </a>
                 );
               })}
             </div>
           </div>
 
-          {/* Footer link — 48px below tile row */}
-          <p style={{ textAlign: "center", marginTop: 48 }}>
+          {/* Footer link — left aligned */}
+          <p style={{ marginTop: 32 }}>
             <a href="/solutions" className="mbh-spine-link" style={{ fontSize: 14, fontWeight: 400 }}>
               Explore all process systems →
             </a>
