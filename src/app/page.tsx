@@ -4,9 +4,11 @@ import SolutionsShowcase from "@/components/SolutionsShowcase";
 import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
 import ServiceSplit from "@/components/ServiceSplit";
+import ProductsTeaser from "@/components/ProductsTeaser";
 import CaseStudy from "@/components/CaseStudy";
 import TechnologyPartners from "@/components/TechnologyPartners";
 import Industries from "@/components/Industries";
+import AboutTeaser from "@/components/AboutTeaser";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -36,9 +38,11 @@ export default function Home() {
         imagePlaceholderTag="CTRL.SYS · IMG"
       />
       <FabricationSection />
+      <ProductsTeaser />
       <CaseStudy />
       <TechnologyPartners />
       <Industries />
+      <AboutTeaser />
       <Contact />
       <Footer />
     </>
