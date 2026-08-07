@@ -1,8 +1,16 @@
 const SERVICE_STRIP = [
-  { name: "PLC Programming", desc: "Siemens-certified control logic" },
-  { name: "SCADA Systems", desc: "Real-time plant supervision" },
-  { name: "HMI Design", desc: "Operator interface engineering" },
-  { name: "Process Automation", desc: "End-to-end line integration" },
+  {
+    name: "Process Systems & Automation",
+    desc: "Turnkey CSD, juice, and CIP process lines — Siemens-certified PLC, SCADA, and control engineering",
+  },
+  {
+    name: "Process Equipment & Spares",
+    desc: "Pumps, valves, instruments, analyzers, switchgear, and spare parts procurement",
+  },
+  {
+    name: "Fabrication & Commissioning",
+    desc: "Stainless steel tanks, vessels, piping, and site erection",
+  },
 ];
 
 export default function Hero() {
@@ -60,18 +68,18 @@ export default function Hero() {
         </div>
 
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-1 md:grid-cols-3">
             {SERVICE_STRIP.map((item, i) => (
               <div
                 key={item.name}
-                className={`border-white/10 py-6 pr-4 ${
-                  i % 2 === 0 ? "border-r md:border-r" : ""
-                } ${i < 3 ? "md:border-r" : ""} border-b-2 border-b-amber`}
+                className={`py-6 pr-4 border-b-2 border-b-amber ${
+                  i < 2 ? "md:border-r md:border-r-white/10" : ""
+                }`}
               >
                 <div style={{ fontWeight: 500, fontSize: 14 }} className="text-white">
                   {item.name}
                 </div>
-                <div className="mt-1 text-white/40" style={{ fontWeight: 300, fontSize: 12 }}>
+                <div className="mt-1 text-steel-text" style={{ fontWeight: 300, fontSize: 12 }}>
                   {item.desc}
                 </div>
               </div>
