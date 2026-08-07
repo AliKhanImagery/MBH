@@ -16,11 +16,12 @@ export default function Contact() {
               Get In Touch
             </span>
             <h2 className="text-h2 mt-4 text-white">
-              Discussing Your Next Automation Project
+              Start a Conversation
             </h2>
             <p className="text-body mt-4 max-w-md text-white/60">
-              Providing consultation on PLC, SCADA, and control panel
-              projects for manufacturing facilities across Pakistan.
+              Providing consultation on process systems, industrial automation,
+              and control panel engineering for manufacturing facilities
+              worldwide.
             </p>
 
             <div className="mt-10 space-y-8">

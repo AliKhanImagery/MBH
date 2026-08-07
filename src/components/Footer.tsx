@@ -1,24 +1,19 @@
 const COLUMNS = [
   {
     title: "Company",
-    links: ["About", "Careers", "Contact"],
+    links: ["About", "Contact", "Careers"],
   },
   {
-    title: "Services",
-    links: ["Automation", "Live Monitoring", "Panel Design", "Maintenance"],
+    title: "Solutions",
+    links: ["Process Systems", "Automation", "Fabrication", "CIP Systems"],
   },
   {
     title: "Industries",
-    links: [
-      "Food & Beverage",
-      "FMCG",
-      "Power Generation",
-      "Process Manufacturing",
-    ],
+    links: ["Food & Beverage", "FMCG", "Pharmaceutical", "Power Generation"],
   },
   {
-    title: "Legal",
-    links: ["Privacy Policy", "Terms of Service"],
+    title: "Resources",
+    links: ["References", "Technology Partners", "Products"],
   },
 ];
 
@@ -32,7 +27,7 @@ export default function Footer() {
               MBH <span className="text-amber">SOLUTIONS</span>
             </div>
             <p className="text-body mt-3 text-white/40" style={{ fontSize: 13 }}>
-              Technology For Innovators
+              Industrial Automation &amp; Process Systems
             </p>
           </div>
 

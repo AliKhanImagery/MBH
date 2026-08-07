@@ -3,12 +3,13 @@
 import { useState } from "react";
 
 const LINKS = [
-  { label: "About", href: "#about" },
-  { label: "Automation", href: "#automation" },
-  { label: "Monitoring", href: "#monitoring" },
-  { label: "Industries", href: "#industries" },
-  { label: "Case Studies", href: "#case-study" },
-  { label: "Contact", href: "#contact" },
+  { label: "Solutions",            href: "/" },
+  { label: "Products",             href: "/" },
+  { label: "Industries",           href: "/" },
+  { label: "References",           href: "/" },
+  { label: "Technology Partners",  href: "/" },
+  { label: "About",                href: "/" },
+  { label: "Contact",              href: "#contact" },
 ];
 
 export default function Header() {
