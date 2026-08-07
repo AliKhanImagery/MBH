@@ -4,7 +4,7 @@ const SOLUTIONS = [
   {
     title: "CSD Process Systems",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=800",
+    img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
   },
   {
     title: "Juice Process Systems",
@@ -14,12 +14,12 @@ const SOLUTIONS = [
   {
     title: "Industrial Automation",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1565514020179-026b92b2d70b?w=800",
+    img: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800",
   },
   {
     title: "CIP Systems",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800",
+    img: "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800",
   },
 ];
 
