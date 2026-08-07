@@ -1,23 +1,50 @@
-const STAGES = [
-  { code: "S1", label: "Raw Material Intake" },
-  { code: "S2", label: "Water Treatment" },
-  { code: "S3", label: "Sugar Dissolving" },
-  { code: "S4", label: "Filtration" },
-  { code: "S5", label: "Pasteurisation" },
-  { code: "S6", label: "Mixing & Blending" },
-  { code: "S7", label: "CIP Cleaning" },
-  { code: "S8", label: "Syrup Storage" },
-  { code: "S9", label: "Automation & Control", highlight: true },
-] as const;
+type Tile = {
+  code: string;
+  name: string;
+  desc: string;
+  highlight?: boolean;
+};
+
+const TILES: Tile[] = [
+  { code: "S1", name: "Raw Material Intake",    desc: "Sugar silos, big-bag receiving, bulk handling" },
+  { code: "S2", name: "Water Treatment",         desc: "RO filtration, de-aeration, microbiological treatment" },
+  { code: "S3", name: "Sugar Dissolving",        desc: "Continuous and batch dissolving, Brix 65°" },
+  { code: "S4", name: "Filtration",              desc: "Kieselguhr filtration, decolourisation, bag filters" },
+  { code: "S5", name: "Pasteurisation",          desc: "Flash pasteurisers, plate and tubular heat exchangers" },
+  { code: "S6", name: "Mixing & Blending",       desc: "Concentrate stations, continuous blenders, dosing skids" },
+  { code: "S7", name: "CIP Cleaning",            desc: "Multi-circuit CIP, automated cleaning cycles" },
+  { code: "S8", name: "Syrup Storage",           desc: "Simple syrup and final syrup storage tanks" },
+  { code: "S9", name: "Automation & Control",    desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
+];
 
 export default function ProcessSpine() {
   return (
-    <section style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 96 }}>
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+    <>
+      {/* Scoped hover styles — no JS required */}
+      <style>{`
+        .mbh-tile {
+          background-color: #0D1B2E;
+          transition: background-color 200ms ease;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        .mbh-tile:hover { background-color: #162540; }
 
-        {/* Eyebrow */}
-        <p
-          style={{
+        .mbh-tile-s9 {
+          background-color: #0F1A2E;
+          border-left: 2px solid #C87D00 !important;
+        }
+        .mbh-tile-s9:hover { background-color: #1E3352; }
+
+        .mbh-spine-link { color: #9BAAB5; text-decoration: none; transition: color 200ms ease; }
+        .mbh-spine-link:hover { color: #C87D00; }
+      `}</style>
+
+      <section style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 80 }}>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+
+          {/* Eyebrow */}
+          <p style={{
             fontFamily: "var(--font-ibm-plex-mono)",
             fontWeight: 500,
             fontSize: 10,
@@ -25,142 +52,102 @@ export default function ProcessSpine() {
             textTransform: "uppercase",
             color: "#C87D00",
             marginBottom: 16,
-          }}
-        >
-          The Process
-        </p>
+          }}>
+            Process Systems
+          </p>
 
-        {/* H2 */}
-        <h2
-          style={{
+          {/* H2 */}
+          <h2 style={{
             fontWeight: 500,
             fontSize: 28,
             letterSpacing: "-0.8px",
             lineHeight: 1.25,
             color: "#ffffff",
+            marginBottom: 12,
+          }}>
+            Nine Engineered Modules. One Complete Beverage Line.
+          </h2>
+
+          {/* Subtitle */}
+          <p style={{
+            fontWeight: 300,
+            fontSize: 16,
+            color: "#9BAAB5",
             marginBottom: 48,
-          }}
-        >
-          From Raw Material to Finished Beverage — Engineered End to End
-        </h2>
+          }}>
+            Each module is available as a turnkey solution or integrated into your existing process line.
+          </p>
 
-        {/* Rail — horizontally scrollable on smaller viewports */}
-        <div style={{ overflowX: "auto" }}>
-          <div style={{ minWidth: 860, position: "relative" }}>
+          {/* Horizontally scrollable tile row */}
+          <div style={{ overflowX: "auto" }}>
+            <div style={{ display: "flex", flexDirection: "row" }}>
+              {TILES.map((tile, i) => {
+                const isLast = i === TILES.length - 1;
+                const hi = tile.highlight ?? false;
 
-            {/*
-              Horizontal spine line.
-              Node layout from top: code-label (20px) + gap (8px) + half-circle (6px) = 34px
-            */}
-            <div
-              style={{
-                position: "absolute",
-                left: 0,
-                right: 0,
-                top: 34,
-                height: 1,
-                background: "#1E3352",
-              }}
-            />
-
-            {/* Nine nodes, evenly spaced */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(9, 1fr)",
-              }}
-            >
-              {STAGES.map((stage) => {
-                const hi = "highlight" in stage && stage.highlight;
                 return (
-                  <div
-                    key={stage.code}
+                  <a
+                    key={tile.code}
+                    href="/solutions"
+                    className={hi ? "mbh-tile mbh-tile-s9" : "mbh-tile"}
                     style={{
+                      width: 200,
+                      minWidth: 200,
+                      height: 220,
+                      padding: 24,
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "center",
+                      flexShrink: 0,
+                      borderRight: isLast ? "none" : "1px solid #1E3352",
                     }}
                   >
-                    {/* Stage code — fixed 20px container keeps circle on the line */}
-                    <div
-                      style={{
-                        height: 20,
-                        display: "flex",
-                        alignItems: "flex-end",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <span
-                        style={{
-                          fontFamily: "var(--font-ibm-plex-mono)",
-                          fontWeight: 400,
-                          fontSize: 11,
-                          letterSpacing: "0.06em",
-                          textTransform: "uppercase",
-                          color: hi ? "#C87D00" : "#9BAAB5",
-                        }}
-                      >
-                        {stage.code}
-                      </span>
-                    </div>
-
-                    {/* 8px gap above circle */}
-                    <div style={{ height: 8 }} />
-
-                    {/* Node circle */}
-                    <div
-                      style={{
-                        width: 12,
-                        height: 12,
-                        borderRadius: "50%",
-                        flexShrink: 0,
-                        background: hi ? "#C87D00" : "#0D1B2E",
-                        border: `1px solid ${hi ? "#C87D00" : "#1E3352"}`,
-                        position: "relative",
-                        zIndex: 1,
-                      }}
-                    />
-
-                    {/* 8px gap below circle */}
-                    <div style={{ height: 8 }} />
+                    {/* Stage code */}
+                    <span style={{
+                      fontFamily: "var(--font-ibm-plex-mono)",
+                      fontWeight: 500,
+                      fontSize: 28,
+                      lineHeight: 1,
+                      color: "#C87D00",
+                    }}>
+                      {tile.code}
+                    </span>
 
                     {/* Stage name */}
-                    <span
-                      style={{
-                        fontWeight: hi ? 500 : 400,
-                        fontSize: 13,
-                        lineHeight: 1.4,
-                        color: hi ? "#ffffff" : "#9BAAB5",
-                        textAlign: "center",
-                        maxWidth: 80,
-                      }}
-                    >
-                      {stage.label}
+                    <span style={{
+                      fontWeight: 500,
+                      fontSize: 16,
+                      lineHeight: 1.3,
+                      color: "#ffffff",
+                      marginTop: 16,
+                    }}>
+                      {tile.name}
                     </span>
-                  </div>
+
+                    {/* Descriptor */}
+                    <span style={{
+                      fontWeight: 400,
+                      fontSize: 13,
+                      lineHeight: 1.5,
+                      color: "#9BAAB5",
+                      marginTop: 8,
+                    }}>
+                      {tile.desc}
+                    </span>
+                  </a>
                 );
               })}
             </div>
-
           </div>
+
+          {/* Footer link — 48px below tile row */}
+          <p style={{ textAlign: "center", marginTop: 48 }}>
+            <a href="/solutions" className="mbh-spine-link" style={{ fontSize: 14, fontWeight: 400 }}>
+              Explore all process systems →
+            </a>
+          </p>
+
         </div>
-
-        {/* Body copy */}
-        <p
-          style={{
-            fontWeight: 400,
-            fontSize: 15,
-            color: "#9BAAB5",
-            textAlign: "center",
-            marginTop: 32,
-            lineHeight: 1.6,
-          }}
-        >
-          Each stage is an individually engineered module — available as a complete
-          turnkey system or as a standalone solution integrated into your existing line.
-        </p>
-
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
