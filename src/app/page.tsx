@@ -20,18 +20,21 @@ export default function Home() {
       <About />
       <ServiceSplit
         id="automation"
-        eyebrow="Automation"
+        eyebrow="AUTOMATION & CONTROL"
         title="Engineering Control Systems That Run the Line"
         paragraphs={[
-          "Designing and integrating PLC-based control systems for production lines – covering control philosophy, panel design, and on-site commissioning under a single scope.",
+          "Designing and integrating PLC-based control systems for production lines — covering control philosophy, panel design, and end-to-end commissioning under a single scope.",
         ]}
         points={[
           "Siemens S7 PLC programming and TIA Portal integration",
-          "Control panel design and manufacture",
-          "Machine and line-level HMI development",
+          "Control panel design, fabrication, and factory acceptance testing",
+          "WinCC and SCADA dashboard deployment with remote access",
         ]}
         imageSide="right"
-        variant="light"
+        variant="automation"
+        ctaText="Explore Automation Solutions"
+        ctaHref="/solutions"
+        imagePlaceholderTag="CTRL.SYS · IMG"
       />
       <ServiceSplit
         id="monitoring"
