@@ -37,25 +37,18 @@ export default function Hero() {
             <div className="mb-4 flex items-center gap-2">
               <span className="h-[2px] w-6 bg-amber" />
               <span className="text-eyebrow text-amber">
-                Siemens Solution Partner · Lahore, Pakistan
+                Siemens Solution Partner
               </span>
             </div>
 
             <h1 className="text-h1 text-white">
-              Industrial Automation and Engineering Solutions
+              Engineering Beverage Process Systems and Industrial Automation for the World&apos;s Leading Manufacturers
             </h1>
 
             <p className="text-subtitle mt-6 text-white/75">
-              Delivering Comprehensive Automation, Monitoring, and Control
-              Systems for Pakistan&rsquo;s Manufacturing Sector
-            </p>
-
-            <p className="text-body mt-4 max-w-2xl text-white/55">
-              Providing end-to-end PLC and SCADA-based automation solutions
-              for food and beverage, FMCG, power generation, and process
-              manufacturing industries – combining Siemens-certified
-              engineering with real-time monitoring and ongoing maintenance
-              support.
+              Delivering turnkey syrup rooms, CSD and juice process lines, and
+              plant-wide control systems — from new installations to the
+              modernisation and retrofit of existing production facilities.
             </p>
 
             <a
