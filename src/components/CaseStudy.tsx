@@ -1,62 +1,167 @@
+const DATA_POINTS = [
+  { value: "Iran",            label: "Project Location" },
+  { value: "Syrup Room + CIP", label: "Systems Delivered" },
+  { value: "Turnkey",         label: "Delivery Scope" },
+];
+
 export default function CaseStudy() {
   return (
-    <section id="case-study" className="bg-white">
-      <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">
-        <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div
-            className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-black/5 bg-near-black"
-          >
-            <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full opacity-40">
-              <defs>
-                <pattern id="grid-case" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M20 0H0V20" fill="none" stroke="#2E9CC8" strokeWidth="0.5" />
-                </pattern>
-              </defs>
-              <rect width="400" height="300" fill="url(#grid-case)" />
-            </svg>
-            <svg viewBox="0 0 400 300" className="absolute inset-0 h-full w-full">
-              <rect x="60" y="90" width="120" height="120" fill="none" stroke="#C87D00" strokeWidth="1.5" />
-              <rect x="220" y="120" width="120" height="60" fill="none" stroke="#2E9CC8" strokeWidth="1.5" />
-              <path d="M180 150h40" stroke="#9BAAB5" strokeWidth="1.5" />
-            </svg>
-            <div className="text-data absolute bottom-4 left-4 text-steel-signal">
-              PROJ.CASE · 002
+    <>
+      <style>{`
+        .mbh-ref-cta { color: #C87D00; text-decoration: none; }
+        .mbh-ref-cta:hover { text-decoration: underline; }
+      `}</style>
+
+      <section
+        id="case-study"
+        style={{ background: "#ffffff", paddingTop: 96, paddingBottom: 96 }}
+      >
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+          <div className="grid items-stretch gap-12 lg:grid-cols-[45fr_55fr]">
+
+            {/* ── Left: image placeholder (45%) ── */}
+            <div
+              style={{
+                background: "#0D1B2E",
+                border: "1px solid #1E3352",
+                minHeight: 380,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "var(--font-ibm-plex-mono)",
+                  fontWeight: 400,
+                  fontSize: 11,
+                  color: "#1E3352",
+                  letterSpacing: "0.06em",
+                }}
+              >
+                PROJ.REF · IMG
+              </span>
+            </div>
+
+            {/* ── Right: copy block (55%) ── */}
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+
+              {/* Eyebrow */}
+              <p
+                style={{
+                  fontFamily: "var(--font-ibm-plex-mono)",
+                  fontWeight: 500,
+                  fontSize: 10,
+                  letterSpacing: "0.5px",
+                  textTransform: "uppercase",
+                  color: "#C87D00",
+                  marginBottom: 20,
+                }}
+              >
+                Featured Project
+              </p>
+
+              {/* H2 */}
+              <h2
+                style={{
+                  fontWeight: 500,
+                  fontSize: 28,
+                  letterSpacing: "-0.8px",
+                  lineHeight: 1.25,
+                  color: "#080B0F",
+                }}
+              >
+                Coca-Cola Tehran — Syrup Room and CIP System
+              </h2>
+
+              {/* Body paragraph */}
+              <p
+                style={{
+                  fontWeight: 400,
+                  fontSize: 15,
+                  lineHeight: 1.7,
+                  color: "#4A5568",
+                  marginTop: 24,
+                }}
+              >
+                Erection and commissioning of a complete syrup room and CIP
+                system at Coca-Cola&apos;s Tehran facility — covering mechanical
+                installation, process piping, automation integration, and system
+                startup.
+              </p>
+
+              {/* Data strip */}
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  marginTop: 40,
+                  gap: 0,
+                }}
+              >
+                {DATA_POINTS.map((dp, i) => (
+                  <div key={dp.label} style={{ display: "flex", alignItems: "stretch" }}>
+                    {/* Divider before 2nd and 3rd items */}
+                    {i > 0 && (
+                      <div
+                        style={{
+                          width: 1,
+                          height: 40,
+                          background: "#E2E8F0",
+                          alignSelf: "center",
+                          flexShrink: 0,
+                          marginLeft: 24,
+                          marginRight: 24,
+                        }}
+                      />
+                    )}
+                    <div>
+                      <div
+                        style={{
+                          fontWeight: 500,
+                          fontSize: 28,
+                          lineHeight: 1.1,
+                          color: "#080B0F",
+                        }}
+                      >
+                        {dp.value}
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: "var(--font-ibm-plex-mono)",
+                          fontWeight: 400,
+                          fontSize: 11,
+                          textTransform: "uppercase",
+                          color: "#9BAAB5",
+                          letterSpacing: "0.04em",
+                          marginTop: 4,
+                        }}
+                      >
+                        {dp.label}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CTA link */}
+              <a
+                href="/references"
+                className="mbh-ref-cta"
+                style={{
+                  display: "inline-block",
+                  marginTop: 32,
+                  fontWeight: 500,
+                  fontSize: 14,
+                }}
+              >
+                View All References
+              </a>
+
             </div>
           </div>
-
-          <div>
-            <span className="text-eyebrow inline-block rounded-full border border-amber/30 bg-amber/10 px-3 py-1 text-amber">
-              Featured Project
-            </span>
-
-            <h2 className="text-h2 mt-4 text-near-black">
-              FMCG Bottling Facility – Line Automation Upgrade
-            </h2>
-
-            <p className="text-body mt-4 text-[#4a5568]">
-              Replacing legacy relay-based control with a Siemens S7-1500 PLC
-              and WinCC SCADA architecture across a multi-line bottling
-              facility – reducing unplanned downtime and giving plant
-              management real-time OEE visibility across every line.
-            </p>
-
-            <dl className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-3">
-              {[
-                { label: "Lines Automated", value: "6" },
-                { label: "Downtime Reduction", value: "32%" },
-                { label: "Commissioning Time", value: "11 Weeks" },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="text-h3 text-brand-blue">{stat.value}</div>
-                  <div className="text-data mt-1 text-steel-text">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </dl>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
