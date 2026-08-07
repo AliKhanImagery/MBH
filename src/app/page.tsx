@@ -5,6 +5,7 @@ import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
 import ServiceSplit from "@/components/ServiceSplit";
 import CaseStudy from "@/components/CaseStudy";
+import TechnologyPartners from "@/components/TechnologyPartners";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -35,6 +36,7 @@ export default function Home() {
       />
       <FabricationSection />
       <CaseStudy />
+      <TechnologyPartners />
       <Contact />
       <Footer />
     </>
