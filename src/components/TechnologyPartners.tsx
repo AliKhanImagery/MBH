@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import type { RefObject } from "react";
 
 type Partner = {
   name: string;
@@ -27,15 +28,49 @@ const PARTNERS: Partner[] = [
 /* ─── Single logo cell — manages its own load/fail state ─── */
 function LogoCell({ partner }: { partner: Partner }) {
   const [failed, setFailed] = useState(!partner.logoUrl);
+  const imgRef = useRef<HTMLImageElement>(null) as RefObject<HTMLImageElement>;
+
+  useEffect(() => {
+    const img = imgRef.current;
+    if (!img || !partner.logoUrl) return;
+
+    // After the browser paints, check whether the img rendered as a real image
+    // or as a broken/alt-text placeholder.
+    //
+    // naturalHeight > 0  → properly-dimensioned image (e.g. Siemens SVG) — always keep.
+    // naturalHeight === 0 → either a dimensionless SVG (viewBox-only, fills our
+    //   maxHeight:40 CSS → renders ≥ 30px) OR a blocked/empty response that the
+    //   browser renders as alt text (~19–24px). We use 26px as the cut-off.
+    const checkAfterPaint = () => {
+      if (!img) return;
+      if (img.naturalHeight > 0) return; // confirmed real image
+      const h = img.getBoundingClientRect().height;
+      if (h <= 26) setFailed(true);
+    };
+
+    if (img.complete) {
+      // Already loaded from cache — wait one frame for layout/paint to finalise
+      requestAnimationFrame(checkAfterPaint);
+    } else {
+      const onLoad  = () => requestAnimationFrame(checkAfterPaint);
+      const onError = () => setFailed(true);
+      img.addEventListener("load",  onLoad);
+      img.addEventListener("error", onError);
+      return () => {
+        img.removeEventListener("load",  onLoad);
+        img.removeEventListener("error", onError);
+      };
+    }
+  }, [partner.logoUrl]);
 
   return (
     <div className="mbh-partner-cell">
       {!failed && partner.logoUrl ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
+          ref={imgRef}
           src={partner.logoUrl}
           alt={partner.name}
-          onError={() => setFailed(true)}
           style={{ maxHeight: 40, maxWidth: "100%", objectFit: "contain" }}
         />
       ) : (
