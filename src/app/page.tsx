@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import ProcessSpine from "@/components/ProcessSpine";
+import FabricationSection from "@/components/FabricationSection";
 import About from "@/components/About";
 import ServiceSplit from "@/components/ServiceSplit";
 import Clients from "@/components/Clients";
@@ -36,6 +37,7 @@ export default function Home() {
         ctaHref="/solutions"
         imagePlaceholderTag="CTRL.SYS · IMG"
       />
+      <FabricationSection />
       <ServiceSplit
         id="monitoring"
         eyebrow="Live Monitoring"
