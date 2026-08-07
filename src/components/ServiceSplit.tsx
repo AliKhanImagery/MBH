@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ServiceSplitProps = {
   id: string;
   eyebrow: string;
@@ -167,30 +169,15 @@ function AutomationSection({
               )}
             </div>
 
-            {/* ── Right: image placeholder ── */}
-            <div
-              style={{
-                background: "#0D1B2E",
-                border: "1px solid #1E3352",
-                minHeight: 320,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {imagePlaceholderTag && (
-                <span
-                  style={{
-                    fontFamily: "var(--font-ibm-plex-mono)",
-                    fontWeight: 400,
-                    fontSize: 11,
-                    color: "#1E3352",
-                    letterSpacing: "0.06em",
-                  }}
-                >
-                  {imagePlaceholderTag}
-                </span>
-              )}
+            {/* ── Right: automation panel image ── */}
+            <div style={{ position: "relative", minHeight: 320 }}>
+              <Image
+                src="/images/sections/plc-cabinet-mbh.webp"
+                alt="MBH Solutions PLC control cabinet"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
             </div>
 
           </div>

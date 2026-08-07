@@ -19,7 +19,7 @@ const SOLUTIONS = [
   {
     title: "CIP Systems",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800",
+    img: "/images/sections/cip-valves.png",
   },
 ];
 

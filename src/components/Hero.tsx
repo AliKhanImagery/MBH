@@ -13,25 +13,32 @@ const SERVICE_STRIP = [
   },
 ];
 
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative overflow-hidden text-white">
-      {/* Background photo — replace /public/hero-bg.jpg with the supplied image */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/hero-bg.jpg')" }}
+      {/* Background photo */}
+      <Image
+        src="/images/hero/hero.png"
+        alt="MBH Solutions process engineering facility"
+        fill
+        priority
+        style={{ objectFit: "cover", zIndex: 0 }}
+        sizes="100vw"
       />
 
-      {/* Subtle brand-blue gradient overlay — mostly opaque, lets the photo bleed through faintly */}
+      {/* Directional gradient overlay — heavier on left for legibility, fades right */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(135deg, rgba(0,0,40,0.83) 0%, rgba(4,6,47,0.83) 55%, rgba(10,16,72,0.83) 100%)",
+            "linear-gradient(to right, rgba(8,11,15,0.93) 0%, rgba(8,11,15,0.8) 40%, rgba(8,11,15,0.5) 100%)",
+          zIndex: 1,
         }}
       />
 
-      <div className="relative z-10">
+      <div className="relative z-[2]">
         <div className="mx-auto max-w-[1400px] px-6 pt-24 pb-16 md:px-12 md:pt-40">
           <div className="max-w-3xl">
             <div className="mb-4 flex items-center gap-2">

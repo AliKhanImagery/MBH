@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CAPABILITIES = [
   "Stainless steel and carbon steel tank and vessel fabrication",
   "Piping, structure, and skid assembly to engineering specifications",
@@ -19,28 +21,15 @@ export default function FabricationSection() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-12 lg:grid-cols-[2fr_3fr]">
 
-            {/* ── Left: image placeholder (40%) ── */}
-            <div
-              style={{
-                background: "#0D1B2E",
-                border: "1px solid #1E3352",
-                minHeight: 320,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 400,
-                  fontSize: 11,
-                  color: "#1E3352",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                FAB.WRK · IMG
-              </span>
+            {/* ── Left: fabrication image (40%) ── */}
+            <div style={{ position: "relative", minHeight: 320 }}>
+              <Image
+                src="/images/sections/fabrication-welding.jpeg"
+                alt="MBH Solutions fabrication and welding"
+                fill
+                style={{ objectFit: "cover" }}
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
             </div>
 
             {/* ── Right: copy block (60%) ── */}
