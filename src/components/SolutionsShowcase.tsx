@@ -1,8 +1,26 @@
+import Image from "next/image";
+
 const SOLUTIONS = [
-  { title: "CSD Process Systems", href: "/solutions" },
-  { title: "Juice Process Systems", href: "/solutions" },
-  { title: "Industrial Automation", href: "/solutions" },
-  { title: "CIP Systems", href: "/solutions" },
+  {
+    title: "CSD Process Systems",
+    href: "/solutions",
+    img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
+  },
+  {
+    title: "Juice Process Systems",
+    href: "/solutions",
+    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800",
+  },
+  {
+    title: "Industrial Automation",
+    href: "/solutions",
+    img: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800",
+  },
+  {
+    title: "CIP Systems",
+    href: "/solutions",
+    img: "https://images.unsplash.com/photo-1510127034890-ba27508e9f1c?w=800",
+  },
 ];
 
 export default function SolutionsShowcase() {
@@ -54,6 +72,15 @@ export default function SolutionsShowcase() {
                 borderBottom: "2px solid #C87D00",
               }}
             >
+              {/* Background image */}
+              <Image
+                src={sol.img}
+                alt={sol.title}
+                fill
+                className="object-cover transition-transform duration-[400ms] ease-in-out group-hover:scale-[1.03]"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+
               {/* Gradient overlay */}
               <div
                 className="absolute inset-0"
