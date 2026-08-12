@@ -19,9 +19,10 @@ const TILES: Tile[] = [
 ];
 
 // Card dimensions (update here if changed):
-// CSS: 200 × 278 px  |  2× asset: 400 × 556 px  |  padding inset: 24 px all sides
-const TILE_WIDTH  = 200;
-const TILE_HEIGHT = 278; // 253 × 1.10 = 278
+// CSS: 220 × 306 px  |  2× asset: 440 × 612 px  |  padding inset: 26 px all sides
+const TILE_WIDTH  = 220;
+const TILE_HEIGHT = 306;
+const TILE_PAD    = 26;
 
 export default function ProcessSpine() {
   return (
@@ -44,9 +45,23 @@ export default function ProcessSpine() {
 
         .mbh-spine-link { color: #9BAAB5; text-decoration: none; transition: color 200ms ease; }
         .mbh-spine-link:hover { color: #C87D00; }
+
+        .mbh-spine-scroll { overflow-x: auto; }
+        .mbh-spine-scroll::-webkit-scrollbar { display: none; }
+        .mbh-spine-scroll { -ms-overflow-style: none; scrollbar-width: none; }
       `}</style>
 
-      <section style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 80 }}>
+      <section style={{ position: "relative", background: "#080B0F", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
+        {/* Background image at 15% opacity */}
+        <div style={{
+          position: "absolute",
+          inset: 0,
+          backgroundImage: "url('/images/hero/hero.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          opacity: 0.15,
+          pointerEvents: "none",
+        }} />
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
           {/* Eyebrow */}
@@ -84,8 +99,31 @@ export default function ProcessSpine() {
             Each module is available as a turnkey solution or integrated into your existing process line.
           </p>
 
+          {/* Scroll hint */}
+          <div style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            gap: 8,
+            marginBottom: 12,
+          }}>
+            <span style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontWeight: 400,
+              fontSize: 11,
+              letterSpacing: "0.3px",
+              textTransform: "uppercase",
+              color: "#4A5E6F",
+            }}>
+              Scroll
+            </span>
+            <svg width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#C87D00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </div>
+
           {/* Horizontally scrollable tile row */}
-          <div style={{ overflowX: "auto" }}>
+          <div className="mbh-spine-scroll">
             <div style={{ display: "flex", flexDirection: "row" }}>
               {TILES.map((tile, i) => {
                 const isLast = i === TILES.length - 1;
@@ -100,49 +138,47 @@ export default function ProcessSpine() {
                       width: TILE_WIDTH,
                       minWidth: TILE_WIDTH,
                       height: TILE_HEIGHT,
-                      padding: 24,
-                      position: "relative",   // anchor for absolute bottom group
+                      padding: TILE_PAD,
                       display: "flex",
                       flexDirection: "column",
                       flexShrink: 0,
                       borderRight: isLast ? "none" : "1px solid #1E3352",
                     }}
                   >
-                    {/* Stage code — normal flow, top-left */}
+                    {/* Stage code — top-left */}
                     <span style={{
                       fontFamily: "var(--font-ibm-plex-mono)",
                       fontWeight: 500,
-                      fontSize: 28,
+                      fontSize: 30,
                       lineHeight: 1,
                       color: "#C87D00",
                     }}>
                       {tile.code}
                     </span>
 
-                    {/* Name + descriptor — absolutely pinned to bottom edge
-                        Every card's title lands at the same Y regardless of
-                        how many lines the descriptor wraps to. */}
-                    <div style={{ position: "absolute", bottom: 24, left: 24, right: 24 }}>
-                      <span style={{
-                        display: "block",
-                        fontWeight: 500,
-                        fontSize: 16,
-                        lineHeight: 1.3,
-                        color: "#ffffff",
-                      }}>
-                        {tile.name}
-                      </span>
-                      <span style={{
-                        display: "block",
-                        fontWeight: 400,
-                        fontSize: 13,
-                        lineHeight: 1.5,
-                        color: "#9BAAB5",
-                        marginTop: 8,
-                      }}>
-                        {tile.desc}
-                      </span>
-                    </div>
+                    {/* Spacer pushes name+desc to bottom */}
+                    <div style={{ flex: 1 }} />
+
+                    <span style={{
+                      display: "block",
+                      fontWeight: 500,
+                      fontSize: 16,
+                      lineHeight: 1.3,
+                      color: "#ffffff",
+                    }}>
+                      {tile.name}
+                    </span>
+                    <span style={{
+                      display: "block",
+                      fontWeight: 400,
+                      fontSize: 13,
+                      lineHeight: 1.5,
+                      color: "#9BAAB5",
+                      marginTop: 8,
+                      minHeight: 40,
+                    }}>
+                      {tile.desc}
+                    </span>
                   </a>
                 );
               })}
