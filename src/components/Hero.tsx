@@ -1,18 +1,3 @@
-const SERVICE_STRIP = [
-  {
-    name: "Beverage Process Systems & Modernisation",
-    desc: "Turnkey CSD, juice, and CIP process lines — plus retrofit, upgradation, and automation integration for existing syrup rooms and production systems",
-  },
-  {
-    name: "Process Equipment & Spares",
-    desc: "Pumps, valves, instruments, analyzers, switchgear, and spare parts procurement",
-  },
-  {
-    name: "Projects & References",
-    desc: "Commissioned process systems and automation upgrades for Coca-Cola, Pepsi, Fauji Foods, Dalda Foods, and leading manufacturers across three countries",
-  },
-];
-
 import Image from "next/image";
 
 export default function Hero() {
@@ -33,7 +18,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(9,9,73,0.75) 0%, rgba(9,9,73,0.65) 40%, rgba(9,9,73,0.35) 65%, rgba(8,11,15,0.25) 100%)",
+            "linear-gradient(to right, rgba(31,48,94,0.80) 0%, rgba(31,48,94,0.65) 40%, rgba(31,48,94,0.35) 65%, rgba(8,11,15,0.50) 100%)",
           zIndex: 1,
         }}
       />
@@ -67,25 +52,6 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3">
-            {SERVICE_STRIP.map((item, i) => (
-              <div
-                key={item.name}
-                className={`py-6 pr-4 border-b-2 border-b-amber ${
-                  i < 2 ? "md:border-r md:border-r-white/10" : ""
-                }`}
-              >
-                <div style={{ fontWeight: 500, fontSize: 14 }} className="text-white">
-                  {item.name}
-                </div>
-                <div className="mt-1 text-steel-text" style={{ fontWeight: 300, fontSize: 12 }}>
-                  {item.desc}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

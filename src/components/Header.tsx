@@ -3,12 +3,10 @@
 import { useState } from "react";
 
 const LINKS = [
-  { label: "Solutions",            href: "/" },
-  { label: "Products",             href: "/" },
-  { label: "Industries",           href: "/" },
-  { label: "References",           href: "/" },
-  { label: "Technology Partners",  href: "/" },
-  { label: "About",                href: "/" },
+  { label: "Solutions",            href: "/solutions" },
+  { label: "Products",             href: "/products" },
+  { label: "References",           href: "/references" },
+  { label: "About",                href: "/about" },
   { label: "Contact",              href: "#contact" },
 ];
 
@@ -25,7 +23,7 @@ export default function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="https://wa.me/"
+            href="https://wa.me/92300000000"
             className="text-cta hidden rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/20 hover:bg-white/5 sm:inline-block"
           >
             WhatsApp
@@ -93,7 +91,7 @@ export default function Header() {
           </ul>
           <div className="mt-3 flex flex-col gap-3 sm:hidden">
             <a
-              href="https://wa.me/"
+              href="https://wa.me/92300000000"
               onClick={() => setOpen(false)}
               className="text-cta rounded-md border border-white/10 px-[22px] py-3 text-center text-white transition-colors hover:border-white/20 hover:bg-white/5"
             >

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ServiceStrip from "@/components/ServiceStrip";
 import SolutionsShowcase from "@/components/SolutionsShowcase";
 import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
@@ -17,6 +18,7 @@ export default function Home() {
     <>
       <Header />
       <Hero />
+      <ServiceStrip />
       <SolutionsShowcase />
       <ProcessSpine />
       <ServiceSplit

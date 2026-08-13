@@ -10,19 +10,19 @@ type Partner = {
 };
 
 const PARTNERS: Partner[] = [
-  { name: "SSP",               logoUrl: "https://www.ssp-gmbh.com/fileadmin/templates/img/ssp-logo.svg",                                                     fallback: "SSP" },
-  { name: "GEA",               logoUrl: "https://upload.wikimedia.org/wikipedia/commons/0/0a/GEA_Group_logo.svg",                                             fallback: "GEA" },
-  { name: "Siemens",           logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg",                                               fallback: "Siemens" },
-  { name: "Endress+Hauser",    logoUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Endress%2BHauser_Logo.svg",                                      fallback: "Endress+Hauser" },
-  { name: "Fristam",           logoUrl: "https://www.fristam.de/fileadmin/templates/img/fristam-logo.svg",                                                    fallback: "Fristam" },
-  { name: "Hilge",             logoUrl: "https://www.hilge.com/fileadmin/templates/img/hilge-logo.svg",                                                       fallback: "Hilge" },
-  { name: "Kieselmann",        logoUrl: "https://www.kieselmann.com/fileadmin/templates/img/kieselmann-logo.svg",                                             fallback: "Kieselmann" },
-  { name: "Bardiani Valvole",  logoUrl: "https://www.bardiani.com/wp-content/themes/flavflavor-developer/assets/images/logo.svg",                            fallback: "Bardiani" },
-  { name: "Danfoss",           logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Danfoss_Logo.svg",                                               fallback: "Danfoss" },
-  { name: "Maselli",                                                                                                                                           fallback: "Maselli" },
-  { name: "ACM",                                                                                                                                               fallback: "ACM" },
-  { name: "ARI-Armaturen",                                                                                                                                     fallback: "ARI" },
-  { name: "MSR Electronic",                                                                                                                                    fallback: "MSR" },
+  { name: "SSP",               logoUrl: "/logo-ssp.png",              fallback: "SSP" },
+  { name: "GEA",               logoUrl: "/logo-gea.svg",              fallback: "GEA" },
+  { name: "Siemens",           logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg", fallback: "Siemens" },
+  { name: "Endress+Hauser",    logoUrl: "/logo-Endress+Hauser.svg",   fallback: "Endress+Hauser" },
+  { name: "Fristam",           logoUrl: "/logo-Fristam.webp",         fallback: "Fristam" },
+  { name: "Hilge",             logoUrl: "/logo-Hilge.webp",           fallback: "Hilge" },
+  { name: "Kieselmann",        logoUrl: "/logo-Kieselmann.png",       fallback: "Kieselmann" },
+  { name: "Bardiani Valvole",  logoUrl: "/logo-Bardiani.jpg",         fallback: "Bardiani" },
+  { name: "Danfoss",           logoUrl: "/logo-danfoss.png",              fallback: "Danfoss" },
+  { name: "Maselli",           logoUrl: "/logo-maselli.jpg",           fallback: "Maselli" },
+  { name: "ACM",               logoUrl: "/logo-acm.png",              fallback: "ACM" },
+  { name: "ARI-Armaturen",     logoUrl: "/logo-ari.svg",                 fallback: "ARI" },
+  { name: "MSR Electronic",    logoUrl: "/logo-msr.png",              fallback: "MSR" },
 ];
 
 /* ─── Single logo cell — manages its own load/fail state ─── */

@@ -1,21 +1,24 @@
 type Tile = {
   code: string;
+  slug: string;
   name: string;
   desc: string;
   highlight?: boolean;
 };
 
-// S7 ↔ S8 content swapped (codes unchanged)
+// Drop images into /public/images/process-systems/ using the slug as filename.
+// Supported extensions (checked in order): .jpg .jpeg .webp .png
+// Example: s1-raw-material-intake.jpg
 const TILES: Tile[] = [
-  { code: "S1", name: "Raw Material Intake",    desc: "Sugar silos, big-bag receiving, bulk handling" },
-  { code: "S2", name: "Water Treatment",         desc: "RO filtration, de-aeration, microbiological treatment" },
-  { code: "S3", name: "Sugar Dissolving",        desc: "Continuous and batch dissolving, Brix 65°" },
-  { code: "S4", name: "Filtration",              desc: "Kieselguhr filtration, decolourisation, bag filters" },
-  { code: "S5", name: "Pasteurisation",          desc: "Flash pasteurisers, plate and tubular heat exchangers" },
-  { code: "S6", name: "Mixing & Blending",       desc: "Concentrate stations, continuous blenders, dosing skids" },
-  { code: "S7", name: "Syrup Storage",           desc: "Simple syrup and final syrup storage tanks" },
-  { code: "S8", name: "CIP Cleaning",            desc: "Multi-circuit CIP, automated cleaning cycles" },
-  { code: "S9", name: "Automation & Control",    desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
+  { code: "S1", slug: "s1-raw-material-intake",   name: "Raw Material Intake",   desc: "Sugar silos, big-bag receiving, bulk handling" },
+  { code: "S2", slug: "s2-water-treatment",        name: "Water Treatment",        desc: "RO filtration, de-aeration, microbiological treatment" },
+  { code: "S3", slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
+  { code: "S4", slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
+  { code: "S5", slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
+  { code: "S6", slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
+  { code: "S7", slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
+  { code: "S8", slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
+  { code: "S9", slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
 ];
 
 // Card dimensions (update here if changed):
@@ -49,6 +52,8 @@ export default function ProcessSpine() {
         .mbh-spine-scroll { overflow-x: auto; }
         .mbh-spine-scroll::-webkit-scrollbar { display: none; }
         .mbh-spine-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
       `}</style>
 
       <section style={{ position: "relative", background: "#080B0F", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
@@ -60,6 +65,7 @@ export default function ProcessSpine() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.15,
+          filter: "blur(2px)",
           pointerEvents: "none",
         }} />
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
@@ -143,10 +149,31 @@ export default function ProcessSpine() {
                       flexDirection: "column",
                       flexShrink: 0,
                       borderRight: isLast ? "none" : "1px solid #1E3352",
+                      position: "relative",
+                      overflow: "hidden",
                     }}
                   >
-                    {/* Stage code — top-left */}
+                    {/* Full-bleed card image — drop file at /public/images/process-systems/<slug>.jpg */}
+                    <div style={{
+                      position: "absolute",
+                      inset: 0,
+                      backgroundImage: `url('/images/process-systems/${tile.slug}.jpg')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      opacity: 0.85,
+                      transition: "opacity 300ms ease",
+                    }} className="mbh-tile-img" />
+                    {/* Bottom gradient so text stays legible over any image */}
+                    <div style={{
+                      position: "absolute",
+                      inset: 0,
+                      background: "linear-gradient(to bottom, transparent 0%, rgba(8,11,15,0.15) 25%, rgba(8,11,15,0.55) 60%, rgba(8,11,15,0.90) 100%)",
+                      pointerEvents: "none",
+                    }} />
+
+                    {/* Content — sits above image layers */}
                     <span style={{
+                      position: "relative",
                       fontFamily: "var(--font-ibm-plex-mono)",
                       fontWeight: 500,
                       fontSize: 30,
@@ -156,10 +183,10 @@ export default function ProcessSpine() {
                       {tile.code}
                     </span>
 
-                    {/* Spacer pushes name+desc to bottom */}
                     <div style={{ flex: 1 }} />
 
                     <span style={{
+                      position: "relative",
                       display: "block",
                       fontWeight: 500,
                       fontSize: 16,
@@ -169,6 +196,7 @@ export default function ProcessSpine() {
                       {tile.name}
                     </span>
                     <span style={{
+                      position: "relative",
                       display: "block",
                       fontWeight: 400,
                       fontSize: 13,

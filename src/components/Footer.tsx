@@ -1,19 +1,36 @@
 const COLUMNS = [
   {
     title: "Company",
-    links: ["About", "Contact", "Careers"],
+    links: [
+      { label: "About", href: "/about" },
+      { label: "Contact", href: "#contact" },
+    ],
   },
   {
     title: "Solutions",
-    links: ["Process Systems", "Automation", "Fabrication", "CIP Systems"],
+    links: [
+      { label: "Process Systems", href: "/solutions" },
+      { label: "Automation", href: "/solutions" },
+      { label: "Fabrication", href: "/solutions" },
+      { label: "CIP Systems", href: "/solutions" },
+    ],
   },
   {
     title: "Industries",
-    links: ["Food & Beverage", "FMCG", "Pharmaceutical", "Power Generation"],
+    links: [
+      { label: "Food & Beverage", href: "/industries" },
+      { label: "FMCG", href: "/industries" },
+      { label: "Pharmaceutical", href: "/industries" },
+      { label: "Power Generation", href: "/industries" },
+    ],
   },
   {
     title: "Resources",
-    links: ["References", "Technology Partners", "Products"],
+    links: [
+      { label: "References", href: "/references" },
+      { label: "Technology Partners", href: "/partners" },
+      { label: "Products", href: "/products" },
+    ],
   },
 ];
 
@@ -37,12 +54,12 @@ export default function Footer() {
                 <h4 className="text-data text-steel-text">{col.title}</h4>
                 <ul className="mt-4 space-y-3">
                   {col.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <a
-                        href="#"
+                        href={link.href}
                         className="text-nav-link text-white/45 transition-colors hover:text-white"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}
