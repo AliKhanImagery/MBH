@@ -113,13 +113,29 @@ export default function TechnologyPartners() {
           opacity: 0.6;
           transition: opacity 200ms ease;
         }
-        /* White-monochrome filter for all img logos */
         .mbh-partner-cell img {
           filter: brightness(0) invert(1);
         }
         .mbh-partner-cell:hover img,
         .mbh-partner-cell:hover span {
           opacity: 1;
+        }
+
+        @media (max-width: 767px) {
+          .mbh-partner-cell {
+            width: 100px;
+            min-height: 36px;
+          }
+          .mbh-partner-cell img {
+            max-height: 28px !important;
+          }
+          .mbh-partner-cell span {
+            font-size: 13px !important;
+          }
+          .mbh-partners-grid {
+            column-gap: 16px !important;
+            row-gap: 28px !important;
+          }
         }
 
         /* Footer text link */
@@ -167,7 +183,7 @@ export default function TechnologyPartners() {
 
           {/* ── Logo grid ── */}
           <div
-            className="flex flex-wrap justify-center"
+            className="flex flex-wrap justify-center mbh-partners-grid"
             style={{ marginTop: 64, rowGap: 48, columnGap: 32 }}
           >
             {PARTNERS.map((p) => (

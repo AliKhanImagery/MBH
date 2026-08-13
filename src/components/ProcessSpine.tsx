@@ -11,21 +11,20 @@ type Tile = {
 // Example: s1-raw-material-intake.jpg
 const TILES: Tile[] = [
   { code: "S1", slug: "s1-raw-material-intake",   name: "Raw Material Intake",   desc: "Sugar silos, big-bag receiving, bulk handling" },
-  { code: "S2", slug: "s2-water-treatment",        name: "Water Treatment",        desc: "RO filtration, de-aeration, microbiological treatment" },
-  { code: "S3", slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
-  { code: "S4", slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
-  { code: "S5", slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
-  { code: "S6", slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
-  { code: "S7", slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
-  { code: "S8", slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
-  { code: "S9", slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
+  { code: "S2", slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
+  { code: "S3", slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
+  { code: "S4", slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
+  { code: "S5", slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
+  { code: "S6", slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
+  { code: "S7", slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
+  { code: "S8", slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
 ];
 
 // Card dimensions (update here if changed):
-// CSS: 220 × 306 px  |  2× asset: 440 × 612 px  |  padding inset: 26 px all sides
-const TILE_WIDTH  = 220;
-const TILE_HEIGHT = 306;
-const TILE_PAD    = 26;
+// CSS: 253 × 352 px  |  2× asset: 506 × 704 px  |  padding inset: 30 px all sides
+const TILE_WIDTH  = 253;
+const TILE_HEIGHT = 352;
+const TILE_PAD    = 30;
 
 export default function ProcessSpine() {
   return (
@@ -92,7 +91,7 @@ export default function ProcessSpine() {
             color: "#ffffff",
             marginBottom: 6,
           }}>
-            Nine Engineered Modules. One Complete Beverage Line.
+            Eight Engineered Modules. One Complete Beverage Line.
           </h2>
 
           {/* Subtitle */}

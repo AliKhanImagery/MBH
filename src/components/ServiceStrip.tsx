@@ -39,7 +39,7 @@ export default function ServiceStrip() {
 
       <section style={{ background: "#ffffff", borderBottom: "1px solid #E2E8F0" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
+          <div className="grid grid-cols-1 md:grid-cols-3">
             {ITEMS.map((item, i) => (
               <a
                 key={item.name}
@@ -47,7 +47,7 @@ export default function ServiceStrip() {
                 className="ss-card"
                 style={{
                   borderTop: "none",
-                  borderBottom: "none",
+                  borderBottom: i === ITEMS.length - 1 ? "none" : undefined,
                   borderLeft: i === 0 ? "none" : undefined,
                   borderRight: i === ITEMS.length - 1 ? "none" : undefined,
                 }}
