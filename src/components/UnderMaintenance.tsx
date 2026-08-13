@@ -13,8 +13,8 @@ export default function UnderMaintenance() {
       <div style={{ textAlign: "center", maxWidth: 560 }}>
 
         {/* Logo */}
-        <div style={{ fontWeight: 500, fontSize: 24, color: "#ffffff" }}>
-          MBH <span style={{ color: "#C87D00" }}>SOLUTIONS</span>
+        <div>
+          <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 40, objectFit: "contain" }} />
         </div>
 
         {/* 32px gap */}

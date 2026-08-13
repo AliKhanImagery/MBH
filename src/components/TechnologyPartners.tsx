@@ -15,13 +15,13 @@ const PARTNERS: Partner[] = [
   { name: "Siemens",           logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg", fallback: "Siemens" },
   { name: "Endress+Hauser",    logoUrl: "/logo-Endress+Hauser.svg",   fallback: "Endress+Hauser" },
   { name: "Fristam",           logoUrl: "/logo-Fristam.webp",         fallback: "Fristam" },
-  { name: "Hilge",             logoUrl: "/logo-Hilge.webp",           fallback: "Hilge" },
+  { name: "Hilge",             logoUrl: "/logo-Hilge.png",            fallback: "Hilge" },
   { name: "Kieselmann",        logoUrl: "/logo-Kieselmann.png",       fallback: "Kieselmann" },
-  { name: "Bardiani Valvole",  logoUrl: "/logo-Bardiani.jpg",         fallback: "Bardiani" },
-  { name: "Danfoss",           logoUrl: "/logo-danfoss.png",              fallback: "Danfoss" },
-  { name: "Maselli",           logoUrl: "/logo-maselli.jpg",           fallback: "Maselli" },
+  { name: "Bardiani Valvole",  logoUrl: "/logo-Bardiani.png",         fallback: "Bardiani" },
+  { name: "Danfoss",           logoUrl: "/logo-danfoss.png",          fallback: "Danfoss" },
+  { name: "Maselli",           logoUrl: "/logo-maselli.png",          fallback: "Maselli" },
   { name: "ACM",               logoUrl: "/logo-acm.png",              fallback: "ACM" },
-  { name: "ARI-Armaturen",     logoUrl: "/logo-ari.svg",                 fallback: "ARI" },
+  { name: "ARI-Armaturen",     logoUrl: "/logo-ari.svg",              fallback: "ARI" },
   { name: "MSR Electronic",    logoUrl: "/logo-msr.png",              fallback: "MSR" },
 ];
 
@@ -106,6 +106,7 @@ export default function TechnologyPartners() {
           align-items: center;
           justify-content: center;
           min-height: 48px;
+          width: 200px;
         }
         .mbh-partner-cell img,
         .mbh-partner-cell span {
@@ -166,7 +167,7 @@ export default function TechnologyPartners() {
 
           {/* ── Logo grid ── */}
           <div
-            className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+            className="flex flex-wrap justify-center"
             style={{ marginTop: 64, rowGap: 48, columnGap: 32 }}
           >
             {PARTNERS.map((p) => (
