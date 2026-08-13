@@ -16,7 +16,7 @@ export default function SolutionsPage() {
         title="Beverage Process Systems & Automation"
         subtitle="Turnkey engineering for CSD, juice, and syrup production lines — from raw material intake through automation and CIP."
       />
-      <SolutionsShowcase />
+      {/* <SolutionsShowcase /> */}
       <ProcessSpine />
       <ServiceSplit
         id="automation"

@@ -15,7 +15,7 @@ export default function IndustriesPage() {
         subtitle="Engineering solutions for food and beverage, FMCG, pharmaceutical, and process manufacturing industries."
       />
       <Industries />
-      <SolutionsShowcase />
+      {/* <SolutionsShowcase /> */}
       <Contact />
       <Footer />
     </>
