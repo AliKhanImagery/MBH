@@ -65,18 +65,28 @@ function AutomationSection({
   return (
     <>
       <style>{`
-        .mbh-auto-cta { color: #E8A020; text-decoration: none; }
-        .mbh-auto-cta:hover { text-decoration: underline; }
-        .mbh-auto-panel {
+        .mbh-auto-grid {
           background:
-            linear-gradient(180deg, rgba(46, 156, 200, 0.12), rgba(8, 11, 15, 0) 42%),
-            #0D1B2E;
+            linear-gradient(rgba(30, 51, 82, 0.28) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(30, 51, 82, 0.22) 1px, transparent 1px),
+            #080B0F;
+          background-size: 56px 56px;
+        }
+        .mbh-auto-cta {
+          color: #E8A020;
+          text-decoration: none;
+        }
+        .mbh-auto-cta:hover {
+          text-decoration: underline;
+        }
+        .mbh-auto-panel {
+          background: #0D1B2E;
         }
       `}</style>
 
       <section
         id={id}
-        className="border-y border-white/10 bg-near-black py-20 md:py-24"
+        className="mbh-auto-grid border-y border-[#1E3352] py-20 md:py-24"
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-14">
@@ -103,7 +113,7 @@ function AutomationSection({
                   {points.map((point) => (
                     <li
                       key={point}
-                      className="border-l border-amber/70 bg-white/[0.03] px-4 py-3 text-[14px] leading-6 text-white/75"
+                      className="border-l border-amber/70 bg-[#0D1B2E]/55 px-4 py-3 text-[14px] leading-6 text-white/75"
                     >
                       {point}
                     </li>
@@ -111,11 +121,11 @@ function AutomationSection({
                 </ul>
               </div>
 
-              <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-end md:justify-between">
+              <div className="mt-10 border-t border-[#1E3352] pt-6">
                 <dl className="grid gap-4 sm:grid-cols-3">
                   {specs.map((spec) => (
                     <div key={spec.label}>
-                      <dt className="text-data text-steel-signal">{spec.label}</dt>
+                      <dt className="text-data text-amber">{spec.label}</dt>
                       <dd className="mt-1 text-[13px] leading-5 text-white/80">
                         {spec.value}
                       </dd>
@@ -124,14 +134,14 @@ function AutomationSection({
                 </dl>
 
                 {ctaText && ctaHref && (
-                  <Link href={ctaHref} className="mbh-auto-cta text-cta shrink-0">
+                  <Link href={ctaHref} className="mbh-auto-cta text-cta mt-8 inline-flex">
                     {ctaText}
                   </Link>
                 )}
               </div>
             </div>
 
-            <div className="mbh-auto-panel flex min-h-[360px] flex-col justify-between overflow-hidden border border-white/10">
+            <div className="mbh-auto-panel flex min-h-[360px] flex-col justify-between overflow-hidden border border-[#1E3352]">
               <div className="relative min-h-[280px] flex-1">
                 <Image
                   src="/images/sections/plc-cabinet-mbh.webp"
@@ -142,7 +152,7 @@ function AutomationSection({
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,11,15,0)_55%,rgba(8,11,15,0.76)_100%)]" />
               </div>
-              <div className="flex items-center justify-between gap-5 border-t border-white/10 px-5 py-4">
+              <div className="flex items-center justify-between gap-5 border-t border-[#1E3352] px-5 py-4">
                 <span className="text-data text-amber">{imagePlaceholderTag}</span>
                 <span className="text-[12px] leading-5 text-steel-text">
                   Control cabinet integration
