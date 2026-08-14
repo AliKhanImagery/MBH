@@ -40,7 +40,7 @@ export default function ServiceStrip() {
 
       <section className="-mt-20 md:-mt-24 relative z-10 pb-10 md:pb-14">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
+          <div className="grid grid-cols-1 gap-[2px] md:grid-cols-3">
             {ITEMS.map((item, i) => (
               <a
                 key={item.name}

@@ -133,11 +133,6 @@ function AutomationSection({
                   ))}
                 </dl>
 
-                {ctaText && ctaHref && (
-                  <Link href={ctaHref} className="mbh-auto-cta text-cta mt-8 inline-flex">
-                    {ctaText}
-                  </Link>
-                )}
               </div>
             </div>
 
@@ -161,6 +156,14 @@ function AutomationSection({
             </div>
 
           </div>
+
+          {ctaText && ctaHref && (
+            <p style={{ marginTop: 32 }}>
+              <Link href={ctaHref} className="mbh-auto-cta" style={{ fontSize: 14, fontWeight: 400 }}>
+                {ctaText} →
+              </Link>
+            </p>
+          )}
         </div>
       </section>
     </>

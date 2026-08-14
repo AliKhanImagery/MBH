@@ -6,7 +6,7 @@ import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
 import ServiceSplit from "@/components/ServiceSplit";
 import ProductsTeaser from "@/components/ProductsTeaser";
-import CaseStudy from "@/components/CaseStudy";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 import TechnologyPartners from "@/components/TechnologyPartners";
 import Industries from "@/components/Industries";
 import AboutTeaser from "@/components/AboutTeaser";
@@ -21,6 +21,7 @@ export default function Home() {
       <ServiceStrip />
       {/* <SolutionsShowcase /> */}
       <ProcessSpine />
+      <ProjectsCarousel />
       <ServiceSplit
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
@@ -41,7 +42,6 @@ export default function Home() {
       />
       <FabricationSection />
       <ProductsTeaser />
-      <CaseStudy />
       <TechnologyPartners />
       <Industries />
       <AboutTeaser />

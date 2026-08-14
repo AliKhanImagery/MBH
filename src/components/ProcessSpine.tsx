@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Tile = {
   code: string;
   slug: string;
@@ -26,6 +28,18 @@ const TILE_WIDTH  = 253;
 const TILE_HEIGHT = 352;
 const TILE_PAD    = 30;
 
+const STATS = [
+  { value: "20+", label: "Years" },
+  { value: "3", label: "Countries" },
+  { value: "50+", label: "Projects" },
+];
+
+const CASE_STUDY_POINTS = [
+  { value: "Iran", label: "Project Location" },
+  { value: "Syrup Room + CIP", label: "Systems Delivered" },
+  { value: "Turnkey", label: "Delivery Scope" },
+];
+
 export default function ProcessSpine() {
   return (
     <>
@@ -45,7 +59,7 @@ export default function ProcessSpine() {
         }
         .mbh-tile-s9:hover { background-color: #1E3352; }
 
-        .mbh-spine-link { color: #9BAAB5; text-decoration: none; transition: color 200ms ease; }
+        .mbh-spine-link { color: #6A7A8A; text-decoration: none; transition: color 200ms ease; }
         .mbh-spine-link:hover { color: #C87D00; }
 
         .mbh-spine-scroll { overflow-x: auto; }
@@ -55,21 +69,92 @@ export default function ProcessSpine() {
         .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
       `}</style>
 
-      <section style={{ position: "relative", background: "#080B0F", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
-        {/* Background image at 15% opacity */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "url('/images/hero/hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.15,
-          filter: "blur(2px)",
-          pointerEvents: "none",
-        }} />
+      <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
-          {/* Eyebrow */}
+          {/* ── Feature card header ── */}
+          <div className="mb-16 grid items-stretch gap-0 lg:grid-cols-[1fr_1fr]" style={{ border: "1px solid #E2E8F0" }}>
+
+            {/* Left — image */}
+            <div style={{ position: "relative", minHeight: 340 }}>
+              <Image
+                src="/images/process-systems/s6-mixing-blending.jpg"
+                alt="MBH beverage process line — mixing and blending system"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+
+            {/* Right — copy */}
+            <div style={{ padding: "48px 44px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+              <p style={{
+                fontFamily: "var(--font-ibm-plex-mono)",
+                fontWeight: 500,
+                fontSize: 10,
+                letterSpacing: "0.5px",
+                textTransform: "uppercase",
+                color: "#C87D00",
+                marginBottom: 20,
+              }}>
+                Siemens Solution Partner
+              </p>
+
+              <h2 style={{
+                fontWeight: 500,
+                fontSize: 26,
+                letterSpacing: "-0.6px",
+                lineHeight: 1.3,
+                color: "#080B0F",
+                marginBottom: 16,
+              }}>
+                Turnkey Beverage Process Engineering and Industrial Automation
+              </h2>
+
+              <p style={{
+                fontWeight: 400,
+                fontSize: 14,
+                lineHeight: 1.75,
+                color: "#6A7A8A",
+                marginBottom: 32,
+              }}>
+                From syrup room design and process line integration to PLC programming,
+                SCADA deployment, and plant-wide commissioning — delivering complete
+                production systems for food and beverage manufacturers.
+              </p>
+
+              {/* Stats row */}
+              <div style={{ display: "flex", gap: 40, borderTop: "1px solid #E2E8F0", paddingTop: 24 }}>
+                {STATS.map((stat) => (
+                  <div key={stat.label}>
+                    <span style={{
+                      fontFamily: "var(--font-ibm-plex-mono)",
+                      fontWeight: 600,
+                      fontSize: 28,
+                      color: "#080B0F",
+                      lineHeight: 1,
+                    }}>
+                      {stat.value}
+                    </span>
+                    <span style={{
+                      display: "block",
+                      fontFamily: "var(--font-ibm-plex-mono)",
+                      fontWeight: 400,
+                      fontSize: 10,
+                      letterSpacing: "0.5px",
+                      textTransform: "uppercase",
+                      color: "#6A7A8A",
+                      marginTop: 6,
+                    }}>
+                      {stat.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ── Carousel header ── */}
           <p style={{
             fontFamily: "var(--font-ibm-plex-mono)",
             fontWeight: 500,
@@ -82,23 +167,21 @@ export default function ProcessSpine() {
             Process Systems
           </p>
 
-          {/* H2 — tighter gap to subtitle */}
           <h2 style={{
             fontWeight: 500,
             fontSize: 28,
             letterSpacing: "-0.8px",
             lineHeight: 1.25,
-            color: "#ffffff",
+            color: "#080B0F",
             marginBottom: 6,
           }}>
             Eight Engineered Modules. One Complete Beverage Line.
           </h2>
 
-          {/* Subtitle */}
           <p style={{
             fontWeight: 300,
             fontSize: 16,
-            color: "#9BAAB5",
+            color: "#6A7A8A",
             marginBottom: 48,
           }}>
             Each module is available as a turnkey solution or integrated into your existing process line.
@@ -118,7 +201,7 @@ export default function ProcessSpine() {
               fontSize: 11,
               letterSpacing: "0.3px",
               textTransform: "uppercase",
-              color: "#4A5E6F",
+              color: "#6A7A8A",
             }}>
               Scroll
             </span>
@@ -129,7 +212,7 @@ export default function ProcessSpine() {
 
           {/* Horizontally scrollable tile row */}
           <div className="mbh-spine-scroll">
-            <div style={{ display: "flex", flexDirection: "row" }}>
+            <div style={{ display: "flex", flexDirection: "row", gap: 4 }}>
               {TILES.map((tile, i) => {
                 const isLast = i === TILES.length - 1;
                 const hi = tile.highlight ?? false;
@@ -147,7 +230,7 @@ export default function ProcessSpine() {
                       display: "flex",
                       flexDirection: "column",
                       flexShrink: 0,
-                      borderRight: isLast ? "none" : "1px solid #1E3352",
+                      borderRight: "none",
                       position: "relative",
                       overflow: "hidden",
                     }}
