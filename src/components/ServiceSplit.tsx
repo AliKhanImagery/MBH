@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type ServiceSplitProps = {
   id: string;
@@ -55,129 +56,98 @@ function AutomationSection({
   ctaHref,
   imagePlaceholderTag,
 }: ServiceSplitProps) {
+  const specs = [
+    { label: "PLC", value: "Siemens S7" },
+    { label: "HMI/SCADA", value: "WinCC" },
+    { label: "Delivery", value: "Panel, FAT, commissioning" },
+  ];
+
   return (
     <>
       <style>{`
-        .mbh-auto-cta { color: #C87D00; text-decoration: none; }
+        .mbh-auto-cta { color: #E8A020; text-decoration: none; }
         .mbh-auto-cta:hover { text-decoration: underline; }
+        .mbh-auto-panel {
+          background:
+            linear-gradient(180deg, rgba(46, 156, 200, 0.12), rgba(8, 11, 15, 0) 42%),
+            #0D1B2E;
+        }
       `}</style>
 
       <section
         id={id}
-        style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 96 }}
+        className="border-y border-white/10 bg-near-black py-20 md:py-24"
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid items-stretch gap-12 lg:grid-cols-[3fr_2fr]">
+          <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-14">
 
-            {/* ── Left: copy block ── */}
-            <div>
-              {/* Eyebrow */}
-              <p
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 10,
-                  letterSpacing: "0.5px",
-                  textTransform: "uppercase",
-                  color: "#C87D00",
-                  marginBottom: 20,
-                }}
-              >
-                {eyebrow}
-              </p>
-
-              {/* H2 */}
-              <h2
-                style={{
-                  fontWeight: 500,
-                  fontSize: 28,
-                  letterSpacing: "-0.8px",
-                  lineHeight: 1.25,
-                  color: "#ffffff",
-                }}
-              >
-                {title}
-              </h2>
-
-              {/* Body paragraphs */}
-              {paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  style={{
-                    fontWeight: 400,
-                    fontSize: 15,
-                    lineHeight: 1.7,
-                    color: "#9BAAB5",
-                    marginTop: 24,
-                  }}
-                >
-                  {p}
+            <div className="flex min-w-0 flex-col justify-between">
+              <div>
+                <p className="text-eyebrow mb-5 text-amber">
+                  {eyebrow}
                 </p>
-              ))}
 
-              {/* Em-dash capability lines */}
-              <ul style={{ marginTop: 32, listStyle: "none", padding: 0 }}>
-                {points.map((point, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 10,
-                      marginTop: i > 0 ? 16 : 0,
-                    }}
-                  >
-                    <span
-                      style={{
-                        color: "#C87D00",
-                        flexShrink: 0,
-                        fontWeight: 400,
-                        lineHeight: 1.7,
-                        userSelect: "none",
-                      }}
-                    >
-                      —
-                    </span>
-                    <span
-                      style={{
-                        fontWeight: 400,
-                        fontSize: 15,
-                        lineHeight: 1.7,
-                        color: "#9BAAB5",
-                      }}
+                <h2 className="max-w-[720px] text-[28px] font-medium leading-[1.2] text-white md:text-[34px]">
+                  {title}
+                </h2>
+
+                <div className="mt-6 max-w-[760px] space-y-4">
+                  {paragraphs.map((p, i) => (
+                    <p key={i} className="text-body text-steel-text">
+                      {p}
+                    </p>
+                  ))}
+                </div>
+
+                <ul className="mt-8 grid gap-4 sm:grid-cols-3 lg:max-w-[840px]">
+                  {points.map((point) => (
+                    <li
+                      key={point}
+                      className="border-l border-amber/70 bg-white/[0.03] px-4 py-3 text-[14px] leading-6 text-white/75"
                     >
                       {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              {/* CTA link */}
-              {ctaText && ctaHref && (
-                <a
-                  href={ctaHref}
-                  className="mbh-auto-cta"
-                  style={{
-                    display: "inline-block",
-                    marginTop: 32,
-                    fontWeight: 500,
-                    fontSize: 14,
-                  }}
-                >
-                  {ctaText}
-                </a>
-              )}
+              <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-6 md:flex-row md:items-end md:justify-between">
+                <dl className="grid gap-4 sm:grid-cols-3">
+                  {specs.map((spec) => (
+                    <div key={spec.label}>
+                      <dt className="text-data text-steel-signal">{spec.label}</dt>
+                      <dd className="mt-1 text-[13px] leading-5 text-white/80">
+                        {spec.value}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+
+                {ctaText && ctaHref && (
+                  <Link href={ctaHref} className="mbh-auto-cta text-cta shrink-0">
+                    {ctaText}
+                  </Link>
+                )}
+              </div>
             </div>
 
-            {/* ── Right: automation panel image ── */}
-            <div style={{ position: "relative", minHeight: 320 }}>
-              <Image
-                src="/images/sections/plc-cabinet-mbh.webp"
-                alt="MBH Solutions PLC control cabinet"
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
+            <div className="mbh-auto-panel flex min-h-[360px] flex-col justify-between overflow-hidden border border-white/10">
+              <div className="relative min-h-[280px] flex-1">
+                <Image
+                  src="/images/sections/plc-cabinet-mbh.webp"
+                  alt="PLC modules and pneumatic controls inside an automation cabinet"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 38vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,11,15,0)_55%,rgba(8,11,15,0.76)_100%)]" />
+              </div>
+              <div className="flex items-center justify-between gap-5 border-t border-white/10 px-5 py-4">
+                <span className="text-data text-amber">{imagePlaceholderTag}</span>
+                <span className="text-[12px] leading-5 text-steel-text">
+                  Control cabinet integration
+                </span>
+              </div>
             </div>
 
           </div>
