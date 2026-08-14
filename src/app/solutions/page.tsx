@@ -20,19 +20,19 @@ export default function SolutionsPage() {
       <ProcessSpine />
       <ServiceSplit
         id="automation"
-        eyebrow="AUTOMATION & CONTROL"
-        title="Engineering Control Systems That Run the Line"
+        eyebrow="PILLAR 02 · AUTOMATION & CONTROL"
+        title="PLC, SCADA, and Control Panel Integration"
         paragraphs={[
-          "Designing and integrating PLC-based control systems for production lines — covering control philosophy, panel design, and end-to-end commissioning under a single scope.",
+          "Control architecture, PLC and HMI programming, SCADA screens, panel build, FAT, and site commissioning for beverage process lines.",
         ]}
         points={[
-          "Siemens S7 PLC programming and TIA Portal integration",
-          "Control panel design, fabrication, and factory acceptance testing",
-          "WinCC and SCADA dashboard deployment with remote access",
+          "Siemens S7 PLCs with TIA Portal",
+          "Panel wiring, testing, and documentation",
+          "WinCC SCADA, HMI screens, and recipes",
         ]}
         imageSide="right"
         variant="automation"
-        ctaText="Enquire About Automation"
+        ctaText="Discuss automation scope"
         ctaHref="/contact"
         imagePlaceholderTag="CTRL.SYS · IMG"
       />

@@ -6,7 +6,7 @@ import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
 import ServiceSplit from "@/components/ServiceSplit";
 import ProductsTeaser from "@/components/ProductsTeaser";
-import CaseStudy from "@/components/CaseStudy";
+import ProjectsCarousel from "@/components/ProjectsCarousel";
 import TechnologyPartners from "@/components/TechnologyPartners";
 import Industries from "@/components/Industries";
 import AboutTeaser from "@/components/AboutTeaser";
@@ -21,27 +21,27 @@ export default function Home() {
       <ServiceStrip />
       {/* <SolutionsShowcase /> */}
       <ProcessSpine />
+      <ProjectsCarousel />
       <ServiceSplit
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
-        title="Engineering Control Systems That Run the Line"
+        title="PLC, SCADA, and Control Panel Integration"
         paragraphs={[
-          "Designing and integrating PLC-based control systems for production lines — covering control philosophy, panel design, and end-to-end commissioning under a single scope.",
+          "Control architecture, PLC and HMI programming, SCADA screens, panel build, FAT, and site commissioning for beverage process lines.",
         ]}
         points={[
-          "Siemens S7 PLC programming and TIA Portal integration",
-          "Control panel design, fabrication, and factory acceptance testing",
-          "WinCC and SCADA dashboard deployment with remote access",
+          "Siemens S7 PLCs with TIA Portal",
+          "Panel wiring, testing, and documentation",
+          "WinCC SCADA, HMI screens, and recipes",
         ]}
         imageSide="right"
         variant="automation"
-        ctaText="Explore Automation Solutions"
+        ctaText="View automation scope"
         ctaHref="/solutions"
         imagePlaceholderTag="CTRL.SYS · IMG"
       />
       <FabricationSection />
       <ProductsTeaser />
-      <CaseStudy />
       <TechnologyPartners />
       <Industries />
       <AboutTeaser />

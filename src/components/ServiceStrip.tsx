@@ -27,30 +27,26 @@ export default function ServiceStrip() {
           flex-direction: column;
           text-decoration: none;
           background: #ffffff;
+          box-shadow: 0 2px 16px rgba(0,0,0,0.08);
           transition: border-color 200ms ease, box-shadow 200ms ease;
         }
         .ss-card:hover {
           border-color: #C87D00;
-          box-shadow: 0 2px 12px rgba(200,125,0,0.08);
+          box-shadow: 0 4px 20px rgba(200,125,0,0.12);
         }
         .ss-card:hover .ss-arrow { color: #C87D00; transform: translateX(3px); }
         .ss-arrow { transition: color 200ms ease, transform 200ms ease; }
       `}</style>
 
-      <section style={{ background: "#ffffff", borderBottom: "1px solid #E2E8F0" }}>
+      <section className="-mt-20 md:-mt-24 relative z-10 pb-10 md:pb-14">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-[2px] md:grid-cols-3">
             {ITEMS.map((item, i) => (
               <a
                 key={item.name}
                 href={item.href}
                 className="ss-card"
-                style={{
-                  borderTop: "none",
-                  borderBottom: i === ITEMS.length - 1 ? "none" : undefined,
-                  borderLeft: i === 0 ? "none" : undefined,
-                  borderRight: i === ITEMS.length - 1 ? "none" : undefined,
-                }}
+                style={{}}
               >
                 {/* Eyebrow label */}
                 <p style={{
