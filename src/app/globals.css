@@ -97,3 +97,6 @@ body {
   font-size: 11px;
   letter-spacing: 0.04em;
 }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }

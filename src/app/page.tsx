@@ -6,7 +6,7 @@ import ProcessSpine from "@/components/ProcessSpine";
 import FabricationSection from "@/components/FabricationSection";
 import ServiceSplit from "@/components/ServiceSplit";
 import ProductsTeaser from "@/components/ProductsTeaser";
-import { Eyebrow } from "@/components/Eyebrow";
+import { ReferenceCarousel } from "@/components/ReferenceCarousel";
 import TechnologyPartners from "@/components/TechnologyPartners";
 import Industries from "@/components/Industries";
 import AboutTeaser from "@/components/AboutTeaser";
@@ -48,50 +48,7 @@ export default function Home() {
       </section>
 
       <ProcessSpine />
-      {/* Pillar 1 — Reference */}
-      <section className="bg-white" style={{ paddingTop: 80, paddingBottom: 80 }}>
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <Eyebrow variant="plain" label="Reference" />
-          <article className="mt-5 max-w-prose" style={{ borderLeft: "2px solid #C87D00", paddingLeft: 24 }}>
-            <p className="font-mono text-data uppercase tracking-wider" style={{ color: "#6A7A8A" }}>
-              Coca-Cola · Tehran, Iran
-            </p>
-            <h3 className="mt-3 text-section font-medium" style={{ color: "#080B0F" }}>
-              Turnkey Syrup Room, CIP System, and Automation Integration
-            </h3>
-            <p className="mt-4 text-body" style={{ color: "#6A7A8A" }}>
-              Complete syrup room and CIP system delivered to Coca-Cola&apos;s Tehran facility — mechanical installation, process piping, automation integration, and startup commissioning under one engineering scope.
-            </p>
-            <dl className="mt-5 grid grid-cols-3 gap-8 border-t pt-4" style={{ borderColor: "#E2E8F0" }}>
-              <div>
-                <dt className="text-body font-medium" style={{ color: "#080B0F" }}>Tehran, Iran</dt>
-                <dd className="mt-1 font-mono text-data uppercase tracking-wider" style={{ color: "#6A7A8A" }}>
-                  Site
-                </dd>
-              </div>
-              <div>
-                <dt className="text-body font-medium" style={{ color: "#080B0F" }}>Syrup Room · CIP</dt>
-                <dd className="mt-1 font-mono text-data uppercase tracking-wider" style={{ color: "#6A7A8A" }}>
-                  Systems
-                </dd>
-              </div>
-              <div>
-                <dt className="text-body font-medium" style={{ color: "#080B0F" }}>Turnkey</dt>
-                <dd className="mt-1 font-mono text-data uppercase tracking-wider" style={{ color: "#6A7A8A" }}>
-                  Scope
-                </dd>
-              </div>
-            </dl>
-            <a
-              href="/references"
-              className="mt-5 inline-block font-mono text-data"
-              style={{ color: "#C87D00" }}
-            >
-              All References →
-            </a>
-          </article>
-        </div>
-      </section>
+      <ReferenceCarousel />
       <ServiceSplit
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
