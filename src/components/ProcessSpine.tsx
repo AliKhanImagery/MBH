@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 type Tile = {
   code: string;
   slug: string;
@@ -27,12 +25,6 @@ const TILES: Tile[] = [
 const TILE_WIDTH  = 253;
 const TILE_HEIGHT = 352;
 const TILE_PAD    = 30;
-
-const STATS = [
-  { value: "20+", label: "Years" },
-  { value: "3", label: "Countries" },
-  { value: "50+", label: "Projects" },
-];
 
 const CASE_STUDY_POINTS = [
   { value: "Iran", label: "Project Location" },
@@ -71,88 +63,6 @@ export default function ProcessSpine() {
 
       <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-
-          {/* ── Feature card header ── */}
-          <div className="mb-16 grid items-stretch gap-0 lg:grid-cols-[1fr_1fr]" style={{ border: "1px solid #E2E8F0" }}>
-
-            {/* Left — image */}
-            <div style={{ position: "relative", minHeight: 340 }}>
-              <Image
-                src="/images/process-systems/s6-mixing-blending.jpg"
-                alt="MBH beverage process line — mixing and blending system"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-            </div>
-
-            {/* Right — copy */}
-            <div style={{ padding: "48px 44px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <p style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 10,
-                letterSpacing: "0.5px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 20,
-              }}>
-                Siemens Solution Partner
-              </p>
-
-              <h2 style={{
-                fontWeight: 500,
-                fontSize: 26,
-                letterSpacing: "-0.6px",
-                lineHeight: 1.3,
-                color: "#080B0F",
-                marginBottom: 16,
-              }}>
-                Turnkey Beverage Process Engineering and Industrial Automation
-              </h2>
-
-              <p style={{
-                fontWeight: 400,
-                fontSize: 14,
-                lineHeight: 1.75,
-                color: "#6A7A8A",
-                marginBottom: 32,
-              }}>
-                From syrup room design and process line integration to PLC programming,
-                SCADA deployment, and plant-wide commissioning — delivering complete
-                production systems for food and beverage manufacturers.
-              </p>
-
-              {/* Stats row */}
-              <div style={{ display: "flex", gap: 40, borderTop: "1px solid #E2E8F0", paddingTop: 24 }}>
-                {STATS.map((stat) => (
-                  <div key={stat.label}>
-                    <span style={{
-                      fontFamily: "var(--font-ibm-plex-mono)",
-                      fontWeight: 600,
-                      fontSize: 28,
-                      color: "#080B0F",
-                      lineHeight: 1,
-                    }}>
-                      {stat.value}
-                    </span>
-                    <span style={{
-                      display: "block",
-                      fontFamily: "var(--font-ibm-plex-mono)",
-                      fontWeight: 400,
-                      fontSize: 10,
-                      letterSpacing: "0.5px",
-                      textTransform: "uppercase",
-                      color: "#6A7A8A",
-                      marginTop: 6,
-                    }}>
-                      {stat.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
 
           {/* ── Carousel header ── */}
           <p style={{

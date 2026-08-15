@@ -20,6 +20,33 @@ export default function Home() {
       <Hero />
       <ServiceStrip />
       {/* <SolutionsShowcase /> */}
+
+      {/* Proof band — stats-only strip */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+          <dl className="grid grid-cols-3 gap-8 border-y border-[#E2E8F0] py-6">
+            <div>
+              <dt className="text-anchor font-light text-[#080B0F]">20+</dt>
+              <dd className="mt-2 font-mono text-data text-[#6A7A8A] uppercase tracking-wider">
+                Years Operating
+              </dd>
+            </div>
+            <div>
+              <dt className="text-anchor font-light text-[#080B0F]">3</dt>
+              <dd className="mt-2 font-mono text-data text-[#6A7A8A] uppercase tracking-wider">
+                Countries Delivered
+              </dd>
+            </div>
+            <div>
+              <dt className="text-anchor font-light text-[#080B0F]">50+</dt>
+              <dd className="mt-2 font-mono text-data text-[#6A7A8A] uppercase tracking-wider">
+                Systems Commissioned
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
       <ProcessSpine />
       <ProjectsCarousel />
       <ServiceSplit
