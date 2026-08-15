@@ -1,5 +1,4 @@
 type Tile = {
-  code: string;
   slug: string;
   name: string;
   desc: string;
@@ -10,14 +9,14 @@ type Tile = {
 // Supported extensions (checked in order): .jpg .jpeg .webp .png
 // Example: s1-raw-material-intake.jpg
 const TILES: Tile[] = [
-  { code: "S1", slug: "s1-raw-material-intake",   name: "Raw Material Intake",   desc: "Sugar silos, big-bag receiving, bulk handling" },
-  { code: "S2", slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
-  { code: "S3", slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
-  { code: "S4", slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
-  { code: "S5", slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
-  { code: "S6", slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
-  { code: "S7", slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
-  { code: "S8", slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
+  { slug: "s1-raw-material-intake",   name: "Raw Material Intake",   desc: "Sugar silos, big-bag receiving, bulk handling" },
+  { slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
+  { slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
+  { slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
+  { slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
+  { slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
+  { slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
+  { slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
 ];
 
 // Card dimensions (update here if changed):
@@ -129,7 +128,7 @@ export default function ProcessSpine() {
 
                 return (
                   <a
-                    key={tile.code}
+                    key={tile.slug}
                     href="/solutions"
                     className={hi ? "mbh-tile mbh-tile-s9" : "mbh-tile"}
                     style={{
@@ -163,42 +162,25 @@ export default function ProcessSpine() {
                       pointerEvents: "none",
                     }} />
 
-                    {/* Content — sits above image layers */}
-                    <span style={{
-                      position: "relative",
-                      fontFamily: "var(--font-ibm-plex-mono)",
-                      fontWeight: 500,
-                      fontSize: 30,
-                      lineHeight: 1,
-                      color: "#C87D00",
-                    }}>
-                      {tile.code}
-                    </span>
-
                     <div style={{ flex: 1 }} />
 
-                    <span style={{
-                      position: "relative",
-                      display: "block",
-                      fontWeight: 500,
-                      fontSize: 16,
-                      lineHeight: 1.3,
-                      color: "#ffffff",
-                    }}>
-                      {tile.name}
-                    </span>
-                    <span style={{
-                      position: "relative",
-                      display: "block",
+                    <div className="relative flex items-baseline gap-3" style={{ marginTop: 12 }}>
+                      <span className="font-mono text-data" style={{ color: "#C87D00" }}>
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className="text-caption font-medium" style={{ color: "#ffffff" }}>
+                        {tile.name}
+                      </h3>
+                    </div>
+                    <p className="relative" style={{
                       fontWeight: 400,
-                      fontSize: 13,
-                      lineHeight: 1.5,
+                      fontSize: 15,
+                      lineHeight: 1.7,
                       color: "#9BAAB5",
                       marginTop: 8,
-                      minHeight: 40,
                     }}>
                       {tile.desc}
-                    </span>
+                    </p>
                   </a>
                 );
               })}
