@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useRef, useState } from 'react'
 import { Eyebrow } from '@/components/Eyebrow'
 
 type Tile = {
@@ -27,6 +30,40 @@ const CASE_STUDY_POINTS = [
 ];
 
 export default function ProcessSpine() {
+  const gridRef = useRef<HTMLOListElement>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    if (visible) return
+
+    const reduce =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reduce) {
+      setVisible(true)
+      return
+    }
+
+    const el = gridRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
+            setVisible(true)
+            observer.disconnect()
+          }
+        })
+      },
+      { threshold: [0.15] }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [visible])
+
   return (
     <>
       <style>{`
@@ -49,19 +86,19 @@ export default function ProcessSpine() {
           </p>
 
           {/* 4×2 tile grid */}
-          <ol className="mt-12 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4" style={{ background: "#E2E8F0" }}>
+          <ol ref={gridRef} className="mt-12 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4" style={{ background: "#E2E8F0" }}>
             {TILES.map((tile, i) => {
               const sig = isSignature(tile);
 
               return (
                 <li
                   key={tile.slug}
-                  className={`p-6 transition-colors ${
+                  style={{ listStyle: "none", transitionDelay: `${i * 60}ms` }}
+                  className={`p-6 transition-all duration-500 ease-out ${
                     sig
                       ? 'bg-[#0D1B2E] hover:bg-[#1E3352]'
                       : 'bg-white hover:bg-[#F8FAFC]'
-                  }`}
-                  style={{ listStyle: "none" }}
+                  } ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
                     <img
