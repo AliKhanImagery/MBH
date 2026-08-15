@@ -14,6 +14,22 @@
 
   --font-sans: var(--font-ibm-plex-sans);
   --font-mono: var(--font-ibm-plex-mono);
+
+  --text-display: 54px;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-anchor: 36px;
+  --text-anchor--line-height: 1.1;
+  --text-anchor--letter-spacing: -0.025em;
+
+  --text-section: 22px;
+  --text-section--line-height: 1.25;
+  --text-section--letter-spacing: -0.015em;
+
+  --text-caption: 16px;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0em;
 }
 
 body {
