@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Eyebrow } from '@/components/Eyebrow';
 
 type ServiceSplitProps = {
   id: string;
@@ -93,11 +94,9 @@ function AutomationSection({
 
             <div className="flex min-w-0 flex-col justify-between">
               <div>
-                <p className="text-eyebrow mb-5 text-amber">
-                  {eyebrow}
-                </p>
+                <Eyebrow variant="pillar" number="02" label="Industrial Automation" />
 
-                <h2 className="max-w-[720px] text-[28px] font-medium leading-[1.2] text-white md:text-[34px]">
+                <h2 className="mt-4 max-w-prose text-anchor font-medium text-white">
                   {title}
                 </h2>
 

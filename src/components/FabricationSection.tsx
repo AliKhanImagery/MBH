@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Eyebrow } from '@/components/Eyebrow';
 
 const CAPABILITIES = [
   "Stainless steel and carbon steel tank and vessel fabrication",
@@ -34,32 +35,10 @@ export default function FabricationSection() {
 
             {/* ── Right: copy block (60%) ── */}
             <div>
-              {/* Eyebrow */}
-              <p
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 10,
-                  letterSpacing: "0.5px",
-                  textTransform: "uppercase",
-                  color: "#C87D00",
-                  marginBottom: 20,
-                }}
-              >
-                Fabrication & Erection
-              </p>
+              <Eyebrow variant="pillar" number="03" label="Mechanical & Fabrication" />
 
-              {/* H2 */}
-              <h2
-                style={{
-                  fontWeight: 500,
-                  fontSize: 28,
-                  letterSpacing: "-0.8px",
-                  lineHeight: 1.25,
-                  color: "#080B0F",
-                }}
-              >
-                Designing, Fabricating, and Erecting Process Equipment On Site
+              <h2 className="mt-4 max-w-prose text-anchor font-medium" style={{ color: "#080B0F" }}>
+                Stainless Fabrication, Piping, and On-Site Erection
               </h2>
 
               {/* Body paragraph */}
