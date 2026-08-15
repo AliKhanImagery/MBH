@@ -1,3 +1,5 @@
+import { Eyebrow } from '@/components/Eyebrow'
+
 type Tile = {
   slug: string;
   name: string;
@@ -64,36 +66,14 @@ export default function ProcessSpine() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
           {/* ── Carousel header ── */}
-          <p style={{
-            fontFamily: "var(--font-ibm-plex-mono)",
-            fontWeight: 500,
-            fontSize: 10,
-            letterSpacing: "0.5px",
-            textTransform: "uppercase",
-            color: "#C87D00",
-            marginBottom: 16,
-          }}>
-            Process Systems
-          </p>
+          <Eyebrow variant="pillar" number="01" label="Beverage Process Systems" />
 
-          <h2 style={{
-            fontWeight: 500,
-            fontSize: 28,
-            letterSpacing: "-0.8px",
-            lineHeight: 1.25,
-            color: "#080B0F",
-            marginBottom: 6,
-          }}>
-            Eight Engineered Modules. One Complete Beverage Line.
+          <h2 className="mt-4 max-w-prose text-anchor font-medium" style={{ color: "#080B0F" }}>
+            The Complete Syrup Room, Delivered as Engineered Modules — Available Turnkey or Integrated into an Existing Line.
           </h2>
 
-          <p style={{
-            fontWeight: 300,
-            fontSize: 16,
-            color: "#6A7A8A",
-            marginBottom: 48,
-          }}>
-            Each module is available as a turnkey solution or integrated into your existing process line.
+          <p className="mt-5 max-w-prose text-body" style={{ color: "#6A7A8A", marginBottom: 48 }}>
+            Eight modular systems covering raw material intake through automated recipe control.
           </p>
 
           {/* Scroll hint */}
@@ -190,7 +170,7 @@ export default function ProcessSpine() {
           {/* Footer link — left aligned */}
           <p style={{ marginTop: 32 }}>
             <a href="/solutions" className="mbh-spine-link" style={{ fontSize: 14, fontWeight: 400 }}>
-              Explore all process systems →
+              All Modules →
             </a>
           </p>
 
