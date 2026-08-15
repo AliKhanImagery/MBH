@@ -4,12 +4,9 @@ type Tile = {
   slug: string;
   name: string;
   desc: string;
-  highlight?: boolean;
+  signature?: boolean;
 };
 
-// Drop images into /public/images/process-systems/ using the slug as filename.
-// Supported extensions (checked in order): .jpg .jpeg .webp .png
-// Example: s1-raw-material-intake.jpg
 const TILES: Tile[] = [
   { slug: "s1-raw-material-intake",   name: "Raw Material Intake",   desc: "Sugar silos, big-bag receiving, bulk handling" },
   { slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
@@ -18,14 +15,10 @@ const TILES: Tile[] = [
   { slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
   { slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
   { slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
-  { slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
+  { slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", signature: true },
 ];
 
-// Card dimensions (update here if changed):
-// CSS: 253 × 352 px  |  2× asset: 506 × 704 px  |  padding inset: 30 px all sides
-const TILE_WIDTH  = 253;
-const TILE_HEIGHT = 352;
-const TILE_PAD    = 30;
+const isSignature = (tile: Tile) => tile.signature === true;
 
 const CASE_STUDY_POINTS = [
   { value: "Iran", label: "Project Location" },
@@ -36,138 +29,69 @@ const CASE_STUDY_POINTS = [
 export default function ProcessSpine() {
   return (
     <>
-      {/* Scoped hover styles — no JS required */}
       <style>{`
-        .mbh-tile {
-          background-color: #0D1B2E;
-          transition: background-color 200ms ease;
-          text-decoration: none;
-          cursor: pointer;
-        }
-        .mbh-tile:hover { background-color: #162540; }
-
-        .mbh-tile-s9 {
-          background-color: #0F1A2E;
-          border-left: 2px solid #C87D00 !important;
-        }
-        .mbh-tile-s9:hover { background-color: #1E3352; }
-
         .mbh-spine-link { color: #6A7A8A; text-decoration: none; transition: color 200ms ease; }
         .mbh-spine-link:hover { color: #C87D00; }
-
-        .mbh-spine-scroll { overflow-x: auto; }
-        .mbh-spine-scroll::-webkit-scrollbar { display: none; }
-        .mbh-spine-scroll { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
       `}</style>
 
-      <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
+      <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80 }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
-          {/* ── Carousel header ── */}
+          {/* ── Pillar header ── */}
           <Eyebrow variant="pillar" number="01" label="Beverage Process Systems" />
 
           <h2 className="mt-4 max-w-prose text-anchor font-medium" style={{ color: "#080B0F" }}>
             The Complete Syrup Room, Delivered as Engineered Modules — Available Turnkey or Integrated into an Existing Line.
           </h2>
 
-          <p className="mt-5 max-w-prose text-body" style={{ color: "#6A7A8A", marginBottom: 48 }}>
+          <p className="mt-5 max-w-prose text-body" style={{ color: "#6A7A8A" }}>
             Eight modular systems covering raw material intake through automated recipe control.
           </p>
 
-          {/* Scroll hint */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            gap: 8,
-            marginBottom: 12,
-          }}>
-            <span style={{
-              fontFamily: "var(--font-ibm-plex-mono)",
-              fontWeight: 400,
-              fontSize: 11,
-              letterSpacing: "0.3px",
-              textTransform: "uppercase",
-              color: "#6A7A8A",
-            }}>
-              Scroll
-            </span>
-            <svg width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#C87D00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </div>
+          {/* 4×2 tile grid */}
+          <ol className="mt-12 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4" style={{ background: "#E2E8F0" }}>
+            {TILES.map((tile, i) => {
+              const sig = isSignature(tile);
 
-          {/* Horizontally scrollable tile row */}
-          <div className="mbh-spine-scroll">
-            <div style={{ display: "flex", flexDirection: "row", gap: 4 }}>
-              {TILES.map((tile, i) => {
-                const isLast = i === TILES.length - 1;
-                const hi = tile.highlight ?? false;
-
-                return (
-                  <a
-                    key={tile.slug}
-                    href="/solutions"
-                    className={hi ? "mbh-tile mbh-tile-s9" : "mbh-tile"}
-                    style={{
-                      width: TILE_WIDTH,
-                      minWidth: TILE_WIDTH,
-                      height: TILE_HEIGHT,
-                      padding: TILE_PAD,
-                      display: "flex",
-                      flexDirection: "column",
-                      flexShrink: 0,
-                      borderRight: "none",
-                      position: "relative",
-                      overflow: "hidden",
-                    }}
-                  >
-                    {/* Full-bleed card image — drop file at /public/images/process-systems/<slug>.jpg */}
-                    <div style={{
-                      position: "absolute",
-                      inset: 0,
-                      backgroundImage: `url('/images/process-systems/${tile.slug}.jpg')`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      opacity: 0.85,
-                      transition: "opacity 300ms ease",
-                    }} className="mbh-tile-img" />
-                    {/* Bottom gradient so text stays legible over any image */}
-                    <div style={{
-                      position: "absolute",
-                      inset: 0,
-                      background: "linear-gradient(to bottom, transparent 0%, rgba(8,11,15,0.15) 25%, rgba(8,11,15,0.55) 60%, rgba(8,11,15,0.90) 100%)",
-                      pointerEvents: "none",
-                    }} />
-
-                    <div style={{ flex: 1 }} />
-
-                    <div className="relative flex items-baseline gap-3" style={{ marginTop: 12 }}>
-                      <span className="font-mono text-data" style={{ color: "#C87D00" }}>
-                        {String(i + 1).padStart(2, '0')}
+              return (
+                <li
+                  key={tile.slug}
+                  className={`p-6 transition-colors ${
+                    sig
+                      ? 'bg-[#0D1B2E] hover:bg-[#1E3352]'
+                      : 'bg-white hover:bg-[#F8FAFC]'
+                  }`}
+                  style={{ listStyle: "none" }}
+                >
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img
+                      src={`/images/process-systems/${tile.slug}.jpg`}
+                      alt={tile.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <div className="mt-3 flex items-baseline gap-3">
+                    <span className="font-mono text-data" style={{ color: "#C87D00" }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <h3 className="text-caption font-medium" style={{ color: sig ? "#ffffff" : "#080B0F" }}>
+                      {tile.name}
+                    </h3>
+                    {sig && (
+                      <span className="ml-auto font-mono text-data uppercase tracking-wider" style={{ color: "#C87D00" }}>
+                        Signature
                       </span>
-                      <h3 className="text-caption font-medium" style={{ color: "#ffffff" }}>
-                        {tile.name}
-                      </h3>
-                    </div>
-                    <p className="relative" style={{
-                      fontWeight: 400,
-                      fontSize: 15,
-                      lineHeight: 1.7,
-                      color: "#9BAAB5",
-                      marginTop: 8,
-                    }}>
-                      {tile.desc}
-                    </p>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
+                    )}
+                  </div>
+                  <p className="mt-2 text-body" style={{ color: sig ? "#9BAAB5" : "#6A7A8A" }}>
+                    {tile.desc}
+                  </p>
+                </li>
+              );
+            })}
+          </ol>
 
-          {/* Footer link — left aligned */}
+          {/* Footer link */}
           <p style={{ marginTop: 32 }}>
             <a href="/solutions" className="mbh-spine-link" style={{ fontSize: 14, fontWeight: 400 }}>
               All Modules →
