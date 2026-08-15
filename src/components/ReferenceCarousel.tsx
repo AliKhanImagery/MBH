@@ -137,14 +137,39 @@ export function ReferenceCarousel() {
               }`}
               style={{ width: '76vw', maxWidth: 860 }}
             >
-              <div className="group aspect-[4/3] overflow-hidden" style={{ background: '#0D1B2E' }}>
+              <div className="group relative aspect-[4/3] overflow-hidden" style={{ background: '#0D1B2E' }}>
+                <div
+                  className="absolute inset-0 opacity-[0.08]"
+                  style={{
+                    backgroundImage:
+                      'repeating-linear-gradient(135deg, transparent 0, transparent 22px, currentColor 22px, currentColor 23px)',
+                    color: 'var(--mbh-ink-steel, #9BAAB5)',
+                  }}
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
+                  <span
+                    className="font-mono uppercase tracking-tight"
+                    style={{ fontSize: 'clamp(36px, 6vw, 72px)', lineHeight: 1, opacity: 0.18, color: '#C87D00' }}
+                  >
+                    {ref.client}
+                  </span>
+                  <span className="mt-3 font-mono text-data uppercase tracking-wider" style={{ color: '#9BAAB5' }}>
+                    {ref.location}
+                  </span>
+                </div>
+                <span className="absolute font-mono uppercase tracking-widest" style={{ bottom: 12, right: 16, fontSize: 10, color: '#6A7A8A' }}>
+                  Bridge Photograph · Pending
+                </span>
                 <img
                   src={ref.image}
                   alt={ref.imageAlt}
-                  className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                  onError={(e) => {
-                    ;(e.currentTarget as HTMLImageElement).style.visibility = 'hidden'
+                  loading="lazy"
+                  onLoad={(e) => {
+                    ;(e.currentTarget as HTMLImageElement).style.opacity = '1'
                   }}
+                  style={{ opacity: 0 }}
+                  className="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out group-hover:scale-[1.02]"
                 />
               </div>
               <div className="mt-5" style={{ borderLeft: '2px solid #C87D00', paddingLeft: 24 }}>
