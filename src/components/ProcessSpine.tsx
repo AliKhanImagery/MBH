@@ -46,22 +46,36 @@ export default function ProcessSpine() {
     }
 
     const el = gridRef.current
-    if (!el) return
+
+    if (!el) {
+      const t = setTimeout(() => setVisible(true), 100)
+      return () => clearTimeout(t)
+    }
+
+    const safetyTimer = setTimeout(() => setVisible(true), 800)
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
+          if (entry.isIntersecting) {
             setVisible(true)
             observer.disconnect()
+            clearTimeout(safetyTimer)
           }
         })
       },
-      { threshold: [0.15] }
+      {
+        threshold: 0,
+        rootMargin: '0px 0px -10% 0px',
+      }
     )
 
     observer.observe(el)
-    return () => observer.disconnect()
+
+    return () => {
+      observer.disconnect()
+      clearTimeout(safetyTimer)
+    }
   }, [visible])
 
   return (
