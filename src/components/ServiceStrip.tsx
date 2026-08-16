@@ -85,7 +85,7 @@ export default function ServiceStrip() {
                 <p style={{
                   fontFamily: "var(--font-ibm-plex-mono)",
                   fontWeight: 500,
-                  fontSize: 10,
+                  fontSize: 14,
                   letterSpacing: "0.5px",
                   textTransform: "uppercase",
                   color: "#080B0F",

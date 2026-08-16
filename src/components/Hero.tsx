@@ -13,12 +13,13 @@ export default function Hero() {
         sizes="100vw"
       />
 
-      {/* Directional gradient overlay — heavier on left for legibility, fades right */}
+      {/* Gradient overlay — left tint keeps the headline legible; a subtle
+          darker-blue feather runs from 60% to 100% on the right */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(31,48,94,0.80) 0%, rgba(31,48,94,0.65) 40%, rgba(31,48,94,0.35) 65%, rgba(8,11,15,0.50) 100%)",
+            "linear-gradient(to right, rgba(31,48,94,0.72) 0%, rgba(31,48,94,0.42) 30%, rgba(31,48,94,0.14) 60%, rgba(20,31,62,0.60) 100%)",
           zIndex: 1,
         }}
       />
