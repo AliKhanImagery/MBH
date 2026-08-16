@@ -25,7 +25,7 @@ const SOLUTIONS = [
 
 export default function SolutionsShowcase() {
   return (
-    <section className="bg-white" style={{ paddingTop: 96, paddingBottom: 96 }}>
+    <section className="bg-white" style={{ paddingTop: 48, paddingBottom: 96 }}>
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         {/* Eyebrow */}
         <p
