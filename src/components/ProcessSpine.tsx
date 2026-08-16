@@ -11,16 +11,17 @@ type Tile = {
 // Drop images into /public/images/process-systems/ using the slug as filename.
 // Supported extensions (checked in order): .jpg .jpeg .webp .png
 // Example: s1-raw-material-intake.jpg
+// `code` is the displayed sequence label and renumbers freely.
+// `slug` is the image filename and must not change.
 const TILES: Tile[] = [
   { code: "S1", slug: "s1-raw-material-intake",   name: "Raw Material Intake",   desc: "Sugar silos, big-bag receiving, bulk handling" },
-  { code: "S2", slug: "s2-water-treatment",        name: "Water Treatment",        desc: "RO filtration, de-aeration, microbiological treatment" },
-  { code: "S3", slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
-  { code: "S4", slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
-  { code: "S5", slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
-  { code: "S6", slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
-  { code: "S7", slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
-  { code: "S8", slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
-  { code: "S9", slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
+  { code: "S2", slug: "s3-sugar-dissolving",       name: "Sugar Dissolving",       desc: "Continuous and batch dissolving, Brix 65°" },
+  { code: "S3", slug: "s4-filtration",             name: "Filtration",             desc: "Kieselguhr filtration, decolourisation, bag filters" },
+  { code: "S4", slug: "s5-pasteurisation",         name: "Pasteurisation",         desc: "Flash pasteurisers, plate and tubular heat exchangers" },
+  { code: "S5", slug: "s6-mixing-blending",        name: "Mixing & Blending",      desc: "Concentrate stations, continuous blenders, dosing skids" },
+  { code: "S6", slug: "s7-syrup-storage",          name: "Syrup Storage",          desc: "Simple syrup and final syrup storage tanks" },
+  { code: "S7", slug: "s8-cip-cleaning",           name: "CIP Cleaning",           desc: "Multi-circuit CIP, automated cleaning cycles" },
+  { code: "S8", slug: "s9-automation-control",     name: "Automation & Control",   desc: "Siemens PLC, SCADA, HMI, recipe management", highlight: true },
 ];
 
 // Card dimensions (update here if changed):
@@ -39,6 +40,8 @@ export default function ProcessSpine() {
           transition: background-color 200ms ease;
           text-decoration: none;
           cursor: pointer;
+          /* Small cosmetic diagonal cut on the top-right corner */
+          clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
         }
         .mbh-tile:hover { background-color: #162540; }
 
@@ -105,9 +108,8 @@ export default function ProcessSpine() {
 
           {/* Horizontally scrollable tile row */}
           <div className="mbh-spine-scroll">
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              {TILES.map((tile, i) => {
-                const isLast = i === TILES.length - 1;
+            <div style={{ display: "flex", flexDirection: "row", gap: 2 }}>
+              {TILES.map((tile) => {
                 const hi = tile.highlight ?? false;
 
                 return (
@@ -123,7 +125,6 @@ export default function ProcessSpine() {
                       display: "flex",
                       flexDirection: "column",
                       flexShrink: 0,
-                      borderRight: isLast ? "none" : "1px solid #1E3352",
                       position: "relative",
                       overflow: "hidden",
                     }}
