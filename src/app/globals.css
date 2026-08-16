@@ -39,10 +39,18 @@
   --color-cta: #C87D00;
   --color-cta-hover: #E8A020;
 
+  --spacing-c2: 8px;
   --spacing-c3: 12px;
   --spacing-c4: 16px;
   --spacing-c5: 24px;
   --spacing-l2: 48px;
+
+  --color-rule-dark: #1E3352;
+  --color-surface-card: #0D1B2E;
+  --color-surface-card-hover: #1E3352;
+  --color-surface-forge: #080B0F;
+  --color-ink-steel: #9BAAB5;
+  --color-ink-inverse: #ffffff;
 }
 
 body {

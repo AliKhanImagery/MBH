@@ -46,23 +46,54 @@ function VisualPanel({ dark }: { dark: boolean }) {
   );
 }
 
+/* ─── Automation capabilities data ─── */
+type AutoCap = {
+  index: number
+  name: string
+  descriptor: string
+  signature?: boolean
+}
+
+const AUTOMATION_CAPABILITIES: AutoCap[] = [
+  {
+    index: 1,
+    name: 'Control Architecture',
+    descriptor: 'Designing plant-wide control philosophy and system topology for beverage process lines.',
+  },
+  {
+    index: 2,
+    name: 'PLC Programming',
+    descriptor: 'Siemens S7 code development in TIA Portal, aligned to production recipes and safety interlocks.',
+    signature: true,
+  },
+  {
+    index: 3,
+    name: 'SCADA & HMI',
+    descriptor: 'WinCC SCADA build, HMI screen design, and recipe management for operator handoff.',
+  },
+  {
+    index: 4,
+    name: 'Panel Design & Build',
+    descriptor: 'Low-voltage control panel design, in-house wiring, and full drawing documentation.',
+  },
+  {
+    index: 5,
+    name: 'Factory Acceptance Testing',
+    descriptor: 'Pre-shipment validation against the control specification with the client witnessing.',
+  },
+  {
+    index: 6,
+    name: 'Commissioning & Handover',
+    descriptor: 'On-site startup, loop calibration, and operator training through to signed acceptance.',
+  },
+]
+
 /* ─── Automation variant — new design ─── */
 function AutomationSection({
   id,
-  eyebrow,
   title,
-  paragraphs,
-  points,
-  ctaText,
-  ctaHref,
   imagePlaceholderTag,
 }: ServiceSplitProps) {
-  const specs = [
-    { label: "PLC", value: "Siemens S7" },
-    { label: "HMI/SCADA", value: "WinCC" },
-    { label: "Delivery", value: "Panel, FAT, commissioning" },
-  ];
-
   return (
     <>
       <style>{`
@@ -72,13 +103,6 @@ function AutomationSection({
             linear-gradient(90deg, rgba(30, 51, 82, 0.22) 1px, transparent 1px),
             #080B0F;
           background-size: 56px 56px;
-        }
-        .mbh-auto-cta {
-          color: #E8A020;
-          text-decoration: none;
-        }
-        .mbh-auto-cta:hover {
-          text-decoration: underline;
         }
         .mbh-auto-panel {
           background: #0D1B2E;
@@ -92,47 +116,57 @@ function AutomationSection({
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-14">
 
-            <div className="flex min-w-0 flex-col justify-between">
-              <div>
-                <Eyebrow variant="pillar" number="02" label="Industrial Automation" />
+            <div className="flex min-w-0 flex-col">
+              <Eyebrow variant="pillar" number="02" label="Industrial Automation" />
 
-                <h2 className="mt-4 max-w-prose text-anchor font-medium text-white">
-                  {title}
-                </h2>
+              <h2 className="mt-4 max-w-prose text-anchor font-medium text-white">
+                {title}
+              </h2>
 
-                <div className="mt-6 max-w-[760px] space-y-4">
-                  {paragraphs.map((p, i) => (
-                    <p key={i} className="text-body text-steel-text">
-                      {p}
-                    </p>
-                  ))}
-                </div>
+              <p className="mt-c5 max-w-prose text-body text-ink-steel">
+                Delivering control-system engineering under a single scope — from control philosophy through PLC code, SCADA build, and on-site commissioning.
+              </p>
 
-                <ul className="mt-8 grid gap-4 sm:grid-cols-3 lg:max-w-[840px]">
-                  {points.map((point) => (
+              <ol className="mt-l2 grid grid-cols-1 gap-px bg-rule-dark sm:grid-cols-2 lg:grid-cols-3 border-y border-rule-dark">
+                {AUTOMATION_CAPABILITIES.map((cap) => {
+                  const sig = cap.signature === true
+                  return (
                     <li
-                      key={point}
-                      className="border-l border-amber/70 bg-[#0D1B2E]/55 px-4 py-3 text-[14px] leading-6 text-white/75"
+                      key={cap.index}
+                      style={{ listStyle: 'none' }}
+                      className={`p-c5 transition-colors ${
+                        sig
+                          ? 'bg-surface-card hover:bg-surface-card-hover'
+                          : 'bg-surface-forge hover:bg-surface-panel'
+                      }`}
                     >
-                      {point}
+                      <div className="flex items-baseline gap-c3">
+                        <span className="font-mono text-data text-cta">
+                          {String(cap.index).padStart(2, '0')}
+                        </span>
+                        {sig && (
+                          <span className="ml-auto font-mono text-data text-cta uppercase tracking-wider">
+                            Signature
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="mt-c3 text-caption font-medium text-ink-inverse">
+                        {cap.name}
+                      </h3>
+                      <p className="mt-c2 text-body text-ink-steel">
+                        {cap.descriptor}
+                      </p>
                     </li>
-                  ))}
-                </ul>
-              </div>
+                  )
+                })}
+              </ol>
 
-              <div className="mt-10 border-t border-[#1E3352] pt-6">
-                <dl className="grid gap-4 sm:grid-cols-3">
-                  {specs.map((spec) => (
-                    <div key={spec.label}>
-                      <dt className="text-data text-amber">{spec.label}</dt>
-                      <dd className="mt-1 text-[13px] leading-5 text-white/80">
-                        {spec.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-
-              </div>
+              <a
+                href="/solutions#automation"
+                className="mt-l2 inline-block font-mono text-data text-cta hover:text-cta-hover"
+              >
+                Explore Automation →
+              </a>
             </div>
 
             <div className="mbh-auto-panel flex min-h-[360px] flex-col justify-between overflow-hidden border border-[#1E3352]">
@@ -155,14 +189,6 @@ function AutomationSection({
             </div>
 
           </div>
-
-          {ctaText && ctaHref && (
-            <p style={{ marginTop: 32 }}>
-              <Link href={ctaHref} className="mbh-auto-cta" style={{ fontSize: 14, fontWeight: 400 }}>
-                {ctaText} →
-              </Link>
-            </p>
-          )}
         </div>
       </section>
     </>

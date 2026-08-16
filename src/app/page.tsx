@@ -54,18 +54,10 @@ export default function Home() {
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
         title="PLC, SCADA, and Control Panel Integration"
-        paragraphs={[
-          "Control architecture, PLC and HMI programming, SCADA screens, panel build, FAT, and site commissioning for beverage process lines.",
-        ]}
-        points={[
-          "Siemens S7 PLCs with TIA Portal",
-          "Panel wiring, testing, and documentation",
-          "WinCC SCADA, HMI screens, and recipes",
-        ]}
+        paragraphs={[]}
+        points={[]}
         imageSide="right"
         variant="automation"
-        ctaText="View automation scope"
-        ctaHref="/solutions"
         imagePlaceholderTag="CTRL.SYS · IMG"
       />
       <FabricationSection />
