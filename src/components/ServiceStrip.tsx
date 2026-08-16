@@ -66,7 +66,7 @@ export default function ServiceStrip() {
         }
       `}</style>
 
-      <section style={{ background: "#ffffff", borderBottom: "1px solid #E2E8F0" }}>
+      <section style={{ background: "#ffffff" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {ITEMS.map((item, i) => (
@@ -88,7 +88,7 @@ export default function ServiceStrip() {
                   fontSize: 10,
                   letterSpacing: "0.5px",
                   textTransform: "uppercase",
-                  color: "#C87D00",
+                  color: "#080B0F",
                   marginBottom: 12,
                 }}>
                   {item.label}
