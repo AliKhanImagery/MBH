@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Eyebrow } from '@/components/Eyebrow';
+import { CtaLink } from '@/components/CtaLink';
 
 type ServiceSplitProps = {
   id: string;
@@ -161,12 +161,9 @@ function AutomationSection({
                 })}
               </ol>
 
-              <a
-                href="/solutions#automation"
-                className="mt-l2 inline-block font-mono text-data text-cta hover:text-cta-hover"
-              >
-                Explore Automation →
-              </a>
+              <CtaLink href="/solutions#automation" className="mt-l2">
+                Explore Automation
+              </CtaLink>
             </div>
 
             <div className="mbh-auto-panel flex min-h-[360px] flex-col justify-between overflow-hidden border border-[#1E3352]">

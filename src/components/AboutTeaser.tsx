@@ -1,11 +1,8 @@
+import { CtaLink } from "@/components/CtaLink";
+
 export default function AboutTeaser() {
   return (
     <>
-      <style>{`
-        .mbh-about-cta { color: #C87D00; text-decoration: none; }
-        .mbh-about-cta:hover { text-decoration: underline; }
-      `}</style>
-
       <section style={{ background: "#0D1B2E", paddingTop: 96, paddingBottom: 96 }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-12 lg:grid-cols-[2fr_3fr]">
@@ -86,13 +83,9 @@ export default function AboutTeaser() {
               </p>
 
               {/* CTA */}
-              <a
-                href="/about"
-                className="mbh-about-cta"
-                style={{ display: "inline-block", marginTop: 32, fontWeight: 500, fontSize: 14 }}
-              >
+              <CtaLink href="/about" className="mt-8">
                 Learn More About MBH
-              </a>
+              </CtaLink>
 
             </div>
           </div>

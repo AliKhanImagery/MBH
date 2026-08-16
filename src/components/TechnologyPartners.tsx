@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { CtaLink } from "@/components/CtaLink";
 import type { RefObject } from "react";
 
 type Partner = {
@@ -137,14 +138,6 @@ export default function TechnologyPartners() {
             row-gap: 28px !important;
           }
         }
-
-        /* Footer text link */
-        .mbh-partners-link {
-          color: #9BAAB5;
-          text-decoration: none;
-          transition: color 200ms ease;
-        }
-        .mbh-partners-link:hover { color: #C87D00; }
       `}</style>
 
       <section
@@ -191,11 +184,11 @@ export default function TechnologyPartners() {
           </div>
 
           {/* ── Footer link ── */}
-          <p style={{ textAlign: "center", marginTop: 48 }}>
-            <a href="/partners" className="mbh-partners-link" style={{ fontSize: 14, fontWeight: 400 }}>
-              View all technology partners →
-            </a>
-          </p>
+          <div style={{ textAlign: "center", marginTop: 48 }}>
+            <CtaLink href="/partners">
+              View all technology partners
+            </CtaLink>
+          </div>
 
         </div>
       </section>

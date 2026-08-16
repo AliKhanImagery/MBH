@@ -1,3 +1,5 @@
+import { CtaLink } from "@/components/CtaLink";
+
 const INDUSTRIES = [
   "Food & Beverage",
   "FMCG",
@@ -34,8 +36,6 @@ export default function Industries() {
         .mbh-ind-item:hover       { color: #C87D00; }
 
         /* Footer link */
-        .mbh-ind-link { color: #9BAAB5; text-decoration: none; transition: color 200ms ease; }
-        .mbh-ind-link:hover { color: #C87D00; }
 
         /* Mobile — vertical stack */
         @media (max-width: 767px) {
@@ -92,11 +92,9 @@ export default function Industries() {
           </div>
 
           {/* ── Footer link ── */}
-          <p style={{ marginTop: 32 }}>
-            <a href="/industries" className="mbh-ind-link" style={{ fontSize: 14, fontWeight: 400 }}>
-              Explore industry solutions →
-            </a>
-          </p>
+          <CtaLink href="/industries" className="mt-8">
+            Explore industry solutions
+          </CtaLink>
 
         </div>
       </section>

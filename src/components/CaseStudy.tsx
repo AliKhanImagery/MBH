@@ -1,3 +1,5 @@
+import { CtaLink } from "@/components/CtaLink";
+
 const DATA_POINTS = [
   { value: "Iran",            label: "Project Location" },
   { value: "Syrup Room + CIP", label: "Systems Delivered" },
@@ -7,11 +9,6 @@ const DATA_POINTS = [
 export default function CaseStudy() {
   return (
     <>
-      <style>{`
-        .mbh-ref-cta { color: #C87D00; text-decoration: none; }
-        .mbh-ref-cta:hover { text-decoration: underline; }
-      `}</style>
-
       <section
         id="case-study"
         style={{ background: "#ffffff", paddingTop: 48, paddingBottom: 96 }}
@@ -145,18 +142,9 @@ export default function CaseStudy() {
               </div>
 
               {/* CTA link */}
-              <a
-                href="/references"
-                className="mbh-ref-cta"
-                style={{
-                  display: "inline-block",
-                  marginTop: 32,
-                  fontWeight: 500,
-                  fontSize: 14,
-                }}
-              >
+              <CtaLink href="/references" className="mt-8">
                 View All References
-              </a>
+              </CtaLink>
 
             </div>
           </div>

@@ -129,6 +129,22 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* Unified secondary CTA — see CtaLink.tsx */
+.mbh-cta-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-cta);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+.mbh-cta-link:hover { color: var(--color-cta-hover); }
+.mbh-cta-arrow { transition: transform 200ms ease; }
+.mbh-cta-link:hover .mbh-cta-arrow { transform: translateX(4px); }
+
 .mbh-section { position: relative; }
 .mbh-shell { margin-left: auto; margin-right: auto; max-width: 1400px; padding-left: 1.5rem; padding-right: 1.5rem; }
 @media (min-width: 768px) { .mbh-shell { padding-left: 3rem; padding-right: 3rem; } }

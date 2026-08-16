@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CtaLink } from "@/components/CtaLink";
 
 const CAPABILITIES = [
   "Stainless steel and carbon steel tank and vessel fabrication",
@@ -9,11 +10,6 @@ const CAPABILITIES = [
 export default function FabricationSection() {
   return (
     <>
-      <style>{`
-        .mbh-fab-cta { color: #C87D00; text-decoration: none; }
-        .mbh-fab-cta:hover { text-decoration: underline; }
-      `}</style>
-
       <section
         id="fabrication"
         style={{ background: "#ffffff", paddingTop: 96, paddingBottom: 96 }}
@@ -116,18 +112,9 @@ export default function FabricationSection() {
               </ul>
 
               {/* CTA link */}
-              <a
-                href="/solutions"
-                className="mbh-fab-cta"
-                style={{
-                  display: "inline-block",
-                  marginTop: 32,
-                  fontWeight: 500,
-                  fontSize: 14,
-                }}
-              >
+              <CtaLink href="/solutions" className="mt-8">
                 Explore Fabrication Services
-              </a>
+              </CtaLink>
             </div>
 
           </div>

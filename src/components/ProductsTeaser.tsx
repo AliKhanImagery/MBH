@@ -1,3 +1,5 @@
+import { CtaLink } from "@/components/CtaLink";
+
 const CATEGORIES = [
   { cat: "Flow Components",          desc: "Pumps, Valves, Strainers, Spray Balls" },
   { cat: "Automation Products",      desc: "PLC, HMI, SCADA, VFD, Inverters" },
@@ -11,10 +13,6 @@ const CATEGORIES = [
 export default function ProductsTeaser() {
   return (
     <>
-      <style>{`
-        .mbh-prod-cta { color: #C87D00; text-decoration: none; }
-        .mbh-prod-cta:hover { text-decoration: underline; }
-      `}</style>
 
       <section style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 96 }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
@@ -61,13 +59,9 @@ export default function ProductsTeaser() {
               </p>
 
               {/* CTA */}
-              <a
-                href="/products"
-                className="mbh-prod-cta"
-                style={{ display: "inline-block", marginTop: 32, fontWeight: 500, fontSize: 14 }}
-              >
+              <CtaLink href="/products" className="mt-8">
                 Explore Products
-              </a>
+              </CtaLink>
             </div>
 
             {/* ── Right: product category list (45%) ── */}

@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Eyebrow } from "@/components/Eyebrow";
+import { CtaLink } from "@/components/CtaLink";
 
 type Tile = {
   code: string;
@@ -57,9 +58,6 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
           border-left: 2px solid #C87D00 !important;
         }
         .mbh-tile-s9:hover { background-color: #1E3352; }
-
-        .mbh-spine-link { color: #6A7A8A; text-decoration: none; transition: color 200ms ease; }
-        .mbh-spine-link:hover { color: #C87D00; }
 
         .mbh-spine-scroll { overflow-x: auto; }
         .mbh-spine-scroll::-webkit-scrollbar { display: none; }
@@ -199,11 +197,9 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
           </div>
 
           {/* Footer link — left aligned */}
-          <p style={{ marginTop: 32 }}>
-            <a href="/solutions" className="mbh-spine-link" style={{ fontSize: 14, fontWeight: 400 }}>
-              Explore all process systems →
-            </a>
-          </p>
+          <CtaLink href="/solutions" className="mt-8">
+            Explore all process systems
+          </CtaLink>
 
         </div>
       </section>
