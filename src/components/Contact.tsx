@@ -126,7 +126,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="text-cta mt-6 w-full rounded-md bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light sm:w-auto"
+                className="text-cta mt-6 w-full bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light sm:w-auto"
               >
                 Enquire Now
               </button>

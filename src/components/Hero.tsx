@@ -13,13 +13,13 @@ export default function Hero() {
         sizes="100vw"
       />
 
-      {/* Gradient overlay — left tint keeps the headline legible; a subtle
-          darker-blue feather runs from 60% to 100% on the right */}
+      {/* Directional gradient overlay — heavier on left for legibility, fades
+          right. Blue darkened ~10 points from the base tone. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(31,48,94,0.72) 0%, rgba(31,48,94,0.42) 30%, rgba(31,48,94,0.14) 60%, rgba(20,31,62,0.60) 100%)",
+            "linear-gradient(to right, rgba(21,38,84,0.80) 0%, rgba(21,38,84,0.65) 40%, rgba(21,38,84,0.35) 65%, rgba(8,11,15,0.50) 100%)",
           zIndex: 1,
         }}
       />
@@ -34,11 +34,17 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-h1 text-white">
+            <h1
+              className="text-h1 text-white"
+              style={{ textShadow: "0 1px 2px rgba(8,11,15,0.45), 0 6px 24px rgba(8,11,15,0.30)" }}
+            >
               Engineering Beverage Process Systems and Industrial Automation for the World&apos;s Leading Manufacturers
             </h1>
 
-            <p className="text-subtitle mt-6 text-white/75">
+            <p
+              className="text-subtitle mt-6 text-white/75"
+              style={{ textShadow: "0 1px 2px rgba(8,11,15,0.40), 0 4px 16px rgba(8,11,15,0.25)" }}
+            >
               Delivering turnkey syrup rooms, CSD and juice process lines, and
               plant-wide control systems — from new installations to the
               modernisation and retrofit of existing production facilities.
@@ -46,7 +52,7 @@ export default function Hero() {
 
             <a
               href="#contact"
-              className="text-cta mt-8 inline-block rounded-md bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light"
+              className="text-cta mt-8 inline-block bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light"
             >
               Enquire Now
             </a>

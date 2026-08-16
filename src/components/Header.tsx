@@ -30,7 +30,7 @@ export default function Header() {
           </a>
           <a
             href="#contact"
-            className="text-cta hidden rounded-md bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light sm:inline-block"
+            className="text-cta hidden bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light sm:inline-block"
           >
             Enquire Now
           </a>
@@ -100,7 +100,7 @@ export default function Header() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="text-cta block rounded-md bg-amber px-[22px] py-3 text-center text-white transition-colors hover:bg-amber-light"
+              className="text-cta block bg-amber px-[22px] py-3 text-center text-white transition-colors hover:bg-amber-light"
             >
               Enquire Now
             </a>
