@@ -14,6 +14,53 @@
 
   --font-sans: var(--font-ibm-plex-sans);
   --font-mono: var(--font-ibm-plex-mono);
+
+  /* Stepped semantic type scale — use by role, not by size */
+  --text-display: 54px;
+  --text-display--line-height: 1.05;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-anchor: 36px;
+  --text-anchor--line-height: 1.1;
+  --text-anchor--letter-spacing: -0.025em;
+
+  --text-section: 22px;
+  --text-section--line-height: 1.25;
+  --text-section--letter-spacing: -0.015em;
+
+  --text-caption: 16px;
+  --text-caption--line-height: 1.4;
+  --text-caption--letter-spacing: 0em;
+
+  /* Semantic surface / ink / accent roles */
+  --color-surface-page: #ffffff;
+  --color-surface-panel: #F8FAFC;
+  --color-rule: #E2E8F0;
+  --color-ink: #080B0F;
+  --color-ink-muted: #6A7A8A;
+  --color-cta: #C87D00;
+  --color-cta-hover: #E8A020;
+
+  --color-rule-dark: #1E3352;
+  --color-surface-card: #0D1B2E;
+  --color-surface-card-hover: #1E3352;
+  --color-surface-forge: #080B0F;
+  --color-ink-steel: #9BAAB5;
+  --color-ink-inverse: #ffffff;
+
+  /* Spacing scale — 8px base.
+     c* = component rhythm (inside a card/block)
+     l* = layout rhythm (between blocks, section padding) */
+  --spacing-c1: 4px;
+  --spacing-c2: 8px;
+  --spacing-c3: 12px;
+  --spacing-c4: 16px;
+  --spacing-c5: 24px;
+  --spacing-l1: 32px;
+  --spacing-l2: 48px;
+  --spacing-l3: 64px;
+  --spacing-l4: 80px;
+  --spacing-l5: 96px;
 }
 
 body {
@@ -81,3 +128,10 @@ body {
   font-size: 11px;
   letter-spacing: 0.04em;
 }
+
+.mbh-section { position: relative; }
+.mbh-shell { margin-left: auto; margin-right: auto; max-width: 1400px; padding-left: 1.5rem; padding-right: 1.5rem; }
+@media (min-width: 768px) { .mbh-shell { padding-left: 3rem; padding-right: 3rem; } }
+
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
