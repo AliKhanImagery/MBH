@@ -4,7 +4,6 @@ const ITEMS = [
   {
     number: "01",
     label: "Beverage Process Systems",
-    name: "Beverage Process Engineering",
     desc: "Turnkey syrup rooms, CSD and juice process lines, and modernisation of existing production systems.",
     href: "/solutions#beverage-process",
     linkText: "Explore Process Systems →",
@@ -12,7 +11,6 @@ const ITEMS = [
   {
     number: "02",
     label: "Industrial Automation",
-    name: "Industrial Automation",
     desc: "PLC-based control architecture, SCADA deployment, and end-to-end commissioning under one engineering scope.",
     href: "/solutions#automation",
     linkText: "Explore Automation →",
@@ -20,7 +18,6 @@ const ITEMS = [
   {
     number: "03",
     label: "Mechanical & Fabrication",
-    name: "Mechanical & Fabrication Installation",
     desc: "In-house stainless and carbon steel fabrication with full mechanical installation at the client facility.",
     href: "/solutions#fabrication",
     linkText: "Explore Fabrication →",
@@ -28,7 +25,6 @@ const ITEMS = [
   {
     number: "04",
     label: "Equipment & Spares",
-    name: "Equipment & Spares Procurement",
     desc: "Flow components, automation hardware, instruments, and switchgear from the leading process manufacturers.",
     href: "/products",
     linkText: "Explore Products →",
@@ -96,17 +92,6 @@ export default function ServiceStrip() {
                   marginBottom: 12,
                 }}>
                   Pillar {item.number} · {item.label}
-                </p>
-
-                {/* Title */}
-                <p style={{
-                  fontWeight: 500,
-                  fontSize: 15,
-                  lineHeight: 1.4,
-                  color: "#080B0F",
-                  marginBottom: 10,
-                }}>
-                  {item.name}
                 </p>
 
                 {/* Description */}
