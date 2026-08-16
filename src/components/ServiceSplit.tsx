@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { Eyebrow } from '@/components/Eyebrow';
 
 type ServiceSplitProps = {
   id: string;
@@ -44,140 +46,146 @@ function VisualPanel({ dark }: { dark: boolean }) {
   );
 }
 
+/* ─── Automation capabilities data ─── */
+type AutoCap = {
+  index: number
+  name: string
+  descriptor: string
+  signature?: boolean
+}
+
+const AUTOMATION_CAPABILITIES: AutoCap[] = [
+  {
+    index: 1,
+    name: 'Control Architecture',
+    descriptor: 'Designing plant-wide control philosophy and system topology for beverage process lines.',
+  },
+  {
+    index: 2,
+    name: 'PLC Programming',
+    descriptor: 'Siemens S7 code development in TIA Portal, aligned to production recipes and safety interlocks.',
+    signature: true,
+  },
+  {
+    index: 3,
+    name: 'SCADA & HMI',
+    descriptor: 'WinCC SCADA build, HMI screen design, and recipe management for operator handoff.',
+  },
+  {
+    index: 4,
+    name: 'Panel Design & Build',
+    descriptor: 'Low-voltage control panel design, in-house wiring, and full drawing documentation.',
+  },
+  {
+    index: 5,
+    name: 'Factory Acceptance Testing',
+    descriptor: 'Pre-shipment validation against the control specification with the client witnessing.',
+  },
+  {
+    index: 6,
+    name: 'Commissioning & Handover',
+    descriptor: 'On-site startup, loop calibration, and operator training through to signed acceptance.',
+  },
+]
+
 /* ─── Automation variant — new design ─── */
 function AutomationSection({
   id,
-  eyebrow,
   title,
-  paragraphs,
-  points,
-  ctaText,
-  ctaHref,
   imagePlaceholderTag,
 }: ServiceSplitProps) {
   return (
     <>
       <style>{`
-        .mbh-auto-cta { color: #C87D00; text-decoration: none; }
-        .mbh-auto-cta:hover { text-decoration: underline; }
+        .mbh-auto-grid {
+          background:
+            linear-gradient(rgba(30, 51, 82, 0.28) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(30, 51, 82, 0.22) 1px, transparent 1px),
+            #080B0F;
+          background-size: 56px 56px;
+        }
+        .mbh-auto-panel {
+          background: #0D1B2E;
+        }
       `}</style>
 
       <section
         id={id}
-        style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 96 }}
+        className="mbh-auto-grid border-y border-[#1E3352] py-l3 md:py-l4"
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid items-stretch gap-12 lg:grid-cols-[3fr_2fr]">
+          <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-14">
 
-            {/* ── Left: copy block ── */}
-            <div>
-              {/* Eyebrow */}
-              <p
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 10,
-                  letterSpacing: "0.5px",
-                  textTransform: "uppercase",
-                  color: "#C87D00",
-                  marginBottom: 20,
-                }}
-              >
-                {eyebrow}
-              </p>
+            <div className="flex min-w-0 flex-col">
+              <Eyebrow variant="pillar" number="02" label="Industrial Automation" />
 
-              {/* H2 */}
-              <h2
-                style={{
-                  fontWeight: 500,
-                  fontSize: 28,
-                  letterSpacing: "-0.8px",
-                  lineHeight: 1.25,
-                  color: "#ffffff",
-                }}
-              >
+              <h2 className="mt-4 max-w-prose text-anchor font-medium text-white">
                 {title}
               </h2>
 
-              {/* Body paragraphs */}
-              {paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  style={{
-                    fontWeight: 400,
-                    fontSize: 15,
-                    lineHeight: 1.7,
-                    color: "#9BAAB5",
-                    marginTop: 24,
-                  }}
-                >
-                  {p}
-                </p>
-              ))}
+              <p className="mt-c5 max-w-prose text-body text-ink-steel">
+                Delivering control-system engineering under a single scope — from control philosophy through PLC code, SCADA build, and on-site commissioning.
+              </p>
 
-              {/* Em-dash capability lines */}
-              <ul style={{ marginTop: 32, listStyle: "none", padding: 0 }}>
-                {points.map((point, i) => (
-                  <li
-                    key={i}
-                    style={{
-                      display: "flex",
-                      alignItems: "flex-start",
-                      gap: 10,
-                      marginTop: i > 0 ? 16 : 0,
-                    }}
-                  >
-                    <span
-                      style={{
-                        color: "#C87D00",
-                        flexShrink: 0,
-                        fontWeight: 400,
-                        lineHeight: 1.7,
-                        userSelect: "none",
-                      }}
+              <ol className="mt-l2 grid grid-cols-1 gap-px bg-rule-dark sm:grid-cols-2 lg:grid-cols-3 border-y border-rule-dark">
+                {AUTOMATION_CAPABILITIES.map((cap) => {
+                  const sig = cap.signature === true
+                  return (
+                    <li
+                      key={cap.index}
+                      style={{ listStyle: 'none' }}
+                      className={`p-c5 transition-colors ${
+                        sig
+                          ? 'bg-surface-card hover:bg-surface-card-hover'
+                          : 'bg-surface-forge hover:bg-surface-panel'
+                      }`}
                     >
-                      —
-                    </span>
-                    <span
-                      style={{
-                        fontWeight: 400,
-                        fontSize: 15,
-                        lineHeight: 1.7,
-                        color: "#9BAAB5",
-                      }}
-                    >
-                      {point}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                      <div className="flex items-baseline gap-c3">
+                        <span className="font-mono text-data text-cta">
+                          {String(cap.index).padStart(2, '0')}
+                        </span>
+                        {sig && (
+                          <span className="ml-auto font-mono text-data text-cta uppercase tracking-wider">
+                            Signature
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="mt-c3 text-caption font-medium text-ink-inverse">
+                        {cap.name}
+                      </h3>
+                      <p className="mt-c2 text-body text-ink-steel">
+                        {cap.descriptor}
+                      </p>
+                    </li>
+                  )
+                })}
+              </ol>
 
-              {/* CTA link */}
-              {ctaText && ctaHref && (
-                <a
-                  href={ctaHref}
-                  className="mbh-auto-cta"
-                  style={{
-                    display: "inline-block",
-                    marginTop: 32,
-                    fontWeight: 500,
-                    fontSize: 14,
-                  }}
-                >
-                  {ctaText}
-                </a>
-              )}
+              <a
+                href="/solutions#automation"
+                className="mt-l2 inline-block font-mono text-data text-cta hover:text-cta-hover"
+              >
+                Explore Automation →
+              </a>
             </div>
 
-            {/* ── Right: automation panel image ── */}
-            <div style={{ position: "relative", minHeight: 320 }}>
-              <Image
-                src="/images/sections/plc-cabinet-mbh.webp"
-                alt="MBH Solutions PLC control cabinet"
-                fill
-                style={{ objectFit: "cover" }}
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
+            <div className="mbh-auto-panel flex min-h-[360px] flex-col justify-between overflow-hidden border border-[#1E3352]">
+              <div className="relative min-h-[280px] flex-1">
+                <Image
+                  src="/images/sections/plc-cabinet-mbh.webp"
+                  alt="PLC modules and pneumatic controls inside an automation cabinet"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 38vw"
+                />
+                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,11,15,0)_55%,rgba(8,11,15,0.76)_100%)]" />
+              </div>
+              <div className="flex items-center justify-between gap-5 border-t border-[#1E3352] px-5 py-4">
+                <span className="text-data text-amber">{imagePlaceholderTag}</span>
+                <span className="text-[12px] leading-5 text-steel-text">
+                  Control cabinet integration
+                </span>
+              </div>
             </div>
 
           </div>
