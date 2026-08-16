@@ -119,7 +119,7 @@ export default function CaseStudy() {
                       <div
                         style={{
                           fontWeight: 500,
-                          fontSize: 28,
+                          fontSize: 22,
                           lineHeight: 1.1,
                           color: "#080B0F",
                         }}
