@@ -81,7 +81,7 @@ export default function ServiceStrip() {
                   borderRight: i === ITEMS.length - 1 ? "none" : undefined,
                 }}
               >
-                {/* Eyebrow label */}
+                {/* Card label — mono */}
                 <p style={{
                   fontFamily: "var(--font-ibm-plex-mono)",
                   fontWeight: 500,
@@ -91,7 +91,7 @@ export default function ServiceStrip() {
                   color: "#C87D00",
                   marginBottom: 12,
                 }}>
-                  Pillar {item.number} · {item.label}
+                  {item.label}
                 </p>
 
                 {/* Description */}
