@@ -90,27 +90,24 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
             Each module is available as a turnkey solution or integrated into your existing process line.
           </p>
 
-          {/* Scroll hint */}
-          <div style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-            gap: 8,
-            marginBottom: 12,
-          }}>
-            <span style={{
-              fontFamily: "var(--font-ibm-plex-mono)",
-              fontWeight: 400,
-              fontSize: 11,
-              letterSpacing: "0.3px",
-              textTransform: "uppercase",
-              color: "#6A7A8A",
-            }}>
-              Scroll
-            </span>
-            <svg width="32" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#C87D00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+          {/* Scroll affordance — card box with a right arrow, left-aligned */}
+          <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 12 }}>
+            <div
+              aria-hidden="true"
+              style={{
+                width: 64,
+                height: 64,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#0D1B2E",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px))",
+              }}
+            >
+              <svg width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#C87D00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
           </div>
 
           {/* Horizontally scrollable tile row */}
@@ -143,7 +140,7 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
                       backgroundImage: `url('/images/process-systems/${tile.slug}.jpg')`,
                       backgroundSize: "cover",
                       backgroundPosition: "center",
-                      opacity: 0.85,
+                      opacity: 1,
                       transition: "opacity 300ms ease",
                     }} className="mbh-tile-img" />
                     {/* Bottom gradient so text stays legible over any image */}
