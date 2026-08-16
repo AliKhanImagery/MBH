@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Eyebrow } from "@/components/Eyebrow";
 
 type Tile = {
@@ -30,7 +31,13 @@ const TILE_WIDTH  = 220;
 const TILE_HEIGHT = 306;
 const TILE_PAD    = 26;
 
-export default function ProcessSpine() {
+type ProcessSpineProps = {
+  /** Optional block rendered between the pillar eyebrow and the anchor H2.
+   *  Used by /solutions to host an image; the homepage passes nothing. */
+  imageSlot?: ReactNode;
+};
+
+export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
   return (
     <>
       {/* Scoped hover styles — no JS required */}
@@ -66,6 +73,8 @@ export default function ProcessSpine() {
 
           {/* Pillar eyebrow */}
           <Eyebrow variant="pillar" number="01" label="Beverage Process Systems" />
+
+          {imageSlot ? <div className="mt-c5 mb-l1">{imageSlot}</div> : null}
 
           {/* Anchor statement */}
           <h2 className="mt-4 max-w-prose text-anchor font-medium text-ink">

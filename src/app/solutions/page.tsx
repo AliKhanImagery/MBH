@@ -15,11 +15,11 @@ export default function SolutionsPage() {
         title="Beverage Process Systems & Automation"
         subtitle="Turnkey engineering for CSD, juice, and syrup production lines — from raw material intake through automation and CIP."
       />
-      {/* Image placeholder — awaiting a real solutions photograph.
-          Replaced the SolutionsShowcase tile grid on this page only;
-          the homepage still mounts SolutionsShowcase. */}
-      <section style={{ background: "#ffffff", paddingTop: 48, paddingBottom: 96 }}>
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+      {/* Image placeholder sits inside Pillar 01, under its eyebrow.
+          Passed as a slot so the homepage's <ProcessSpine /> is unaffected.
+          Replaced the SolutionsShowcase tile grid on this page only. */}
+      <ProcessSpine
+        imageSlot={
           <div
             style={{
               background: "#0D1B2E",
@@ -42,10 +42,8 @@ export default function SolutionsPage() {
               SOLUTIONS · IMG
             </span>
           </div>
-        </div>
-      </section>
-
-      <ProcessSpine />
+        }
+      />
       <ServiceSplit
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
