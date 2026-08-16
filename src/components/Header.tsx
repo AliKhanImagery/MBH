@@ -17,7 +17,7 @@ export default function Header() {
     <header className="bg-near-black">
       {/* Row 1 — logo, WhatsApp, Enquire Now (mobile: logo + menu toggle) */}
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:px-12">
-        <a href="#" className="text-white" style={{ fontSize: 16, fontWeight: 500 }}>
+        <a href="/" aria-label="MBH Solutions — home" className="text-white" style={{ fontSize: 16, fontWeight: 500 }}>
           MBH <span className="text-amber">SOLUTIONS</span>
         </a>
 
