@@ -148,8 +148,7 @@ export default function TechnologyPartners() {
       `}</style>
 
       <section
-        className="mbh-partners-section"
-        style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 96 }}
+        className="mbh-partners-section bg-near-black py-l3 md:py-l4"
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 

@@ -111,7 +111,7 @@ function AutomationSection({
 
       <section
         id={id}
-        className="mbh-auto-grid border-y border-[#1E3352] py-20 md:py-24"
+        className="mbh-auto-grid border-y border-[#1E3352] py-l3 md:py-l4"
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-14">

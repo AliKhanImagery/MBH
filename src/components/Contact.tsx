@@ -32,7 +32,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="bg-ibm-panel">
-      <div className="mx-auto max-w-[1400px] px-6 py-24 md:px-12">
+      <div className="mx-auto max-w-[1400px] px-6 py-l3 md:px-12 md:py-l4">
         <div className="grid gap-16 lg:grid-cols-2">
           <div>
             <span className="text-eyebrow inline-block rounded-full border border-amber/30 bg-amber/10 px-3 py-1 text-amber">

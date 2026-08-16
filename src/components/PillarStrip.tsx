@@ -48,9 +48,9 @@ const PILLARS: Pillar[] = [
 
 export default function PillarStrip() {
   return (
-    <section className="mbh-section bg-surface-page py-l2">
+    <section className="mbh-section bg-surface-page">
       <div className="mbh-shell">
-        <div className="grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-4 border-y border-rule">
+        <div className="grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-4">
           {PILLARS.map((pillar) => (
             <a
               key={pillar.number}

@@ -24,7 +24,7 @@ export default function Hero() {
       />
 
       <div className="relative z-[2]">
-        <div className="mx-auto max-w-[1400px] px-6 pt-24 pb-36 md:px-12 md:pt-40 md:pb-44">
+        <div className="mx-auto max-w-[1400px] px-6 pt-l3 pb-l4 md:px-12 md:pt-l4 md:pb-l5">
           <div className="max-w-3xl">
             <div className="mb-4 flex items-center gap-2">
               <span className="h-[2px] w-6 bg-amber" />

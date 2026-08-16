@@ -85,7 +85,7 @@ export function ReferenceCarousel() {
   const total = REFERENCES.length
 
   return (
-    <section className="bg-white overflow-hidden" style={{ paddingTop: 80, paddingBottom: 80 }}>
+    <section className="bg-white overflow-hidden py-l2 md:py-l3">
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <div className="flex items-end justify-between">
           <Eyebrow variant="plain" label="Reference" />

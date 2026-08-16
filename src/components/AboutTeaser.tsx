@@ -6,7 +6,7 @@ export default function AboutTeaser() {
         .mbh-about-cta:hover { text-decoration: underline; }
       `}</style>
 
-      <section style={{ background: "#0D1B2E", paddingTop: 96, paddingBottom: 96 }}>
+      <section className="bg-ibm-panel py-l3 md:py-l4">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-12 lg:grid-cols-[2fr_3fr]">
 

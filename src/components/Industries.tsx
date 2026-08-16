@@ -52,7 +52,7 @@ export default function Industries() {
         }
       `}</style>
 
-      <section style={{ background: "#ffffff", paddingTop: 96, paddingBottom: 96 }}>
+      <section className="bg-white py-l3 md:py-l4">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
           {/* ── Header block — left-aligned ── */}

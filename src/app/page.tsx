@@ -7,7 +7,6 @@ import FabricationSection from "@/components/FabricationSection";
 import ServiceSplit from "@/components/ServiceSplit";
 import ProductsTeaser from "@/components/ProductsTeaser";
 import { ReferenceCarousel } from "@/components/ReferenceCarousel";
-import { AnimatedNumber } from "@/components/AnimatedNumber";
 import TechnologyPartners from "@/components/TechnologyPartners";
 import Industries from "@/components/Industries";
 import AboutTeaser from "@/components/AboutTeaser";
@@ -21,32 +20,6 @@ export default function Home() {
       <Hero />
       <PillarStrip />
       {/* <SolutionsShowcase /> */}
-
-      {/* Proof band — stats-only strip */}
-      <section className="bg-white py-16">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <dl className="grid grid-cols-3 gap-8 border-y border-[#E2E8F0] py-6">
-            <div>
-              <dt className="text-anchor font-light text-[#080B0F]"><AnimatedNumber value={20} suffix="+" /></dt>
-              <dd className="mt-2 font-mono text-data text-[#6A7A8A] uppercase tracking-wider">
-                Years Operating
-              </dd>
-            </div>
-            <div>
-              <dt className="text-anchor font-light text-[#080B0F]"><AnimatedNumber value={3} /></dt>
-              <dd className="mt-2 font-mono text-data text-[#6A7A8A] uppercase tracking-wider">
-                Countries Delivered
-              </dd>
-            </div>
-            <div>
-              <dt className="text-anchor font-light text-[#080B0F]"><AnimatedNumber value={50} suffix="+" /></dt>
-              <dd className="mt-2 font-mono text-data text-[#6A7A8A] uppercase tracking-wider">
-                Systems Commissioned
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </section>
 
       <ProcessSpine />
       <ReferenceCarousel />

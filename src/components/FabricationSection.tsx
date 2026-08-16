@@ -17,7 +17,7 @@ export default function FabricationSection() {
 
       <section
         id="fabrication"
-        style={{ background: "#ffffff", paddingTop: 96, paddingBottom: 96 }}
+        className="bg-white py-l3 md:py-l4"
       >
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-12 lg:grid-cols-[2fr_3fr]">

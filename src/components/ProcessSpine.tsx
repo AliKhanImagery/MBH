@@ -2,6 +2,13 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { Eyebrow } from '@/components/Eyebrow'
+import { AnimatedNumber } from '@/components/AnimatedNumber'
+
+const CREDENTIALS = [
+  { value: 20, suffix: '+', label: 'Years Operating' },
+  { value: 3, suffix: '', label: 'Countries Delivered' },
+  { value: 50, suffix: '+', label: 'Systems Commissioned' },
+]
 
 type Tile = {
   slug: string;
@@ -80,27 +87,58 @@ export default function ProcessSpine() {
 
   return (
     <>
-      <style>{`
-        .mbh-spine-link { color: #6A7A8A; text-decoration: none; transition: color 200ms ease; }
-        .mbh-spine-link:hover { color: #C87D00; }
-      `}</style>
-
-      <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80 }}>
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+      <section className="relative bg-white py-l3 md:py-l4">
+        <div className="mbh-shell">
 
           {/* ── Pillar header ── */}
           <Eyebrow variant="pillar" number="01" label="Beverage Process Systems" />
 
-          <h2 className="mt-4 max-w-prose text-anchor font-medium" style={{ color: "#080B0F" }}>
+          {/* ── Scope: single-scope lead + credentials ── */}
+          <div className="mt-c5 grid items-start gap-l2 lg:grid-cols-[2fr_3fr]">
+            <div className="aspect-[4/3] overflow-hidden border border-rule bg-surface-panel">
+              <div className="flex h-full w-full items-center justify-center">
+                <span className="font-mono text-data text-ink-muted">TEAM · IMG</span>
+              </div>
+            </div>
+
+            <div>
+              <h2 className="max-w-prose text-section font-medium text-ink">
+                One Engineering Partner, From Control Philosophy to Commissioning.
+              </h2>
+
+              <p className="mt-c4 max-w-prose text-body text-ink-muted">
+                MBH Solutions has delivered turnkey process systems and industrial
+                automation since 2003 — a Siemens Solution Partner carrying design,
+                fabrication, panel build, and site commissioning under a single
+                contract.
+              </p>
+
+              <dl className="mt-l1 grid grid-cols-3 gap-c5 border-t border-rule pt-c5">
+                {CREDENTIALS.map((item) => (
+                  <div key={item.label}>
+                    <dt className="text-section font-light text-ink-muted">
+                      <AnimatedNumber value={item.value} suffix={item.suffix} />
+                    </dt>
+                    <dd className="mt-c1 font-mono text-data uppercase tracking-wider text-steel-text">
+                      {item.label}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+
+          {/* ── Anchor statement ── */}
+          <h2 className="mt-l3 max-w-prose text-anchor font-medium text-ink">
             The Complete Syrup Room, Delivered as Engineered Modules — Available Turnkey or Integrated into an Existing Line.
           </h2>
 
-          <p className="mt-5 max-w-prose text-body" style={{ color: "#6A7A8A" }}>
+          <p className="mt-c4 max-w-prose text-body text-ink-muted">
             Eight modular systems covering raw material intake through automated recipe control.
           </p>
 
           {/* 4×2 tile grid */}
-          <ol ref={gridRef} className="mt-12 grid grid-cols-1 gap-px sm:grid-cols-2 lg:grid-cols-4" style={{ background: "#E2E8F0" }}>
+          <ol ref={gridRef} className="mt-l2 grid grid-cols-1 gap-px bg-rule sm:grid-cols-2 lg:grid-cols-4">
             {TILES.map((tile, i) => {
               const sig = isSignature(tile);
 
@@ -108,10 +146,10 @@ export default function ProcessSpine() {
                 <li
                   key={tile.slug}
                   style={{ listStyle: "none", transitionDelay: `${i * 60}ms` }}
-                  className={`p-6 transition-all duration-500 ease-out ${
+                  className={`p-c5 transition-all duration-500 ease-out ${
                     sig
-                      ? 'bg-[#0D1B2E] hover:bg-[#1E3352]'
-                      : 'bg-white hover:bg-[#F8FAFC]'
+                      ? 'bg-surface-card hover:bg-surface-card-hover'
+                      : 'bg-surface-page hover:bg-surface-panel'
                   } ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
@@ -121,20 +159,20 @@ export default function ProcessSpine() {
                       className="h-full w-full object-cover"
                     />
                   </div>
-                  <div className="mt-3 flex items-baseline gap-3">
-                    <span className="font-mono text-data" style={{ color: "#C87D00" }}>
+                  <div className="mt-c3 flex items-baseline gap-c3">
+                    <span className="font-mono text-data text-cta">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <h3 className="text-caption font-medium" style={{ color: sig ? "#ffffff" : "#080B0F" }}>
+                    <h3 className={`text-caption font-medium ${sig ? 'text-ink-inverse' : 'text-ink'}`}>
                       {tile.name}
                     </h3>
                     {sig && (
-                      <span className="ml-auto font-mono text-data uppercase tracking-wider" style={{ color: "#C87D00" }}>
+                      <span className="ml-auto font-mono text-data uppercase tracking-wider text-cta">
                         Signature
                       </span>
                     )}
                   </div>
-                  <p className="mt-2 text-body" style={{ color: sig ? "#9BAAB5" : "#6A7A8A" }}>
+                  <p className={`mt-c2 text-body ${sig ? 'text-ink-steel' : 'text-ink-muted'}`}>
                     {tile.desc}
                   </p>
                 </li>
@@ -143,11 +181,12 @@ export default function ProcessSpine() {
           </ol>
 
           {/* Footer link */}
-          <p style={{ marginTop: 32 }}>
-            <a href="/solutions" className="mbh-spine-link" style={{ fontSize: 14, fontWeight: 400 }}>
-              All Modules →
-            </a>
-          </p>
+          <a
+            href="/solutions"
+            className="mt-l1 inline-block font-mono text-data text-cta hover:text-cta-hover"
+          >
+            All Modules →
+          </a>
 
         </div>
       </section>

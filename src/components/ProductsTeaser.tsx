@@ -16,7 +16,7 @@ export default function ProductsTeaser() {
         .mbh-prod-cta:hover { text-decoration: underline; }
       `}</style>
 
-      <section style={{ background: "#080B0F", paddingTop: 96, paddingBottom: 96 }}>
+      <section className="bg-near-black py-l3 md:py-l4">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-start gap-16 lg:grid-cols-[55fr_45fr]">
 
