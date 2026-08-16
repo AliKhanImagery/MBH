@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import ProcessSpine from "@/components/ProcessSpine";
@@ -20,28 +21,14 @@ export default function SolutionsPage() {
           Replaced the SolutionsShowcase tile grid on this page only. */}
       <ProcessSpine
         imageSlot={
-          <div
-            style={{
-              background: "#0D1B2E",
-              border: "1px solid #1E3352",
-              minHeight: 380,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 400,
-                fontSize: 11,
-                color: "#1E3352",
-                letterSpacing: "0.06em",
-              }}
-            >
-              SOLUTIONS · IMG
-            </span>
-          </div>
+          <Image
+            src="/images/sections/beverage-process-line.png"
+            alt="MBH beverage process line — raw material handling through blending, CIP, and control"
+            width={4977}
+            height={1920}
+            className="h-auto w-full"
+            sizes="(max-width: 1024px) 100vw, 1400px"
+          />
         }
       />
       <ServiceSplit

@@ -4,17 +4,17 @@ const SOLUTIONS = [
   {
     title: "CSD Process Systems",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800",
+    img: "/images/sections/CSD_processing.png",
   },
   {
     title: "Juice Process Systems",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800",
+    img: "/images/sections/Juice-processing.png",
   },
   {
     title: "Industrial Automation",
     href: "/solutions",
-    img: "https://images.unsplash.com/photo-1563770660941-20978e870e26?w=800",
+    img: "/images/sections/industrial-automation.png",
   },
   {
     title: "CIP Systems",

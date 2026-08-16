@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CtaLink } from "@/components/CtaLink";
 
 const DATA_POINTS = [
@@ -16,28 +17,22 @@ export default function CaseStudy() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-12 lg:grid-cols-[45fr_55fr]">
 
-            {/* ── Left: image placeholder (45%) ── */}
+            {/* ── Left: reference image (45%) ── */}
             <div
               style={{
-                background: "#0D1B2E",
-                border: "1px solid #1E3352",
+                position: "relative",
                 minHeight: 380,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                overflow: "hidden",
+                backgroundColor: "#0D1B2E",
               }}
             >
-              <span
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 400,
-                  fontSize: 11,
-                  color: "#1E3352",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                PROJ.REF · IMG
-              </span>
+              <Image
+                src="/references/coca-cola-tehran.jpg"
+                alt="Coca-Cola Tehran — syrup room and CIP system installation"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
             </div>
 
             {/* ── Right: copy block (55%) ── */}

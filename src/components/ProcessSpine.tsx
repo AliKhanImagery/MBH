@@ -138,7 +138,7 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
                     <div style={{
                       position: "absolute",
                       inset: 0,
-                      background: "linear-gradient(to bottom, transparent 0%, rgba(8,11,15,0.15) 25%, rgba(8,11,15,0.55) 60%, rgba(8,11,15,0.90) 100%)",
+                      background: "linear-gradient(to bottom, transparent 50%, rgba(8,11,15,0.15) 62%, rgba(8,11,15,0.55) 80%, rgba(8,11,15,0.90) 100%)",
                       pointerEvents: "none",
                     }} />
 
