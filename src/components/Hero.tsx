@@ -1,17 +1,55 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useState } from "react";
+
+// Hero background slideshow — the hero photo plus a few section photos.
+const SLIDES = [
+  "/images/hero/hero.png",
+  "/images/sections/industrial-automation.png",
+  "/images/sections/CSD_processing.png",
+  "/images/sections/fabrication-welding.jpeg",
+  "/images/sections/Juice-processing.png",
+];
+
+const HOLD_MS = 6000; // time each slide stays before crossfading
 
 export default function Hero() {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return; // hold on the first image when reduced motion is set
+    const id = setInterval(
+      () => setActive((a) => (a + 1) % SLIDES.length),
+      HOLD_MS
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative overflow-hidden text-white">
-      {/* Background photo */}
-      <Image
-        src="/images/hero/hero.png"
-        alt="MBH Solutions process engineering facility"
-        fill
-        priority
-        style={{ objectFit: "cover", zIndex: 0 }}
-        sizes="100vw"
-      />
+      {/* Crossfading background slides, each with a slow Ken Burns zoom */}
+      {SLIDES.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0"
+          style={{
+            opacity: i === active ? 1 : 0,
+            transition: "opacity 1500ms ease-in-out",
+            zIndex: 0,
+          }}
+        >
+          <Image
+            src={src}
+            alt=""
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className={`object-cover ${i === active ? "mbh-hero-zoom" : ""}`}
+          />
+        </div>
+      ))}
 
       {/* Directional gradient overlay — heavier on left for legibility, fades
           right. Blue darkened ~10 points from the base tone. */}
