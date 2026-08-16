@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
-import SolutionsShowcase from "@/components/SolutionsShowcase";
 import ProcessSpine from "@/components/ProcessSpine";
 import ServiceSplit from "@/components/ServiceSplit";
 import FabricationSection from "@/components/FabricationSection";
@@ -16,7 +15,36 @@ export default function SolutionsPage() {
         title="Beverage Process Systems & Automation"
         subtitle="Turnkey engineering for CSD, juice, and syrup production lines — from raw material intake through automation and CIP."
       />
-      <SolutionsShowcase />
+      {/* Image placeholder — awaiting a real solutions photograph.
+          Replaced the SolutionsShowcase tile grid on this page only;
+          the homepage still mounts SolutionsShowcase. */}
+      <section style={{ background: "#ffffff", paddingTop: 48, paddingBottom: 96 }}>
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
+          <div
+            style={{
+              background: "#0D1B2E",
+              border: "1px solid #1E3352",
+              minHeight: 380,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <span
+              style={{
+                fontFamily: "var(--font-ibm-plex-mono)",
+                fontWeight: 400,
+                fontSize: 11,
+                color: "#1E3352",
+                letterSpacing: "0.06em",
+              }}
+            >
+              SOLUTIONS · IMG
+            </span>
+          </div>
+        </div>
+      </section>
+
       <ProcessSpine />
       <ServiceSplit
         id="automation"
