@@ -1,3 +1,5 @@
+import { Eyebrow } from "@/components/Eyebrow";
+
 type Tile = {
   code: string;
   slug: string;
@@ -46,7 +48,7 @@ export default function ProcessSpine() {
         }
         .mbh-tile-s9:hover { background-color: #1E3352; }
 
-        .mbh-spine-link { color: #9BAAB5; text-decoration: none; transition: color 200ms ease; }
+        .mbh-spine-link { color: #6A7A8A; text-decoration: none; transition: color 200ms ease; }
         .mbh-spine-link:hover { color: #C87D00; }
 
         .mbh-spine-scroll { overflow-x: auto; }
@@ -56,50 +58,23 @@ export default function ProcessSpine() {
         .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
       `}</style>
 
-      <section style={{ position: "relative", background: "#080B0F", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
-        {/* Background image at 15% opacity */}
-        <div style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: "url('/images/hero/hero.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          opacity: 0.15,
-          filter: "blur(2px)",
-          pointerEvents: "none",
-        }} />
+      <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
-          {/* Eyebrow */}
-          <p style={{
-            fontFamily: "var(--font-ibm-plex-mono)",
-            fontWeight: 500,
-            fontSize: 10,
-            letterSpacing: "0.5px",
-            textTransform: "uppercase",
-            color: "#C87D00",
-            marginBottom: 16,
-          }}>
-            Process Systems
-          </p>
+          {/* Pillar eyebrow */}
+          <Eyebrow variant="pillar" number="01" label="Beverage Process Systems" />
 
-          {/* H2 — tighter gap to subtitle */}
-          <h2 style={{
-            fontWeight: 500,
-            fontSize: 28,
-            letterSpacing: "-0.8px",
-            lineHeight: 1.25,
-            color: "#ffffff",
-            marginBottom: 6,
-          }}>
-            Nine Engineered Modules. One Complete Beverage Line.
+          {/* Anchor statement */}
+          <h2 className="mt-4 max-w-prose text-anchor font-medium text-ink">
+            The Complete Syrup Room, Delivered as Engineered Modules — Available Turnkey or Integrated into an Existing Line.
           </h2>
 
           {/* Subtitle */}
           <p style={{
             fontWeight: 300,
             fontSize: 16,
-            color: "#9BAAB5",
+            color: "#6A7A8A",
+            marginTop: 12,
             marginBottom: 48,
           }}>
             Each module is available as a turnkey solution or integrated into your existing process line.
@@ -119,7 +94,7 @@ export default function ProcessSpine() {
               fontSize: 11,
               letterSpacing: "0.3px",
               textTransform: "uppercase",
-              color: "#4A5E6F",
+              color: "#6A7A8A",
             }}>
               Scroll
             </span>
