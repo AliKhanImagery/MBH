@@ -1,10 +1,26 @@
 import Image from "next/image";
-import { CtaLink } from "@/components/CtaLink";
 
 const DATA_POINTS = [
   { value: "Iran",            label: "Project Location" },
   { value: "Syrup Room + CIP", label: "Systems Delivered" },
   { value: "Turnkey",         label: "Delivery Scope" },
+];
+
+// Supporting references. `tag` drives the navy image placeholder until a
+// real photo is added at public/references/<slug>.jpg.
+const SUPPORTING = [
+  {
+    client: "Pepsi Northern Beverages",
+    heading: "Bottling Line Automation and Control Panel Upgrade",
+    meta: "Pakistan · PLC · SCADA · Panels",
+    tag: "PEPSI",
+  },
+  {
+    client: "Fauji Foods",
+    heading: "Plant-Wide Control System Deployment for Dairy Processing",
+    meta: "Pakistan · PLC · HMI · SCADA",
+    tag: "FAUJI FOODS",
+  },
 ];
 
 export default function CaseStudy() {
@@ -136,12 +152,92 @@ export default function CaseStudy() {
                 ))}
               </div>
 
-              {/* CTA link */}
-              <CtaLink href="/references" className="mt-8">
-                View All References
-              </CtaLink>
-
             </div>
+          </div>
+
+          {/* ── Supporting references ── */}
+          <p
+            style={{
+              fontFamily: "var(--font-ibm-plex-mono)",
+              fontWeight: 500,
+              fontSize: 10,
+              letterSpacing: "0.5px",
+              textTransform: "uppercase",
+              color: "#C87D00",
+              marginTop: 64,
+              marginBottom: 24,
+            }}
+          >
+            More References
+          </p>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {SUPPORTING.map((ref) => (
+              <div key={ref.client}>
+                {/* Image placeholder — swap for a real photo when available */}
+                <div
+                  style={{
+                    height: 200,
+                    backgroundColor: "#0D1B2E",
+                    border: "1px solid #1E3352",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: 20,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontFamily: "var(--font-ibm-plex-mono)",
+                      fontWeight: 400,
+                      fontSize: 11,
+                      color: "#1E3352",
+                      letterSpacing: "0.06em",
+                    }}
+                  >
+                    {ref.tag} · IMG
+                  </span>
+                </div>
+
+                <h3
+                  style={{
+                    fontWeight: 500,
+                    fontSize: 18,
+                    letterSpacing: "-0.3px",
+                    lineHeight: 1.3,
+                    color: "#080B0F",
+                  }}
+                >
+                  {ref.client}
+                </h3>
+
+                <p
+                  style={{
+                    fontWeight: 400,
+                    fontSize: 15,
+                    lineHeight: 1.7,
+                    color: "#4A5568",
+                    marginTop: 8,
+                  }}
+                >
+                  {ref.heading}
+                </p>
+
+                <p
+                  style={{
+                    fontFamily: "var(--font-ibm-plex-mono)",
+                    fontWeight: 400,
+                    fontSize: 11,
+                    textTransform: "uppercase",
+                    color: "#9BAAB5",
+                    letterSpacing: "0.04em",
+                    marginTop: 12,
+                  }}
+                >
+                  {ref.meta}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
