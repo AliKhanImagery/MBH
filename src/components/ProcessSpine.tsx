@@ -1,4 +1,6 @@
-import type { ReactNode } from "react";
+"use client";
+
+import { type ReactNode, useRef } from "react";
 import { Eyebrow } from "@/components/Eyebrow";
 import { CtaLink } from "@/components/CtaLink";
 
@@ -39,6 +41,14 @@ type ProcessSpineProps = {
 };
 
 export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollRight = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: Math.max(el.clientWidth * 0.8, 240), behavior: "smooth" });
+  };
+
   return (
     <>
       {/* Scoped hover styles — no JS required */}
@@ -90,31 +100,12 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
             Each module is available as a turnkey solution or integrated into your existing process line.
           </p>
 
-          {/* Scroll affordance — card box with a right arrow, left-aligned */}
-          <div style={{ display: "flex", justifyContent: "flex-start", marginBottom: 12 }}>
-            <div
-              aria-hidden="true"
-              style={{
-                width: 64,
-                height: 64,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "#0D1B2E",
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px))",
-              }}
-            >
-              <svg width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#C87D00" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
-          </div>
-
-          {/* Horizontally scrollable tile row */}
-          <div className="mbh-spine-scroll">
-            <div style={{ display: "flex", flexDirection: "row", gap: 2 }}>
-              {TILES.map((tile) => {
-                const hi = tile.highlight ?? false;
+          {/* Carousel with a floating scroll-right control */}
+          <div style={{ position: "relative", marginTop: 12 }}>
+            <div className="mbh-spine-scroll" ref={scrollRef}>
+              <div style={{ display: "flex", flexDirection: "row", gap: 2 }}>
+                {TILES.map((tile) => {
+                  const hi = tile.highlight ?? false;
 
                 return (
                   <a
@@ -190,7 +181,35 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
                   </a>
                 );
               })}
+              </div>
             </div>
+
+            {/* Floating scroll-right control */}
+            <button
+              type="button"
+              onClick={scrollRight}
+              aria-label="Scroll process modules right"
+              style={{
+                position: "absolute",
+                top: "50%",
+                right: 16,
+                transform: "translateY(-50%)",
+                zIndex: 10,
+                width: 64,
+                height: 64,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#0D1B2E",
+                border: "none",
+                cursor: "pointer",
+                clipPath: "polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px))",
+              }}
+            >
+              <svg width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
           </div>
 
           {/* Footer link — left aligned */}
