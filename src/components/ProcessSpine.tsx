@@ -58,7 +58,7 @@ export default function ProcessSpine() {
         .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
       `}</style>
 
-      <section style={{ position: "relative", background: "#ffffff", paddingTop: 96, paddingBottom: 80, overflow: "hidden" }}>
+      <section style={{ position: "relative", background: "#ffffff", paddingTop: 48, paddingBottom: 80, overflow: "hidden" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
           {/* Pillar eyebrow */}

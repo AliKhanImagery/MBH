@@ -21,6 +21,7 @@ export default function Home() {
       <ServiceStrip />
       <SolutionsShowcase />
       <ProcessSpine />
+      <CaseStudy />
       <ServiceSplit
         id="automation"
         eyebrow="AUTOMATION & CONTROL"
@@ -41,7 +42,6 @@ export default function Home() {
       />
       <FabricationSection />
       <ProductsTeaser />
-      <CaseStudy />
       <TechnologyPartners />
       <Industries />
       <AboutTeaser />
