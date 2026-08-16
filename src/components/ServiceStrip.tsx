@@ -1,18 +1,37 @@
+// Four-pillar shortcut strip. Content ported from the parked branch's
+// PillarStrip; typography kept at this branch's compact scale.
 const ITEMS = [
   {
-    name: "Beverage Process Systems & Modernisation",
-    desc: "Turnkey CSD, juice, and CIP process lines — plus retrofit, upgradation, and automation integration for existing syrup rooms and production systems",
-    href: "/solutions",
+    number: "01",
+    label: "Beverage Process Systems",
+    name: "Beverage Process Engineering",
+    desc: "Turnkey syrup rooms, CSD and juice process lines, and modernisation of existing production systems.",
+    href: "/solutions#beverage-process",
+    linkText: "Explore Process Systems →",
   },
   {
-    name: "Process Equipment & Spares",
-    desc: "Pumps, valves, instruments, analyzers, switchgear, and spare parts procurement",
+    number: "02",
+    label: "Industrial Automation",
+    name: "Industrial Automation",
+    desc: "PLC-based control architecture, SCADA deployment, and end-to-end commissioning under one engineering scope.",
+    href: "/solutions#automation",
+    linkText: "Explore Automation →",
+  },
+  {
+    number: "03",
+    label: "Mechanical & Fabrication",
+    name: "Mechanical & Fabrication Installation",
+    desc: "In-house stainless and carbon steel fabrication with full mechanical installation at the client facility.",
+    href: "/solutions#fabrication",
+    linkText: "Explore Fabrication →",
+  },
+  {
+    number: "04",
+    label: "Equipment & Spares",
+    name: "Equipment & Spares Procurement",
+    desc: "Flow components, automation hardware, instruments, and switchgear from the leading process manufacturers.",
     href: "/products",
-  },
-  {
-    name: "Projects & References",
-    desc: "Commissioned process systems and automation upgrades for Coca-Cola, Pepsi, Fauji Foods, Dalda Foods, and leading manufacturers across three countries",
-    href: "/references",
+    linkText: "Explore Products →",
   },
 ];
 
@@ -35,14 +54,28 @@ export default function ServiceStrip() {
         }
         .ss-card:hover .ss-arrow { color: #C87D00; transform: translateX(3px); }
         .ss-arrow { transition: color 200ms ease, transform 200ms ease; }
+
+        /* Zero the outer edges so card text aligns with the hero headline.
+           Which cards sit on an edge depends on the column count. */
+        @media (max-width: 639px) {
+          .ss-card { padding-left: 0; padding-right: 0; }
+        }
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .ss-card:nth-child(odd)  { padding-left: 0; }
+          .ss-card:nth-child(even) { padding-right: 0; }
+        }
+        @media (min-width: 1024px) {
+          .ss-card:first-child { padding-left: 0; }
+          .ss-card:last-child  { padding-right: 0; }
+        }
       `}</style>
 
       <section style={{ background: "#ffffff", borderBottom: "1px solid #E2E8F0" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 0 }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
             {ITEMS.map((item, i) => (
               <a
-                key={item.name}
+                key={item.number}
                 href={item.href}
                 className="ss-card"
                 style={{
@@ -62,7 +95,7 @@ export default function ServiceStrip() {
                   color: "#C87D00",
                   marginBottom: 12,
                 }}>
-                  {i === 0 ? "Solutions" : i === 1 ? "Products" : "References"}
+                  Pillar {item.number} · {item.label}
                 </p>
 
                 {/* Title */}
@@ -87,7 +120,7 @@ export default function ServiceStrip() {
                   {item.desc}
                 </p>
 
-                {/* Arrow */}
+                {/* Link */}
                 <p className="ss-arrow" style={{
                   fontFamily: "var(--font-ibm-plex-mono)",
                   fontWeight: 400,
@@ -95,7 +128,7 @@ export default function ServiceStrip() {
                   color: "#C87D00",
                   marginTop: 20,
                 }}>
-                  →
+                  {item.linkText}
                 </p>
               </a>
             ))}
