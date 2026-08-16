@@ -56,10 +56,10 @@ export default function SolutionsShowcase() {
           Engineering Process Systems For The World&apos;s Leading Manufacturers
         </h2>
 
-        {/* Card grid — 48px gap below H2 */}
+        {/* Card grid — 48px gap below H2, 2px gutter between cards */}
         <div
           className="grid grid-cols-1 md:grid-cols-2"
-          style={{ marginTop: 48 }}
+          style={{ marginTop: 48, gap: 2 }}
         >
           {SOLUTIONS.map((sol) => (
             <a
@@ -69,7 +69,11 @@ export default function SolutionsShowcase() {
               style={{
                 height: 320,
                 backgroundColor: "#0D1B2E",
-                borderBottom: "2px solid #C87D00",
+                // Small cosmetic diagonal cut on the bottom-left of one card
+                clipPath:
+                  sol.title === "Industrial Automation"
+                    ? "polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px))"
+                    : undefined,
               }}
             >
               {/* Background image */}
