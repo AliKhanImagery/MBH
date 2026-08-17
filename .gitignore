@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Staging output for AI-generated images (only curated finals get committed)
+public/images/generated/*
+!public/images/generated/.gitkeep
