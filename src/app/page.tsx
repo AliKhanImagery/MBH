@@ -19,7 +19,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ServiceStrip />
-      {/* <SolutionsShowcase /> */}
+      <SolutionsShowcase />
       <ProcessSpine />
       <CaseStudy />
       <ServiceSplit
