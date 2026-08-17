@@ -38,7 +38,7 @@ export default function PageHero({ eyebrow, title, subtitle, image, imageAlt = "
             style={{
               zIndex: 1,
               background:
-                "linear-gradient(to right, rgba(8,11,15,0.88) 0%, rgba(8,11,15,0.70) 45%, rgba(8,11,15,0.40) 100%)",
+                "linear-gradient(to right, rgba(8,11,15,0.78) 0%, rgba(8,11,15,0.60) 45%, rgba(8,11,15,0.30) 100%)",
             }}
           />
         </>
