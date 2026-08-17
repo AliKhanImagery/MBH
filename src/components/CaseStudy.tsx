@@ -6,20 +6,22 @@ const DATA_POINTS = [
   { value: "Turnkey",         label: "Delivery Scope" },
 ];
 
-// Supporting references. `tag` drives the navy image placeholder until a
-// real photo is added at public/references/<slug>.jpg.
+// Supporting references. `image` shows a real photo; `tag` is the navy
+// placeholder fallback used only when no image is set.
 const SUPPORTING = [
   {
     client: "Pepsi Northern Beverages",
     heading: "Bottling Line Automation and Control Panel Upgrade",
     meta: "Pakistan · PLC · SCADA · Panels",
     tag: "PEPSI",
+    image: "/references/pepsi-northern.png",
   },
   {
     client: "Fauji Foods",
     heading: "Plant-Wide Control System Deployment for Dairy Processing",
     meta: "Pakistan · PLC · HMI · SCADA",
     tag: "FAUJI FOODS",
+    image: "/references/fauji-foods.jpg",
   },
 ];
 
@@ -174,10 +176,12 @@ export default function CaseStudy() {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {SUPPORTING.map((ref) => (
               <div key={ref.client}>
-                {/* Image placeholder — swap for a real photo when available */}
+                {/* Reference photo, or navy placeholder if none set */}
                 <div
                   style={{
+                    position: "relative",
                     height: 200,
+                    overflow: "hidden",
                     backgroundColor: "#0D1B2E",
                     border: "1px solid #1E3352",
                     display: "flex",
@@ -186,17 +190,27 @@ export default function CaseStudy() {
                     marginBottom: 20,
                   }}
                 >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-ibm-plex-mono)",
-                      fontWeight: 400,
-                      fontSize: 11,
-                      color: "#1E3352",
-                      letterSpacing: "0.06em",
-                    }}
-                  >
-                    {ref.tag} · IMG
-                  </span>
+                  {ref.image ? (
+                    <Image
+                      src={ref.image}
+                      alt={`${ref.client} — ${ref.heading}`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  ) : (
+                    <span
+                      style={{
+                        fontFamily: "var(--font-ibm-plex-mono)",
+                        fontWeight: 400,
+                        fontSize: 11,
+                        color: "#1E3352",
+                        letterSpacing: "0.06em",
+                      }}
+                    >
+                      {ref.tag} · IMG
+                    </span>
+                  )}
                 </div>
 
                 <h3
