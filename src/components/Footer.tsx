@@ -40,8 +40,8 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div className="lg:w-56 lg:shrink-0">
-            <div className="text-white" style={{ fontSize: 16, fontWeight: 500 }}>
-              MBH <span className="text-amber">SOLUTIONS</span>
+            <div>
+              <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 32, objectFit: "contain" }} />
             </div>
             <p className="text-body mt-3 text-white/40" style={{ fontSize: 13 }}>
               Industrial Automation &amp; Process Systems
