@@ -15,6 +15,8 @@ export default function SolutionsPage() {
         eyebrow="Solutions"
         title="Beverage Process Systems & Automation"
         subtitle="Turnkey engineering for CSD, juice, and syrup production lines — from raw material intake through automation and CIP."
+        image="/images/sections/solutions-banner.jpg"
+        imageAlt="Stainless steel syrup tanks, process piping, and control panels in a beverage plant"
       />
       {/* Image placeholder sits inside Pillar 01, under its eyebrow.
           Passed as a slot so the homepage's <ProcessSpine /> is unaffected.
