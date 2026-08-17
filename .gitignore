@@ -43,3 +43,6 @@ next-env.d.ts
 # Staging output for AI-generated images (only curated finals get committed)
 public/images/generated/*
 !public/images/generated/.gitkeep
+# Curated finals used as live page backgrounds — tracked explicitly
+!public/images/generated/solutions-banner.jpg
+!public/images/generated/Industrial-automation-2.png
