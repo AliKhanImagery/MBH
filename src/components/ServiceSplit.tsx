@@ -57,19 +57,19 @@ type AutoCap = {
 const AUTOMATION_CAPABILITIES: AutoCap[] = [
   {
     index: 1,
-    name: 'Control Architecture',
-    descriptor: 'Designing plant-wide control philosophy and system topology for beverage process lines.',
-  },
-  {
-    index: 2,
     name: 'PLC Programming',
     descriptor: 'Siemens S7 code development in TIA Portal, aligned to production recipes and safety interlocks.',
     signature: true,
   },
   {
-    index: 3,
+    index: 2,
     name: 'SCADA & HMI',
     descriptor: 'WinCC SCADA build, HMI screen design, and recipe management for operator handoff.',
+  },
+  {
+    index: 3,
+    name: 'Control Architecture',
+    descriptor: 'Designing plant-wide control philosophy and system topology for beverage process lines.',
   },
   {
     index: 4,
