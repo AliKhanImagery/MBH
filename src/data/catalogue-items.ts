@@ -1,5 +1,5 @@
 // MBH Catalogue — single source of truth for the /catalogue page.
-// Hand-authored (32 items). Each item carries a permanent ID that appears on
+// Hand-authored (31 items). Each item carries a permanent ID that appears on
 // the row, in the anchor URL (#csd-line-01), on the Quote drawer, and in the
 // quote email subject line so sales can triage by ID. See the page spec.
 
@@ -13,7 +13,7 @@ export const CATALOGUE_CATEGORIES = [
 export type CatalogueCategory = (typeof CATALOGUE_CATEGORIES)[number];
 
 export type CatalogueItem = {
-  /** Display sequence 1..32 across the whole catalogue. */
+  /** Display sequence 1..31 across the whole catalogue. */
   seq: number;
   /** Permanent line-item ID, e.g. "CSD-LINE-01". Used in URL + quote email. */
   id: string;
@@ -23,7 +23,7 @@ export type CatalogueItem = {
   description: string;
   /** Compact spec line shown on the Quote drawer. */
   spec: string;
-  /** Optional emphasis tag: SIGNATURE | SSP TECHNOLOGY | SIEMENS | MBH WORKSHOP. */
+  /** Optional emphasis tag: SIGNATURE | SIEMENS | MBH WORKSHOP. */
   badge?: string;
 };
 
@@ -33,10 +33,10 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     seq: 1,
     id: "CSD-LINE-01",
     category: "Process Systems",
-    name: "Carbonated soft drink line",
+    name: "Carbonated soft drink processing line",
     description:
-      "Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. 8–30 m³/h at Brix 65°. Available turnkey. SSP + Siemens + MBH fabrication.",
-    spec: "8–30 m³/h · Brix 65° · Turnkey",
+      "Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. 2–40 m³/h at upto 70°. Available turnkey. Siemens + MBH fabrication.",
+    spec: "2–40 m³/h · upto 70° · Turnkey",
     badge: "SIGNATURE",
   },
   {
@@ -45,7 +45,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Juice processing line",
     description:
-      "Concentrate handling, pasteurisation, blending, storage. Configurable capacity. Available turnkey or as retrofit. SSP tubular heat exchangers, MASTERMIXX blender.",
+      "Concentrate handling, pasteurisation, blending, storage. Configurable capacity. Available turnkey or as retrofit. Tubular heat exchangers, MASTERMIXX blender.",
     spec: "Configurable capacity · Turnkey or retrofit",
   },
   {
@@ -54,9 +54,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Turnkey syrup room",
     description:
-      "Standalone syrup manufacturing module. Plugs into existing filling line. 8–30 m³/h continuous. Available turnkey. Full SSP S1–S8 stack with MBH Siemens automation.",
-    spec: "8–30 m³/h continuous · Turnkey",
-    badge: "SSP TECHNOLOGY",
+      "Standalone syrup manufacturing module. Plugs into existing filling line. 2–40 m³/h continuous. Available turnkey. Complete stages in line with MBH.",
+    spec: "2–40 m³/h continuous · Turnkey",
   },
   {
     seq: 4,
@@ -64,9 +63,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Sugar handling and dissolving system",
     description:
-      "Big-bag receiving through continuous dissolving to finished simple syrup. 8–30 m³/h at Brix 65°. Available as standalone module. SSP CONTIMAXX.",
-    spec: "8–30 m³/h · Brix 65° · Standalone",
-    badge: "SSP TECHNOLOGY",
+      "Big-bag receiving through continuous dissolving to finished simple syrup. 2–40 m³/h at upto 70°. Available as standalone module.",
+    spec: "2–40 m³/h · upto 70° · Standalone",
   },
   {
     seq: 5,
@@ -85,7 +83,6 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "Continuous blender for final syrup and finished beverage. Multi-component. Recipe-driven. Available as standalone module or integrated into new line.",
     spec: "Continuous · Recipe-driven · Standalone",
-    badge: "SSP TECHNOLOGY",
   },
   {
     seq: 7,
@@ -93,8 +90,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Concentrate and dosing station",
     description:
-      "Precise dosing of concentrates, minor ingredients, additives. Recipe-driven with suction lance and valve matrix. Available standalone.",
-    spec: "Recipe-driven · Standalone",
+      "Precise dosing of concentrates, minor ingredients, additives. Recipe-driven with suction lance and valve matrix. Available standalone or integrated into new line.",
+    spec: "Recipe-driven · Standalone or integrated",
   },
   {
     seq: 8,
@@ -111,8 +108,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Kieselguhr filtration unit",
     description:
-      "Diatomaceous-earth filtration for syrup polishing and decolourisation. Available standalone. SSP-supplied elements.",
-    spec: "Standalone · SSP elements",
+      "Diatomaceous-earth filtration for removing impurities for syrup polishing and decolourisation. Available standalone or integrated into new line.",
+    spec: "Standalone or integrated",
   },
   {
     seq: 10,
@@ -120,7 +117,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Double bag filter",
     description:
-      "Inline bag filtration for pre-treatment or product polishing. Sanitary construction. Available ex-workshop.",
+      "Inline bag filtration for the Final treatment or product polishing. Sanitary construction. Available ex-workshop.",
     spec: "Sanitary · Ex-workshop",
   },
   {
@@ -129,8 +126,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Homogeniser",
     description:
-      "High-pressure homogenisation for juice, dairy, or emulsified beverages. Configurable capacity. Available on request through SSP.",
-    spec: "Configurable capacity · Via SSP",
+      "High-pressure homogenisation for juice, dairy, or emulsified beverages. Configurable capacity. Available on request.",
+    spec: "Configurable capacity",
   },
   {
     seq: 12,
@@ -138,8 +135,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Simple syrup storage tank",
     description:
-      "Sanitary stainless-steel storage vessel for intermediate simple syrup. Sizes to spec. Fabricated in-house at Lahore workshop.",
-    spec: "Sizes to spec · In-house",
+      "Sanitary stainless-steel storage vessel for intermediate simple syrup. Sizes to spec. Available standalone or integrated into new line.",
+    spec: "Sizes to spec · Standalone or integrated",
   },
   {
     seq: 13,
@@ -156,7 +153,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Aseptic storage tank",
     description:
-      "Aseptic buffering between process and filling. Sizes to spec. SSP-supplied for aseptic-grade requirements.",
+      "Aseptic buffering between process and filling. Sizes to spec. Supplied for aseptic-grade requirements.",
     spec: "Aseptic-grade · Sizes to spec",
   },
 
@@ -167,7 +164,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Automation",
     name: "Plant automation and control",
     description:
-      "End-to-end PLC, SCADA, HMI, recipe management on Siemens S7 and WinCC. Available for new lines or as retrofit. MBH Siemens Solution Partner.",
+      "End-to-end PLC, SCADA, HMI, recipe management on Siemens S7 and WinCC. Available for new lines or as retrofit. MBH Siemens Integrators.",
     spec: "Siemens S7 · WinCC · New or retrofit",
     badge: "SIEMENS",
   },
@@ -177,8 +174,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Automation",
     name: "Control cabinet · standard",
     description:
-      "Low-voltage control cabinet housing PLC, I/O, and instrumentation terminations. Designed and built at MBH Lahore workshop. Full drawings included.",
-    spec: "LV cabinet · Full drawings",
+      "HMI and control cabinet housing PLC, I/O, and field terminations. Designed and built at MBH workshop. Full drawings included.",
+    spec: "HMI & field cabinet · Full drawings",
   },
   {
     seq: 17,
@@ -195,7 +192,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Automation",
     name: "SCADA and HMI development",
     description:
-      "WinCC SCADA build, HMI screen design, recipe management, operator handover. Available as standalone service or line-integrated.",
+      "WinCC SCADA build, HMI screen design, recipe management, operator training. Available as standalone service or line-integrated.",
     spec: "WinCC · HMI · Standalone or integrated",
   },
   {
@@ -204,8 +201,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Automation",
     name: "Factory acceptance testing (FAT)",
     description:
-      "Pre-shipment validation of control system against buyer specification. Witnessed by buyer or third party. Documentation package included.",
-    spec: "Witnessed · Documentation included",
+      "Pre-shipment validation of control system against buyer specification. Witnessed by buyer or third party.",
+    spec: "Witnessed",
   },
   {
     seq: 20,
@@ -213,29 +210,29 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Automation",
     name: "Site commissioning and handover",
     description:
-      "On-site startup, loop calibration, operator training, and signed handover. Same-week response from Lahore workshop. Available for MBH-supplied or third-party equipment.",
+      "On-site startup, loop calibration, operator training, and with handover. Available for MBH-supplied or third-party equipment.",
     spec: "On-site · Any equipment",
   },
 
-  // ── Fabrication (6) ───────────────────────────────────────────────────
+  // ── Fabrication (5) ───────────────────────────────────────────────────
   {
     seq: 21,
     id: "FAB-TANK-01",
     category: "Fabrication",
     name: "Stainless steel tanks and vessels",
     description:
-      "Sanitary-grade process vessels, storage tanks, blending tanks. Sizes to spec. Orbital-welded, passivated, documented.",
-    spec: "Orbital-welded · Sizes to spec",
+      "Sanitary-grade process vessels, storage tanks, blending tanks. Sizes to spec. clean welded, passivated, documented.",
+    spec: "Clean welded · Sizes to spec",
     badge: "MBH WORKSHOP",
   },
   {
     seq: 22,
     id: "FAB-PIPE-01",
     category: "Fabrication",
-    name: "Process piping and skid assembly",
+    name: "Process and utility piping and skid assembly",
     description:
-      "Orbital-welded process piping, pre-fabricated skids for shop or site install. Isometric drawings, weld maps, material certificates included.",
-    spec: "Orbital-welded · Shop or site",
+      "Process and utility piping, pre-fabricated skids for site install.",
+    spec: "Pre-fabricated · Site install",
     badge: "MBH WORKSHOP",
   },
   {
@@ -244,7 +241,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Fabrication",
     name: "Structural steel platforms",
     description:
-      "Platforms, walkways, and support structures for process equipment. Carbon steel, galvanised or painted to spec.",
+      "Platforms, walkways, and support structures. Carbon steel, galvanised or painted to spec.",
     spec: "Carbon steel · To spec",
     badge: "MBH WORKSHOP",
   },
@@ -254,7 +251,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Fabrication",
     name: "On-site mechanical erection",
     description:
-      "Mechanical installation, rigging, and alignment at the buyer's facility. Full site supervision included.",
+      "Mechanical installation, rigging, and alignment at the buyer's facility with supervision.",
     spec: "On-site · Supervised",
     badge: "MBH WORKSHOP",
   },
@@ -268,18 +265,17 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     spec: "On-site · SS cladding",
     badge: "MBH WORKSHOP",
   },
-  {
-    seq: 26,
-    id: "FAB-DOC-01",
-    category: "Fabrication",
-    name: "Fabrication documentation package",
-    description:
-      "Weld maps, material certificates, dimensional inspection reports, hydro-test records. Delivered per project or per skid.",
-    spec: "Per project or per skid",
-    badge: "MBH WORKSHOP",
-  },
 
   // ── Utilities (6) ─────────────────────────────────────────────────────
+  {
+    seq: 26,
+    id: "UTIL-CIP-01",
+    category: "Utilities",
+    name: "CIP system · standalone",
+    description:
+      "Automated and manual cleaning skid can clean one line upto multiple lines or tanks alltogether. Single to four circuits standard, expandable to six or eight. Multi-detergent, recipe-driven. Available standalone or retrofit.",
+    spec: "1 to 4 circuits standard · Standalone or retrofit",
+  },
   {
     seq: 27,
     id: "UTIL-WATER-01",
@@ -291,24 +287,6 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
   },
   {
     seq: 28,
-    id: "UTIL-CIP-01",
-    category: "Utilities",
-    name: "CIP system · standalone",
-    description:
-      "Automated cleaning skid. Four circuits standard, expandable to six or eight. Multi-detergent, recipe-driven. Available standalone or retrofit.",
-    spec: "4 circuits, expandable to 8 · Standalone or retrofit",
-  },
-  {
-    seq: 29,
-    id: "UTIL-AIR-01",
-    category: "Utilities",
-    name: "Compressed air treatment skid",
-    description:
-      "Sanitary compressed air treatment for process contact. Filters, dryers, receivers. Available ex-workshop.",
-    spec: "Sanitary · Ex-workshop",
-  },
-  {
-    seq: 30,
     id: "UTIL-CHILL-01",
     category: "Utilities",
     name: "Chilled water skid",
@@ -317,7 +295,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     spec: "Sizes to spec",
   },
   {
-    seq: 31,
+    seq: 29,
     id: "UTIL-STEAM-01",
     category: "Utilities",
     name: "Steam distribution skid",
@@ -326,13 +304,22 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     spec: "Sanitary or industrial",
   },
   {
-    seq: 32,
+    seq: 30,
     id: "RETRO-01",
     category: "Utilities",
     name: "Retrofit and modernisation service",
     description:
-      "Line-by-line assessment for automation upgrade, capacity extension, or module replacement. Available for any brand of installed equipment. Engineered and executed from Lahore.",
-    spec: "Any brand · From Lahore",
+      "Line-by-line assessment for automation upgrade, consultancy, or module replacement. Available for any brand or installed equipment. Engineering and execution.",
+    spec: "Any brand · Engineering and execution",
+  },
+  {
+    seq: 31,
+    id: "UTIL-RECOVERY-01",
+    category: "Utilities",
+    name: "Product recovery system",
+    description:
+      "Product recovery system designed to minimise waste and increase yield during product changeovers. Custom engineered.",
+    spec: "Minimise waste · Increase yield",
   },
 ];
 
