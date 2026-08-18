@@ -53,7 +53,7 @@ export default function SolutionsShowcase() {
             maxWidth: 640,
           }}
         >
-          Engineering Process Systems For The World&apos;s Leading Manufacturers
+          Process Systems For The World&apos;s Leading Manufacturers
         </h2>
 
         {/* Card grid — 48px gap below H2, 2px gutter between cards */}

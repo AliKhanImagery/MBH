@@ -17,7 +17,7 @@ const ITEMS = [
   },
   {
     number: "03",
-    label: "Mechanical & Fabrication",
+    label: "Erection and Fabrication",
     desc: "In-house stainless and carbon steel fabrication with full mechanical installation at the client facility.",
     href: "/solutions#fabrication",
     linkText: "Explore Fabrication →",

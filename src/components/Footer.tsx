@@ -44,7 +44,9 @@ export default function Footer() {
               <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 32, objectFit: "contain" }} />
             </div>
             <p className="text-body mt-3 text-white/40" style={{ fontSize: 13 }}>
-              Industrial Automation &amp; Process Systems
+              Industrial Automation &amp; Process Systems<br />
+              <a href="mailto:sales@mbhsol.com" className="hover:text-white transition-colors">sales@mbhsol.com</a><br />
+              <a href="https://wa.me/923322007373" className="hover:text-white transition-colors">+92 332 2007373</a>
             </p>
           </div>
 

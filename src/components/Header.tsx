@@ -18,13 +18,19 @@ export default function Header() {
     <header className="bg-near-black">
       {/* Row 1 — logo, WhatsApp, Enquire Now (mobile: logo + menu toggle) */}
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:px-12">
-        <a href="/" aria-label="MBH Solutions — home" className="text-white" style={{ fontSize: 16, fontWeight: 500 }}>
-          MBH <span className="text-amber">SOLUTIONS</span>
+        <a href="/" aria-label="MBH Solutions — home" className="text-white">
+          <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 32, objectFit: "contain" }} />
         </a>
 
         <div className="flex items-center gap-3">
           <a
-            href="https://wa.me/92300000000"
+            href="mailto:sales@mbhsol.com"
+            className="text-cta hidden rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/20 hover:bg-white/5 sm:inline-block"
+          >
+            sales@mbhsol.com
+          </a>
+          <a
+            href="https://wa.me/923322007373"
             className="text-cta hidden rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/20 hover:bg-white/5 sm:inline-block"
           >
             WhatsApp
@@ -92,7 +98,14 @@ export default function Header() {
           </ul>
           <div className="mt-3 flex flex-col gap-3 sm:hidden">
             <a
-              href="https://wa.me/92300000000"
+              href="mailto:sales@mbhsol.com"
+              onClick={() => setOpen(false)}
+              className="text-cta rounded-md border border-white/10 px-[22px] py-3 text-center text-white transition-colors hover:border-white/20 hover:bg-white/5"
+            >
+              sales@mbhsol.com
+            </a>
+            <a
+              href="https://wa.me/923322007373"
               onClick={() => setOpen(false)}
               className="text-cta rounded-md border border-white/10 px-[22px] py-3 text-center text-white transition-colors hover:border-white/20 hover:bg-white/5"
             >

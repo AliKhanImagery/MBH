@@ -76,7 +76,7 @@ export default function Hero() {
               className="text-h1 text-white"
               style={{ textShadow: "0 1px 2px rgba(8,11,15,0.45), 0 6px 24px rgba(8,11,15,0.30)" }}
             >
-              Engineering Beverage Process Systems and Industrial Automation for the World&apos;s Leading Manufacturers
+              Beverage Process Systems and Industrial Automation for the World&apos;s Leading Manufacturers
             </h1>
 
             <p

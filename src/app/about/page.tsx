@@ -12,7 +12,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About MBH"
         title="Engineering Partnerships Built on Trust"
-        subtitle="MBH Solutions is a Siemens-certified engineering company delivering beverage process systems and industrial automation across the region."
+        subtitle="MBH Solutions is a SIEMENS Integrator company delivering beverage process systems and industrial automation across the region."
       />
       <About />
       <TechnologyPartners />

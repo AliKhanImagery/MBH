@@ -18,7 +18,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "MBH Solutions | Industrial Automation and Engineering Solutions",
   description:
-    "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries — combining Siemens-certified engineering with real-time monitoring and ongoing maintenance support.",
+    "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries — combining our expertise as a SIEMENS Integrator company with real-time monitoring and ongoing maintenance support.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
