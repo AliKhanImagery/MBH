@@ -16,9 +16,40 @@ const ibmPlexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MBH Solutions | Industrial Automation and Engineering Solutions",
+  metadataBase: new URL('https://www.mbhsol.com'),
+  title: {
+    default: "MBH Solutions | Industrial Automation & Engineering",
+    template: "%s | MBH Solutions"
+  },
   description:
     "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries — combining our expertise as a SIEMENS Integrator company with real-time monitoring and ongoing maintenance support.",
+  keywords: [
+    "Industrial Automation",
+    "Siemens Integrator",
+    "PLC",
+    "SCADA",
+    "Beverage Process Systems",
+    "FMCG Automation",
+    "Turnkey Syrup Rooms",
+    "MBH Solutions"
+  ],
+  openGraph: {
+    title: "MBH Solutions | Industrial Automation & Engineering",
+    description: "End-to-end PLC and SCADA-based automation and beverage process solutions.",
+    url: 'https://www.mbhsol.com',
+    siteName: 'MBH Solutions',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "MBH Solutions | Industrial Automation & Engineering",
+    description: "End-to-end PLC and SCADA-based automation and beverage process solutions.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

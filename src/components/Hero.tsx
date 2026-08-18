@@ -5,11 +5,26 @@ import { useEffect, useState } from "react";
 
 // Hero background slideshow — the hero photo plus a few section photos.
 const SLIDES = [
-  "/images/hero/hero.png",
-  "/images/sections/industrial-automation.png",
-  "/images/sections/CSD_processing.png",
-  "/images/sections/fabrication-welding.jpeg",
-  "/images/sections/Juice-processing.png",
+  {
+    src: "/images/hero/hero.png",
+    alt: "MBH Solutions industrial automation and beverage process systems",
+  },
+  {
+    src: "/images/sections/industrial-automation.png",
+    alt: "Siemens PLC and SCADA control panels in an industrial setting",
+  },
+  {
+    src: "/images/sections/CSD_processing.png",
+    alt: "Carbonated soft drink (CSD) turnkey processing line",
+  },
+  {
+    src: "/images/sections/fabrication-welding.jpeg",
+    alt: "Stainless steel hygienic fabrication and orbital welding",
+  },
+  {
+    src: "/images/sections/Juice-processing.png",
+    alt: "Industrial juice processing and pasteurisation equipment",
+  },
 ];
 
 const HOLD_MS = 6000; // time each slide stays before crossfading
@@ -30,9 +45,9 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden text-white">
       {/* Crossfading background slides, each with a slow Ken Burns zoom */}
-      {SLIDES.map((src, i) => (
+      {SLIDES.map((slide, i) => (
         <div
-          key={src}
+          key={slide.src}
           className="absolute inset-0"
           style={{
             opacity: i === active ? 1 : 0,
@@ -41,8 +56,8 @@ export default function Hero() {
           }}
         >
           <Image
-            src={src}
-            alt=""
+            src={slide.src}
+            alt={slide.alt}
             fill
             priority={i === 0}
             sizes="100vw"
