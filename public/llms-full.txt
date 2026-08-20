@@ -1,0 +1,151 @@
+# MBH Solutions - Full Context
+
+> Industrial Automation and Beverage Process Systems. Siemens Solution Partner.
+
+MBH Solutions provides end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries. As a SIEMENS Integrator company, we deliver real-time monitoring and ongoing maintenance support.
+
+We design, fabricate, and install turnkey syrup rooms, CSD and juice process lines, and plant-wide control systems — from new installations to the modernisation and retrofit of existing production facilities.
+
+## Contact Information
+- **Email**: sales@mbhsol.com
+- **WhatsApp**: +923322007373
+- **Website**: https://www.mbhsol.com
+
+---
+
+# Product Catalogue
+
+## Process Systems
+
+### 1. Carbonated soft drink processing line [SIGNATURE]
+Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. 2–40 m³/h at upto 70°. Available turnkey. Siemens + MBH fabrication.
+**Specs**: 2–40 m³/h · upto 70° · Turnkey
+
+### 2. Juice processing line
+Concentrate handling, pasteurisation, blending, storage. Configurable capacity. Available turnkey or as retrofit. Tubular heat exchangers, MASTERMIXX blender.
+**Specs**: Configurable capacity · Turnkey or retrofit
+
+### 3. Turnkey syrup room
+Standalone syrup manufacturing module. Plugs into existing filling line. 2–40 m³/h continuous. Available turnkey. Complete stages in line with MBH.
+**Specs**: 2–40 m³/h continuous · Turnkey
+
+### 4. Sugar handling and dissolving system
+Big-bag receiving through continuous dissolving to finished simple syrup. 2–40 m³/h at upto 70°. Available as standalone module.
+**Specs**: 2–40 m³/h · upto 70° · Standalone
+
+### 5. Batch dissolving station
+Batch sugar dissolving for smaller runs or specialty syrups. Configurable tank sizes. Available standalone. Manual or automated recipe control.
+**Specs**: Configurable tanks · Standalone
+
+### 6. Continuous blender · MASTERMIXX
+Continuous blender for final syrup and finished beverage. Multi-component. Recipe-driven. Available as standalone module or integrated into new line.
+**Specs**: Continuous · Recipe-driven · Standalone
+
+### 7. Concentrate and dosing station
+Precise dosing of concentrates, minor ingredients, additives. Recipe-driven with suction lance and valve matrix. Available standalone or integrated into new line.
+**Specs**: Recipe-driven · Standalone or integrated
+
+### 8. Flash pasteuriser
+Thermal treatment for syrup or finished beverage. Plate or tubular heat exchanger. Configurable capacity. Available as standalone unit or line-integrated.
+**Specs**: Configurable capacity · Standalone or integrated
+
+### 9. Kieselguhr filtration unit
+Diatomaceous-earth filtration for removing impurities for syrup polishing and decolourisation. Available standalone or integrated into new line.
+**Specs**: Standalone or integrated
+
+### 10. Double bag filter
+Inline bag filtration for the Final treatment or product polishing. Sanitary construction. Available ex-workshop.
+**Specs**: Sanitary · Ex-workshop
+
+### 11. Homogeniser
+High-pressure homogenisation for juice, dairy, or emulsified beverages. Configurable capacity. Available on request.
+**Specs**: Configurable capacity
+
+### 12. Simple syrup storage tank
+Sanitary stainless-steel storage vessel for intermediate simple syrup. Sizes to spec. Available standalone or integrated into new line.
+**Specs**: Sizes to spec · Standalone or integrated
+
+### 13. Final syrup blending tank with weighing
+Final syrup blending tank with integrated load cells for recipe verification. Sizes to spec. Available standalone.
+**Specs**: Load cells · Sizes to spec · Standalone
+
+### 14. Aseptic storage tank
+Aseptic buffering between process and filling. Sizes to spec. Supplied for aseptic-grade requirements.
+**Specs**: Aseptic-grade · Sizes to spec
+
+
+## Automation
+
+### 15. Plant automation and control [SIEMENS]
+End-to-end PLC, SCADA, HMI, recipe management on Siemens S7 and WinCC. Available for new lines or as retrofit. MBH Siemens Integrators.
+**Specs**: Siemens S7 · WinCC · New or retrofit
+
+### 16. Control cabinet · standard
+HMI and control cabinet housing PLC, I/O, and field terminations. Designed and built at MBH workshop. Full drawings included.
+**Specs**: HMI & field cabinet · Full drawings
+
+### 17. Control cabinet · custom
+Custom-engineered control cabinet to buyer's electrical specification. Available for both process and non-process applications.
+**Specs**: Custom spec · Process or non-process
+
+### 18. SCADA and HMI development
+WinCC SCADA build, HMI screen design, recipe management, operator training. Available as standalone service or line-integrated.
+**Specs**: WinCC · HMI · Standalone or integrated
+
+### 19. Factory acceptance testing (FAT)
+Pre-shipment validation of control system against buyer specification. Witnessed by buyer or third party.
+**Specs**: Witnessed
+
+### 20. Site commissioning and handover
+On-site startup, loop calibration, operator training, and with handover. Available for MBH-supplied or third-party equipment.
+**Specs**: On-site · Any equipment
+
+
+## Fabrication
+
+### 21. Stainless steel tanks and vessels [MBH WORKSHOP]
+Sanitary-grade process vessels, storage tanks, blending tanks. Sizes to spec. clean welded, passivated, documented.
+**Specs**: Clean welded · Sizes to spec
+
+### 22. Process and utility piping and skid assembly [MBH WORKSHOP]
+Process and utility piping, pre-fabricated skids for site install.
+**Specs**: Pre-fabricated · Site install
+
+### 23. Structural steel platforms [MBH WORKSHOP]
+Platforms, walkways, and support structures. Carbon steel, galvanised or painted to spec.
+**Specs**: Carbon steel · To spec
+
+### 24. On-site mechanical erection [MBH WORKSHOP]
+Mechanical installation, rigging, and alignment at the buyer's facility with supervision.
+**Specs**: On-site · Supervised
+
+### 25. Insulation and cladding [MBH WORKSHOP]
+Thermal insulation and stainless-steel cladding of installed equipment and piping. Applied on-site.
+**Specs**: On-site · SS cladding
+
+
+## Utilities
+
+### 26. CIP system · standalone
+Automated and manual cleaning skid can clean one line upto multiple lines or tanks alltogether. Single to four circuits standard, expandable to six or eight. Multi-detergent, recipe-driven. Available standalone or retrofit.
+**Specs**: 1 to 4 circuits standard · Standalone or retrofit
+
+### 27. Water treatment module
+Filtration, reverse osmosis, ozonation, de-aeration for beverage-grade water. Configurable to raw-water analysis. Available standalone or line-integrated.
+**Specs**: RO · Ozonation · Standalone or integrated
+
+### 28. Chilled water skid
+Chilled water production and distribution for process cooling. Sizes to spec.
+**Specs**: Sizes to spec
+
+### 29. Steam distribution skid
+Steam distribution, condensate return, and pressure regulation. Sanitary or industrial grade.
+**Specs**: Sanitary or industrial
+
+### 30. Retrofit and modernisation service
+Line-by-line assessment for automation upgrade, consultancy, or module replacement. Available for any brand or installed equipment. Engineering and execution.
+**Specs**: Any brand · Engineering and execution
+
+### 31. Product recovery system
+Product recovery system designed to minimise waste and increase yield during product changeovers. Custom engineered.
+**Specs**: Minimise waste · Increase yield
