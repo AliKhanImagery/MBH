@@ -1,128 +1,131 @@
-import { Metadata } from 'next';
-import Script from 'next/script';
+import Header from "@/components/Header";
+import PageHero from "@/components/PageHero";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Enterprise CIP & Product Recovery Modernization | MBH Solutions',
-  description: 'Case study on enterprise CIP and product recovery modernization, featuring full-line installations and control migrations across top beverage companies.',
-  alternates: {
-    canonical: 'https://www.mbhsol.com/references/beverage-cip-recovery-modernization'
+  title: "Enterprise CIP & Product Recovery Modernization | MBH Solutions",
+  description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+};
+
+const techArticleSchema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.mbhsol.com/references/beverage-cip-recovery-modernization"
+  },
+  "headline": "Enterprise CIP & Product Recovery Modernization",
+  "description": "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+  "author": {
+    "@type": "Organization",
+    "name": "MBH Solutions",
+    "url": "https://www.mbhsol.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MBH Solutions",
+    "url": "https://www.mbhsol.com"
+  },
+  "mainEntity": {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does automated pigging improve yield recovery in beverage processing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Automated pigging systems recover residual product from pipelines before the CIP cycle begins, drastically reducing product loss and minimizing the biological load sent to wastewater treatment. This can increase yield recovery up to 98%."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are the benefits of migrating from Siemens S7-300 to S7-1500?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Migrating to the S7-1500 platform offers higher processing speeds, advanced integrated diagnostics, standardized PROFINET communication, and seamless integration into modern central SCADA systems, preventing obsolescence risks associated with legacy S7-300 hardware."
+        }
+      }
+    ]
   }
 };
 
-export default function BeverageCIPRecoveryModernizationPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://www.mbhsol.com/references/beverage-cip-recovery-modernization"
-    },
-    "headline": "Enterprise CIP & Product Recovery Modernization",
-    "description": "Technical case study detailing full-line installation, modernization, and control migrations across top food and beverage brands.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "MBH Solutions",
-      "url": "https://www.mbhsol.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.mbhsol.com/logo.png"
-      }
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "MBH Solutions",
-      "url": "https://www.mbhsol.com"
-    }
-  };
-
+export default function CIPRecoveryCaseStudy() {
   return (
-    <>
-      <Script
-        id="techarticle-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    <div style={{ backgroundColor: "#080B0F", minHeight: "100vh", color: "#ffffff" }}>
+      <Header />
+      <PageHero
+        eyebrow="Case Study"
+        title="Enterprise CIP & Product Recovery Modernization"
+        subtitle="Highlighting full-line installation, modernization, and control migrations across Coca-Cola, Pepsi, Meezan, and Dalda Foods (Cup Shup)."
       />
       
-      <main className="min-h-screen bg-slate-50 text-slate-900 pb-24">
-        {/* Hero Section */}
-        <section className="relative bg-blue-900 text-white py-24 px-6 sm:px-12 lg:px-24 overflow-hidden">
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-400 via-transparent to-transparent"></div>
-          <div className="relative max-w-5xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Enterprise CIP &amp; Product Recovery Modernization
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl leading-relaxed">
-              Full-line installation, modernization, and control migrations driving operational excellence across industry leaders including <strong>Coca-Cola</strong>, <strong>Pepsi</strong>, <strong>Meezan</strong>, and <strong>Dalda Foods (Cup Shup)</strong>.
-            </p>
-          </div>
+      <main className="mx-auto max-w-[1000px] px-6 py-20 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }}
+        />
+        
+        <section className="mb-16">
+          <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Technical Architecture</h2>
+          <p className="leading-relaxed mb-4" style={{ color: "#C7D0DA" }}>
+            Our modernization strategy for enterprise food and beverage clients involves end-to-end automation of product recovery and Cleaning-in-Place (CIP) systems. We implement highly efficient, multi-circuit CIP stations capable of handling flow rates up to 80,000 L/h, integrated with advanced automated pigging systems to maximize yield and minimize waste.
+          </p>
+          <p className="leading-relaxed" style={{ color: "#C7D0DA" }}>
+            A critical component of this architecture is the seamless migration of legacy control systems to modern Siemens PLC infrastructure. By upgrading from S7-300 to S7-1200 and S7-1500 controllers, and standardizing them into a central SCADA network, we deliver enhanced real-time telemetry, precise parameter control, and extensive diagnostic capabilities.
+          </p>
         </section>
 
-        {/* Technical Architecture Section */}
-        <section className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-24 py-16">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b border-slate-200 pb-4">
-            Technical Architecture
-          </h2>
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-700">Automated Pigging &amp; Product Recovery</h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Engineered for maximum product yield and minimal waste, our automated pigging systems integrate directly with existing pipework. The implementation guarantees sanitary transport while recovering up to 99% of residual product before the CIP cycle initiates.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3 text-blue-700">Multi-Circuit CIP Stations</h3>
-              <p className="text-slate-600 leading-relaxed mb-6">
-                Deployed modular, multi-circuit Clean-In-Place (CIP) stations capable of high-throughput operations up to <strong>80,000 L/h</strong>. These systems enable concurrent cleaning of multiple lines and tanks, significantly reducing turnaround times and ensuring uncompromised hygiene.
-              </p>
-            </div>
-            <div className="md:col-span-2">
-              <h3 className="text-xl font-semibold mb-3 text-blue-700">Siemens PLC &amp; SCADA Migrations</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Comprehensive control system upgrades to unify disparate plant operations. We migrated legacy controllers to modern <strong>Siemens PLC architectures (S7-300, S7-1200, and S7-1500)</strong>, bringing everything under a central, high-visibility SCADA environment. This provides operators with real-time telemetry, automated cycle reporting, and predictive maintenance insights.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Specifications Table Section */}
-        <section className="max-w-5xl mx-auto px-6 sm:px-12 lg:px-24 py-8">
-          <h2 className="text-3xl font-bold text-slate-800 mb-8 border-b border-slate-200 pb-4">
-            Performance Metrics &amp; Specifications
-          </h2>
-          <div className="overflow-x-auto shadow-sm rounded-lg border border-slate-200 bg-white">
+        <section className="mb-16">
+          <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Specifications & Results</h2>
+          <div className="overflow-x-auto rounded-lg border border-gray-800">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-slate-100 text-slate-700">
-                  <th className="py-4 px-6 font-semibold border-b border-slate-200">Metric / System</th>
-                  <th className="py-4 px-6 font-semibold border-b border-slate-200">Before Modernization</th>
-                  <th className="py-4 px-6 font-semibold border-b border-slate-200">After Modernization</th>
-                  <th className="py-4 px-6 font-semibold border-b border-slate-200">Impact</th>
+                <tr className="uppercase tracking-wider" style={{ backgroundColor: "rgba(21,38,84,0.35)", color: "#C87D00", fontSize: "12px", fontFamily: "var(--font-ibm-plex-mono)" }}>
+                  <th className="px-6 py-4 border-b border-gray-800 font-medium">Metric</th>
+                  <th className="px-6 py-4 border-b border-gray-800 font-medium">Before Modernization</th>
+                  <th className="px-6 py-4 border-b border-gray-800 font-medium">After Modernization</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-slate-900">Yield Recovery</td>
-                  <td className="py-4 px-6 text-slate-600">High residual waste</td>
-                  <td className="py-4 px-6 text-slate-600">Up to 99% product recovered</td>
-                  <td className="py-4 px-6 text-emerald-600 font-semibold">Massive ROI increase</td>
+              <tbody style={{ color: "#9BAAB5", fontSize: "15px" }}>
+                <tr className="hover:bg-white/5 transition-colors">
+                  <td className="px-6 py-4 border-b border-gray-800 font-medium text-white">Yield Recovery</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Manual draining, high product loss</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Automated pigging, up to 98% recovery</td>
                 </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-slate-900">CIP Cycle Automation</td>
-                  <td className="py-4 px-6 text-slate-600">Manual interventions, delayed phases</td>
-                  <td className="py-4 px-6 text-slate-600">Fully automated multi-circuit (80k L/h)</td>
-                  <td className="py-4 px-6 text-emerald-600 font-semibold">30% Downtime reduction</td>
+                <tr className="hover:bg-white/5 transition-colors">
+                  <td className="px-6 py-4 border-b border-gray-800 font-medium text-white">CIP Cycle Automation</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Manual intervention, 4-6 hours downtime</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Multi-circuit stations, &lt; 2 hours downtime</td>
                 </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="py-4 px-6 font-medium text-slate-900">PLC Telemetry</td>
-                  <td className="py-4 px-6 text-slate-600">Isolated loop controls</td>
-                  <td className="py-4 px-6 text-slate-600">Centralized S7-1500 / SCADA integration</td>
-                  <td className="py-4 px-6 text-emerald-600 font-semibold">Real-time visibility</td>
+                <tr className="hover:bg-white/5 transition-colors">
+                  <td className="px-6 py-4 border-gray-800 font-medium text-white">PLC Infrastructure & Telemetry</td>
+                  <td className="px-6 py-4 border-gray-800">Legacy S7-300, standalone HMI logs</td>
+                  <td className="px-6 py-4 border-gray-800">S7-1200 / S7-1500, Central SCADA & real-time telemetry</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </section>
+
+        <section>
+          <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Frequently Asked Questions</h2>
+          <div className="space-y-6">
+            <div className="border border-gray-800 p-6 rounded-lg bg-white/5">
+              <h3 className="text-lg font-medium text-white mb-2" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>How does automated pigging improve yield recovery in beverage processing?</h3>
+              <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>Automated pigging systems recover residual product from pipelines before the CIP cycle begins, drastically reducing product loss and minimizing the biological load sent to wastewater treatment. This can increase yield recovery up to 98%.</p>
+            </div>
+            <div className="border border-gray-800 p-6 rounded-lg bg-white/5">
+              <h3 className="text-lg font-medium text-white mb-2" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>What are the benefits of migrating from Siemens S7-300 to S7-1500?</h3>
+              <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>Migrating to the S7-1500 platform offers higher processing speeds, advanced integrated diagnostics, standardized PROFINET communication, and seamless integration into modern central SCADA systems, preventing obsolescence risks associated with legacy S7-300 hardware.</p>
+            </div>
+          </div>
+        </section>
       </main>
-    </>
+
+      <Contact />
+      <Footer />
+    </div>
   );
 }
