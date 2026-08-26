@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
+import ProcessSpineStepper from "@/components/ProcessSpineStepper";
 import ProcessSpine from "@/components/ProcessSpine";
 import ServiceSplit from "@/components/ServiceSplit";
 import FabricationSection from "@/components/FabricationSection";
@@ -18,6 +19,7 @@ export default function SolutionsPage() {
         image="/images/generated/solutions-banner.jpg"
         imageAlt="Stainless steel syrup tanks, process piping, and control panels in a beverage plant"
       />
+      <ProcessSpineStepper />
       {/* Image placeholder sits inside Pillar 01, under its eyebrow.
           Passed as a slot so the homepage's <ProcessSpine /> is unaffected.
           Replaced the SolutionsShowcase tile grid on this page only. */}
