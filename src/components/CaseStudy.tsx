@@ -3,7 +3,7 @@ import Image from "next/image";
 const DATA_POINTS = [
   { value: "Iran",            label: "Project Location" },
   { value: "Syrup Room + CIP", label: "Systems Delivered" },
-  { value: "Turnkey",         label: "Delivery Scope" },
+  { value: "Installation & Commissioning", label: "Delivery Scope" },
 ];
 
 // Supporting references. `image` shows a real photo; `tag` is the navy
