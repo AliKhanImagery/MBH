@@ -1,5 +1,7 @@
 "use client";
 
+import { Eyebrow } from "@/components/Eyebrow";
+
 const STEPS = [
   {
     title: "System Audit",
@@ -37,9 +39,9 @@ export default function ProcessSpineStepper() {
           
           {/* Left Side: Sticky Context */}
           <div className="flex min-w-0 flex-col lg:sticky lg:top-32 h-fit">
-            <span className="text-sm font-medium tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-ibm-plex-mono)", color: "#C87D00" }}>
-              01 — Project Execution
-            </span>
+            <div className="mb-4">
+              <Eyebrow variant="pillar" number="01" label="Project Execution" />
+            </div>
             <h2 className="text-4xl md:text-5xl font-medium text-white leading-tight">
               Methodology & Lifecycle
             </h2>

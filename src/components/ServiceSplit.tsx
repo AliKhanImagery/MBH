@@ -117,7 +117,7 @@ function AutomationSection({
           <div className="grid items-stretch gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.75fr)] lg:gap-14">
 
             <div className="flex min-w-0 flex-col">
-              <Eyebrow variant="pillar" number="02" label="Industrial Automation" />
+              <Eyebrow variant="pillar" number="03" label="Industrial Automation" />
 
               <h2 className="mt-4 max-w-prose text-anchor font-medium text-white">
                 {title}

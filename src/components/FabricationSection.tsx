@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CtaLink } from "@/components/CtaLink";
+import { Eyebrow } from "@/components/Eyebrow";
 
 const CAPABILITIES = [
   "Stainless steel and carbon steel tank and vessel fabrication",
@@ -31,19 +32,9 @@ export default function FabricationSection() {
             {/* ── Right: copy block (60%) ── */}
             <div>
               {/* Eyebrow */}
-              <p
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 10,
-                  letterSpacing: "0.5px",
-                  textTransform: "uppercase",
-                  color: "#C87D00",
-                  marginBottom: 20,
-                }}
-              >
-                Fabrication & Erection
-              </p>
+              <div className="mb-5">
+                <Eyebrow variant="pillar" number="04" label="Fabrication & Erection" />
+              </div>
 
               {/* H2 */}
               <h2

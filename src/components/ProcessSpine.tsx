@@ -80,7 +80,7 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
           {/* Pillar eyebrow */}
-          <Eyebrow variant="pillar" number="01" label="Beverage Process Systems" />
+          <Eyebrow variant="pillar" number="02" label="Beverage Process Systems" />
 
           {imageSlot ? <div className="mt-c5 mb-l1">{imageSlot}</div> : null}
 
