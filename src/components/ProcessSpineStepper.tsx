@@ -11,7 +11,7 @@ const STEPS = [
   {
     title: "Plant Layout",
     businessOutcome: "Custom Tank & Flow Routing",
-    technicalAnchor: "CONTIMAXX continuous dissolving & hygienic valve matrices",
+    technicalAnchor: "Continuous dissolving systems & hygienic valve matrices",
   },
   {
     title: "Local Erection",
