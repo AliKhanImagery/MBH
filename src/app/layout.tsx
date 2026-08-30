@@ -33,6 +33,9 @@ export const metadata: Metadata = {
     "Turnkey Syrup Rooms",
     "MBH Solutions"
   ],
+  alternates: {
+    canonical: 'https://www.mbhsol.com',
+  },
   openGraph: {
     title: "MBH Solutions | Industrial Automation & Engineering",
     description: "End-to-end PLC and SCADA-based automation and beverage process solutions.",
@@ -40,11 +43,20 @@ export const metadata: Metadata = {
     siteName: 'MBH Solutions',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/images/hero/hero.png',
+        width: 1200,
+        height: 630,
+        alt: 'MBH Solutions Industrial Automation and Beverage Process Systems',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: "MBH Solutions | Industrial Automation & Engineering",
     description: "End-to-end PLC and SCADA-based automation and beverage process solutions.",
+    images: ['/images/hero/hero.png'],
   },
   robots: {
     index: true,
@@ -52,13 +64,22 @@ export const metadata: Metadata = {
   }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "MBH Solutions",
-  url: "https://www.mbhsol.com",
-  description: "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries."
-};
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "MBH Solutions",
+    url: "https://www.mbhsol.com",
+    logo: "https://www.mbhsol.com/mbh-logo.png",
+    description: "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "MBH Solutions",
+    url: "https://www.mbhsol.com"
+  }
+];
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

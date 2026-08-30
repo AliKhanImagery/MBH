@@ -1,7 +1,6 @@
-import UnderMaintenance from "@/components/UnderMaintenance";
+import { notFound } from "next/navigation";
 
-// Catch-all route: renders for every path that isn't the homepage (/).
-// Replace individual route files as real pages are built out.
+// Catch-all route: triggers true HTTP 404 for unhandled paths to eliminate soft-404 crawl issues.
 export default function CatchAllPage() {
-  return <UnderMaintenance />;
+  notFound();
 }

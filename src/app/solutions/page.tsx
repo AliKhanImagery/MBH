@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -7,6 +8,31 @@ import ServiceSplit from "@/components/ServiceSplit";
 import FabricationSection from "@/components/FabricationSection";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Beverage Process Systems & Automation | Turnkey Syrup Rooms",
+  description:
+    "Turnkey engineering for CSD, juice, and syrup production lines — raw material intake, continuous inline blending, CIP recovery systems, and Siemens PLC automation.",
+  alternates: {
+    canonical: "https://www.mbhsol.com/solutions",
+  },
+  openGraph: {
+    title: "Beverage Process Systems & Automation | MBH Solutions",
+    description:
+      "Turnkey engineering for CSD, juice, and syrup production lines — from raw material intake through automation and CIP.",
+    url: "https://www.mbhsol.com/solutions",
+    siteName: "MBH Solutions",
+    images: [
+      {
+        url: "/images/generated/solutions-banner.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Stainless steel syrup tanks, process piping, and control panels in a beverage plant",
+      },
+    ],
+    type: "website",
+  },
+};
 
 export default function SolutionsPage() {
   return (

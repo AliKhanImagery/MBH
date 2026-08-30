@@ -7,6 +7,16 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Enterprise CIP & Product Recovery Modernization | MBH Solutions",
   description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+  alternates: {
+    canonical: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",
+  },
+  openGraph: {
+    title: "Enterprise CIP & Product Recovery Modernization | MBH Solutions",
+    description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+    url: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",
+    siteName: "MBH Solutions",
+    type: "article",
+  },
 };
 
 const techArticleSchema = {
