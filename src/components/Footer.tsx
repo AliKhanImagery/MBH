@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 const COLUMNS = [
   {
     title: "Company",
@@ -9,10 +12,10 @@ const COLUMNS = [
   {
     title: "Solutions",
     links: [
-      { label: "Process Systems", href: "/solutions" },
-      { label: "Automation", href: "/solutions" },
-      { label: "Fabrication", href: "/solutions" },
-      { label: "CIP Systems", href: "/solutions" },
+      { label: "Process Systems", href: "/solutions#beverage-process" },
+      { label: "Automation", href: "/solutions#automation" },
+      { label: "Fabrication", href: "/solutions#fabrication" },
+      { label: "CIP Systems", href: "/solutions#beverage-process" },
     ],
   },
   {
@@ -27,6 +30,7 @@ const COLUMNS = [
   {
     title: "Resources",
     links: [
+      { label: "Catalogue", href: "/catalogue" },
       { label: "References", href: "/references" },
       { label: "Technology Partners", href: "/partners" },
       { label: "Products", href: "/products" },
@@ -41,7 +45,13 @@ export default function Footer() {
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between">
           <div className="lg:w-56 lg:shrink-0">
             <div>
-              <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 32, objectFit: "contain" }} />
+              <Image
+                src="/mbh-logo.png"
+                alt="MBH Solutions"
+                width={160}
+                height={32}
+                style={{ height: 32, width: "auto", objectFit: "contain" }}
+              />
             </div>
             <p className="text-body mt-3 text-white/40" style={{ fontSize: 13 }}>
               Industrial Automation &amp; Process Systems<br />
@@ -57,12 +67,21 @@ export default function Footer() {
                 <ul className="mt-4 space-y-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <a
-                        href={link.href}
-                        className="text-nav-link text-white/45 transition-colors hover:text-white"
-                      >
-                        {link.label}
-                      </a>
+                      {link.href.startsWith("#") ? (
+                        <a
+                          href={link.href}
+                          className="text-nav-link text-white/45 transition-colors hover:text-white"
+                        >
+                          {link.label}
+                        </a>
+                      ) : (
+                        <Link
+                          href={link.href}
+                          className="text-nav-link text-white/45 transition-colors hover:text-white"
+                        >
+                          {link.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>

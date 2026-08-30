@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CtaLink } from "@/components/CtaLink";
 
 const INDUSTRIES = [
@@ -85,9 +86,9 @@ export default function Industries() {
           {/* ── Industry row ── */}
           <div className="mbh-ind-list" style={{ marginTop: 48 }}>
             {INDUSTRIES.map((name) => (
-              <a key={name} href="/industries" className="mbh-ind-item">
+              <Link key={name} href="/industries" className="mbh-ind-item">
                 {name}
-              </a>
+              </Link>
             ))}
           </div>
 

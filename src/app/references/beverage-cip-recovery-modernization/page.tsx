@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import Contact from "@/components/Contact";
@@ -71,11 +72,20 @@ export default function CIPRecoveryCaseStudy() {
         subtitle="Highlighting full-line installation, modernization, and control migrations across Coca-Cola, Pepsi, Meezan, and Dalda Foods (Cup Shup)."
       />
       
-      <main className="mx-auto max-w-[1000px] px-6 py-20 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
+      <main className="mx-auto max-w-[1000px] px-6 py-16 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(techArticleSchema) }}
         />
+
+        <div className="mb-10">
+          <Link
+            href="/references"
+            className="inline-flex items-center gap-2 text-sm font-mono text-amber hover:underline uppercase tracking-wider"
+          >
+            ← Back to all projects &amp; references
+          </Link>
+        </div>
         
         <section className="mb-16">
           <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Technical Architecture</h2>

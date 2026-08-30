@@ -13,7 +13,7 @@ type Partner = {
 const PARTNERS: Partner[] = [
   { name: "SSP",               logoUrl: "/logo-ssp.png",              fallback: "SSP" },
   { name: "GEA",               logoUrl: "/logo-gea.svg",              fallback: "GEA" },
-  { name: "Siemens",           logoUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Siemens-logo.svg", fallback: "Siemens" },
+  { name: "Siemens",           logoUrl: "/logo-siemens.svg",          fallback: "Siemens" },
   { name: "Endress+Hauser",    logoUrl: "/logo-Endress+Hauser.svg",   fallback: "Endress+Hauser" },
   { name: "Fristam",           logoUrl: "/logo-Fristam.webp",         fallback: "Fristam" },
   { name: "Hilge",             logoUrl: "/logo-Hilge.png",            fallback: "Hilge" },

@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const LINKS = [
   { label: "Solutions",            href: "/solutions" },
@@ -18,9 +20,16 @@ export default function Header() {
     <header className="bg-near-black">
       {/* Row 1 — logo, WhatsApp, Enquire Now (mobile: logo + menu toggle) */}
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-3 md:px-12">
-        <a href="/" aria-label="MBH Solutions — home" className="text-white">
-          <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 32, objectFit: "contain" }} />
-        </a>
+        <Link href="/" aria-label="MBH Solutions — home" className="text-white flex items-center">
+          <Image
+            src="/mbh-logo.png"
+            alt="MBH Solutions"
+            width={160}
+            height={32}
+            style={{ height: 32, width: "auto", objectFit: "contain" }}
+            priority
+          />
+        </Link>
 
         <div className="flex items-center gap-3">
           <a
@@ -68,12 +77,21 @@ export default function Header() {
           <ul className="flex items-center justify-end gap-8 py-4">
             {LINKS.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-nav-link text-white/45 transition-colors hover:text-white"
-                >
-                  {link.label}
-                </a>
+                {link.href.startsWith("#") ? (
+                  <a
+                    href={link.href}
+                    className="text-nav-link text-white/45 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    className="text-nav-link text-white/45 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
@@ -86,13 +104,23 @@ export default function Header() {
           <ul className="flex flex-col gap-1">
             {LINKS.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="text-nav-link block py-3 text-white/60 transition-colors hover:text-white"
-                >
-                  {link.label}
-                </a>
+                {link.href.startsWith("#") ? (
+                  <a
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-nav-link block py-3 text-white/60 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    className="text-nav-link block py-3 text-white/60 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>

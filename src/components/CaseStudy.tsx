@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { CtaLink } from "@/components/CtaLink";
 
 const DATA_POINTS = [
   { value: "Iran",            label: "Project Location" },
@@ -15,6 +17,7 @@ const SUPPORTING = [
     meta: "Pakistan · PLC · SCADA · Panels",
     tag: "PEPSI",
     image: "/references/pepsi-northern.png",
+    href: "/references/beverage-cip-recovery-modernization",
   },
   {
     client: "Fauji Foods",
@@ -22,6 +25,7 @@ const SUPPORTING = [
     meta: "Pakistan · PLC · HMI · SCADA",
     tag: "FAUJI FOODS",
     image: "/references/fauji-foods.jpg",
+    href: "/references/beverage-cip-recovery-modernization",
   },
 ];
 
@@ -154,6 +158,13 @@ export default function CaseStudy() {
                 ))}
               </div>
 
+              {/* CTA Link to Full Technical Case Study */}
+              <div className="mt-8">
+                <CtaLink href="/references/beverage-cip-recovery-modernization">
+                  Read Technical Case Study: Enterprise CIP Modernization
+                </CtaLink>
+              </div>
+
             </div>
           </div>
 
@@ -170,12 +181,16 @@ export default function CaseStudy() {
               marginBottom: 24,
             }}
           >
-            More References
+            More References &amp; Case Studies
           </p>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {SUPPORTING.map((ref) => (
-              <div key={ref.client}>
+              <Link
+                key={ref.client}
+                href={ref.href}
+                className="group block text-inherit transition-transform hover:-translate-y-0.5"
+              >
                 {/* Reference photo, or navy placeholder if none set */}
                 <div
                   style={{
@@ -195,7 +210,7 @@ export default function CaseStudy() {
                       src={ref.image}
                       alt={`${ref.client} — ${ref.heading}`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   ) : (
@@ -214,6 +229,7 @@ export default function CaseStudy() {
                 </div>
 
                 <h3
+                  className="group-hover:text-amber transition-colors"
                   style={{
                     fontWeight: 500,
                     fontSize: 18,
@@ -250,7 +266,7 @@ export default function CaseStudy() {
                 >
                   {ref.meta}
                 </p>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

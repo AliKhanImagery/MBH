@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactNode, useRef } from "react";
+import Link from "next/link";
 import { Eyebrow } from "@/components/Eyebrow";
 import { CtaLink } from "@/components/CtaLink";
 
@@ -35,12 +36,13 @@ const TILE_HEIGHT = 306;
 const TILE_PAD    = 26;
 
 type ProcessSpineProps = {
+  id?: string;
   /** Optional block rendered between the pillar eyebrow and the anchor H2.
    *  Used by /solutions to host an image; the homepage passes nothing. */
   imageSlot?: ReactNode;
 };
 
-export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
+export default function ProcessSpine({ id = "beverage-process", imageSlot }: ProcessSpineProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollRight = () => {
@@ -76,7 +78,7 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
         .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
       `}</style>
 
-      <section style={{ position: "relative", background: "#ffffff", paddingTop: 48, paddingBottom: 80, overflow: "hidden" }}>
+      <section id={id} style={{ position: "relative", background: "#ffffff", paddingTop: 48, paddingBottom: 80, overflow: "hidden" }}>
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
 
           {/* Pillar eyebrow */}
@@ -108,7 +110,7 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
                   const hi = tile.highlight ?? false;
 
                 return (
-                  <a
+                  <Link
                     key={tile.code}
                     href="/solutions"
                     className={hi ? "mbh-tile mbh-tile-s9" : "mbh-tile"}
@@ -178,7 +180,7 @@ export default function ProcessSpine({ imageSlot }: ProcessSpineProps) {
                     }}>
                       {tile.desc}
                     </span>
-                  </a>
+                  </Link>
                 );
               })}
               </div>

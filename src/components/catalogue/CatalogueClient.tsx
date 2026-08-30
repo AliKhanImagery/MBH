@@ -18,7 +18,7 @@ const HOW_TO_ORDER = [
   {
     step: "01",
     title: "Pick a line item",
-    body: "Browse by category or scroll the full catalogue below. 32 items available individually or as a turnkey package.",
+    body: "Browse by category or scroll the full catalogue below. 31 items available individually or as a turnkey package.",
   },
   {
     step: "02",

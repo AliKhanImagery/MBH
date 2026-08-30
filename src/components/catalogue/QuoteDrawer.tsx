@@ -1,9 +1,9 @@
 "use client";
 
-import { type FormEvent, useEffect, useRef, useState } from "react";
+import { type FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import type { CatalogueItem } from "@/data/catalogue-items";
 
-const SALES_EMAIL = "sales@mbhsolutions.pk";
+const SALES_EMAIL = "sales@mbhsol.com";
 
 export type DrawerMode = "item" | "generic" | "bulk" | "call";
 
@@ -49,10 +49,10 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
   const restoreFocusRef = useRef<HTMLElement | null>(null);
   const copy = drawerCopy(mode, item);
 
-  // Reset the success state whenever a fresh drawer is opened.
-  useEffect(() => {
-    if (open) setSubmitted(false);
-  }, [open, mode, item]);
+  const handleClose = useCallback(() => {
+    setSubmitted(false);
+    onClose();
+  }, [onClose]);
 
   // Modal behaviour while open: lock scroll, move focus into the panel, trap
   // Tab within it, close on Escape, and restore focus to the trigger on close.
@@ -63,7 +63,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
 
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
-        onClose();
+        handleClose();
         return;
       }
       if (e.key === "Tab" && panelRef.current) {
@@ -92,7 +92,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
       document.body.style.overflow = prevOverflow;
       restoreFocusRef.current?.focus?.();
     };
-  }, [open, onClose]);
+  }, [open, handleClose]);
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -144,7 +144,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
       <button
         type="button"
         aria-label="Close"
-        onClick={onClose}
+        onClick={handleClose}
         className="absolute inset-0 h-full w-full cursor-default bg-black/60"
       />
 
@@ -169,7 +169,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
           <button
             type="button"
             aria-label="Close"
-            onClick={onClose}
+            onClick={handleClose}
             className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-white transition-colors hover:border-white/25 hover:bg-white/5"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
@@ -192,7 +192,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
             </p>
             <button
               type="button"
-              onClick={onClose}
+              onClick={handleClose}
               className="text-cta mt-6 rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/25 hover:bg-white/5"
             >
               Close

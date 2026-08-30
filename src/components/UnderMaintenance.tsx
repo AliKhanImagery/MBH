@@ -1,3 +1,6 @@
+import Link from "next/link";
+import Image from "next/image";
+
 export default function UnderMaintenance() {
   return (
     <div
@@ -13,8 +16,14 @@ export default function UnderMaintenance() {
       <div style={{ textAlign: "center", maxWidth: 560 }}>
 
         {/* Logo */}
-        <div>
-          <img src="/mbh-logo.png" alt="MBH Solutions" style={{ height: 40, objectFit: "contain" }} />
+        <div className="flex justify-center">
+          <Image
+            src="/mbh-logo.png"
+            alt="MBH Solutions"
+            width={200}
+            height={40}
+            style={{ height: 40, width: "auto", objectFit: "contain" }}
+          />
         </div>
 
         {/* 32px gap */}
@@ -53,18 +62,18 @@ export default function UnderMaintenance() {
             gap: 32,
           }}
         >
-          <a
+          <Link
             href="/"
             style={{ fontWeight: 500, fontSize: 14, color: "#C87D00", textDecoration: "none" }}
           >
             Return to Home
-          </a>
-          <a
+          </Link>
+          <Link
             href="/#contact"
             style={{ fontWeight: 500, fontSize: 14, color: "#9BAAB5", textDecoration: "none" }}
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
       </div>

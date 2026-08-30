@@ -50,6 +50,7 @@ export default function SolutionsPage() {
           Passed as a slot so the homepage's <ProcessSpine /> is unaffected.
           Replaced the SolutionsShowcase tile grid on this page only. */}
       <ProcessSpine
+        id="process-modules"
         imageSlot={
           <Image
             src="/images/sections/beverage-process-line.png"

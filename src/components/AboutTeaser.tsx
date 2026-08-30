@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CtaLink } from "@/components/CtaLink";
 
 export default function AboutTeaser() {
@@ -7,24 +8,31 @@ export default function AboutTeaser() {
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           <div className="grid items-stretch gap-12 lg:grid-cols-[2fr_3fr]">
 
-            {/* ── Left: image placeholder (40%) ── */}
-            <div style={{
-              background: "#080B0F",
-              border: "1px solid #1E3352",
-              minHeight: 360,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}>
-              <span style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 400,
-                fontSize: 11,
-                color: "#1E3352",
-                letterSpacing: "0.06em",
-              }}>
-                TEAM · IMG
-              </span>
+            {/* ── Left: engineering image (40%) ── */}
+            <div
+              style={{
+                position: "relative",
+                minHeight: 360,
+                overflow: "hidden",
+                border: "1px solid #1E3352",
+                backgroundColor: "#080B0F",
+              }}
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80"
+                alt="MBH Solutions industrial engineering and automation team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(180deg, rgba(8,11,15,0) 60%, rgba(8,11,15,0.7) 100%)",
+                }}
+              />
             </div>
 
             {/* ── Right: copy block (60%) ── */}

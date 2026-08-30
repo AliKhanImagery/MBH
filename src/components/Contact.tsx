@@ -5,7 +5,7 @@ import { type FormEvent, useState } from "react";
 const OFFICES = [
   {
     name: "Lahore — Head Office",
-    lines: ["Industrial Area, Lahore, Pakistan", "+92 300 000 0000", "info@mbhsolutions.pk"],
+    lines: ["Industrial Area, Lahore, Pakistan", "+92 332 2007373", "sales@mbhsol.com"],
   },
 ];
 
@@ -26,7 +26,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\n${details}`
     );
-    window.location.href = `mailto:info@mbhsolutions.pk?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sales@mbhsol.com?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
