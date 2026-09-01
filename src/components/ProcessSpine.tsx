@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useRef } from "react";
+import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Eyebrow } from "@/components/Eyebrow";
 import { CtaLink } from "@/components/CtaLink";
@@ -44,11 +44,42 @@ type ProcessSpineProps = {
 
 export default function ProcessSpine({ id = "beverage-process", imageSlot }: ProcessSpineProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const { scrollLeft, scrollWidth, clientWidth } = el;
+    setCanScrollLeft(scrollLeft > 6);
+    setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 6);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    updateScrollState();
+
+    el.addEventListener("scroll", updateScrollState, { passive: true });
+    window.addEventListener("resize", updateScrollState);
+
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      window.removeEventListener("resize", updateScrollState);
+    };
+  }, [updateScrollState]);
+
+  const scrollLeft = () => {
+    const el = scrollRef.current;
+    if (!el) return;
+    el.scrollBy({ left: -Math.max(el.clientWidth * 0.75, 240), behavior: "smooth" });
+  };
 
   const scrollRight = () => {
     const el = scrollRef.current;
     if (!el) return;
-    el.scrollBy({ left: Math.max(el.clientWidth * 0.8, 240), behavior: "smooth" });
+    el.scrollBy({ left: Math.max(el.clientWidth * 0.75, 240), behavior: "smooth" });
   };
 
   return (
@@ -57,7 +88,7 @@ export default function ProcessSpine({ id = "beverage-process", imageSlot }: Pro
       <style>{`
         .mbh-tile {
           background-color: #0D1B2E;
-          transition: background-color 200ms ease;
+          transition: background-color 200ms ease, transform 200ms ease;
           text-decoration: none;
           cursor: pointer;
           /* Small cosmetic diagonal cut on the top-right corner */
@@ -71,11 +102,53 @@ export default function ProcessSpine({ id = "beverage-process", imageSlot }: Pro
         }
         .mbh-tile-s9:hover { background-color: #1E3352; }
 
-        .mbh-spine-scroll { overflow-x: auto; }
+        .mbh-spine-scroll { 
+          overflow-x: auto;
+          scroll-behavior: smooth;
+        }
         .mbh-spine-scroll::-webkit-scrollbar { display: none; }
         .mbh-spine-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 
         .mbh-tile:hover .mbh-tile-img { opacity: 0.60; }
+
+        /* Industrial Nav Arrows */
+        .mbh-nav-btn {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          width: 52px;
+          height: 52px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #0D1B2E;
+          border: 1px solid rgba(255,255,255,0.12);
+          box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+          transition: all 180ms ease;
+          cursor: pointer;
+        }
+        .mbh-nav-btn:hover:not(:disabled) {
+          background-color: #C87D00;
+          border-color: #C87D00;
+          box-shadow: 0 4px 20px rgba(200,125,0,0.35);
+        }
+        .mbh-nav-btn:active:not(:disabled) {
+          transform: translateY(-50%) scale(0.92);
+        }
+        .mbh-nav-btn:disabled {
+          opacity: 0.15;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+        .mbh-nav-btn-left {
+          left: 12px;
+          clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%, 0 12px);
+        }
+        .mbh-nav-btn-right {
+          right: 12px;
+          clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+        }
       `}</style>
 
       <section id={id} style={{ position: "relative", background: "#ffffff", paddingTop: 48, paddingBottom: 80, overflow: "hidden" }}>
@@ -102,8 +175,22 @@ export default function ProcessSpine({ id = "beverage-process", imageSlot }: Pro
             Each module is available as a turnkey solution or integrated into your existing process line.
           </p>
 
-          {/* Carousel with a floating scroll-right control */}
+          {/* Carousel with bidirectional floating scroll controls */}
           <div style={{ position: "relative", marginTop: 12 }}>
+            {/* Floating scroll-left control */}
+            <button
+              type="button"
+              onClick={scrollLeft}
+              disabled={!canScrollLeft}
+              aria-label="Scroll process modules left"
+              aria-disabled={!canScrollLeft}
+              className="mbh-nav-btn mbh-nav-btn-left"
+            >
+              <svg width="24" height="12" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M32 7H4m0 0l5.5-5.5M4 7l5.5 5.5" stroke="#ffffff" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+
             <div className="mbh-spine-scroll" ref={scrollRef}>
               <div style={{ display: "flex", flexDirection: "row", gap: 2 }}>
                 {TILES.map((tile) => {
@@ -190,26 +277,13 @@ export default function ProcessSpine({ id = "beverage-process", imageSlot }: Pro
             <button
               type="button"
               onClick={scrollRight}
+              disabled={!canScrollRight}
               aria-label="Scroll process modules right"
-              style={{
-                position: "absolute",
-                top: "50%",
-                right: 16,
-                transform: "translateY(-50%)",
-                zIndex: 10,
-                width: 64,
-                height: 64,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                backgroundColor: "#0D1B2E",
-                border: "none",
-                cursor: "pointer",
-                clipPath: "polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 14px))",
-              }}
+              aria-disabled={!canScrollRight}
+              className="mbh-nav-btn mbh-nav-btn-right"
             >
-              <svg width="28" height="14" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <svg width="24" height="12" viewBox="0 0 32 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M0 7h28m0 0l-5.5-5.5M28 7l-5.5 5.5" stroke="#ffffff" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
           </div>
