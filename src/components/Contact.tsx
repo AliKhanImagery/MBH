@@ -11,23 +11,41 @@ const OFFICES = [
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const name = fd.get("name") as string;
-    const company = fd.get("company") as string;
-    const email = fd.get("email") as string;
-    const details = fd.get("details") as string;
+    setIsSubmitting(true);
+    setErrorMessage(null);
 
-    const subject = encodeURIComponent(
-      `Enquiry from ${name}${company ? ` — ${company}` : ""}`
-    );
-    const body = encodeURIComponent(
-      `Name: ${name}\nCompany: ${company}\nEmail: ${email}\n\n${details}`
-    );
-    window.location.href = `mailto:sales@mbhsol.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    const fd = new FormData(e.currentTarget);
+    const name = (fd.get("name") as string) || "";
+    const company = (fd.get("company") as string) || "";
+    const email = (fd.get("email") as string) || "";
+    const details = (fd.get("details") as string) || "";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, company, email, details }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit enquiry.");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      console.error("Form submit error:", err);
+      const msg = err instanceof Error ? err.message : "Unable to send enquiry. Please try again or email sales@mbhsol.com.";
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -66,10 +84,14 @@ export default function Contact() {
           {submitted ? (
             <div className="flex items-center justify-center rounded-lg border border-white/10 bg-near-black p-8">
               <div className="text-center">
+                <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber/10 text-amber">
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
                 <p className="text-h3 text-white">Thank you for your enquiry</p>
-                <p className="text-body mt-2 text-white/55">
-                  Your email client should have opened with the details pre-filled.
-                  We will respond within one business day.
+                <p className="text-body mt-2 text-white/55 max-w-md mx-auto">
+                  Our engineering team has received your project details. We will review your requirements and respond within one business day.
                 </p>
                 <button
                   type="button"
@@ -82,14 +104,24 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="rounded-lg border border-white/10 bg-near-black p-8">
+              {errorMessage && (
+                <div className="mb-6 rounded-md border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
+                  <p className="font-medium">{errorMessage}</p>
+                  <p className="mt-1 text-xs text-red-400">
+                    You can also email us directly at <a href="mailto:sales@mbhsol.com" className="underline font-semibold">sales@mbhsol.com</a> or WhatsApp <a href="https://wa.me/923322007373" className="underline font-semibold">+92 332 2007373</a>.
+                  </p>
+                </div>
+              )}
+
               <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                 <label className="block">
-                  <span className="text-data text-steel-text">Name</span>
+                  <span className="text-data text-steel-text">Name*</span>
                   <input
                     name="name"
                     type="text"
                     required
-                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue disabled:opacity-50"
                     placeholder="Full name"
                   />
                 </label>
@@ -98,27 +130,30 @@ export default function Contact() {
                   <input
                     name="company"
                     type="text"
-                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue disabled:opacity-50"
                     placeholder="Company name"
                   />
                 </label>
                 <label className="block sm:col-span-2">
-                  <span className="text-data text-steel-text">Email</span>
+                  <span className="text-data text-steel-text">Email*</span>
                   <input
                     name="email"
                     type="email"
                     required
-                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue disabled:opacity-50"
                     placeholder="you@company.com"
                   />
                 </label>
                 <label className="block sm:col-span-2">
-                  <span className="text-data text-steel-text">Project Details</span>
+                  <span className="text-data text-steel-text">Project Details*</span>
                   <textarea
                     name="details"
                     rows={4}
                     required
-                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue"
+                    disabled={isSubmitting}
+                    className="mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-body text-white outline-none focus:border-brand-blue disabled:opacity-50"
                     placeholder="Briefly describe the facility and scope"
                   />
                 </label>
@@ -126,9 +161,20 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="text-cta mt-6 w-full bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light sm:w-auto"
+                disabled={isSubmitting}
+                className="text-cta mt-6 inline-flex items-center justify-center gap-2 w-full bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light disabled:opacity-50 sm:w-auto"
               >
-                Enquire Now
+                {isSubmitting ? (
+                  <>
+                    <svg className="h-4 w-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                    </svg>
+                    <span>Sending Enquiry...</span>
+                  </>
+                ) : (
+                  <span>Enquire Now</span>
+                )}
               </button>
             </form>
           )}

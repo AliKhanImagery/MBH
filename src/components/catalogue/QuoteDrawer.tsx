@@ -45,12 +45,15 @@ function drawerCopy(mode: DrawerMode, item: CatalogueItem | null) {
 
 export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const restoreFocusRef = useRef<HTMLElement | null>(null);
   const copy = drawerCopy(mode, item);
 
   const handleClose = useCallback(() => {
     setSubmitted(false);
+    setErrorMessage(null);
     onClose();
   }, [onClose]);
 
@@ -94,41 +97,44 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
     };
   }, [open, handleClose]);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
-    const name = (fd.get("name") as string) ?? "";
-    const company = (fd.get("company") as string) ?? "";
-    const email = (fd.get("email") as string) ?? "";
-    const phone = (fd.get("phone") as string) ?? "";
-    const message = (fd.get("message") as string) ?? "";
-    const pageUrl = typeof window !== "undefined" ? window.location.href : "";
-    const tag = item ? item.id : "GENERAL";
-    const label = item ? item.name : "General enquiry";
+    setIsSubmitting(true);
+    setErrorMessage(null);
 
-    // TODO(backlog): replace this mailto with a POST to /api/quote (Resend).
-    // The route will send to sales@mbhsolutions.pk with the same subject/body,
-    // forward the attached RFQ file, and remove the buyer's own-client step.
-    const subject = encodeURIComponent(
-      `[QUOTE REQUEST] ${tag} · ${label}${company ? ` · ${company}` : ""}`
-    );
-    const bodyLines = [
-      `Item ID: ${tag}`,
-      `Item: ${label}`,
-      item ? `Spec: ${item.spec}` : null,
-      "",
-      `Name: ${name}`,
-      `Company: ${company}`,
-      `Email: ${email}`,
-      phone ? `Phone: ${phone}` : null,
-      "",
-      message,
-      "",
-      `Page: ${pageUrl}`,
-    ].filter((l) => l !== null);
-    const body = encodeURIComponent(bodyLines.join("\n"));
-    window.location.href = `mailto:${SALES_EMAIL}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    const fd = new FormData(e.currentTarget);
+    if (item) {
+      fd.append("itemId", item.id);
+      fd.append("itemName", item.name);
+      fd.append("itemSpec", item.spec);
+    }
+    if (typeof window !== "undefined") {
+      fd.append("pageUrl", window.location.href);
+    }
+
+    try {
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        body: fd,
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to submit quote request.");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      console.error("Quote submit error:", err);
+      const msg =
+        err instanceof Error
+          ? err.message
+          : `Unable to send quote request. Please try again or email ${SALES_EMAIL}.`;
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   if (!open) return null;
@@ -185,21 +191,41 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
 
         {submitted ? (
           <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-            <p className="text-h3 text-white">Enquiry ready to send</p>
-            <p className="text-body mt-2 text-white/55">
-              Your email client should have opened with the request pre-filled to{" "}
-              {SALES_EMAIL}. Press send and we&apos;ll reply within one business day.
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber/10 text-amber">
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p className="text-h3 text-white">Quote Request Received</p>
+            <p className="text-body mt-2 text-white/60">
+              {item ? (
+                <>Your technical proposal request for <strong>{item.id}</strong> ({item.name}) has been received.</>
+              ) : (
+                <>Your scoping enquiry has been received.</>
+              )}
+            </p>
+            <p className="text-sm mt-3 text-amber font-mono">
+              Indicative price and scope draft within 1 business day.
             </p>
             <button
               type="button"
               onClick={handleClose}
               className="text-cta mt-6 rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/25 hover:bg-white/5"
             >
-              Close
+              Done
             </button>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-1 flex-col px-6 py-6">
+            {errorMessage && (
+              <div className="mb-5 rounded-md border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
+                <p className="font-medium">{errorMessage}</p>
+                <p className="mt-1 text-xs text-red-400">
+                  You can also email your RFQ directly to <a href="mailto:sales@mbhsol.com" className="underline font-semibold">sales@mbhsol.com</a>.
+                </p>
+              </div>
+            )}
+
             {/* Item context block */}
             {item && (
               <div className="mb-6 border border-white/10 bg-white/[0.03] p-4">
@@ -222,8 +248,9 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                   name="name"
                   type="text"
                   required
+                  disabled={isSubmitting}
                   placeholder="Full name"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue"
+                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
                 />
               </label>
               <label className="block">
@@ -232,8 +259,9 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                   name="company"
                   type="text"
                   required
+                  disabled={isSubmitting}
                   placeholder="Company name"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue"
+                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
                 />
               </label>
               <label className="block">
@@ -242,8 +270,9 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                   name="email"
                   type="email"
                   required
+                  disabled={isSubmitting}
                   placeholder="you@company.com"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue"
+                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
                 />
               </label>
               <label className="block">
@@ -251,26 +280,26 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                 <input
                   name="phone"
                   type="tel"
+                  disabled={isSubmitting}
                   placeholder="+92 …"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue"
+                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
                 />
               </label>
 
-              {/* File upload — design only until the /api/quote (Resend) route
-                  is built. mailto cannot carry an attachment. */}
+              {/* File upload — enabled for spec sheets & RFQ packages up to 10MB */}
               <label className="block">
                 <span className="text-data text-steel-text">
-                  Attach spec / RFQ (optional)
+                  Attach spec / RFQ package (optional)
                 </span>
                 <input
                   name="attachment"
                   type="file"
                   accept=".pdf,.doc,.docx,.xls,.xlsx"
-                  disabled
-                  className="text-body mt-2 w-full cursor-not-allowed rounded-md border border-dashed border-white/10 bg-transparent px-3 py-2 text-white/40 outline-none file:mr-3 file:rounded file:border-0 file:bg-white/5 file:px-3 file:py-1 file:text-white/40"
+                  disabled={isSubmitting}
+                  className="text-body mt-2 w-full rounded-md border border-dashed border-white/20 bg-white/[0.02] px-3 py-2 text-white/70 outline-none file:mr-3 file:rounded file:border-0 file:bg-amber/20 file:px-3 file:py-1 file:text-xs file:font-mono file:text-amber hover:border-amber/50 cursor-pointer disabled:opacity-50"
                 />
                 <span className="mt-1 block font-mono text-[11px] text-steel-text">
-                  Upload enabled once quote routing goes live — email the file for now.
+                  Supports PDF, Word, or Excel up to 10MB.
                 </span>
               </label>
 
@@ -281,8 +310,9 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                 <textarea
                   name="message"
                   rows={4}
+                  disabled={isSubmitting}
                   defaultValue={copy.message}
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue"
+                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
                 />
               </label>
             </div>
@@ -293,9 +323,20 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
 
             <button
               type="submit"
-              className="text-cta mt-4 w-full bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light"
+              disabled={isSubmitting}
+              className="text-cta mt-4 inline-flex items-center justify-center gap-2 w-full bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light disabled:opacity-50 cursor-pointer"
             >
-              Send Request
+              {isSubmitting ? (
+                <>
+                  <svg className="h-4 w-4 animate-spin text-white" viewBox="0 0 24 24" fill="none">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                  </svg>
+                  <span>Sending Request...</span>
+                </>
+              ) : (
+                <span>Send Request</span>
+              )}
             </button>
           </form>
         )}
