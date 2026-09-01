@@ -11,6 +11,14 @@ export async function POST(req: Request) {
   try {
     const formData = await req.formData();
 
+    const _gotcha = formData.get("_gotcha")?.toString()?.trim();
+    if (_gotcha) {
+      return NextResponse.json({
+        success: true,
+        message: "Your quote request has been received.",
+      });
+    }
+
     const name = formData.get("name")?.toString()?.trim() || "";
     const company = formData.get("company")?.toString()?.trim() || "";
     const email = formData.get("email")?.toString()?.trim() || "";
@@ -90,11 +98,27 @@ export async function POST(req: Request) {
         });
       }
 
+      const salesText = `
+MBH SOLUTIONS — QUOTE / RFQ REQUEST
+Target Item: ${payload.itemId || "General RFQ"} (${payload.itemName || "N/A"})
+${payload.itemSpec ? `Spec: ${payload.itemSpec}\n` : ""}Buyer: ${payload.name}
+Company: ${payload.company}
+Email: ${payload.email}
+Phone: ${payload.phone || "Not provided"}
+Attachment: ${payload.fileName || "None"}
+
+Message:
+${payload.message || "Please prepare indicative proposal and price."}
+
+Submitted: ${payload.date}
+      `.trim();
+
       const salesResult = await resend.emails.send({
         from: SENDER_EMAIL,
         to: [RECEIVER_EMAIL],
         replyTo: payload.email,
         subject: `[QUOTE REQUEST] ${payload.itemId ? `${payload.itemId} · ` : ""}${payload.company}`,
+        text: salesText,
         html: salesQuoteNotificationEmail(payload),
         attachments: attachmentsList.length > 0 ? attachmentsList : undefined,
       });
@@ -108,7 +132,8 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: SENDER_EMAIL,
           to: [payload.email],
-          subject: `Quote Request Received: ${payload.itemId ? `${payload.itemId}` : "MBH Solutions Proposal"}`,
+          subject: `Quote Request Registered: ${payload.itemId ? `${payload.itemId}` : "MBH Solutions Proposal"}`,
+          text: `Dear ${payload.name},\n\nThank you for requesting a technical proposal from MBH Solutions on behalf of ${payload.company}.\n\nTarget Item: ${payload.itemId || "Custom RFQ"}\nOur process engineering team is preparing the scope draft and indicative pricing. You will receive the technical proposal within one business day.\n\nDirect WhatsApp: +92 332 2007373\nWebsite: https://www.mbhsol.com`,
           html: clientQuoteConfirmationEmail(payload),
         });
       } catch (clientErr) {

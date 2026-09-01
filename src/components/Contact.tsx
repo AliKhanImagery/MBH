@@ -104,6 +104,16 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="rounded-lg border border-white/10 bg-near-black p-8">
+              {/* Anti-spam honeypot */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                style={{ display: "none" }}
+              />
+
               {errorMessage && (
                 <div className="mb-6 rounded-md border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
                   <p className="font-medium">{errorMessage}</p>

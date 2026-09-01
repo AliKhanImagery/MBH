@@ -47,9 +47,24 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const restoreFocusRef = useRef<HTMLElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const copy = drawerCopy(mode, item);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      setSelectedFile(e.target.files[0]);
+    }
+  };
+
+  const handleClearFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = "";
+    }
+  };
 
   const handleClose = useCallback(() => {
     setSubmitted(false);
@@ -286,22 +301,56 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                 />
               </label>
 
+              {/* Anti-spam honeypot (hidden from real users) */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                className="hidden"
+                style={{ display: "none" }}
+              />
+
               {/* File upload — enabled for spec sheets & RFQ packages up to 10MB */}
-              <label className="block">
+              <div className="block">
                 <span className="text-data text-steel-text">
                   Attach spec / RFQ package (optional)
                 </span>
-                <input
-                  name="attachment"
-                  type="file"
-                  accept=".pdf,.doc,.docx,.xls,.xlsx"
-                  disabled={isSubmitting}
-                  className="text-body mt-2 w-full rounded-md border border-dashed border-white/20 bg-white/[0.02] px-3 py-2 text-white/70 outline-none file:mr-3 file:rounded file:border-0 file:bg-amber/20 file:px-3 file:py-1 file:text-xs file:font-mono file:text-amber hover:border-amber/50 cursor-pointer disabled:opacity-50"
-                />
+                
+                {selectedFile ? (
+                  <div className="mt-2 flex items-center justify-between rounded-md border border-amber/40 bg-amber/10 px-3 py-2 text-sm text-white">
+                    <div className="flex items-center gap-2 truncate">
+                      <span className="text-amber">📎</span>
+                      <span className="truncate font-mono text-xs">{selectedFile.name}</span>
+                      <span className="text-[11px] text-white/50">
+                        ({(selectedFile.size / (1024 * 1024)).toFixed(2)} MB)
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={handleClearFile}
+                      className="ml-2 text-xs font-mono text-white/70 hover:text-white"
+                      title="Remove file"
+                    >
+                      ✕ Remove
+                    </button>
+                  </div>
+                ) : (
+                  <input
+                    ref={fileInputRef}
+                    name="attachment"
+                    type="file"
+                    accept=".pdf,.doc,.docx,.xls,.xlsx"
+                    disabled={isSubmitting}
+                    onChange={handleFileChange}
+                    className="text-body mt-2 w-full rounded-md border border-dashed border-white/20 bg-white/[0.02] px-3 py-2 text-white/70 outline-none file:mr-3 file:rounded file:border-0 file:bg-amber/20 file:px-3 file:py-1 file:text-xs file:font-mono file:text-amber hover:border-amber/50 cursor-pointer disabled:opacity-50"
+                  />
+                )}
+
                 <span className="mt-1 block font-mono text-[11px] text-steel-text">
                   Supports PDF, Word, or Excel up to 10MB.
                 </span>
-              </label>
+              </div>
 
               <label className="block">
                 <span className="text-data text-steel-text">

@@ -8,7 +8,15 @@ import {
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, company, email, details } = body;
+    const { name, company, email, details, _gotcha } = body;
+
+    // Silent drop for automated bots filling honeypot field
+    if (_gotcha) {
+      return NextResponse.json({
+        success: true,
+        message: "Thank you. Your enquiry has been received.",
+      });
+    }
 
     // 1. Validation
     if (!name || typeof name !== "string" || name.trim().length < 2) {
@@ -41,6 +49,18 @@ export async function POST(req: Request) {
       date: new Date().toUTCString(),
     };
 
+    const textSummary = `
+MBH SOLUTIONS — NEW ENQUIRY
+Client: ${payload.name}
+Company: ${payload.company || "N/A"}
+Email: ${payload.email}
+
+Project Scope:
+${payload.details}
+
+Submitted: ${payload.date}
+    `.trim();
+
     // 2. Dispatch via Resend if API Key is present
     if (isResendConfigured() && resend) {
       // Send notification to sales team
@@ -49,6 +69,7 @@ export async function POST(req: Request) {
         to: [RECEIVER_EMAIL],
         replyTo: payload.email,
         subject: `[New Website Lead] ${payload.name}${payload.company ? ` · ${payload.company}` : ""}`,
+        text: textSummary,
         html: salesContactNotificationEmail(payload),
       });
 
@@ -61,7 +82,8 @@ export async function POST(req: Request) {
         await resend.emails.send({
           from: SENDER_EMAIL,
           to: [payload.email],
-          subject: "We've received your enquiry · MBH Solutions",
+          subject: "We've received your project parameters · MBH Solutions",
+          text: `Dear ${payload.name},\n\nThank you for contacting MBH Solutions. Our process engineering desk has received your project scope. We will review your parameters and respond within one business day.\n\nDirect WhatsApp: +92 332 2007373\nWebsite: https://www.mbhsol.com\n\nSubmitted Scope:\n${payload.details}`,
           html: clientContactConfirmationEmail(payload),
         });
       } catch (clientErr) {
