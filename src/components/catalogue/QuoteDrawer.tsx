@@ -166,32 +166,35 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
         type="button"
         aria-label="Close"
         onClick={handleClose}
-        className="absolute inset-0 h-full w-full cursor-default bg-black/60"
+        className="absolute inset-0 h-full w-full cursor-default bg-black/60 backdrop-blur-xs transition-opacity"
       />
 
-      {/* Panel — slides in from the right */}
+      {/* Panel — slides in from the right with wider white styling */}
       <div
         ref={panelRef}
         tabIndex={-1}
-        className="mbh-drawer-panel absolute right-0 top-0 flex h-full w-full max-w-[440px] flex-col overflow-y-auto bg-near-black outline-none"
+        className="mbh-drawer-panel absolute right-0 top-0 flex h-full w-full max-w-[580px] flex-col overflow-y-auto bg-white text-slate-900 shadow-2xl border-l border-slate-200 outline-none"
       >
         <style>{`
-          @keyframes mbh-drawer-in { from { transform: translateX(24px); opacity: 0.4; } to { transform: translateX(0); opacity: 1; } }
+          @keyframes mbh-drawer-in { from { transform: translateX(28px); opacity: 0.4; } to { transform: translateX(0); opacity: 1; } }
           @media (prefers-reduced-motion: no-preference) {
             .mbh-drawer-panel { animation: mbh-drawer-in 220ms ease-out; }
           }
         `}</style>
 
         {/* Header row */}
-        <div className="flex items-center justify-between border-b border-white/10 px-6 py-5">
-          <p className="font-mono text-data uppercase tracking-wider text-amber">
-            {copy.heading}
-          </p>
+        <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50/90 px-8 py-5">
+          <div className="flex items-center gap-2.5">
+            <span className="h-2 w-2 rounded-full bg-amber" />
+            <p className="font-mono text-xs font-bold uppercase tracking-wider text-amber">
+              {copy.heading}
+            </p>
+          </div>
           <button
             type="button"
             aria-label="Close"
             onClick={handleClose}
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-white transition-colors hover:border-white/25 hover:bg-white/5"
+            className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-500 transition-colors hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
               <path
@@ -205,52 +208,54 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
         </div>
 
         {submitted ? (
-          <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-amber/10 text-amber">
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          <div className="flex flex-1 flex-col items-center justify-center p-8 text-center bg-white">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-amber/15 text-amber">
+              <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <p className="text-h3 text-white">Quote Request Received</p>
-            <p className="text-body mt-2 text-white/60">
+            <p className="text-xl font-bold text-slate-900">Quote Request Received</p>
+            <p className="mt-2.5 text-sm leading-relaxed text-slate-600 max-w-md">
               {item ? (
-                <>Your technical proposal request for <strong>{item.id}</strong> ({item.name}) has been received.</>
+                <>Your technical proposal request for <strong className="text-slate-900">{item.id}</strong> ({item.name}) has been registered.</>
               ) : (
-                <>Your scoping enquiry has been received.</>
+                <>Your scoping enquiry has been registered with our proposal desk.</>
               )}
             </p>
-            <p className="text-sm mt-3 text-amber font-mono">
-              Indicative price and scope draft within 1 business day.
-            </p>
+            <div className="mt-4 rounded-md border border-amber/30 bg-amber/10 px-4 py-2.5 text-xs font-mono font-medium text-amber-900">
+              ⚡ Indicative price and scope draft within 1 business day.
+            </div>
             <button
               type="button"
               onClick={handleClose}
-              className="text-cta mt-6 rounded-md border border-white/10 px-[22px] py-3 text-white transition-colors hover:border-white/25 hover:bg-white/5"
+              className="mt-8 rounded-md bg-slate-900 px-8 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-white shadow-sm transition-colors hover:bg-slate-800"
             >
               Done
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-1 flex-col px-6 py-6">
+          <form onSubmit={handleSubmit} className="flex flex-1 flex-col px-8 py-7 bg-white">
             {errorMessage && (
-              <div className="mb-5 rounded-md border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
-                <p className="font-medium">{errorMessage}</p>
-                <p className="mt-1 text-xs text-red-400">
-                  You can also email your RFQ directly to <a href="mailto:sales@mbhsol.com" className="underline font-semibold">sales@mbhsol.com</a>.
+              <div className="mb-6 rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                <p className="font-semibold">{errorMessage}</p>
+                <p className="mt-1 text-xs text-red-600">
+                  You can also email your RFQ directly to <a href={`mailto:${SALES_EMAIL}`} className="underline font-bold">{SALES_EMAIL}</a>.
                 </p>
               </div>
             )}
 
             {/* Item context block */}
             {item && (
-              <div className="mb-6 border border-white/10 bg-white/[0.03] p-4">
+              <div className="mb-6 rounded-md border border-slate-200 bg-slate-50/80 p-4 shadow-2xs">
                 <div className="flex items-baseline justify-between gap-3">
-                  <span className="text-body font-medium text-white">
+                  <span className="text-sm font-semibold text-slate-900">
                     {item.name}
                   </span>
-                  <span className="font-mono text-data text-amber">{item.id}</span>
+                  <span className="rounded bg-amber/15 border border-amber/30 px-2 py-0.5 font-mono text-xs font-bold text-amber-800">
+                    {item.id}
+                  </span>
                 </div>
-                <p className="mt-1 font-mono text-data text-steel-text">
+                <p className="mt-1.5 font-mono text-xs text-slate-500">
                   {item.spec}
                 </p>
               </div>
@@ -258,48 +263,61 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
 
             <div className="grid grid-cols-1 gap-5">
               <label className="block">
-                <span className="text-data text-steel-text">Name*</span>
+                <span className="font-mono text-xs font-medium uppercase tracking-wider text-slate-600">
+                  Full Name*
+                </span>
                 <input
                   name="name"
                   type="text"
                   required
                   disabled={isSubmitting}
-                  placeholder="Full name"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
+                  placeholder="e.g. Tariq Mahmood"
+                  className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber shadow-2xs disabled:opacity-50"
                 />
               </label>
+
               <label className="block">
-                <span className="text-data text-steel-text">Company*</span>
+                <span className="font-mono text-xs font-medium uppercase tracking-wider text-slate-600">
+                  Company / Organization*
+                </span>
                 <input
                   name="company"
                   type="text"
                   required
                   disabled={isSubmitting}
-                  placeholder="Company name"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
+                  placeholder="e.g. National Beverage Corp"
+                  className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber shadow-2xs disabled:opacity-50"
                 />
               </label>
-              <label className="block">
-                <span className="text-data text-steel-text">Email*</span>
-                <input
-                  name="email"
-                  type="email"
-                  required
-                  disabled={isSubmitting}
-                  placeholder="you@company.com"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
-                />
-              </label>
-              <label className="block">
-                <span className="text-data text-steel-text">Phone (optional)</span>
-                <input
-                  name="phone"
-                  type="tel"
-                  disabled={isSubmitting}
-                  placeholder="+92 …"
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
-                />
-              </label>
+
+              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                <label className="block">
+                  <span className="font-mono text-xs font-medium uppercase tracking-wider text-slate-600">
+                    Email Address*
+                  </span>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    disabled={isSubmitting}
+                    placeholder="you@company.com"
+                    className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber shadow-2xs disabled:opacity-50"
+                  />
+                </label>
+
+                <label className="block">
+                  <span className="font-mono text-xs font-medium uppercase tracking-wider text-slate-600">
+                    Phone (optional)
+                  </span>
+                  <input
+                    name="phone"
+                    type="tel"
+                    disabled={isSubmitting}
+                    placeholder="+92 300 …"
+                    className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber shadow-2xs disabled:opacity-50"
+                  />
+                </label>
+              </div>
 
               {/* Anti-spam honeypot (hidden from real users) */}
               <input
@@ -313,47 +331,49 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
 
               {/* File upload — enabled for spec sheets & RFQ packages up to 10MB */}
               <div className="block">
-                <span className="text-data text-steel-text">
-                  Attach spec / RFQ package (optional)
+                <span className="font-mono text-xs font-medium uppercase tracking-wider text-slate-600">
+                  Attach Spec / RFQ Package (optional)
                 </span>
                 
                 {selectedFile ? (
-                  <div className="mt-2 flex items-center justify-between rounded-md border border-amber/40 bg-amber/10 px-3 py-2 text-sm text-white">
+                  <div className="mt-1.5 flex items-center justify-between rounded-md border border-amber/40 bg-amber/5 px-3.5 py-2.5 text-sm text-slate-900">
                     <div className="flex items-center gap-2 truncate">
-                      <span className="text-amber">📎</span>
-                      <span className="truncate font-mono text-xs">{selectedFile.name}</span>
-                      <span className="text-[11px] text-white/50">
+                      <span className="text-amber font-bold">📎</span>
+                      <span className="truncate font-mono text-xs font-semibold">{selectedFile.name}</span>
+                      <span className="text-xs text-slate-500">
                         ({(selectedFile.size / (1024 * 1024)).toFixed(2)} MB)
                       </span>
                     </div>
                     <button
                       type="button"
                       onClick={handleClearFile}
-                      className="ml-2 text-xs font-mono text-white/70 hover:text-white"
+                      className="ml-2 rounded px-2 py-0.5 text-xs font-mono text-slate-600 hover:bg-slate-200 hover:text-slate-900 transition-colors"
                       title="Remove file"
                     >
                       ✕ Remove
                     </button>
                   </div>
                 ) : (
-                  <input
-                    ref={fileInputRef}
-                    name="attachment"
-                    type="file"
-                    accept=".pdf,.doc,.docx,.xls,.xlsx"
-                    disabled={isSubmitting}
-                    onChange={handleFileChange}
-                    className="text-body mt-2 w-full rounded-md border border-dashed border-white/20 bg-white/[0.02] px-3 py-2 text-white/70 outline-none file:mr-3 file:rounded file:border-0 file:bg-amber/20 file:px-3 file:py-1 file:text-xs file:font-mono file:text-amber hover:border-amber/50 cursor-pointer disabled:opacity-50"
-                  />
+                  <div className="mt-1.5 rounded-md border-2 border-dashed border-slate-300 bg-slate-50/80 p-3 hover:border-amber/60 hover:bg-amber/5 transition-colors">
+                    <input
+                      ref={fileInputRef}
+                      name="attachment"
+                      type="file"
+                      accept=".pdf,.doc,.docx,.xls,.xlsx"
+                      disabled={isSubmitting}
+                      onChange={handleFileChange}
+                      className="w-full text-xs text-slate-600 outline-none file:mr-3 file:rounded file:border file:border-slate-300 file:bg-white file:px-3 file:py-1 file:text-xs file:font-mono file:font-semibold file:text-slate-700 hover:file:bg-slate-100 cursor-pointer disabled:opacity-50"
+                    />
+                  </div>
                 )}
 
-                <span className="mt-1 block font-mono text-[11px] text-steel-text">
+                <span className="mt-1 block font-mono text-[11px] text-slate-500">
                   Supports PDF, Word, or Excel up to 10MB.
                 </span>
               </div>
 
               <label className="block">
-                <span className="text-data text-steel-text">
+                <span className="font-mono text-xs font-medium uppercase tracking-wider text-slate-600">
                   What would you like to discuss?
                 </span>
                 <textarea
@@ -361,19 +381,21 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                   rows={4}
                   disabled={isSubmitting}
                   defaultValue={copy.message}
-                  className="text-body mt-2 w-full rounded-md border border-white/10 bg-transparent px-3 py-2 text-white outline-none focus:border-brand-blue disabled:opacity-50"
+                  className="mt-1.5 w-full rounded-md border border-slate-300 bg-white px-3.5 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition-colors focus:border-amber focus:ring-1 focus:ring-amber shadow-2xs disabled:opacity-50"
                 />
               </label>
             </div>
 
-            <p className="text-data mt-6 text-steel-text">
-              We reply within one business day.
-            </p>
+            <div className="mt-6 flex items-center justify-between border-t border-slate-200 pt-5">
+              <span className="font-mono text-xs text-slate-500">
+                ⚡ Response within 1 business day
+              </span>
+            </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="text-cta mt-4 inline-flex items-center justify-center gap-2 w-full bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light disabled:opacity-50 cursor-pointer"
+              className="text-cta mt-4 inline-flex items-center justify-center gap-2 w-full rounded-md bg-amber px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-colors hover:bg-amber-light disabled:opacity-50 cursor-pointer"
             >
               {isSubmitting ? (
                 <>
