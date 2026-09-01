@@ -44,6 +44,8 @@ function drawerCopy(mode: DrawerMode, item: CatalogueItem | null) {
 }
 
 export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
+  const [mounted, setMounted] = useState(open);
+  const [active, setActive] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -52,6 +54,27 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
   const restoreFocusRef = useRef<HTMLElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const copy = drawerCopy(mode, item);
+
+  // When open changes to true, mount during render (official React pattern)
+  if (open && !mounted) {
+    setMounted(true);
+  }
+
+  // Smooth entrance & exit animations
+  useEffect(() => {
+    let timer: NodeJS.Timeout;
+    if (open) {
+      timer = setTimeout(() => {
+        setActive(true);
+      }, 16);
+    } else {
+      timer = setTimeout(() => {
+        setActive(false);
+        setMounted(false);
+      }, 280);
+    }
+    return () => clearTimeout(timer);
+  }, [open]);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
@@ -67,9 +90,12 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
   };
 
   const handleClose = useCallback(() => {
-    setSubmitted(false);
-    setErrorMessage(null);
-    onClose();
+    setActive(false);
+    setTimeout(() => {
+      setSubmitted(false);
+      setErrorMessage(null);
+      onClose();
+    }, 260);
   }, [onClose]);
 
   // Modal behaviour while open: lock scroll, move focus into the panel, trap
@@ -152,11 +178,13 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
     }
   }
 
-  if (!open) return null;
+  if (!mounted) return null;
 
   return (
     <div
-      className="fixed inset-0 z-[100]"
+      className={`fixed inset-0 z-[100] transition-opacity duration-300 ease-out ${
+        active ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
       role="dialog"
       aria-modal="true"
       aria-label={copy.heading}
@@ -166,22 +194,17 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
         type="button"
         aria-label="Close"
         onClick={handleClose}
-        className="absolute inset-0 h-full w-full cursor-default bg-black/60 backdrop-blur-xs transition-opacity"
+        className="absolute inset-0 h-full w-full cursor-default bg-black/50 backdrop-blur-xs transition-opacity"
       />
 
-      {/* Panel — slides in from the right with wider white styling */}
+      {/* Panel — slides in from the right with cubic-bezier physics */}
       <div
         ref={panelRef}
         tabIndex={-1}
-        className="mbh-drawer-panel absolute right-0 top-0 flex h-full w-full max-w-[580px] flex-col overflow-y-auto bg-white text-slate-900 shadow-2xl border-l border-slate-200 outline-none"
+        className={`mbh-drawer-panel absolute right-0 top-0 flex h-full w-full max-w-[580px] flex-col overflow-y-auto bg-white text-slate-900 shadow-2xl border-l border-slate-200 outline-none transform transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          active ? "translate-x-0" : "translate-x-full"
+        }`}
       >
-        <style>{`
-          @keyframes mbh-drawer-in { from { transform: translateX(28px); opacity: 0.4; } to { transform: translateX(0); opacity: 1; } }
-          @media (prefers-reduced-motion: no-preference) {
-            .mbh-drawer-panel { animation: mbh-drawer-in 220ms ease-out; }
-          }
-        `}</style>
-
         {/* Header row */}
         <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50/90 px-8 py-5">
           <div className="flex items-center gap-2.5">
@@ -194,7 +217,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
             type="button"
             aria-label="Close"
             onClick={handleClose}
-            className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-500 transition-colors hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900"
+            className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-500 transition-all duration-150 active:scale-90 hover:border-slate-300 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
           >
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none">
               <path
@@ -228,7 +251,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
             <button
               type="button"
               onClick={handleClose}
-              className="mt-8 rounded-md bg-slate-900 px-8 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-white shadow-sm transition-colors hover:bg-slate-800"
+              className="mt-8 rounded-md bg-slate-900 px-8 py-3 text-xs font-mono font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-150 hover:bg-slate-800 active:scale-95 cursor-pointer"
             >
               Done
             </button>
@@ -395,7 +418,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="text-cta mt-4 inline-flex items-center justify-center gap-2 w-full rounded-md bg-amber px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-colors hover:bg-amber-light disabled:opacity-50 cursor-pointer"
+              className="text-cta mt-4 inline-flex items-center justify-center gap-2 w-full rounded-md bg-amber px-6 py-3.5 text-sm font-semibold uppercase tracking-wider text-white shadow-sm transition-all duration-150 hover:bg-amber-light hover:shadow-md active:scale-[0.98] disabled:opacity-50 cursor-pointer"
             >
               {isSubmitting ? (
                 <>

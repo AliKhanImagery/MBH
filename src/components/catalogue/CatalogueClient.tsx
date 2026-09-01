@@ -116,7 +116,7 @@ export default function CatalogueClient() {
           <button
             type="button"
             onClick={openGeneric}
-            className={`text-cta shrink-0 self-start bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light md:self-auto ${FOCUS_RING}`}
+            className={`text-cta shrink-0 self-start bg-amber px-[22px] py-3 text-white transition-all duration-150 hover:bg-amber-light hover:shadow-md active:scale-95 cursor-pointer md:self-auto ${FOCUS_RING}`}
           >
             Request Quote
           </button>
@@ -234,10 +234,10 @@ export default function CatalogueClient() {
                         type="button"
                         onClick={() => openItem(item)}
                         aria-label={`Request quote for ${item.name} (${item.id})`}
-                        className={`mbh-cta-link ${FOCUS_RING}`}
+                        className={`mbh-cta-link group transition-all duration-150 active:translate-x-1 cursor-pointer ${FOCUS_RING}`}
                       >
-                        <span>Request Quote</span>
-                        <span className="mbh-cta-arrow">→</span>
+                        <span className="group-hover:text-amber transition-colors">Request Quote</span>
+                        <span className="mbh-cta-arrow transition-transform group-hover:translate-x-1">→</span>
                       </button>
                       <span className="font-mono text-data text-ink-muted">
                         ID · {item.id}
@@ -266,14 +266,14 @@ export default function CatalogueClient() {
             <button
               type="button"
               onClick={openBulk}
-              className={`text-cta bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light ${FOCUS_RING}`}
+              className={`text-cta bg-amber px-[22px] py-3 text-white transition-all duration-150 hover:bg-amber-light hover:shadow-md active:scale-95 cursor-pointer ${FOCUS_RING}`}
             >
               Attach RFQ · Request Quote
             </button>
             <button
               type="button"
               onClick={openCall}
-              className={`text-cta border border-ink/15 px-[22px] py-3 text-ink transition-colors hover:bg-ink/5 ${FOCUS_RING}`}
+              className={`text-cta border border-ink/15 px-[22px] py-3 text-ink transition-all duration-150 hover:bg-ink/5 active:scale-95 cursor-pointer ${FOCUS_RING}`}
             >
               Book a scoping call
             </button>
@@ -296,13 +296,13 @@ export default function CatalogueClient() {
             <button
               type="button"
               onClick={openGeneric}
-              className={`text-cta bg-amber px-[22px] py-3 text-white transition-colors hover:bg-amber-light ${FOCUS_RING}`}
+              className={`text-cta bg-amber px-[22px] py-3 text-white transition-all duration-150 hover:bg-amber-light hover:shadow-md active:scale-95 cursor-pointer ${FOCUS_RING}`}
             >
               Request Quote
             </button>
             <a
               href="#contact"
-              className={`text-cta border border-white/15 px-[22px] py-3 text-white transition-colors hover:bg-white/5 ${FOCUS_RING}`}
+              className={`text-cta border border-white/15 px-[22px] py-3 text-white transition-all duration-150 hover:bg-white/5 active:scale-95 cursor-pointer ${FOCUS_RING}`}
             >
               Speak to Engineering
             </a>
