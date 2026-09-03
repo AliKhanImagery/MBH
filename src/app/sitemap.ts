@@ -17,6 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/solutions', changeFreq: 'weekly', priority: 0.9 },
     { path: '/references', changeFreq: 'weekly', priority: 0.8 },
     { path: '/references/beverage-cip-recovery-modernization', changeFreq: 'monthly', priority: 0.85 },
+    { path: '/references/coca-cola-multan-line-automation', changeFreq: 'monthly', priority: 0.85 },
+    { path: '/references/fauji-foods-syrup-room-modernization', changeFreq: 'monthly', priority: 0.85 },
+    { path: '/references/edible-oil-processing-automation', changeFreq: 'monthly', priority: 0.85 },
+    { path: '/references/pepsi-northern-bottling-line-automation', changeFreq: 'monthly', priority: 0.85 },
   ]
 
   const today = new Date().toISOString().split('T')[0]

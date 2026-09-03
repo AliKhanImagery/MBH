@@ -8,8 +8,7 @@ const DATA_POINTS = [
   { value: "Installation and commissioning", label: "Delivery Scope" },
 ];
 
-// Supporting references. `image` shows a real photo; `tag` is the navy
-// placeholder fallback used only when no image is set.
+// Supporting references with dedicated case study routes.
 const SUPPORTING = [
   {
     client: "Pepsi Northern Beverages",
@@ -17,7 +16,7 @@ const SUPPORTING = [
     meta: "Pakistan · PLC · SCADA · Panels",
     tag: "PEPSI",
     image: "/references/pepsi-northern.png",
-    href: "/references/beverage-cip-recovery-modernization",
+    href: "/references/pepsi-northern-bottling-line-automation",
   },
   {
     client: "Fauji Foods",
@@ -25,6 +24,22 @@ const SUPPORTING = [
     meta: "Pakistan · PLC · HMI · SCADA",
     tag: "FAUJI FOODS",
     image: "/references/fauji-foods.jpg",
+    href: "/references/fauji-foods-syrup-room-modernization",
+  },
+  {
+    client: "Meezan & Dalda Foods",
+    heading: "Edible Oil Continuous Neutralization & Bleaching Automation",
+    meta: "Pakistan · ATEX · Mass Flow · Dosing Skids",
+    tag: "EDIBLE OIL",
+    image: "/images/sections/industrial-automation.png",
+    href: "/references/edible-oil-processing-automation",
+  },
+  {
+    client: "Enterprise Beverage Facilities",
+    heading: "Automated CIP System & Pipeline Pigging Product Recovery",
+    meta: "Regional · Sanitary Valves · Multi-Circuit CIP",
+    tag: "CIP SYSTEMS",
+    image: "/images/sections/cip-valves.png",
     href: "/references/beverage-cip-recovery-modernization",
   },
 ];
@@ -160,8 +175,8 @@ export default function CaseStudy() {
 
               {/* CTA Link to Full Technical Case Study */}
               <div className="mt-8">
-                <CtaLink href="/references/beverage-cip-recovery-modernization">
-                  Read Technical Case Study: Enterprise CIP Modernization
+                <CtaLink href="/references/coca-cola-multan-line-automation">
+                  Read Technical Case Study: Continuous Sugar Dissolving &amp; Syrup Room
                 </CtaLink>
               </div>
 
