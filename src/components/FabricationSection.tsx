@@ -103,7 +103,7 @@ export default function FabricationSection() {
               </ul>
 
               {/* CTA link */}
-              <CtaLink href="/solutions" className="mt-8">
+              <CtaLink href="/fabrication" className="mt-8">
                 Explore Fabrication Services
               </CtaLink>
             </div>

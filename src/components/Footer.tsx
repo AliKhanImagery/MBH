@@ -14,7 +14,7 @@ const COLUMNS = [
     links: [
       { label: "Process Systems", href: "/solutions#beverage-process" },
       { label: "Automation", href: "/solutions#automation" },
-      { label: "Fabrication", href: "/solutions#fabrication" },
+      { label: "Fabrication", href: "/fabrication" },
       { label: "CIP Systems", href: "/solutions#beverage-process" },
     ],
   },

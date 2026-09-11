@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/partners', changeFreq: 'monthly', priority: 0.7 },
     { path: '/products', changeFreq: 'weekly', priority: 0.9 },
     { path: '/solutions', changeFreq: 'weekly', priority: 0.9 },
+    { path: '/fabrication', changeFreq: 'weekly', priority: 0.9 },
     { path: '/references', changeFreq: 'weekly', priority: 0.8 },
     { path: '/references/beverage-cip-recovery-modernization', changeFreq: 'monthly', priority: 0.85 },
     { path: '/references/coca-cola-multan-line-automation', changeFreq: 'monthly', priority: 0.85 },
