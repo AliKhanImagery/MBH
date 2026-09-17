@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Eyebrow } from "@/components/Eyebrow";
 import QuoteDrawer, { type DrawerMode } from "./QuoteDrawer";
+import CatalogueCategories from "./CatalogueCategories";
 import {
   CATALOGUE_CATEGORIES,
   CATALOGUE_ITEMS,
@@ -122,6 +123,9 @@ export default function CatalogueClient() {
           </button>
         </div>
       </section>
+
+      {/* ── §01b Product-type category cards — light ground ── */}
+      <CatalogueCategories />
 
       {/* ── §02 How to Order — light ground ── */}
       <section className="bg-surface-page">

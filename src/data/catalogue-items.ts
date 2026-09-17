@@ -25,6 +25,8 @@ export type CatalogueItem = {
   spec: string;
   /** Optional emphasis tag: SIGNATURE | SIEMENS | MBH WORKSHOP. */
   badge?: string;
+  /** Product-type tags for cross-referencing with product category subpages. */
+  tags?: string[];
 };
 
 export const CATALOGUE_ITEMS: CatalogueItem[] = [
@@ -38,6 +40,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
       "Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. 2–40 m³/h at upto 70°. Available turnkey. Siemens + MBH fabrication.",
     spec: "2–40 m³/h · upto 70° · Turnkey",
     badge: "SIGNATURE",
+    tags: ["pumps", "valves", "heat-exchangers", "siemens-plc", "ifm-sensors", "vfd"],
   },
   {
     seq: 2,
@@ -47,6 +50,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "Concentrate handling, pasteurisation, blending, storage. Configurable capacity. Available turnkey or as retrofit. Tubular heat exchangers, MASTERMIXX blender.",
     spec: "Configurable capacity · Turnkey or retrofit",
+    tags: ["pumps", "valves", "heat-exchangers"],
   },
   {
     seq: 3,
@@ -92,6 +96,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "Precise dosing of concentrates, minor ingredients, additives. Recipe-driven with suction lance and valve matrix. Available standalone or integrated into new line.",
     spec: "Recipe-driven · Standalone or integrated",
+    tags: ["pumps", "valves"],
   },
   {
     seq: 8,
@@ -101,6 +106,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "Thermal treatment for syrup or finished beverage. Plate or tubular heat exchanger. Configurable capacity. Available as standalone unit or line-integrated.",
     spec: "Configurable capacity · Standalone or integrated",
+    tags: ["heat-exchangers", "pumps"],
   },
   {
     seq: 9,
@@ -167,6 +173,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
       "End-to-end PLC, SCADA, HMI, recipe management on Siemens S7 and WinCC. Available for new lines or as retrofit. MBH Siemens Integrators.",
     spec: "Siemens S7 · WinCC · New or retrofit",
     badge: "SIEMENS",
+    tags: ["siemens-plc", "vfd", "ifm-sensors"],
   },
   {
     seq: 16,
@@ -176,6 +183,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "HMI and control cabinet housing PLC, I/O, and field terminations. Designed and built at MBH workshop. Full drawings included.",
     spec: "HMI & field cabinet · Full drawings",
+    tags: ["siemens-plc", "vfd"],
   },
   {
     seq: 17,
@@ -185,6 +193,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "Custom-engineered control cabinet to buyer's electrical specification. Available for both process and non-process applications.",
     spec: "Custom spec · Process or non-process",
+    tags: ["siemens-plc", "vfd"],
   },
   {
     seq: 18,
@@ -194,6 +203,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "WinCC SCADA build, HMI screen design, recipe management, operator training. Available as standalone service or line-integrated.",
     spec: "WinCC · HMI · Standalone or integrated",
+    tags: ["siemens-plc"],
   },
   {
     seq: 19,
@@ -275,6 +285,7 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     description:
       "Automated and manual cleaning skid can clean one line upto multiple lines or tanks alltogether. Single to four circuits standard, expandable to six or eight. Multi-detergent, recipe-driven. Available standalone or retrofit.",
     spec: "1 to 4 circuits standard · Standalone or retrofit",
+    tags: ["pumps", "valves", "heat-exchangers", "ifm-sensors"],
   },
   {
     seq: 27,
@@ -333,3 +344,9 @@ export function categoryCount(category: CatalogueCategory | "All"): number {
 export function itemAnchor(id: string): string {
   return id.toLowerCase();
 }
+
+/** Items matching a given product-type tag (e.g. "pumps", "siemens-plc"). */
+export function itemsByTag(tag: string): CatalogueItem[] {
+  return CATALOGUE_ITEMS.filter((i) => i.tags?.includes(tag));
+}
+
