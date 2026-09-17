@@ -1,7 +1,14 @@
 import { MetadataRoute } from 'next'
+import { PRODUCT_CATEGORIES } from '@/data/catalogue-categories'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.mbhsol.com'
+
+  const categoryRoutes = PRODUCT_CATEGORIES.map((cat) => ({
+    path: `/catalogue/${cat.slug}`,
+    changeFreq: 'weekly' as const,
+    priority: 0.85,
+  }))
 
   const routes: Array<{
     path: string;
@@ -11,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '', changeFreq: 'yearly', priority: 1.0 },
     { path: '/about', changeFreq: 'monthly', priority: 0.8 },
     { path: '/catalogue', changeFreq: 'weekly', priority: 0.8 },
+    ...categoryRoutes,
     { path: '/industries', changeFreq: 'monthly', priority: 0.8 },
     { path: '/partners', changeFreq: 'monthly', priority: 0.7 },
     { path: '/products', changeFreq: 'weekly', priority: 0.9 },
