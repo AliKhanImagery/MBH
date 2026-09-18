@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Coca-Cola Syrup Room & Process Automation | MBH Solutions",
+  title: "Coca-Cola Syrup Room & Process Automation Case Study",
   description:
     "Technical case study on turnkey continuous sugar dissolving, ASME 316L process piping, and automated CIP commissioning for Coca-Cola bottling facilities.",
   alternates: {

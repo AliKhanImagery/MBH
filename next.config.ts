@@ -14,8 +14,33 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/gas-sense-and-alarm-system-pg',
+        destination: '/solutions',
+        permanent: true,
+      },
+      {
+        source: '/energy-audits',
+        destination: '/solutions',
+        permanent: true,
+      },
+      {
+        source: '/switch-gears',
+        destination: '/products',
+        permanent: true,
+      },
+      {
         source: '/food-beverages',
         destination: '/industries',
+        permanent: true,
+      },
+      {
+        source: '/contact-us',
+        destination: '/#contact',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
         permanent: true,
       },
       {

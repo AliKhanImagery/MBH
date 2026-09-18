@@ -3,11 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
+import { Eyebrow } from "@/components/Eyebrow";
+import { CtaLink } from "@/components/CtaLink";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sanitary Process Equipment & Modular Skid Fabrication | MBH Solutions",
+  title: "Sanitary Process Equipment & ASME BPE Skid Fabrication",
   description:
     "Comprehensive engineering, shop fabrication, automated orbital TIG welding, ASME BPE process piping, modular skids, and turnkey mechanical erection for food, beverage, dairy, and chemical plants.",
   alternates: {
@@ -19,6 +21,14 @@ export const metadata: Metadata = {
       "Precision stainless steel vessel manufacturing, closed-chamber orbital welding, and turnkey modular skid systems for food, beverage, dairy, and chemical plants.",
     url: "https://www.mbhsol.com/fabrication",
     siteName: "MBH Solutions",
+    images: [
+      {
+        url: "/images/sections/fabrication-welding.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Sanitary stainless steel orbital welding and skid fabrication",
+      },
+    ],
     type: "website",
   },
 };
@@ -94,7 +104,7 @@ const CAPABILITY_PILLARS = [
   {
     number: "03",
     title: "ASME BPE Sanitary Piping & Orbital TIG Welding",
-    badge: "ASME BPE · <20 ppm O2 Purge",
+    badge: "ASME BPE · < 20 ppm O2 Purge",
     summary:
       "High-purity hygienic fluid transfer demands perfectly flush, crevice-free internal weld beads that eliminate bacterial biofilm harborage. We utilize computer-controlled closed-chamber orbital GTAW/TIG welding with automated parameter data logging.",
     technicalDetails: [
@@ -320,9 +330,74 @@ const ENGINEERING_FAQS = [
   },
 ];
 
+/* ── Scoped styles for the industrial card language ── */
+const fabricationStyles = `
+  .fab-card {
+    background-color: #0D1B2E;
+    border: 1px solid #1E3352;
+    transition: background-color 200ms ease, border-color 200ms ease;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+  }
+  .fab-card:hover {
+    background-color: #162540;
+    border-color: #C87D00;
+  }
+  .fab-detail-card {
+    background-color: #080B0F;
+    border: 1px solid #1E3352;
+    transition: background-color 200ms ease;
+    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
+  }
+  .fab-detail-card:hover {
+    background-color: #0D1B2E;
+  }
+  .fab-doc-card {
+    background-color: #0D1B2E;
+    border: 1px solid #1E3352;
+    transition: background-color 200ms ease, border-color 200ms ease;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+  }
+  .fab-doc-card:hover {
+    background-color: #162540;
+    border-color: #1E3352;
+  }
+  .fab-faq-card {
+    background-color: #0D1B2E;
+    border: 1px solid #1E3352;
+    transition: background-color 200ms ease;
+    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+  }
+  .fab-faq-card:hover {
+    background-color: #162540;
+  }
+  .fab-ref-card {
+    background-color: #0D1B2E;
+    border: 1px solid #1E3352;
+    transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
+    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+    text-decoration: none;
+    display: block;
+  }
+  .fab-ref-card:hover {
+    background-color: #162540;
+    border-color: #C87D00;
+    transform: translateY(-2px);
+  }
+  .fab-table-head {
+    background-color: rgba(21,38,84,0.4);
+  }
+  .fab-table-row {
+    border-bottom: 1px solid #1E3352;
+    transition: background-color 200ms ease;
+  }
+  .fab-table-row:last-child { border-bottom: none; }
+  .fab-table-row:hover { background-color: rgba(255,255,255,0.03); }
+`;
+
 export default function FabricationPage() {
   return (
     <div style={{ backgroundColor: "#080B0F", minHeight: "100vh", color: "#ffffff" }}>
+      <style>{fabricationStyles}</style>
       <Header />
 
       <PageHero
@@ -333,77 +408,68 @@ export default function FabricationPage() {
         imageAlt="MBH Solutions sanitary stainless steel welding and skid fabrication"
       />
 
-      <main className="mx-auto max-w-[1400px] px-6 py-16 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
+      <main className="mx-auto max-w-[1400px] px-6 py-l3 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
         />
 
         {/* ── Engineering Snapshot Metrics Strip ── */}
-        <section className="mb-20 grid grid-cols-2 gap-4 rounded-xl border border-gray-800 bg-[#0D1B2E]/70 p-6 md:grid-cols-4">
-          <div>
-            <div className="font-mono text-xs text-amber uppercase tracking-wider">Metallurgy</div>
-            <div className="mt-1 text-base font-semibold text-white">304L · 316L · Hastelloy</div>
-            <div className="mt-1 text-xs text-slate-400">Controlled Sulfur (0.005–0.017%)</div>
-          </div>
-          <div>
-            <div className="font-mono text-xs text-amber uppercase tracking-wider">Welding Standard</div>
-            <div className="mt-1 text-base font-semibold text-white">Orbital TIG · ASME Sec IX</div>
-            <div className="mt-1 text-xs text-slate-400">&lt; 20 ppm O2 Purge Monitoring</div>
-          </div>
-          <div>
-            <div className="font-mono text-xs text-amber uppercase tracking-wider">Surface Finish</div>
-            <div className="mt-1 text-base font-semibold text-white">Ra &lt; 0.8 µm / Ra &lt; 0.4 µm</div>
-            <div className="mt-1 text-xs text-slate-400">ASTM A967 Chemical Passivation</div>
-          </div>
-          <div>
-            <div className="font-mono text-xs text-amber uppercase tracking-wider">Quality Turnover</div>
-            <div className="mt-1 text-base font-semibold text-white">100% Video Boroscopy</div>
-            <div className="mt-1 text-xs text-slate-400">Hydro-Test 1.5x &amp; EN 10204 3.1</div>
+        <section className="mb-l4">
+          <div
+            className="grid grid-cols-2 gap-px md:grid-cols-4"
+            style={{
+              border: "1px solid #1E3352",
+              backgroundColor: "#1E3352",
+              clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))",
+            }}
+          >
+            {[
+              { label: "Metallurgy", value: "304L · 316L · Hastelloy", sub: "Controlled Sulfur (0.005–0.017%)" },
+              { label: "Welding Standard", value: "Orbital TIG · ASME Sec IX", sub: "< 20 ppm O2 Purge Monitoring" },
+              { label: "Surface Finish", value: "Ra < 0.8 µm / Ra < 0.4 µm", sub: "ASTM A967 Chemical Passivation" },
+              { label: "Quality Turnover", value: "100% Video Boroscopy", sub: "Hydro-Test 1.5x & EN 10204 3.1" },
+            ].map((m, i) => (
+              <div key={i} style={{ backgroundColor: "#0D1B2E", padding: 24 }}>
+                <div className="text-data text-cta uppercase tracking-wider">{m.label}</div>
+                <div style={{ marginTop: 6, fontSize: 15, fontWeight: 500, color: "#ffffff" }}>{m.value}</div>
+                <div style={{ marginTop: 6, fontSize: 11, color: "#9BAAB5" }}>{m.sub}</div>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* ── Section Intro: Why Modular Sanitary Fabrication Matters ── */}
-        <section className="mb-24">
+        <section className="mb-l5">
           <div className="grid gap-12 lg:grid-cols-[55fr_45fr] items-center">
             <div>
-              <p
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 11,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  color: "#C87D00",
-                  marginBottom: 16,
-                }}
-              >
-                Hygienic Process Engineering
-              </p>
-              <h2
-                style={{
-                  fontWeight: 500,
-                  fontSize: 32,
-                  letterSpacing: "-0.8px",
-                  lineHeight: 1.25,
-                  color: "#ffffff",
-                  marginBottom: 20,
-                }}
-              >
+              <Eyebrow label="Hygienic Process Engineering" />
+
+              <h2 className="mt-c4 text-anchor font-medium text-white" style={{ maxWidth: "36ch" }}>
                 Zero-Crevice Craftsmanship Engineered for Zero Plant Downtime
               </h2>
-              <p className="leading-relaxed mb-4" style={{ color: "#C7D0DA", fontSize: "15px" }}>
+
+              <p className="text-body mt-c5" style={{ color: "#9BAAB5" }}>
                 In food, dairy, and beverage manufacturing, product contamination from irregular weld seams, dead legs, or incomplete CIP drainage is a multi-million-dollar operational risk. Building process equipment directly on the plant floor causes prolonged shutdowns, dust contamination, and unpredictable quality.
               </p>
-              <p className="leading-relaxed mb-4" style={{ color: "#C7D0DA", fontSize: "15px" }}>
-                MBH Solutions shifts up to <strong>80% of construction off-site</strong> into our clean manufacturing facility. We fabricate modular process skids, pre-welded piping spools, and jacketed vessels under controlled conditions, performing full factory acceptance testing (FAT) before the equipment ever reaches your loading dock.
+              <p className="text-body mt-c4" style={{ color: "#9BAAB5" }}>
+                MBH Solutions shifts up to <strong style={{ color: "#ffffff" }}>80% of construction off-site</strong> into our clean manufacturing facility. We fabricate modular process skids, pre-welded piping spools, and jacketed vessels under controlled conditions, performing full factory acceptance testing (FAT) before the equipment ever reaches your loading dock.
               </p>
-              <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>
-                Our turnkey engineering approach unites <strong>mechanical vessel fabrication, sanitary orbital welding, and Siemens automation</strong> under a single contract, eliminating vendor finger-pointing between mechanical builders and control system integrators.
+              <p className="text-body mt-c4" style={{ color: "#9BAAB5" }}>
+                Our turnkey engineering approach unites <strong style={{ color: "#ffffff" }}>mechanical vessel fabrication, sanitary orbital welding, and Siemens automation</strong> under a single contract, eliminating vendor finger-pointing between mechanical builders and control system integrators.
               </p>
             </div>
 
-            <div className="relative min-h-[360px] overflow-hidden rounded-xl border border-gray-800 bg-[#0D1B2E]">
+            <div
+              style={{
+                position: "relative",
+                minHeight: 360,
+                overflow: "hidden",
+                border: "1px solid #1E3352",
+                backgroundColor: "#0D1B2E",
+                clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%)",
+              }}
+            >
               <Image
                 src="/images/sections/cip-valves.png"
                 alt="Sanitary mixproof valve matrix and stainless steel fabrication"
@@ -416,68 +482,50 @@ export default function FabricationPage() {
         </section>
 
         {/* ── 5 Core Capability Pillars (Deep Dives) ── */}
-        <section className="mb-24">
-          <div className="mb-12">
-            <p
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 11,
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 8,
-              }}
-            >
-              Core Capabilities
-            </p>
-            <h2
-              style={{
-                fontWeight: 500,
-                fontSize: 30,
-                letterSpacing: "-0.6px",
-                color: "#ffffff",
-              }}
-            >
-              Comprehensive Process Equipment &amp; Fabrication Services
-            </h2>
-            <p className="mt-2 text-sm" style={{ color: "#9BAAB5" }}>
-              Explore the technical engineering specifications of our shop-built vessels, modular skid assemblies, and orbital piping.
-            </p>
-          </div>
+        <section className="mb-l5">
+          <Eyebrow label="Core Capabilities" />
+          <h2 className="mt-c4 text-anchor font-medium text-white">
+            Comprehensive Process Equipment &amp; Fabrication Services
+          </h2>
+          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
+            Explore the technical engineering specifications of our shop-built vessels, modular skid assemblies, and orbital piping.
+          </p>
 
-          <div className="space-y-8">
+          <div className="mt-l2" style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {CAPABILITY_PILLARS.map((pillar) => (
-              <div
-                key={pillar.number}
-                className="rounded-xl border border-gray-800 bg-[#0D1B2E]/50 p-8 transition-all duration-200 hover:border-amber hover:bg-[#0D1B2E]"
-              >
-                <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 pb-6 border-b border-gray-800/80 gap-4">
-                  <div className="flex items-center gap-4">
-                    <span className="font-mono text-3xl font-bold text-amber">{pillar.number}</span>
-                    <h3 className="text-2xl font-semibold text-white leading-snug">{pillar.title}</h3>
+              <div key={pillar.number} className="fab-card" style={{ padding: 32 }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap" }}>
+                    <span className="text-data text-cta" style={{ fontSize: 30, fontFamily: "var(--font-ibm-plex-mono)", fontWeight: 500 }}>
+                      {pillar.number}
+                    </span>
+                    <h3 className="text-h2 text-white" style={{ flex: 1, minWidth: 200 }}>
+                      {pillar.title}
+                    </h3>
+                    <span className="text-data text-cta uppercase tracking-wider" style={{ backgroundColor: "rgba(200,125,0,0.12)", padding: "4px 10px" }}>
+                      {pillar.badge}
+                    </span>
                   </div>
-                  <span className="rounded bg-amber/15 px-3 py-1 font-mono text-xs font-semibold text-amber uppercase tracking-wider self-start md:self-auto">
-                    {pillar.badge}
-                  </span>
-                </div>
 
-                <p className="text-sm leading-relaxed mb-8" style={{ color: "#C7D0DA" }}>
-                  {pillar.summary}
-                </p>
+                  <div style={{ height: 1, backgroundColor: "#1E3352" }} />
 
-                <div className="grid gap-6 sm:grid-cols-2">
-                  {pillar.technicalDetails.map((detail, idx) => (
-                    <div key={idx} className="rounded-lg border border-gray-800/80 bg-black/20 p-5">
-                      <div className="text-sm font-semibold text-white mb-2 flex items-center gap-2">
-                        <span className="text-amber">▪</span>
-                        {detail.heading}
+                  <p className="text-body" style={{ color: "#9BAAB5" }}>
+                    {pillar.summary}
+                  </p>
+
+                  <div className="grid gap-2 sm:grid-cols-2 mt-c4">
+                    {pillar.technicalDetails.map((detail, idx) => (
+                      <div key={idx} className="fab-detail-card" style={{ padding: 20 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                          <span style={{ color: "#C87D00", fontSize: 10 }}>&#9632;</span>
+                          <span style={{ fontSize: 15, fontWeight: 500, color: "#ffffff" }}>{detail.heading}</span>
+                        </div>
+                        <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>
+                          {detail.text}
+                        </p>
                       </div>
-                      <p className="text-xs leading-relaxed" style={{ color: "#9BAAB5" }}>
-                        {detail.text}
-                      </p>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
@@ -485,59 +533,38 @@ export default function FabricationPage() {
         </section>
 
         {/* ── Metallurgy & Chemical Compatibility Guide ── */}
-        <section className="mb-24">
-          <div className="mb-8">
-            <p
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 11,
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 8,
-              }}
-            >
-              Metallurgy &amp; Material Selection
-            </p>
-            <h2
-              style={{
-                fontWeight: 500,
-                fontSize: 28,
-                letterSpacing: "-0.6px",
-                color: "#ffffff",
-              }}
-            >
-              Alloy Selection for Chemical &amp; Thermal Compatibility
-            </h2>
-            <p className="mt-2 text-sm" style={{ color: "#9BAAB5" }}>
-              Choosing the correct stainless metallurgy prevents pitting corrosion, stress cracking, and product degradation.
-            </p>
-          </div>
+        <section className="mb-l5">
+          <Eyebrow label="Metallurgy & Material Selection" />
+          <h2 className="mt-c4 text-anchor font-medium text-white">
+            Alloy Selection for Chemical &amp; Thermal Compatibility
+          </h2>
+          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
+            Choosing the correct stainless metallurgy prevents pitting corrosion, stress cracking, and product degradation.
+          </p>
 
-          <div className="grid gap-6 md:grid-cols-3 mb-12">
+          <div className="mt-l2 grid gap-2 md:grid-cols-3">
             {METALLURGY_GUIDE.map((mat, idx) => (
-              <div key={idx} className="rounded-xl border border-gray-800 bg-[#0D1B2E]/60 p-6 flex flex-col justify-between">
+              <div key={idx} className="fab-card" style={{ padding: 24, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
                 <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h4 className="text-lg font-bold text-white">{mat.alloy}</h4>
-                    <span className="font-mono text-xs text-amber font-semibold">PREN {mat.pren}</span>
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
+                    <h4 style={{ fontSize: 18, fontWeight: 500, color: "#ffffff" }}>{mat.alloy}</h4>
+                    <span className="text-data text-cta">PREN {mat.pren}</span>
                   </div>
-                  <div className="font-mono text-[11px] text-slate-400 mb-4">{mat.composition}</div>
-                  
-                  <div className="mb-4">
-                    <span className="text-xs font-semibold text-white uppercase tracking-wider block mb-1">Recommended Use:</span>
-                    <p className="text-xs leading-relaxed" style={{ color: "#9BAAB5" }}>{mat.bestFor}</p>
+                  <div className="text-data" style={{ color: "#9BAAB5", marginBottom: 16 }}>{mat.composition}</div>
+
+                  <div style={{ marginBottom: 16 }}>
+                    <span className="text-data text-white uppercase tracking-wider" style={{ display: "block", marginBottom: 4 }}>Recommended Use</span>
+                    <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>{mat.bestFor}</p>
                   </div>
 
-                  <div className="mb-4">
-                    <span className="text-xs font-semibold text-amber uppercase tracking-wider block mb-1">Key Advantages:</span>
-                    <p className="text-xs leading-relaxed" style={{ color: "#C7D0DA" }}>{mat.advantages}</p>
+                  <div style={{ marginBottom: 16 }}>
+                    <span className="text-data text-cta uppercase tracking-wider" style={{ display: "block", marginBottom: 4 }}>Key Advantages</span>
+                    <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>{mat.advantages}</p>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-gray-800 text-[11px] text-slate-400">
-                  <span className="font-semibold text-slate-300">Operational Limit: </span>
+                <div style={{ paddingTop: 16, borderTop: "1px solid #1E3352", fontSize: 11, color: "#9BAAB5" }}>
+                  <span style={{ fontWeight: 500, color: "#ffffff" }}>Operational Limit: </span>
                   {mat.limits}
                 </div>
               </div>
@@ -545,17 +572,19 @@ export default function FabricationPage() {
           </div>
 
           {/* Elastomers & Gaskets Strip */}
-          <div className="rounded-xl border border-gray-800 bg-[#0A0E17] p-6">
-            <h4 className="text-base font-semibold text-white mb-4 flex items-center gap-2">
-              <span className="text-amber">🛡️</span> Sanitary Seal &amp; Gasket Compatibility
+          <div className="mt-l1 fab-card" style={{ padding: 24, clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))" }}>
+            <h4 style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
+              <span className="text-data text-cta">SEAL.SPEC</span>
+              <span style={{ height: 1, flex: 1, backgroundColor: "#1E3352" }} />
+              <span style={{ fontSize: 14, color: "#9BAAB5" }}>Sanitary Seal &amp; Gasket Compatibility</span>
             </h4>
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-2 sm:grid-cols-3">
               {ELASTOMER_GUIDE.map((el, i) => (
-                <div key={i} className="rounded-lg border border-gray-800/80 bg-[#0D1B2E]/40 p-4">
-                  <div className="text-sm font-semibold text-white mb-1">{el.material}</div>
-                  <div className="font-mono text-[11px] text-amber mb-1">{el.tempRange}</div>
-                  <div className="text-[10px] font-mono text-slate-400 mb-2">{el.standards}</div>
-                  <p className="text-xs" style={{ color: "#9BAAB5" }}>{el.suitability}</p>
+                <div key={i} className="fab-detail-card" style={{ padding: 16 }}>
+                  <div style={{ fontSize: 14, fontWeight: 500, color: "#ffffff", marginBottom: 4 }}>{el.material}</div>
+                  <div className="text-data text-cta" style={{ marginBottom: 4 }}>{el.tempRange}</div>
+                  <div className="text-data" style={{ color: "#9BAAB5", marginBottom: 8 }}>{el.standards}</div>
+                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>{el.suitability}</p>
                 </div>
               ))}
             </div>
@@ -563,54 +592,25 @@ export default function FabricationPage() {
         </section>
 
         {/* ── Technical Specifications & Tolerances Table ── */}
-        <section className="mb-24">
-          <div className="mb-8">
-            <p
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 11,
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 8,
-              }}
-            >
-              Engineering Standards
-            </p>
-            <h2
-              style={{
-                fontWeight: 500,
-                fontSize: 28,
-                letterSpacing: "-0.6px",
-                color: "#ffffff",
-              }}
-            >
-              Manufacturing Tolerances &amp; Inspection Specifications
-            </h2>
-          </div>
+        <section className="mb-l5">
+          <Eyebrow label="Engineering Standards" />
+          <h2 className="mt-c4 text-anchor font-medium text-white">
+            Manufacturing Tolerances &amp; Inspection Specifications
+          </h2>
 
-          <div className="overflow-x-auto rounded-xl border border-gray-800">
-            <table className="w-full text-left border-collapse">
+          <div className="mt-l2 overflow-x-auto" style={{ border: "1px solid #1E3352", clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%)" }}>
+            <table className="w-full text-left" style={{ borderCollapse: "collapse" }}>
               <thead>
-                <tr
-                  className="uppercase tracking-wider"
-                  style={{
-                    backgroundColor: "rgba(21,38,84,0.4)",
-                    color: "#C87D00",
-                    fontSize: "12px",
-                    fontFamily: "var(--font-ibm-plex-mono)",
-                  }}
-                >
-                  <th className="px-6 py-4 border-b border-gray-800 font-medium">Engineering Parameter</th>
-                  <th className="px-6 py-4 border-b border-gray-800 font-medium">MBH Quality &amp; Compliance Specification</th>
+                <tr className="fab-table-head text-data text-cta uppercase tracking-wider">
+                  <th style={{ padding: "16px 24px", fontWeight: 500, borderBottom: "1px solid #1E3352" }}>Engineering Parameter</th>
+                  <th style={{ padding: "16px 24px", fontWeight: 500, borderBottom: "1px solid #1E3352" }}>MBH Quality &amp; Compliance Specification</th>
                 </tr>
               </thead>
-              <tbody style={{ color: "#C7D0DA", fontSize: "14px" }}>
+              <tbody>
                 {SPEC_TABLE_DATA.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-white/5 transition-colors border-b border-gray-800/80 last:border-0">
-                    <td className="px-6 py-4 font-semibold text-white whitespace-nowrap">{row.parameter}</td>
-                    <td className="px-6 py-4">{row.spec}</td>
+                  <tr key={idx} className="fab-table-row">
+                    <td style={{ padding: "14px 24px", fontWeight: 500, color: "#ffffff", whiteSpace: "nowrap", fontSize: 14 }}>{row.parameter}</td>
+                    <td style={{ padding: "14px 24px", color: "#9BAAB5", fontSize: 14 }}>{row.spec}</td>
                   </tr>
                 ))}
               </tbody>
@@ -619,42 +619,21 @@ export default function FabricationPage() {
         </section>
 
         {/* ── Turnover Documentation Package (TOP) Dossier ── */}
-        <section className="mb-24">
-          <div className="mb-8">
-            <p
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 11,
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 8,
-              }}
-            >
-              Audit-Ready Documentation
-            </p>
-            <h2
-              style={{
-                fontWeight: 500,
-                fontSize: 28,
-                letterSpacing: "-0.6px",
-                color: "#ffffff",
-              }}
-            >
-              Turnover Package (TOP) Dossier Deliverables
-            </h2>
-            <p className="mt-2 text-sm" style={{ color: "#9BAAB5" }}>
-              Every fabricated vessel and skid arrives with complete certification packages required for multinational QA sign-offs and regulatory validation.
-            </p>
-          </div>
+        <section className="mb-l5">
+          <Eyebrow label="Audit-Ready Documentation" />
+          <h2 className="mt-c4 text-anchor font-medium text-white">
+            Turnover Package (TOP) Dossier Deliverables
+          </h2>
+          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
+            Every fabricated vessel and skid arrives with complete certification packages required for multinational QA sign-offs and regulatory validation.
+          </p>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {TOP_DELIVERABLES.map((doc, idx) => (
-              <div key={idx} className="rounded-xl border border-gray-800 bg-[#0D1B2E]/40 p-5 hover:border-gray-700 transition-colors">
-                <div className="font-mono text-xs text-amber font-semibold mb-2">{doc.code}</div>
-                <h4 className="text-sm font-semibold text-white mb-2">{doc.title}</h4>
-                <p className="text-xs leading-relaxed" style={{ color: "#9BAAB5" }}>
+          <div className="mt-l2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+            {TOP_DELIVERABLES.map((doc) => (
+              <div key={doc.code} className="fab-doc-card" style={{ padding: 20 }}>
+                <div className="text-data text-cta" style={{ marginBottom: 8 }}>{doc.code}</div>
+                <h4 style={{ fontSize: 14, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>{doc.title}</h4>
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>
                   {doc.description}
                 </p>
               </div>
@@ -663,45 +642,23 @@ export default function FabricationPage() {
         </section>
 
         {/* ── Factory Acceptance Testing (FAT) & QA Workflow ── */}
-        <section className="mb-24">
-          <div className="mb-12 text-center max-w-3xl mx-auto">
-            <p
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 11,
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 8,
-              }}
-            >
-              Quality Assurance Protocol
-            </p>
-            <h2
-              style={{
-                fontWeight: 500,
-                fontSize: 30,
-                letterSpacing: "-0.6px",
-                color: "#ffffff",
-              }}
-            >
-              From 3D Spool Modeling to Commissioned Reality
-            </h2>
-            <p className="mt-3 text-sm" style={{ color: "#9BAAB5" }}>
-              Every skid and vessel is manufactured under a certified Quality Plan ensuring 100% compliance with client specifications before release.
-            </p>
-          </div>
+        <section className="mb-l5">
+          <Eyebrow label="Quality Assurance Protocol" />
+          <h2 className="mt-c4 text-anchor font-medium text-white">
+            From 3D Spool Modeling to Commissioned Reality
+          </h2>
+          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
+            Every skid and vessel is manufactured under a certified Quality Plan ensuring 100% compliance with client specifications before release.
+          </p>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-l2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
             {FAT_STEPS.map((step) => (
-              <div
-                key={step.step}
-                className="relative rounded-xl border border-gray-800 bg-[#0D1B2E]/60 p-6 transition-all hover:border-amber/50"
-              >
-                <div className="font-mono text-3xl font-black text-amber/40 mb-3">{step.step}</div>
-                <h4 className="text-base font-semibold text-white mb-2">{step.title}</h4>
-                <p className="text-xs leading-relaxed" style={{ color: "#9BAAB5" }}>
+              <div key={step.step} className="fab-card" style={{ padding: 24, position: "relative" }}>
+                <span style={{ fontFamily: "var(--font-ibm-plex-mono)", fontSize: 30, fontWeight: 500, color: "rgba(200,125,0,0.35)" }}>
+                  {step.step}
+                </span>
+                <h4 style={{ fontSize: 15, fontWeight: 500, color: "#ffffff", marginTop: 12, marginBottom: 8 }}>{step.title}</h4>
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>
                   {step.desc}
                 </p>
               </div>
@@ -709,111 +666,75 @@ export default function FabricationPage() {
           </div>
         </section>
 
-        {/* ── Commissioned Project References (Case Study Links) ── */}
-        <section className="mb-24 rounded-2xl border border-gray-800 bg-[#0A0E17] p-8 md:p-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-            <div>
-              <p
-                style={{
-                  fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 11,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  color: "#C87D00",
-                  marginBottom: 6,
-                }}
+        {/* ── Commissioned Project References ── */}
+        <section className="mb-l5">
+          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
+            <Eyebrow label="Proven Track Record" />
+            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
+              <h2 className="text-anchor font-medium text-white">
+                Fabrication &amp; Mechanical Erection References
+              </h2>
+              <Link
+                href="/references"
+                className="text-data text-cta uppercase tracking-wider hover:underline"
               >
-                Proven Track Record
-              </p>
-              <h3 className="text-2xl font-medium text-white">Fabrication &amp; Mechanical Erection References</h3>
+                View all project references →
+              </Link>
             </div>
-            <Link
-              href="/references"
-              className="text-xs font-mono text-amber hover:underline uppercase tracking-wider"
-            >
-              View all project references &rarr;
-            </Link>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            <Link
-              href="/references/coca-cola-multan-line-automation"
-              className="group block rounded-xl border border-gray-800 bg-[#0D1B2E]/50 p-6 transition-transform hover:-translate-y-1 hover:border-amber"
-            >
-              <div className="font-mono text-xs text-amber uppercase tracking-wider mb-2">Coca-Cola Tehran &amp; Multan</div>
-              <div className="text-base font-semibold text-white group-hover:text-amber transition-colors mb-2">
+          <div className="grid gap-2 md:grid-cols-3">
+            <Link href="/references/coca-cola-multan-line-automation" className="fab-ref-card" style={{ padding: 24 }}>
+              <div className="text-data text-cta uppercase tracking-wider" style={{ marginBottom: 8 }}>Coca-Cola Tehran &amp; Multan</div>
+              <div style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>
                 40,000 L/h Continuous Sugar Dissolving Skid &amp; Syrup Room
               </div>
-              <div className="text-xs text-slate-400">
+              <div style={{ fontSize: 13, color: "#9BAAB5" }}>
                 ASME BPE 316L orbital piping, continuous dissolving skids, and automated CIP manifold erection.
               </div>
             </Link>
 
-            <Link
-              href="/references/fauji-foods-syrup-room-modernization"
-              className="group block rounded-xl border border-gray-800 bg-[#0D1B2E]/50 p-6 transition-transform hover:-translate-y-1 hover:border-amber"
-            >
-              <div className="font-mono text-xs text-amber uppercase tracking-wider mb-2">Fauji Foods Ltd</div>
-              <div className="text-base font-semibold text-white group-hover:text-amber transition-colors mb-2">
+            <Link href="/references/fauji-foods-syrup-room-modernization" className="fab-ref-card" style={{ padding: 24 }}>
+              <div className="text-data text-cta uppercase tracking-wider" style={{ marginBottom: 8 }}>Fauji Foods Ltd</div>
+              <div style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>
                 Sanitary Mixproof Valve Matrix &amp; Dairy Batching
               </div>
-              <div className="text-xs text-slate-400">
+              <div style={{ fontSize: 13, color: "#9BAAB5" }}>
                 Automated GEA double-seat valve manifold, recipe dosing skids, and complete CIP integration.
               </div>
             </Link>
 
-            <Link
-              href="/references/beverage-cip-recovery-modernization"
-              className="group block rounded-xl border border-gray-800 bg-[#0D1B2E]/50 p-6 transition-transform hover:-translate-y-1 hover:border-amber"
-            >
-              <div className="font-mono text-xs text-amber uppercase tracking-wider mb-2">Enterprise Beverage Clients</div>
-              <div className="text-base font-semibold text-white group-hover:text-amber transition-colors mb-2">
+            <Link href="/references/beverage-cip-recovery-modernization" className="fab-ref-card" style={{ padding: 24 }}>
+              <div className="text-data text-cta uppercase tracking-wider" style={{ marginBottom: 8 }}>Enterprise Beverage Clients</div>
+              <div style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>
                 Multi-Circuit CIP Skids &amp; Pigging Recovery
               </div>
-              <div className="text-xs text-slate-400">
+              <div style={{ fontSize: 13, color: "#9BAAB5" }}>
                 Multi-tank CIP stations, automated pipeline pigging loops, and sanitary heat exchanger assemblies.
               </div>
             </Link>
           </div>
+
+          <CtaLink href="/references" className="mt-l1">
+            View all project references
+          </CtaLink>
         </section>
 
         {/* ── In-Depth Technical Engineering FAQs ── */}
-        <section className="mb-24">
-          <div className="mb-10">
-            <p
-              style={{
-                fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 11,
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                color: "#C87D00",
-                marginBottom: 8,
-              }}
-            >
-              Technical Clarity
-            </p>
-            <h2
-              style={{
-                fontWeight: 500,
-                fontSize: 28,
-                letterSpacing: "-0.6px",
-                color: "#ffffff",
-              }}
-            >
-              Frequently Asked Engineering Questions
-            </h2>
-          </div>
+        <section className="mb-l4">
+          <Eyebrow label="Technical Clarity" />
+          <h2 className="mt-c4 text-anchor font-medium text-white">
+            Frequently Asked Engineering Questions
+          </h2>
 
-          <div className="space-y-6">
+          <div className="mt-l2" style={{ display: "flex", flexDirection: "column", gap: 6 }}>
             {ENGINEERING_FAQS.map((faq, i) => (
-              <div key={i} className="border border-gray-800 p-6 rounded-xl bg-white/[0.03]">
-                <h3 className="text-base font-semibold text-white mb-3 flex items-start gap-3">
-                  <span className="text-amber font-mono">Q{i + 1}.</span>
+              <div key={i} className="fab-faq-card" style={{ padding: 24 }}>
+                <h3 style={{ fontSize: 15, fontWeight: 500, color: "#ffffff", marginBottom: 12, display: "flex", alignItems: "flex-start", gap: 12 }}>
+                  <span className="text-data text-cta" style={{ flexShrink: 0, paddingTop: 2 }}>Q{i + 1}.</span>
                   <span>{faq.q}</span>
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#C7D0DA" }}>
+                <p className="text-body" style={{ color: "#9BAAB5" }}>
                   {faq.a}
                 </p>
               </div>

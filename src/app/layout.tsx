@@ -22,16 +22,18 @@ export const metadata: Metadata = {
     template: "%s | MBH Solutions"
   },
   description:
-    "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries — combining our expertise as a SIEMENS Integrator company with real-time monitoring and ongoing maintenance support.",
+    "Turnkey beverage process systems, Siemens PLC/SCADA automation, and sanitary stainless fabrication for food, dairy, and FMCG manufacturing plants.",
   keywords: [
     "Industrial Automation",
     "Siemens Integrator",
-    "PLC",
-    "SCADA",
+    "Siemens S7-1500 PLC",
+    "SCADA WinCC",
     "Beverage Process Systems",
-    "FMCG Automation",
     "Turnkey Syrup Rooms",
-    "MBH Solutions"
+    "Sanitary CIP Systems",
+    "ASME BPE Fabrication",
+    "Hygienic Process Engineering",
+    "MBH Solutions",
   ],
   alternates: {
     canonical: 'https://www.mbhsol.com',

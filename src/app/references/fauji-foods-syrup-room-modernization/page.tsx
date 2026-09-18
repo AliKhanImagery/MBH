@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Fauji Foods Dairy & Syrup Processing Automation | MBH Solutions",
+  title: "Fauji Foods Dairy & Syrup Automation Case Study",
   description:
     "Technical case study on plant-wide control system deployment, Siemens S7-1500 PLC migration, and sanitary valve manifold automation for Fauji Foods Ltd.",
   alternates: {

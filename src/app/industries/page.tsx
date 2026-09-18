@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sectors We Serve | F&B, FMCG, Dairy & Process Manufacturing",
+  title: "Sectors We Serve — F&B, FMCG & Dairy",
   description:
     "Tailored process automation and hygienic engineering solutions for Food & Beverage, Edible Oils, Dairy, Pharmaceutical, and Industrial Utilities.",
   alternates: {

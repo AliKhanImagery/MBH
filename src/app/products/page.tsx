@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Process Equipment & Spares | Pumps, Valves, Instrumentation",
+  title: "Industrial Process Equipment & Spares",
   description:
     "Explore industrial process equipment and spare parts sourced from leading OEM partners: Endress+Hauser, Fristam, Kieselmann, GEA, Danfoss, and Hilge.",
   alternates: {

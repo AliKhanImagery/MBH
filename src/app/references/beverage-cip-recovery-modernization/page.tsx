@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Enterprise CIP & Product Recovery Modernization | MBH Solutions",
+  title: "Beverage CIP & Product Recovery Modernization Case Study",
   description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
   alternates: {
     canonical: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",

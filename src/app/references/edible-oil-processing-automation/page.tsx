@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Edible Oil Refining & Neutralization Automation | MBH Solutions",
+  title: "Edible Oil Refining & Neutralization Automation Case Study",
   description:
     "Technical case study on continuous chemical neutralization, ATEX/HazLoc control systems, and Coriolis mass flow dosing for Meezan and Dalda Foods.",
   alternates: {

@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "About Us | Siemens Solution Partner & Process Engineering Experts",
+  title: "Siemens Solution Partner & Process Engineering Experts",
   description:
     "Learn about MBH Solutions — a trusted Siemens Solution Partner delivering turnkey beverage process systems, CIP recovery, and industrial PLC/SCADA migrations.",
   alternates: {

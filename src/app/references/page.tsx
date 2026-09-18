@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Projects & Engineering References | Industrial Case Studies",
+  title: "Project References & Industrial Case Studies",
   description:
     "Explore MBH Solutions commissioned engineering references and technical case studies across Coca-Cola, Pepsi, Fauji Foods, Meezan, and Dalda Foods.",
   alternates: {

@@ -28,8 +28,26 @@ export async function generateMetadata({
   if (!cat) return {};
 
   return {
-    title: `${cat.title} · MBH Solutions Catalogue`,
-    description: cat.subtitle,
+    title: `${cat.title} — Industrial Process & Automation Equipment`,
+    description: `${cat.subtitle}. Technical specifications, line items, and 24-hour quotation support from MBH Solutions.`,
+    alternates: {
+      canonical: `https://www.mbhsol.com/catalogue/${slug}`,
+    },
+    openGraph: {
+      title: `${cat.title} | MBH Solutions Catalogue`,
+      description: cat.subtitle,
+      url: `https://www.mbhsol.com/catalogue/${slug}`,
+      siteName: "MBH Solutions",
+      images: [
+        {
+          url: cat.image,
+          width: 1200,
+          height: 630,
+          alt: `${cat.title} - MBH Solutions Process & Automation`,
+        },
+      ],
+      type: "website",
+    },
   };
 }
 
@@ -44,8 +62,37 @@ export default async function CategoryPage({
 
   const items = itemsByTag(slug);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.mbhsol.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Catalogue",
+        item: "https://www.mbhsol.com/catalogue",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: cat.title,
+        item: `https://www.mbhsol.com/catalogue/${slug}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       {/* ── Category Hero ── */}

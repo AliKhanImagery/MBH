@@ -10,7 +10,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Beverage Process Systems & Automation | Turnkey Syrup Rooms",
+  title: "Beverage Process Systems & Turnkey Syrup Rooms",
   description:
     "Turnkey engineering for CSD, juice, and syrup production lines — raw material intake, continuous inline blending, CIP recovery systems, and Siemens PLC automation.",
   alternates: {
@@ -34,9 +34,32 @@ export const metadata: Metadata = {
   },
 };
 
+const solutionsBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://www.mbhsol.com",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Solutions",
+      item: "https://www.mbhsol.com/solutions",
+    },
+  ],
+};
+
 export default function SolutionsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(solutionsBreadcrumb) }}
+      />
       <Header />
       <PageHero
         eyebrow="Solutions"

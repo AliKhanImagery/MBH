@@ -6,7 +6,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Technology Partners | Endress+Hauser, Fristam, Siemens, Kieselmann",
+  title: "Global OEM & Technology Partners",
   description:
     "Partnering with leading global OEMs to integrate certified pumps, valves, flowmeters, and Siemens automation hardware into industrial process lines.",
   alternates: {

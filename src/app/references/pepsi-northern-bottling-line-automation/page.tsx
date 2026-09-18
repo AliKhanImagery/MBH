@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Pepsi Bottling Line Automation & VFD Control Systems | MBH Solutions",
+  title: "Pepsi Bottling Line Automation & VFD Control Case Study",
   description:
     "Technical case study on high-speed bottling line synchronization, custom control panel fabrication, and Danfoss VFD automation for Pepsi Northern Beverages.",
   alternates: {
