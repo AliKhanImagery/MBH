@@ -70,7 +70,7 @@ export default function AboutTeaser() {
                 color: "#9BAAB5",
                 marginTop: 24,
               }}>
-                MBH Solutions operates as a Siemens Solution Partner delivering
+                MBH Solutions operates as a Siemens Integrator company delivering
                 turnkey process systems, industrial automation, and engineering
                 services to manufacturers across food and beverage, FMCG,
                 pharmaceutical, and power generation industries.

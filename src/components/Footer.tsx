@@ -95,7 +95,7 @@ export default function Footer() {
             © {new Date().getFullYear()} MBH Solutions. All rights reserved.
           </p>
           <p className="text-data text-steel-text">
-            SIEMENS SOLUTION PARTNER
+            SIEMENS INTEGRATOR COMPANY
           </p>
         </div>
       </div>

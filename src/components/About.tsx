@@ -1,7 +1,7 @@
 const STRENGTHS = [
   {
     title: "SIEMENS Integrator company",
-    desc: "Delivering PLC and SCADA architecture built on certified Siemens TIA Portal and Simatic platforms.",
+    desc: "Delivering PLC and SCADA architecture built on Siemens TIA Portal and Simatic platforms.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
         <path
@@ -71,7 +71,7 @@ export default function About() {
             </h2>
 
             <p className="text-body mt-6 text-[#4a5568]">
-              MBH Solutions operates as a Siemens Solution Partner delivering
+              MBH Solutions operates as a Siemens Integrator company delivering
               industrial automation and engineering services to
               manufacturers across Pakistan – covering PLC programming, SCADA
               integration, HMI design, and control panel engineering for

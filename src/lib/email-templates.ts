@@ -43,7 +43,7 @@ function emailHeader(title: string, subtitle: string, ticketId?: string) {
               MBH SOLUTIONS · INDUSTRIAL AUTOMATION &amp; ENGINEERING
             </div>
             <div style="font-size: 11px; font-family: monospace; color: #94a3b8; letter-spacing: 1px;">
-              SIEMENS SOLUTION PARTNER · HYGIENIC PROCESS SYSTEMS
+              SIEMENS INTEGRATOR COMPANY · HYGIENIC PROCESS SYSTEMS
             </div>
           </td>
           <td style="text-align: right; vertical-align: top;">
@@ -237,7 +237,7 @@ function emailFooter() {
               MBH Solutions — Process &amp; Automation Engineering
             </div>
             <div style="color: #64748b; font-size: 12px; margin-top: 2px;">
-              Siemens Solution Partner · Hygienic Process Lines · Industrial SCADA
+              Siemens Integrator Company · Hygienic Process Lines · Industrial SCADA
             </div>
             <div style="color: #94a3b8; font-size: 11px; margin-top: 4px;">
               Head Office: Industrial Area, Lahore, Pakistan · Worldwide Project Delivery

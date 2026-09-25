@@ -83,7 +83,7 @@ export default function Hero() {
             <div className="mb-4 flex items-center gap-2">
               <span className="h-[2px] w-6 bg-amber" />
               <span className="text-eyebrow text-amber">
-                Siemens Solution Partner
+                Siemens Integrator Company
               </span>
             </div>
 
