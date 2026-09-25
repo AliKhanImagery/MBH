@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Beverage Process Systems",
     "Turnkey Syrup Rooms",
     "Sanitary CIP Systems",
-    "ASME BPE Fabrication",
+    "Sanitary Stainless Fabrication",
     "Hygienic Process Engineering",
     "MBH Solutions",
   ],

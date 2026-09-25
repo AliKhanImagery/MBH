@@ -9,9 +9,9 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sanitary Process Equipment & ASME BPE Skid Fabrication",
+  title: "Sanitary Process Equipment & Modular Skid Fabrication",
   description:
-    "Comprehensive engineering, shop fabrication, automated orbital TIG welding, ASME BPE process piping, modular skids, and turnkey mechanical erection for food, beverage, dairy, and chemical plants.",
+    "Comprehensive engineering, shop fabrication, automated orbital TIG welding, sanitary process piping, modular skids, and turnkey mechanical erection for food, beverage, dairy, and chemical plants.",
   alternates: {
     canonical: "https://www.mbhsol.com/fabrication",
   },
@@ -47,14 +47,14 @@ const serviceSchema = {
   "serviceType": "Industrial Stainless Steel Fabrication & Mechanical Erection",
   "areaServed": "Regional",
   "description":
-    "Turnkey engineering, shop fabrication, automated orbital welding, and on-site mechanical installation of sanitary process tanks, pressure vessels, modular skids, and ASME BPE piping systems.",
+    "Turnkey engineering, shop fabrication, automated orbital welding, and on-site mechanical installation of sanitary process tanks, pressure vessels, modular skids, and sanitary piping systems.",
 };
 
 const CAPABILITY_PILLARS = [
   {
     number: "01",
-    title: "Sanitary Stainless Tanks & ASME Pressure Vessels",
-    badge: "ASME Sec VIII · Jacketed Vessels",
+    title: "Sanitary Stainless Tanks & Pressure Vessels",
+    badge: "Sanitary · Jacketed Vessels",
     summary:
       "Custom engineering and fabrication of atmospheric storage, vacuum deaeration vessels, and high-pressure process tanks from 500 L pilot units up to 100,000 L field silos in certified AISI 304L and 316L stainless steel.",
     technicalDetails: [
@@ -103,14 +103,14 @@ const CAPABILITY_PILLARS = [
   },
   {
     number: "03",
-    title: "ASME BPE Sanitary Piping & Orbital TIG Welding",
-    badge: "ASME BPE · < 20 ppm O2 Purge",
+    title: "Sanitary Piping & Orbital TIG Welding",
+    badge: "Sanitary TIG · < 20 ppm O2 Purge",
     summary:
       "High-purity hygienic fluid transfer demands perfectly flush, crevice-free internal weld beads that eliminate bacterial biofilm harborage. We utilize computer-controlled closed-chamber orbital GTAW/TIG welding with automated parameter data logging.",
     technicalDetails: [
       {
         heading: "Closed-Chamber Automated Orbital TIG",
-        text: "Utilizes microprocessor-controlled orbital weld heads with synchronized pulse current, rotation speed, and arc voltage control. Guarantees 100% full-penetration, flush internal weld profiles compliant with ASME BPE weld acceptance criteria.",
+        text: "Utilizes microprocessor-controlled orbital weld heads with synchronized pulse current, rotation speed, and arc voltage control. Guarantees 100% full-penetration, flush internal weld profiles compliant with sanitary weld acceptance criteria.",
       },
       {
         heading: "Controlled-Atmosphere Argon Purging",
@@ -129,13 +129,13 @@ const CAPABILITY_PILLARS = [
   {
     number: "04",
     title: "Surface Engineering, Chemical Pickling & ASTM Passivation",
-    badge: "Ra < 0.4 µm · ASTM A967",
+    badge: "Sanitary Finish · ASTM A967",
     summary:
       "Mechanical cutting and welding deplete protective chromium oxides from stainless steel. We execute certified chemical surface treatments to restore passive oxide films and guarantee maximum corrosion resistance under aggressive CIP chemicals.",
     technicalDetails: [
       {
         heading: "Internal Mechanical & Fine Polishing",
-        text: "Multi-stage grit mechanical polishing achieving Ra < 0.8 µm (32 µin) sanitary food standard and ultra-smooth Ra < 0.4 µm (15 µin) high-purity finish. Internal surface roughness is verified and certified using calibrated Mitutoyo digital surface profilometers.",
+        text: "Multi-stage grit mechanical polishing achieving sanitary food-grade smooth finish across internal surfaces. Surface quality is verified and checked using calibrated digital surface inspection gauges.",
       },
       {
         heading: "Chemical De-Rouging & Pickling",
@@ -164,7 +164,7 @@ const CAPABILITY_PILLARS = [
       },
       {
         heading: "Turnkey Utility Piping Systems",
-        text: "Complete fabrication of plant utility infrastructure: high-pressure steam distribution (ASME B31.1), steam pressure reducing stations, condensate return loops, chilled glycol piping, sterile compressed air, and reverse osmosis (RO/WFI) loops.",
+        text: "Complete fabrication of plant utility infrastructure: high-pressure steam distribution, steam pressure reducing stations, condensate return loops, chilled glycol piping, sterile compressed air, and reverse osmosis (RO/WFI) loops.",
       },
       {
         heading: "Sanitary Structural Steel & Platforms",
@@ -201,7 +201,7 @@ const METALLURGY_GUIDE = [
     composition: "High Ni · High Mo · Cr · W (C-22)",
     bestFor: "Hot brine marinades, high-chloride food seasonings, concentrated phosphoric acid degumming, and aggressive pickling lines.",
     advantages: "Virtually immune to chloride-induced stress corrosion cracking and extreme acid pitting at elevated process temperatures.",
-    limits: "Higher material investment; requires specialized welding procedures (ASME Sec IX) and specialized inert shielding gases.",
+    limits: "Higher material investment; requires specialized welding procedures and specialized inert shielding gases.",
   },
 ];
 
@@ -228,10 +228,10 @@ const ELASTOMER_GUIDE = [
 
 const SPEC_TABLE_DATA = [
   { parameter: "Material Metallurgy", spec: "AISI 304, 304L, 316, 316L, 904L & Hastelloy C-22 (with EN 10204 3.1 MTRs)" },
-  { parameter: "Design Codes & Standards", spec: "ASME BPE, ASME Section VIII Div 1, ASME B31.3 / B31.1, EHEDG & 3-A Sanitary" },
-  { parameter: "Welding Technology", spec: "Automated Closed-Chamber Orbital TIG (GTAW) & Manual Sanitary TIG per ASME Section IX" },
+  { parameter: "Design Codes & Standards", spec: "Sanitary Process Standards, EHEDG & 3-A Sanitary Guidelines" },
+  { parameter: "Welding Technology", spec: "Automated Closed-Chamber Orbital TIG (GTAW) & Manual Sanitary TIG" },
   { parameter: "Inert Purge Quality", spec: "99.999% High-Purity Argon with real-time digital oxygen monitoring (< 20 ppm O2)" },
-  { parameter: "Internal Surface Finish", spec: "Mechanical Polish Ra < 0.8 µm (standard) / Ra < 0.4 µm (high-purity / electropolished)" },
+  { parameter: "Internal Surface Finish", spec: "Sanitary Mechanical Polish / Chemical Passivation" },
   { parameter: "Chemical Passivation", spec: "Nitric / Citric Acid Chemical Treatment per ASTM A380 / ASTM A967 with Ferroxyl validation" },
   { parameter: "Non-Destructive Testing (NDT)", spec: "100% Video Boroscopy, Hydrostatic Pressure Testing (1.5x Design Pressure), Dye Penetrant (PT)" },
   { parameter: "Turnover Documentation (TOP)", spec: "Complete Dossier: MTRs, Weld Maps, Boroscope Video Logs, Hydro-Test Charts, FAT Protocols" },
@@ -246,7 +246,7 @@ const TOP_DELIVERABLES = [
   {
     code: "DOC-02",
     title: "Weld Procedure & Welder Qualifications",
-    description: "Complete Welding Procedure Specifications (WPS), Procedure Qualification Records (PQR), and Welder Performance Qualifications (WPQ) per ASME Section IX.",
+    description: "Complete Welding Procedure Specifications (WPS), Procedure Qualification Records (PQR), and Welder Performance Qualifications (WPQ) according to certified welding standards.",
   },
   {
     code: "DOC-03",
@@ -265,8 +265,8 @@ const TOP_DELIVERABLES = [
   },
   {
     code: "DOC-06",
-    title: "Surface Roughness (Ra) Test Sheets",
-    description: "Digital stylus profilometer reports certifying internal surface finishes at critical vessel and piping measurement points.",
+    title: "Surface Finish Inspection Sheets",
+    description: "Inspection reports verifying sanitary internal surface finishes at critical vessel and piping measurement points.",
   },
   {
     code: "DOC-07",
@@ -289,7 +289,7 @@ const FAT_STEPS = [
   {
     step: "02",
     title: "Cleanroom Shop Fabrication & Orbital Welding",
-    desc: "Components are fabricated in our dedicated stainless facility. Certified ASME Section IX welders perform automated orbital welds under continuous argon purge.",
+    desc: "Components are fabricated in our dedicated stainless facility. Trained sanitary fabrication specialists perform automated orbital welds under continuous argon purge.",
   },
   {
     step: "03",
@@ -317,8 +317,8 @@ const ENGINEERING_FAQS = [
     a: "Building process equipment on an active plant floor requires hot-work permits, dust containment tents, temporary scaffolding, and prolonged plant shutdowns costing tens of thousands of dollars per day. With modular skid fabrication, 80% of assembly occurs in our clean facility while your plant continues running. The completed skid arrives pre-piped, pre-wired, and wet-tested. On-site installation is reduced to rigging into position, bolting down, and connecting primary utility tie-ins during a single 48-to-72-hour weekend shutdown.",
   },
   {
-    q: "What internal surface roughness (Ra) is required for food, beverage, and dairy contact?",
-    a: "For general food and beverage applications, an internal mechanical finish of Ra < 0.8 µm (32 µin) is the recognized sanitary standard under 3-A and EHEDG guidelines. For dairy, baby food, and aseptic processing, a high-purity mechanical polish of Ra < 0.4 µm (15 µin) or electropolishing is recommended to eliminate surface microscopic pockets where proteins and bacterial colonies can anchor.",
+    q: "What surface finish standards are maintained for food, beverage, and dairy contact?",
+    a: "For food, dairy, and beverage applications, internal surfaces receive uniform sanitary mechanical polishing and thorough passivation to eliminate crevices where residues can anchor, ensuring complete cleanability during CIP sanitization cycles.",
   },
   {
     q: "How do you verify that Clean-in-Place (CIP) spray balls cover 100% of internal vessel surfaces?",
@@ -403,7 +403,7 @@ export default function FabricationPage() {
       <PageHero
         eyebrow="Engineering & Manufacturing"
         title="Sanitary Process Equipment & Modular Skid Fabrication"
-        subtitle="ASME BPE compliant stainless steel vessel fabrication, continuous orbital TIG welding, automated modular skids, and turnkey on-site mechanical erection for food, beverage, dairy, and high-purity chemical plants."
+        subtitle="Sanitary stainless steel vessel fabrication, continuous orbital TIG welding, automated modular skids, and turnkey on-site mechanical erection for food, beverage, dairy, and chemical plants."
         image="/images/sections/fabrication-welding.jpeg"
         imageAlt="MBH Solutions sanitary stainless steel welding and skid fabrication"
       />
@@ -426,8 +426,8 @@ export default function FabricationPage() {
           >
             {[
               { label: "Metallurgy", value: "304L · 316L · Hastelloy", sub: "Controlled Sulfur (0.005–0.017%)" },
-              { label: "Welding Standard", value: "Orbital TIG · ASME Sec IX", sub: "< 20 ppm O2 Purge Monitoring" },
-              { label: "Surface Finish", value: "Ra < 0.8 µm / Ra < 0.4 µm", sub: "ASTM A967 Chemical Passivation" },
+              { label: "Welding Standard", value: "Closed-Chamber Orbital TIG", sub: "< 20 ppm O2 Purge Monitoring" },
+              { label: "Surface Finish", value: "Sanitary Polished & Passivated", sub: "ASTM A967 Chemical Passivation" },
               { label: "Quality Turnover", value: "100% Video Boroscopy", sub: "Hydro-Test 1.5x & EN 10204 3.1" },
             ].map((m, i) => (
               <div key={i} style={{ backgroundColor: "#0D1B2E", padding: 24 }}>
@@ -690,7 +690,7 @@ export default function FabricationPage() {
                 40,000 L/h Continuous Sugar Dissolving Skid &amp; Syrup Room
               </div>
               <div style={{ fontSize: 13, color: "#9BAAB5" }}>
-                ASME BPE 316L orbital piping, continuous dissolving skids, and automated CIP manifold erection.
+                Sanitary 316L orbital piping, continuous dissolving skids, and automated CIP manifold erection.
               </div>
             </Link>
 

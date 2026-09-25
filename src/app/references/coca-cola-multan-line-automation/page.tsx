@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Coca-Cola Syrup Room & Process Automation Case Study",
   description:
-    "Technical case study on turnkey continuous sugar dissolving, ASME 316L process piping, and automated CIP commissioning for Coca-Cola bottling facilities.",
+    "Technical case study on turnkey continuous sugar dissolving, sanitary 316L process piping, and automated CIP commissioning for Coca-Cola bottling facilities.",
   alternates: {
     canonical: "https://www.mbhsol.com/references/coca-cola-multan-line-automation",
   },
@@ -55,10 +55,10 @@ const techArticleSchema = {
       },
       {
         "@type": "Question",
-        "name": "What welding standards are applied to sanitary 316L beverage process piping?",
+        "name": "What standards are applied to sanitary 316L beverage process piping?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "All stainless steel process piping conforms to ASME BPE standards utilizing automated orbital TIG welding with inert argon purging, achieving internal surface roughness under Ra < 0.8 µm to prevent microbial adhesion.",
+          "text": "All stainless steel process piping utilizes automated orbital TIG welding with inert argon purging, ensuring smooth sanitary internal fluid pathways to prevent microbial adhesion.",
         },
       },
     ],
@@ -72,7 +72,7 @@ export default function CocaColaCaseStudy() {
       <PageHero
         eyebrow="Case Study · Beverage Process Systems"
         title="Coca-Cola Continuous Sugar Dissolving & Syrup Room Modernization"
-        subtitle="Turnkey erection and commissioning of continuous sugar dissolving skids, ASME 316L sanitary piping, and automated CIP integration for Coca-Cola bottling facilities."
+        subtitle="Turnkey erection and commissioning of continuous sugar dissolving skids, sanitary 316L piping, and automated CIP integration for Coca-Cola bottling facilities."
       />
 
       <main
@@ -145,7 +145,7 @@ export default function CocaColaCaseStudy() {
               <strong>Continuous Dissolving Skid</strong>: High-shear powder induction mixer paired with plate heat exchangers to achieve complete 65° Brix simple syrup dissolution in a single pass at lower thermal operating temperatures.
             </li>
             <li>
-              <strong>ASME BPE Sanitary Orbital Piping</strong>: 100% video-boroscope inspected orbital TIG welding of 316L stainless steel process lines, ensuring ultra-smooth fluid pathways free from microbial crevices.
+              <strong>Sanitary Orbital Piping</strong>: 100% video-boroscope inspected orbital TIG welding of 316L stainless steel process lines, ensuring ultra-smooth fluid pathways free from microbial crevices.
             </li>
             <li>
               <strong>Mixproof Valve Manifolds</strong>: Configured GEA double-seat mixproof valve arrays preventing cross-flow between raw syrup preparation, pasteurization holding tubes, and active CIP sanitization loops.
@@ -235,10 +235,10 @@ export default function CocaColaCaseStudy() {
                 className="text-lg font-medium text-white mb-2"
                 style={{ fontFamily: "var(--font-ibm-plex-sans)" }}
               >
-                What welding standards are applied to sanitary 316L beverage process piping?
+                What standards are applied to sanitary 316L beverage process piping?
               </h3>
               <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>
-                All stainless steel process piping conforms to ASME BPE standards utilizing automated orbital TIG welding with inert argon purging. Each weld joint is 100% boroscope inspected to verify full penetration and internal surface smoothness under Ra &lt; 0.8 µm, preventing bacterial harbor points.
+                All stainless steel process piping utilizes automated orbital TIG welding with inert argon purging. Each weld joint is 100% boroscope inspected to verify full penetration and sanitary internal surface smoothness, preventing bacterial harbor points.
               </p>
             </div>
           </div>
