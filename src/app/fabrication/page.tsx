@@ -9,16 +9,16 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sanitary Process Equipment & Modular Skid Fabrication",
+  title: "Mechanical Fabrication & Modular Process Engineering | MBH Solutions",
   description:
-    "Comprehensive engineering, shop fabrication, automated orbital TIG welding, sanitary process piping, modular skids, and turnkey mechanical erection for food, beverage, dairy, and chemical plants.",
+    "End-to-end mechanical fabrication, sanitary process piping, pressure vessels, modular skids, and conveyor automation. ISO 9001:2015 certified with 1 µm machining tolerance.",
   alternates: {
     canonical: "https://www.mbhsol.com/fabrication",
   },
   openGraph: {
-    title: "Sanitary Process Equipment & Skid Fabrication | MBH Solutions",
+    title: "Mechanical Fabrication & Modular Process Engineering | MBH Solutions",
     description:
-      "Precision stainless steel vessel manufacturing, closed-chamber orbital welding, and turnkey modular skid systems for food, beverage, dairy, and chemical plants.",
+      "Structural fabrication, process piping, and automation-integrated systems, engineered and commissioned to industrial tolerance.",
     url: "https://www.mbhsol.com/fabrication",
     siteName: "MBH Solutions",
     images: [
@@ -26,164 +26,153 @@ export const metadata: Metadata = {
         url: "/images/sections/fabrication-welding.jpeg",
         width: 1200,
         height: 630,
-        alt: "Sanitary stainless steel orbital welding and skid fabrication",
+        alt: "MBH Solutions mechanical fabrication and sanitary orbital welding",
       },
     ],
-    type: "website",
   },
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Sanitary Process Equipment & Modular Skid Fabrication",
+  "name": "Mechanical Fabrication & Industrial Process Engineering",
   "provider": {
     "@type": "Organization",
     "name": "MBH Solutions",
     "url": "https://www.mbhsol.com",
+    "logo": "https://www.mbhsol.com/mbh-logo.png",
     "telephone": "+923322007373",
     "email": "sales@mbhsol.com",
   },
-  "serviceType": "Industrial Stainless Steel Fabrication & Mechanical Erection",
-  "areaServed": "Regional",
+  "serviceType": "Mechanical Fabrication, Process Piping, and Skid Assembly",
+  "areaServed": "Regional & Worldwide",
   "description":
-    "Turnkey engineering, shop fabrication, automated orbital welding, and on-site mechanical installation of sanitary process tanks, pressure vessels, modular skids, and sanitary piping systems.",
+    "Turnkey engineering, shop fabrication, automated orbital welding, and on-site mechanical installation of sanitary process tanks, pressure vessels, modular skids, and material handling conveyors.",
 };
 
-const CAPABILITY_PILLARS = [
+/* ── 4 Custom Fabrication Services (Page 02 of Profile) ── */
+const CUSTOM_FABRICATION_SERVICES = [
   {
+    id: "plate-work",
     number: "01",
-    title: "Sanitary Stainless Tanks & Pressure Vessels",
-    badge: "Sanitary · Jacketed Vessels",
+    badge: "Plate-work and all kinds of process machines",
+    title: "Sanitary Process Vessels, Tanks & Machines",
+    image: "/images/sections/plate-work-vessel.jpg",
+    imageAlt: "Stainless steel sanitary mixing vessel on fabricated tubular skid frame",
     summary:
-      "Custom engineering and fabrication of atmospheric storage, vacuum deaeration vessels, and high-pressure process tanks from 500 L pilot units up to 100,000 L field silos in certified AISI 304L and 316L stainless steel.",
-    technicalDetails: [
+      "Custom engineering and shop fabrication of atmospheric storage tanks, jacketed blending vessels, vacuum deaerators, and continuous holding tubes from 500 L pilot units up to 100,000 L industrial silos.",
+    highlights: [
       {
         heading: "Vessel Architectures & Capacities",
-        text: "We fabricate single-wall holding tanks, insulated storage silos, aseptic surge tanks, continuous pasteurisation holding tubes, vacuum deaerators, and chemical concentrate storage vessels engineered specifically for aggressive CIP reagents.",
+        text: "Single-wall holding tanks, insulated storage silos, aseptic surge tanks, continuous pasteurisation holding tubes, vacuum deaerators, and chemical concentrate storage vessels engineered for aggressive CIP regimes.",
       },
       {
         heading: "Thermal Transfer Jacketing",
-        text: "Precision laser-welded dimple jackets and half-pipe coils designed for operating pressures up to 10 bar. Optimized for high-velocity chilled glycol, cooling tower water, or culinary steam with zoned heat-transfer jackets for precise temperature staging.",
+        text: "Precision laser-welded dimple jackets and half-pipe coils designed for operating pressures up to 10 bar. Optimized for high-velocity chilled glycol, cooling tower water, or culinary steam with zoned heat-transfer manifolds.",
       },
       {
         heading: "Agitation & Homogenization",
-        text: "Custom-designed mixing systems including high-shear rotor-stator bottom emulsifiers for rapid powder dissolving (pectin, sugar, milk solids), magnetic hermetic drives for zero-leak aseptic operations, and top-entry anchor sweep agitators with food-grade Virgin PTFE wall scrapers.",
+        text: "Engineered top-entry, bottom-entry magnetic, or high-shear rotor-stator mixers. Configured with marine-type impellers, pitched turbine blades, or PTFE scraper anchors for viscous syrups and emulsions.",
       },
       {
-        heading: "Hermetic Insulation & Cladding",
-        text: "Fully seam-welded 304 stainless steel outer sheathing with zero pop-rivets or silicone caulking, eliminating moisture penetration into mineral wool or polyurethane insulation during high-pressure sanitary plant washdowns.",
+        heading: "Sanitary Drainability & Venting",
+        text: "True conical, dished (torispherical), or flat-sloped bottom heads paired with zero-dead-leg diaphragm or mixproof bottom outlet valves ensuring 100% gravity self-drainage.",
       },
     ],
   },
   {
+    id: "piping-process",
     number: "02",
-    title: "Turnkey Modular Process Skids & Systems",
-    badge: "Plug-and-Play · 70% Less Plant Downtime",
+    badge: "Piping and Process Engineering",
+    title: "Hygienic Process & Utility Piping Networks",
+    image: "/images/sections/piping-process-engineering.jpg",
+    imageAlt: "Industrial factory process and utility piping headers with compressor units",
     summary:
-      "Pre-engineered, fully automated process skids manufactured in our controlled facility. Skids arrive on-site pre-piped, pre-wired, and wet-tested, reducing on-site tie-in timelines from several weeks to a single scheduled shutdown window.",
-    technicalDetails: [
-      {
-        heading: "Automated CIP/SIP Skid Systems",
-        text: "Single, dual, and multi-circuit Clean-in-Place stations featuring automated chemical concentrate dosing, inline plate/tubular heat exchangers, automated acid/caustic wash cycles, and conductivity-controlled rinse water recovery loops that slash water consumption by up to 35%.",
-      },
-      {
-        heading: "Continuous Sugar Dissolving Skids",
-        text: "High-throughput continuous dissolving units equipped with Fristam or Hilge high-shear powder induction mixers. Capable of preparing 65° Brix simple syrup continuously up to 40,000 L/h with automated closed-loop Maselli optical refractometer Brix locking.",
-      },
-      {
-        heading: "Mixproof Valve Manifold Clusters",
-        text: "Compact matrix blocks utilizing GEA or Bardiani double-seat mixproof valves with integrated physical leakage cavities. Enables simultaneous product transfer on Line A while conducting active 85°C caustic CIP sanitization on Line B with zero contamination risk.",
-      },
-      {
-        heading: "Chemical & Additive Micro-Dosing Skids",
-        text: "ATEX / HazLoc Zone 1/2 rated chemical dosing skids with Endress+Hauser Promass Coriolis mass flow meters, high-viscosity progressive cavity or positive displacement pumps, and Danfoss VFDs for micro-ingredient precision.",
-      },
-    ],
-  },
-  {
-    number: "03",
-    title: "Sanitary Piping & Orbital TIG Welding",
-    badge: "Sanitary TIG · < 20 ppm O2 Purge",
-    summary:
-      "High-purity hygienic fluid transfer demands perfectly flush, crevice-free internal weld beads that eliminate bacterial biofilm harborage. We utilize computer-controlled closed-chamber orbital GTAW/TIG welding with automated parameter data logging.",
-    technicalDetails: [
+      "High-integrity fluid transfer systems and plant utility infrastructure. Closed-chamber automated orbital TIG and manual sanitary welding under continuous inert argon purge (< 20 ppm O2).",
+    highlights: [
       {
         heading: "Closed-Chamber Automated Orbital TIG",
-        text: "Utilizes microprocessor-controlled orbital weld heads with synchronized pulse current, rotation speed, and arc voltage control. Guarantees 100% full-penetration, flush internal weld profiles compliant with sanitary weld acceptance criteria.",
+        text: "Microprocessor-controlled orbital weld heads with synchronized pulse current, rotation speed, and arc voltage control, guaranteeing 100% full-penetration, flush internal weld profiles.",
       },
       {
         heading: "Controlled-Atmosphere Argon Purging",
-        text: "Welds are backed by 99.999% ultra-high purity argon purge gas monitored with calibrated digital optical oxygen analyzers. The weld arc is inhibited until the internal oxygen concentration drops below 20 ppm O2, completely preventing heat tint and sugar-rogging.",
+        text: "Welds backed by 99.999% ultra-high purity argon purge gas monitored with calibrated digital optical oxygen analyzers. The arc is inhibited until oxygen drops below 20 ppm O2, preventing heat tint.",
       },
       {
-        heading: "Metallurgical Sulfur Balance",
-        text: "We procure low-carbon 316L (1.4404) tubing with tightly controlled sulfur content between 0.005% and 0.017%. This balances surface tension gradients (Marangoni convection) in the molten weld pool, preventing asymmetrical or wandering weld penetration.",
+        heading: "Turnkey Plant Utility Infrastructure",
+        text: "Complete fabrication of culinary steam distribution, condensate return loops, chilled glycol headers, sterile compressed air, and reverse osmosis (RO/WFI) distribution loops.",
       },
       {
-        heading: "Prefabricated Modular Spooling",
-        text: "Complex piping geometries are extracted from 3D laser scans and prefabricated into spool assemblies under cleanroom shop conditions. Each spool is hydrostatically tested, marked with unique weld IDs, and passivated before delivery to the site.",
+        heading: "Cleanroom Prefabricated Spooling",
+        text: "Complex piping geometries extracted from 3D laser models and prefabricated into modular spool assemblies in our clean facility. Each spool is hydrostatically tested, numbered, and passivated.",
       },
     ],
   },
   {
+    id: "structural-fab",
+    number: "03",
+    badge: "Structural Fabrication",
+    title: "Industrial Pipe Bridges, Mezzanines & Frameworks",
+    image: "/images/sections/structural-pipe-bridge.jpg",
+    imageAlt: "Outdoor multi-tier industrial structural steel pipe rack and access catwalk",
+    summary:
+      "Heavy-duty sanitary stainless and galvanized steel catwalks, multi-tier overhead pipe bridges, access stair towers, and skid structural subframes engineered for extreme industrial vibration and seismic loads.",
+    highlights: [
+      {
+        heading: "Sanitary Structural Catwalks & Platforms",
+        text: "Fabrication of sanitary stainless catwalks, operator platforms, and overhead pipe bridges in bead-blasted or polished 304/316 stainless steel, engineered without unsealed hollow sections.",
+      },
+      {
+        heading: "Heavy-Duty Pipe Bridges & Racks",
+        text: "Multi-tier structural racks carrying high-density utility bundles, product headers, and electrical cable trays across factory spans with calculated expansion loops and seismic restraints.",
+      },
+      {
+        heading: "Equipment Skid Baseframes",
+        text: "Heavy tubular structural skid bases with integrated drip trays, perimeter coamings, and anti-vibration leveling feet engineered to support static and dynamic operational loads.",
+      },
+      {
+        heading: "Fast-Track Plant Tie-In Erection",
+        text: "Prefabricated modular frames designed for rapid rigging through existing roof openings or doorways during scheduled 48-to-72-hour turnaround shutdown windows.",
+      },
+    ],
+  },
+  {
+    id: "mechanical-conveyors",
     number: "04",
-    title: "Surface Engineering, Chemical Pickling & ASTM Passivation",
-    badge: "Sanitary Finish · ASTM A967",
+    badge: "Mechanical and Conveyors",
+    title: "Conveying Systems & Material Handling Automation",
+    image: "/images/sections/sanitary-curved-conveyor.jpg",
+    imageAlt: "3D CAD product render of curved sanitary modular belt conveyor with gear motor",
     summary:
-      "Mechanical cutting and welding deplete protective chromium oxides from stainless steel. We execute certified chemical surface treatments to restore passive oxide films and guarantee maximum corrosion resistance under aggressive CIP chemicals.",
-    technicalDetails: [
+      "Sanitary belt conveyors, 90°/180° modular plastic curve conveyors, cleated incline elevators, and accumulation roller tables engineered for high-speed food, beverage, and container handling.",
+    highlights: [
       {
-        heading: "Internal Mechanical & Fine Polishing",
-        text: "Multi-stage grit mechanical polishing achieving sanitary food-grade smooth finish across internal surfaces. Surface quality is verified and checked using calibrated digital surface inspection gauges.",
+        heading: "Curved & Modular Plastic Belt Lines",
+        text: "Sanitary modular belt conveyors engineered with low-friction acetal belts, tool-less quick-release belt lifters, and stainless washdown frames for hygienic sanitization.",
       },
       {
-        heading: "Chemical De-Rouging & Pickling",
-        text: "Application of pickling pastes and immersion baths per ASTM A380 to dissolve heat-tint discoloration, free-iron inclusions, and micro-weld spatter, exposing raw unadulterated base metal.",
+        heading: "Cleated Incline & Bucket Elevators",
+        text: "Steep-angle bulk ingredient handling for bottle caps, dry powders, preforms, and packaging cartons featuring food-grade FDA-compliant belts and enclosed catch pans.",
       },
       {
-        heading: "ASTM A967 Chemical Passivation",
-        text: "Total chemical passivation utilizing formulated nitric or citric acid solutions. This selectively leaches free iron from the stainless surface while enriching chromium content, accelerating the formation of a dense, corrosion-resistant Cr2O3 passive layer.",
+        heading: "Line Synchronization & Motion Control",
+        text: "Drive packages utilizing Danfoss variable frequency drives (VFDs) and high-efficiency IP66 electric gear motors synchronized directly to upstream fillers and downstream packers.",
       },
       {
-        heading: "Passivation Verification & Testing",
-        text: "Surface cleanliness is validated via ferroxyl swab testing for free iron detection and high-humidity test chambers. A formal Passivation Certificate of Compliance is issued for every vessel and piping spool.",
-      },
-    ],
-  },
-  {
-    number: "05",
-    title: "On-Site Mechanical Erection, Rigging & Turnkey Tie-Ins",
-    badge: "Turnkey Mechanical Installation",
-    summary:
-      "Our factory-trained mechanical crews manage complete on-site rigging, vessel erection, structural platform assembly, and utility integration with minimal disruption to ongoing production operations.",
-    technicalDetails: [
-      {
-        heading: "Heavy Rigging & Vessel Positioning",
-        text: "Execution of complex vessel rigging through existing plant roof openings or restricted access corridors utilizing hydraulic gantry systems, heavy-duty machinery skates, and laser alignment tooling.",
-      },
-      {
-        heading: "Turnkey Utility Piping Systems",
-        text: "Complete fabrication of plant utility infrastructure: high-pressure steam distribution, steam pressure reducing stations, condensate return loops, chilled glycol piping, sterile compressed air, and reverse osmosis (RO/WFI) loops.",
-      },
-      {
-        heading: "Sanitary Structural Steel & Platforms",
-        text: "Fabrication of sanitary stainless steel catwalks, mezzanines, access stairways, and overhead pipe bridges in bead-blasted or polished 304 stainless steel, engineered without unsealed hollow sections to prevent hidden water accumulation.",
-      },
-      {
-        heading: "Fast-Track Shutdown Windows",
-        text: "Turnaround tie-ins executed during scheduled 48-to-72-hour plant shutdowns. Multi-disciplinary teams work continuous shifts to complete final cut-ins, flange connections, hydrostatic pressure tests, and CIP sanitization flushes.",
+        heading: "Dynamic Accumulation & Buffering",
+        text: "Zero-pressure accumulation roller and modular table-top chains that absorb line micro-stops and balance production throughput across packaging operations.",
       },
     ],
   },
 ];
 
+/* ── Metallurgy Reference Matrix ── */
 const METALLURGY_GUIDE = [
   {
     alloy: "AISI 304 / 304L",
     pren: "18 – 20",
     composition: "18% Cr · 8% Ni · Low Carbon",
-    bestFor: "Ambient sugar syrup storage, dairy raw intake, deaerated water holding, skid structural framework, and utility piping.",
+    bestFor: "Ambient sugar syrup storage, raw water intake, deaerated water holding, skid structural framework, and utility piping.",
     advantages: "Excellent formability and general atmospheric corrosion resistance; cost-effective solution for non-acidic process zones.",
     limits: "Susceptible to chloride pitting above 50°C; not recommended for hot acid CIP or high-saline products.",
   },
@@ -191,7 +180,7 @@ const METALLURGY_GUIDE = [
     alloy: "AISI 316 / 316L",
     pren: "23 – 25",
     composition: "16–18% Cr · 10–14% Ni · 2.0–3.0% Mo",
-    bestFor: "Carbonated beverage lines, acidic juices, hot caustic/acid CIP loops, dairy pasteurizers, and sanitary piping.",
+    bestFor: "Carbonated soft drink lines, acidic juices, hot caustic/acid CIP loops, dairy pasteurizers, and sanitary piping.",
     advantages: "Molybdenum addition provides superior resistance to pitting and crevice corrosion under hot chemical CIP conditions.",
     limits: "Standard alloy for food/beverage. Must maintain sulfur between 0.005–0.017% for automated orbital welding.",
   },
@@ -205,6 +194,7 @@ const METALLURGY_GUIDE = [
   },
 ];
 
+/* ── Sanitary Elastomer Matrix ── */
 const ELASTOMER_GUIDE = [
   {
     material: "EPDM (Ethylene Propylene)",
@@ -226,17 +216,19 @@ const ELASTOMER_GUIDE = [
   },
 ];
 
+/* ── Technical Specifications Summary Table ── */
 const SPEC_TABLE_DATA = [
   { parameter: "Material Metallurgy", spec: "AISI 304, 304L, 316, 316L, 904L & Hastelloy C-22 (with EN 10204 3.1 MTRs)" },
-  { parameter: "Design Codes & Standards", spec: "Sanitary Process Standards, EHEDG & 3-A Sanitary Guidelines" },
+  { parameter: "Design Standards", spec: "Sanitary Process Guidelines, EHEDG & 3-A Sanitary Design Principles" },
   { parameter: "Welding Technology", spec: "Automated Closed-Chamber Orbital TIG (GTAW) & Manual Sanitary TIG" },
-  { parameter: "Inert Purge Quality", spec: "99.999% High-Purity Argon with real-time digital oxygen monitoring (< 20 ppm O2)" },
-  { parameter: "Internal Surface Finish", spec: "Sanitary Mechanical Polish / Chemical Passivation" },
-  { parameter: "Chemical Passivation", spec: "Nitric / Citric Acid Chemical Treatment per ASTM A380 / ASTM A967 with Ferroxyl validation" },
+  { parameter: "Inert Purge Quality", spec: "99.999% Ultra-High Purity Argon with real-time digital oxygen monitoring (< 20 ppm O2)" },
+  { parameter: "Machining Tolerance", spec: "1 µm dimensional verification with calibrated Mitutoyo inspection tooling" },
+  { parameter: "Surface Treatment", spec: "Sanitary Mechanical Polish, Chemical Pickling & ASTM A967 Citric/Nitric Passivation" },
   { parameter: "Non-Destructive Testing (NDT)", spec: "100% Video Boroscopy, Hydrostatic Pressure Testing (1.5x Design Pressure), Dye Penetrant (PT)" },
-  { parameter: "Turnover Documentation (TOP)", spec: "Complete Dossier: MTRs, Weld Maps, Boroscope Video Logs, Hydro-Test Charts, FAT Protocols" },
+  { parameter: "Turnover Documentation (TOP)", spec: "Complete Audit Dossier: MTRs, 3D Weld Maps, Boroscope Video Logs, Hydro-Test Charts, O&M Manuals" },
 ];
 
+/* ── 8-Item Turnover Package (TOP) Deliverables ── */
 const TOP_DELIVERABLES = [
   {
     code: "DOC-01",
@@ -245,8 +237,8 @@ const TOP_DELIVERABLES = [
   },
   {
     code: "DOC-02",
-    title: "Weld Procedure & Welder Qualifications",
-    description: "Complete Welding Procedure Specifications (WPS), Procedure Qualification Records (PQR), and Welder Performance Qualifications (WPQ) according to certified welding standards.",
+    title: "Weld Procedures & Qualifications",
+    description: "Complete Welding Procedure Specifications (WPS), Procedure Qualification Records (PQR), and Welder Performance Qualifications (WPQ).",
   },
   {
     code: "DOC-03",
@@ -265,8 +257,8 @@ const TOP_DELIVERABLES = [
   },
   {
     code: "DOC-06",
-    title: "Surface Finish Inspection Sheets",
-    description: "Inspection reports verifying sanitary internal surface finishes at critical vessel and piping measurement points.",
+    title: "Dimensional & Surface Inspection Sheets",
+    description: "Inspection reports verifying 1 µm machining tolerances and sanitary internal surface finishes at critical vessel and piping measurement points.",
   },
   {
     code: "DOC-07",
@@ -280,6 +272,7 @@ const TOP_DELIVERABLES = [
   },
 ];
 
+/* ── 4-Stage Fabrication & FAT Process ── */
 const FAT_STEPS = [
   {
     step: "01",
@@ -289,7 +282,7 @@ const FAT_STEPS = [
   {
     step: "02",
     title: "Cleanroom Shop Fabrication & Orbital Welding",
-    desc: "Components are fabricated in our dedicated stainless facility. Trained sanitary fabrication specialists perform automated orbital welds under continuous argon purge.",
+    desc: "Components are fabricated in our dedicated facility. Trained sanitary fabrication specialists perform automated orbital welds under continuous argon purge (< 20 ppm O2).",
   },
   {
     step: "03",
@@ -303,6 +296,7 @@ const FAT_STEPS = [
   },
 ];
 
+/* ── Technical Engineering FAQs ── */
 const ENGINEERING_FAQS = [
   {
     q: "What is the operational advantage of automated orbital welding over manual sanitary TIG?",
@@ -318,7 +312,7 @@ const ENGINEERING_FAQS = [
   },
   {
     q: "What surface finish standards are maintained for food, beverage, and dairy contact?",
-    a: "For food, dairy, and beverage applications, internal surfaces receive uniform sanitary mechanical polishing and thorough passivation to eliminate crevices where residues can anchor, ensuring complete cleanability during CIP sanitization cycles.",
+    a: "For food, dairy, and beverage applications, internal surfaces receive uniform sanitary mechanical polishing and thorough passivation to eliminate crevices where residues can anchor, ensuring complete cleanability during CIP sanitization cycles without making unrealistic sub-micron claims.",
   },
   {
     q: "How do you verify that Clean-in-Place (CIP) spray balls cover 100% of internal vessel surfaces?",
@@ -326,426 +320,648 @@ const ENGINEERING_FAQS = [
   },
   {
     q: "What documents are included in the Turnover Package (TOP) for multinational audits?",
-    a: "Every project is accompanied by an audit-ready Turnover Package containing EN 10204 3.1 Mill Test Reports (chemical & mechanical properties), Welder Performance Qualifications (WPQ/WPS), 3D isometric weld identification maps, digital video boroscopy recordings of internal joints, certified hydrostatic test chart logs, surface profilometer roughness sheets, and ASTM A967 Passivation Certificates.",
+    a: "Every project is accompanied by an audit-ready Turnover Package containing EN 10204 3.1 Mill Test Reports (chemical & mechanical properties), Welder Qualifications (WPQ/WPS), 3D isometric weld identification maps, digital video boroscopy recordings of internal joints, certified hydrostatic test chart logs, dimensional inspection sheets verifying 1 µm tolerance, and ASTM A967 Passivation Certificates.",
   },
 ];
 
-/* ── Scoped styles for the industrial card language ── */
-const fabricationStyles = `
-  .fab-card {
-    background-color: #0D1B2E;
-    border: 1px solid #1E3352;
-    transition: background-color 200ms ease, border-color 200ms ease;
-    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
-  }
-  .fab-card:hover {
-    background-color: #162540;
-    border-color: #C87D00;
-  }
-  .fab-detail-card {
-    background-color: #080B0F;
-    border: 1px solid #1E3352;
-    transition: background-color 200ms ease;
-    clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 0 100%);
-  }
-  .fab-detail-card:hover {
-    background-color: #0D1B2E;
-  }
-  .fab-doc-card {
-    background-color: #0D1B2E;
-    border: 1px solid #1E3352;
-    transition: background-color 200ms ease, border-color 200ms ease;
-    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
-  }
-  .fab-doc-card:hover {
-    background-color: #162540;
-    border-color: #1E3352;
-  }
-  .fab-faq-card {
-    background-color: #0D1B2E;
-    border: 1px solid #1E3352;
-    transition: background-color 200ms ease;
-    clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
-  }
-  .fab-faq-card:hover {
-    background-color: #162540;
-  }
-  .fab-ref-card {
-    background-color: #0D1B2E;
-    border: 1px solid #1E3352;
-    transition: background-color 200ms ease, border-color 200ms ease, transform 200ms ease;
-    clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
-    text-decoration: none;
-    display: block;
-  }
-  .fab-ref-card:hover {
-    background-color: #162540;
-    border-color: #C87D00;
-    transform: translateY(-2px);
-  }
-  .fab-table-head {
-    background-color: rgba(21,38,84,0.4);
-  }
-  .fab-table-row {
-    border-bottom: 1px solid #1E3352;
-    transition: background-color 200ms ease;
-  }
-  .fab-table-row:last-child { border-bottom: none; }
-  .fab-table-row:hover { background-color: rgba(255,255,255,0.03); }
-`;
-
 export default function FabricationPage() {
   return (
-    <div style={{ backgroundColor: "#080B0F", minHeight: "100vh", color: "#ffffff" }}>
-      <style>{fabricationStyles}</style>
+    <div className="min-h-screen bg-white text-[#080B0F]">
       <Header />
 
+      {/* ── 1. Page Hero (Standard Corporate Subpage Banner) ── */}
       <PageHero
-        eyebrow="Engineering & Manufacturing"
-        title="Sanitary Process Equipment & Modular Skid Fabrication"
-        subtitle="Sanitary stainless steel vessel fabrication, continuous orbital TIG welding, automated modular skids, and turnkey on-site mechanical erection for food, beverage, dairy, and chemical plants."
+        eyebrow="MBH Solutions — Mechanical Fabrication Profile"
+        title="Mechanical Fabrication Built to Industrial Tolerance"
+        subtitle="Structural fabrication, process piping, and automation-integrated systems, engineered and commissioned to industrial tolerance."
         image="/images/sections/fabrication-welding.jpeg"
-        imageAlt="MBH Solutions sanitary stainless steel welding and skid fabrication"
+        imageAlt="MBH Solutions mechanical fabrication and sanitary orbital welding"
       />
 
-      <main className="mx-auto max-w-[1400px] px-6 py-l3 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-
-        {/* ── Engineering Snapshot Metrics Strip ── */}
-        <section className="mb-l4">
-          <div
-            className="grid grid-cols-2 gap-px md:grid-cols-4"
-            style={{
-              border: "1px solid #1E3352",
-              backgroundColor: "#1E3352",
-              clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))",
-            }}
-          >
-            {[
-              { label: "Metallurgy", value: "304L · 316L · Hastelloy", sub: "Controlled Sulfur (0.005–0.017%)" },
-              { label: "Welding Standard", value: "Closed-Chamber Orbital TIG", sub: "< 20 ppm O2 Purge Monitoring" },
-              { label: "Surface Finish", value: "Sanitary Polished & Passivated", sub: "ASTM A967 Chemical Passivation" },
-              { label: "Quality Turnover", value: "100% Video Boroscopy", sub: "Hydro-Test 1.5x & EN 10204 3.1" },
-            ].map((m, i) => (
-              <div key={i} style={{ backgroundColor: "#0D1B2E", padding: 24 }}>
-                <div className="text-data text-cta uppercase tracking-wider">{m.label}</div>
-                <div style={{ marginTop: 6, fontSize: 15, fontWeight: 500, color: "#ffffff" }}>{m.value}</div>
-                <div style={{ marginTop: 6, fontSize: 11, color: "#9BAAB5" }}>{m.sub}</div>
+      {/* ── 2. The Engineering & Quality Snapshot (Floating Clean White Card) ── */}
+      <section className="relative z-10 -mt-10 px-6 md:px-12">
+        <div className="mx-auto max-w-[1360px]">
+          <div className="rounded-xl border border-slate-200 bg-white shadow-xl shadow-slate-200/50 overflow-hidden">
+            {/* Snapshot Title Bar */}
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-150 bg-slate-50/80 px-6 py-4 md:px-8">
+              <div className="flex items-center gap-3">
+                <span className="h-2.5 w-2.5 rounded-full bg-amber" />
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-800">
+                  Engineering &amp; Quality Snapshot
+                </span>
               </div>
-            ))}
+              <div className="flex items-center gap-3 font-mono text-xs text-slate-500">
+                <span>PROFILE REF: MF-2026</span>
+                <span className="text-slate-300">|</span>
+                <span className="font-semibold text-slate-800">AUDIT-READY STATUS: ACTIVE</span>
+              </div>
+            </div>
+
+            {/* 4 Quantitative Metrics (Page 03 of Profile) */}
+            <div className="grid grid-cols-2 divide-y divide-slate-150 sm:grid-cols-4 sm:divide-y-0 sm:divide-x divide-slate-150 bg-white">
+              <div className="p-6 md:p-8">
+                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Quality Certification</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">ISO 9001:2015</div>
+                <div className="mt-2 text-xs text-slate-600">Certified Quality Management System</div>
+              </div>
+
+              <div className="p-6 md:p-8">
+                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Machining Tolerance</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-amber md:text-3xl">1 µm</div>
+                <div className="mt-2 text-xs text-slate-600">Calibrated Stylus &amp; Micrometer Verified</div>
+              </div>
+
+              <div className="p-6 md:p-8">
+                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">On-Time Delivery</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">100%</div>
+                <div className="mt-2 text-xs text-slate-600">Project Dispatch Track Record</div>
+              </div>
+
+              <div className="p-6 md:p-8">
+                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Logged Operational Hours</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">12,400+</div>
+                <div className="mt-2 text-xs text-slate-600">Active Industrial Runtime Record</div>
+              </div>
+            </div>
+
+            {/* Institutional Seals & Accreditations (Page 01 of Profile) */}
+            <div className="border-t border-slate-150 bg-slate-50/60 px-6 py-4 md:px-8">
+              <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="font-mono text-xs font-medium uppercase tracking-wider text-slate-500">
+                  Statutory Registrations &amp; Corporate Seals:
+                </div>
+                <div className="flex flex-wrap items-center gap-2 md:gap-3">
+                  <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-800 shadow-sm">
+                    ★ ISO 9001:2015 Certified
+                  </span>
+                  <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-800 shadow-sm">
+                    🏛 SECP Incorporated
+                  </span>
+                  <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-800 shadow-sm">
+                    🇵🇰 FBR Pakistan Registered
+                  </span>
+                  <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-800 shadow-sm">
+                    🏢 LCCI Chamber Member
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── Section Intro: Why Modular Sanitary Fabrication Matters ── */}
-        <section className="mb-l5">
-          <div className="grid gap-12 lg:grid-cols-[55fr_45fr] items-center">
-            <div>
-              <Eyebrow label="Hygienic Process Engineering" />
+      {/* ── 3. Front-End Engineering Capabilities (Page 01 of Profile) ── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-12">
+            <Eyebrow label="01 / Front-End Engineering" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              Engineered In-House. Built for Process Integrity.
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Structural fabrication, process piping, and automation-integrated systems, engineered and commissioned to industrial tolerance.
+            </p>
+          </div>
 
-              <h2 className="mt-c4 text-anchor font-medium text-white" style={{ maxWidth: "36ch" }}>
-                Zero-Crevice Craftsmanship Engineered for Zero Plant Downtime
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-8 md:p-10 transition-shadow hover:shadow-md">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                  Pillar 01 · Engineering
+                </span>
+                <span className="font-mono text-xs text-slate-500">IN-HOUSE DESIGN</span>
+              </div>
+              <h3 className="mt-3 text-2xl font-medium text-slate-900">
+                Mechanical &amp; Thermal Engineering
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                Hydraulic calculations, thermal load analysis, and structural design completed in-house prior to fabrication.
+                Every vessel, heat-exchange manifold, and piping line is modeled in 3D CAD to evaluate thermal expansion, pressure drop, and fluid velocities before cutting steel.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-slate-200">
+                {["Hydraulic Flow Calculations", "Thermal Load Analysis", "3D CAD SolidWorks", "Thermal Expansion Checks"].map((tag) => (
+                  <span key={tag} className="rounded border border-slate-200 bg-white px-3 py-1 font-mono text-xs text-slate-700">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-xl border border-slate-200 bg-slate-50/70 p-8 md:p-10 transition-shadow hover:shadow-md">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                  Pillar 02 · Prefabrication
+                </span>
+                <span className="font-mono text-xs text-slate-500">SHOP ASSEMBLY</span>
+              </div>
+              <h3 className="mt-3 text-2xl font-medium text-slate-900">
+                Pre-Assembled Modular Systems
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-slate-600">
+                Skids and process units are shop-assembled and tested prior to delivery, reducing on-site installation time.
+                80% of assembly occurs in our controlled fabrication facility, collapsing on-site plant disruption into scheduled 48-to-72-hour turnaround shutdown windows.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-slate-200">
+                {["Shop Pre-Piped & Wired", "FAT Hydro-Testing", "48–72 Hr Fast-Track Tie-In", "Plug-and-Play Skids"].map((tag) => (
+                  <span key={tag} className="rounded border border-slate-200 bg-white px-3 py-1 font-mono text-xs text-slate-700">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. Custom Fabrication Services (Page 02 — 2x2 Machinery Grid) ── */}
+      <section className="py-20 md:py-28 bg-[#F8FAFC] border-y border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <Eyebrow label="02 / Custom Fabrication Services" />
+              <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+                End-to-End Production Expertise
               </h2>
-
-              <p className="text-body mt-c5" style={{ color: "#9BAAB5" }}>
-                In food, dairy, and beverage manufacturing, product contamination from irregular weld seams, dead legs, or incomplete CIP drainage is a multi-million-dollar operational risk. Building process equipment directly on the plant floor causes prolonged shutdowns, dust contamination, and unpredictable quality.
-              </p>
-              <p className="text-body mt-c4" style={{ color: "#9BAAB5" }}>
-                MBH Solutions shifts up to <strong style={{ color: "#ffffff" }}>80% of construction off-site</strong> into our clean manufacturing facility. We fabricate modular process skids, pre-welded piping spools, and jacketed vessels under controlled conditions, performing full factory acceptance testing (FAT) before the equipment ever reaches your loading dock.
-              </p>
-              <p className="text-body mt-c4" style={{ color: "#9BAAB5" }}>
-                Our turnkey engineering approach unites <strong style={{ color: "#ffffff" }}>mechanical vessel fabrication, sanitary orbital welding, and Siemens automation</strong> under a single contract, eliminating vendor finger-pointing between mechanical builders and control system integrators.
+              <p className="mt-4 text-base leading-relaxed text-slate-600">
+                MBH Solutions designs, fabricates, and commissions mechanical and process systems for industrial clients. Our scope spans structural fabrication, process piping, and modular skid assembly, delivered from initial engineering through site commissioning.
               </p>
             </div>
-
-            <div
-              style={{
-                position: "relative",
-                minHeight: 360,
-                overflow: "hidden",
-                border: "1px solid #1E3352",
-                backgroundColor: "#0D1B2E",
-                clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%)",
-              }}
-            >
-              <Image
-                src="/images/sections/cip-valves.png"
-                alt="Sanitary mixproof valve matrix and stainless steel fabrication"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
+            <div className="shrink-0">
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber/30 bg-amber/10 px-4 py-1.5 font-mono text-xs font-semibold text-amber">
+                4 CORE SHOP CAPABILITIES
+              </span>
             </div>
           </div>
-        </section>
 
-        {/* ── 5 Core Capability Pillars (Deep Dives) ── */}
-        <section className="mb-l5">
-          <Eyebrow label="Core Capabilities" />
-          <h2 className="mt-c4 text-anchor font-medium text-white">
-            Comprehensive Process Equipment &amp; Fabrication Services
-          </h2>
-          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
-            Explore the technical engineering specifications of our shop-built vessels, modular skid assemblies, and orbital piping.
-          </p>
+          <div className="grid gap-8 md:grid-cols-2">
+            {CUSTOM_FABRICATION_SERVICES.map((srv) => (
+              <div
+                key={srv.id}
+                className="group flex flex-col rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-slate-300"
+              >
+                {/* Visual Image with Cut-Corner Badge */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  <Image
+                    src={srv.image}
+                    alt={srv.imageAlt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                  
+                  {/* Badge Ribbon matching Page 2 */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="inline-block rounded border-l-4 border-amber bg-slate-950/90 px-4 py-2 backdrop-blur-sm">
+                      <div className="font-mono text-xs font-semibold tracking-wide text-white uppercase">
+                        {srv.badge}
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-          <div className="mt-l2" style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-            {CAPABILITY_PILLARS.map((pillar) => (
-              <div key={pillar.number} className="fab-card" style={{ padding: 32 }}>
-                <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 16, flexWrap: "wrap" }}>
-                    <span className="text-data text-cta" style={{ fontSize: 30, fontFamily: "var(--font-ibm-plex-mono)", fontWeight: 500 }}>
-                      {pillar.number}
+                {/* Content Details */}
+                <div className="flex flex-1 flex-col p-6 sm:p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs font-semibold text-amber uppercase">
+                      CATEGORY {srv.number}
                     </span>
-                    <h3 className="text-h2 text-white" style={{ flex: 1, minWidth: 200 }}>
-                      {pillar.title}
-                    </h3>
-                    <span className="text-data text-cta uppercase tracking-wider" style={{ backgroundColor: "rgba(200,125,0,0.12)", padding: "4px 10px" }}>
-                      {pillar.badge}
+                    <span className="font-mono text-xs text-slate-500 uppercase">
+                      IN-HOUSE FABRICATION
                     </span>
                   </div>
 
-                  <div style={{ height: 1, backgroundColor: "#1E3352" }} />
+                  <h3 className="mt-2 text-xl font-medium text-slate-900 sm:text-2xl">
+                    {srv.title}
+                  </h3>
 
-                  <p className="text-body" style={{ color: "#9BAAB5" }}>
-                    {pillar.summary}
+                  <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    {srv.summary}
                   </p>
 
-                  <div className="grid gap-2 sm:grid-cols-2 mt-c4">
-                    {pillar.technicalDetails.map((detail, idx) => (
-                      <div key={idx} className="fab-detail-card" style={{ padding: 20 }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
-                          <span style={{ color: "#C87D00", fontSize: 10 }}>&#9632;</span>
-                          <span style={{ fontSize: 15, fontWeight: 500, color: "#ffffff" }}>{detail.heading}</span>
-                        </div>
-                        <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>
-                          {detail.text}
-                        </p>
+                  <div className="mt-6 space-y-4 border-t border-slate-150 pt-6">
+                    {srv.highlights.map((h, i) => (
+                      <div key={i} className="text-xs">
+                        <div className="font-semibold text-slate-900">{h.heading}</div>
+                        <div className="mt-1 text-slate-600 leading-relaxed text-sm">{h.text}</div>
                       </div>
                     ))}
                   </div>
+
+                  <div className="mt-8 pt-4 border-t border-slate-100">
+                    <CtaLink href="/catalogue">
+                      View related equipment catalogue
+                    </CtaLink>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── Metallurgy & Chemical Compatibility Guide ── */}
-        <section className="mb-l5">
-          <Eyebrow label="Metallurgy & Material Selection" />
-          <h2 className="mt-c4 text-anchor font-medium text-white">
-            Alloy Selection for Chemical &amp; Thermal Compatibility
-          </h2>
-          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
-            Choosing the correct stainless metallurgy prevents pitting corrosion, stress cracking, and product degradation.
-          </p>
+      {/* ── 5. Credentials, Quality & Verification (Page 03 of Profile) ── */}
+      <section className="py-20 md:py-28 bg-white">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-14">
+            <Eyebrow label="03 / Credentials & Verification" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              Quality Assurance, Welding Standards &amp; Documentation
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Documented quality control, weld compliance, and delivery record maintained for every project.
+            </p>
+          </div>
 
-          <div className="mt-l2 grid gap-2 md:grid-cols-3">
-            {METALLURGY_GUIDE.map((mat, idx) => (
-              <div key={idx} className="fab-card" style={{ padding: 24, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-                <div>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 8 }}>
-                    <h4 style={{ fontSize: 18, fontWeight: 500, color: "#ffffff" }}>{mat.alloy}</h4>
-                    <span className="text-data text-cta">PREN {mat.pren}</span>
-                  </div>
-                  <div className="text-data" style={{ color: "#9BAAB5", marginBottom: 16 }}>{mat.composition}</div>
-
-                  <div style={{ marginBottom: 16 }}>
-                    <span className="text-data text-white uppercase tracking-wider" style={{ display: "block", marginBottom: 4 }}>Recommended Use</span>
-                    <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>{mat.bestFor}</p>
-                  </div>
-
-                  <div style={{ marginBottom: 16 }}>
-                    <span className="text-data text-cta uppercase tracking-wider" style={{ display: "block", marginBottom: 4 }}>Key Advantages</span>
-                    <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>{mat.advantages}</p>
-                  </div>
-                </div>
-
-                <div style={{ paddingTop: 16, borderTop: "1px solid #1E3352", fontSize: 11, color: "#9BAAB5" }}>
-                  <span style={{ fontWeight: 500, color: "#ffffff" }}>Operational Limit: </span>
-                  {mat.limits}
-                </div>
+          <div className="space-y-8">
+            {/* Row 1: Quality Assurance */}
+            <div className="grid items-center rounded-xl border border-slate-200 bg-slate-50/50 shadow-sm overflow-hidden md:grid-cols-2">
+              <div className="relative aspect-[16/11] w-full bg-slate-100">
+                <Image
+                  src="/images/sections/machinist-quality-inspection.jpg"
+                  alt="Quality assurance inspector with clipboard verifying machined part at lathe"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
-            ))}
-          </div>
-
-          {/* Elastomers & Gaskets Strip */}
-          <div className="mt-l1 fab-card" style={{ padding: 24, clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px))" }}>
-            <h4 style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 16, display: "flex", alignItems: "center", gap: 8 }}>
-              <span className="text-data text-cta">SEAL.SPEC</span>
-              <span style={{ height: 1, flex: 1, backgroundColor: "#1E3352" }} />
-              <span style={{ fontSize: 14, color: "#9BAAB5" }}>Sanitary Seal &amp; Gasket Compatibility</span>
-            </h4>
-            <div className="grid gap-2 sm:grid-cols-3">
-              {ELASTOMER_GUIDE.map((el, i) => (
-                <div key={i} className="fab-detail-card" style={{ padding: 16 }}>
-                  <div style={{ fontSize: 14, fontWeight: 500, color: "#ffffff", marginBottom: 4 }}>{el.material}</div>
-                  <div className="text-data text-cta" style={{ marginBottom: 4 }}>{el.tempRange}</div>
-                  <div className="text-data" style={{ color: "#9BAAB5", marginBottom: 8 }}>{el.standards}</div>
-                  <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>{el.suitability}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Technical Specifications & Tolerances Table ── */}
-        <section className="mb-l5">
-          <Eyebrow label="Engineering Standards" />
-          <h2 className="mt-c4 text-anchor font-medium text-white">
-            Manufacturing Tolerances &amp; Inspection Specifications
-          </h2>
-
-          <div className="mt-l2 overflow-x-auto" style={{ border: "1px solid #1E3352", clipPath: "polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%)" }}>
-            <table className="w-full text-left" style={{ borderCollapse: "collapse" }}>
-              <thead>
-                <tr className="fab-table-head text-data text-cta uppercase tracking-wider">
-                  <th style={{ padding: "16px 24px", fontWeight: 500, borderBottom: "1px solid #1E3352" }}>Engineering Parameter</th>
-                  <th style={{ padding: "16px 24px", fontWeight: 500, borderBottom: "1px solid #1E3352" }}>MBH Quality &amp; Compliance Specification</th>
-                </tr>
-              </thead>
-              <tbody>
-                {SPEC_TABLE_DATA.map((row, idx) => (
-                  <tr key={idx} className="fab-table-row">
-                    <td style={{ padding: "14px 24px", fontWeight: 500, color: "#ffffff", whiteSpace: "nowrap", fontSize: 14 }}>{row.parameter}</td>
-                    <td style={{ padding: "14px 24px", color: "#9BAAB5", fontSize: 14 }}>{row.spec}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        {/* ── Turnover Documentation Package (TOP) Dossier ── */}
-        <section className="mb-l5">
-          <Eyebrow label="Audit-Ready Documentation" />
-          <h2 className="mt-c4 text-anchor font-medium text-white">
-            Turnover Package (TOP) Dossier Deliverables
-          </h2>
-          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
-            Every fabricated vessel and skid arrives with complete certification packages required for multinational QA sign-offs and regulatory validation.
-          </p>
-
-          <div className="mt-l2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {TOP_DELIVERABLES.map((doc) => (
-              <div key={doc.code} className="fab-doc-card" style={{ padding: 20 }}>
-                <div className="text-data text-cta" style={{ marginBottom: 8 }}>{doc.code}</div>
-                <h4 style={{ fontSize: 14, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>{doc.title}</h4>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>
-                  {doc.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ── Factory Acceptance Testing (FAT) & QA Workflow ── */}
-        <section className="mb-l5">
-          <Eyebrow label="Quality Assurance Protocol" />
-          <h2 className="mt-c4 text-anchor font-medium text-white">
-            From 3D Spool Modeling to Commissioned Reality
-          </h2>
-          <p className="text-subtitle mt-c3" style={{ color: "#9BAAB5" }}>
-            Every skid and vessel is manufactured under a certified Quality Plan ensuring 100% compliance with client specifications before release.
-          </p>
-
-          <div className="mt-l2 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-            {FAT_STEPS.map((step) => (
-              <div key={step.step} className="fab-card" style={{ padding: 24, position: "relative" }}>
-                <span style={{ fontFamily: "var(--font-ibm-plex-mono)", fontSize: 30, fontWeight: 500, color: "rgba(200,125,0,0.35)" }}>
-                  {step.step}
+              <div className="p-8 sm:p-12 bg-white">
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                  CREDENTIAL 01 / VERIFICATION
                 </span>
-                <h4 style={{ fontSize: 15, fontWeight: 500, color: "#ffffff", marginTop: 12, marginBottom: 8 }}>{step.title}</h4>
-                <p style={{ fontSize: 13, lineHeight: 1.6, color: "#9BAAB5" }}>
-                  {step.desc}
-                </p>
+                <h3 className="mt-2 text-2xl font-medium text-slate-900">
+                  QUALITY ASSURANCE
+                </h3>
+                <ul className="mt-6 space-y-3.5 text-sm text-slate-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Material traceability with mill test certificates on structural and piping stock.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Dimensional inspection reports issued with every delivered assembly to <strong>1 µm</strong> tolerance.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Non-destructive testing (dye penetrant, radiographic) on critical welds.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Hydrostatic and pressure testing prior to dispatch held at 1.5x design ratings.</span>
+                  </li>
+                </ul>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
 
-        {/* ── Commissioned Project References ── */}
-        <section className="mb-l5">
-          <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 32 }}>
-            <Eyebrow label="Proven Track Record" />
-            <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: 16 }}>
-              <h2 className="text-anchor font-medium text-white">
-                Fabrication &amp; Mechanical Erection References
-              </h2>
-              <Link
-                href="/references"
-                className="text-data text-cta uppercase tracking-wider hover:underline"
-              >
-                View all project references →
-              </Link>
+            {/* Row 2: Welding & Fabrication Standards */}
+            <div className="grid items-center rounded-xl border border-slate-200 bg-slate-50/50 shadow-sm overflow-hidden md:grid-cols-2">
+              <div className="order-2 p-8 sm:p-12 bg-white md:order-1">
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                  CREDENTIAL 02 / COMPLIANCE
+                </span>
+                <h3 className="mt-2 text-2xl font-medium text-slate-900">
+                  WELDING &amp; FABRICATION STANDARDS
+                </h3>
+                <ul className="mt-6 space-y-3.5 text-sm text-slate-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Welding procedures and welder qualifications maintained (WPS &amp; WPQR).</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Orbital and manual TIG welding for sanitary and hygienic piping systems.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>ISO 9001:2015 certified quality management system governing all shop processes.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Controlled inert argon purging (&lt; 20 ppm O2) to completely eliminate oxidation heat-tint.</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="relative order-1 aspect-[16/11] w-full bg-slate-100 md:order-2">
+                <Image
+                  src="/images/sections/fabrication-welding.jpeg"
+                  alt="Sanitary orbital and TIG welding arc on stainless pipe"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            </div>
+
+            {/* Row 3: Project Documentation */}
+            <div className="grid items-center rounded-xl border border-slate-200 bg-slate-50/50 shadow-sm overflow-hidden md:grid-cols-2">
+              <div className="relative aspect-[16/11] w-full bg-slate-100">
+                <Image
+                  src="/images/sections/cad-blueprint-conveyor.jpg"
+                  alt="Technical 2D CAD engineering blueprint schematic of conveyor assembly with dimensional callouts"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-8 sm:p-12 bg-white">
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                  CREDENTIAL 03 / HANDOVER
+                </span>
+                <h3 className="mt-2 text-2xl font-medium text-slate-900">
+                  PROJECT DOCUMENTATION
+                </h3>
+                <ul className="mt-6 space-y-3.5 text-sm text-slate-700">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>As-built drawings and fabrication records updated to physical tie-ins.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Material certificates and inspection / test reports for audit verification.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>Comprehensive operation and maintenance handover documentation.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber font-bold">―</span>
+                    <span>3D isometric weld identification maps linking every joint to boroscopy pass status.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid gap-2 md:grid-cols-3">
-            <Link href="/references/coca-cola-multan-line-automation" className="fab-ref-card" style={{ padding: 24 }}>
-              <div className="text-data text-cta uppercase tracking-wider" style={{ marginBottom: 8 }}>Coca-Cola Tehran &amp; Multan</div>
-              <div style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>
-                40,000 L/h Continuous Sugar Dissolving Skid &amp; Syrup Room
-              </div>
-              <div style={{ fontSize: 13, color: "#9BAAB5" }}>
-                Sanitary 316L orbital piping, continuous dissolving skids, and automated CIP manifold erection.
-              </div>
-            </Link>
-
-            <Link href="/references/fauji-foods-syrup-room-modernization" className="fab-ref-card" style={{ padding: 24 }}>
-              <div className="text-data text-cta uppercase tracking-wider" style={{ marginBottom: 8 }}>Fauji Foods Ltd</div>
-              <div style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>
-                Sanitary Mixproof Valve Matrix &amp; Dairy Batching
-              </div>
-              <div style={{ fontSize: 13, color: "#9BAAB5" }}>
-                Automated GEA double-seat valve manifold, recipe dosing skids, and complete CIP integration.
-              </div>
-            </Link>
-
-            <Link href="/references/beverage-cip-recovery-modernization" className="fab-ref-card" style={{ padding: 24 }}>
-              <div className="text-data text-cta uppercase tracking-wider" style={{ marginBottom: 8 }}>Enterprise Beverage Clients</div>
-              <div style={{ fontSize: 16, fontWeight: 500, color: "#ffffff", marginBottom: 8 }}>
-                Multi-Circuit CIP Skids &amp; Pigging Recovery
-              </div>
-              <div style={{ fontSize: 13, color: "#9BAAB5" }}>
-                Multi-tank CIP stations, automated pipeline pigging loops, and sanitary heat exchanger assemblies.
-              </div>
-            </Link>
+      {/* ── 6. Technical Engineering Deep-Dives: Metallurgy & Elastomers ── */}
+      <section className="py-20 md:py-28 bg-[#F8FAFC] border-t border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-12">
+            <Eyebrow label="Materials Science & Metallurgy" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              Alloy Selection &amp; Process Suitability
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Selecting the appropriate stainless metallurgy and elastomer compounds prevents pitting, chloride stress cracking, and elastomer hardening under aggressive CIP conditions.
+            </p>
           </div>
 
-          <CtaLink href="/references" className="mt-l1">
-            View all project references
-          </CtaLink>
-        </section>
+          <div className="grid gap-6 md:grid-cols-3">
+            {METALLURGY_GUIDE.map((m) => (
+              <div key={m.alloy} className="rounded-xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div className="font-mono text-base font-bold text-slate-900">{m.alloy}</div>
+                  <div className="rounded bg-amber/10 px-2.5 py-1 font-mono text-xs font-semibold text-amber">
+                    PREN {m.pren}
+                  </div>
+                </div>
+                <div className="mt-1 font-mono text-xs text-slate-500">{m.composition}</div>
 
-        {/* ── In-Depth Technical Engineering FAQs ── */}
-        <section className="mb-l4">
-          <Eyebrow label="Technical Clarity" />
-          <h2 className="mt-c4 text-anchor font-medium text-white">
-            Frequently Asked Engineering Questions
-          </h2>
+                <div className="mt-5 border-t border-slate-150 pt-4">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">Optimal Process Zone</div>
+                  <div className="mt-1.5 text-sm leading-relaxed text-slate-700">{m.bestFor}</div>
+                </div>
 
-          <div className="mt-l2" style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            {ENGINEERING_FAQS.map((faq, i) => (
-              <div key={i} className="fab-faq-card" style={{ padding: 24 }}>
-                <h3 style={{ fontSize: 15, fontWeight: 500, color: "#ffffff", marginBottom: 12, display: "flex", alignItems: "flex-start", gap: 12 }}>
-                  <span className="text-data text-cta" style={{ flexShrink: 0, paddingTop: 2 }}>Q{i + 1}.</span>
-                  <span>{faq.q}</span>
-                </h3>
-                <p className="text-body" style={{ color: "#9BAAB5" }}>
-                  {faq.a}
-                </p>
+                <div className="mt-4">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">Engineering Advantage</div>
+                  <div className="mt-1.5 text-sm leading-relaxed text-slate-700">{m.advantages}</div>
+                </div>
+
+                <div className="mt-4">
+                  <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">Operating Limit</div>
+                  <div className="mt-1.5 text-sm leading-relaxed text-slate-700">{m.limits}</div>
+                </div>
               </div>
             ))}
           </div>
-        </section>
-      </main>
 
-      {/* ── Direct Inquiry & RFQ Form (Contact.tsx) ── */}
+          {/* Elastomer Table (Datasheet Style) */}
+          <div className="mt-8 rounded-xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+            <h3 className="text-lg font-medium text-slate-900 mb-4">
+              Sanitary Seal &amp; Gasket Compatibility Matrix
+            </h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50 font-mono text-xs text-slate-600 uppercase">
+                    <th className="py-3 px-4">Polymer Compound</th>
+                    <th className="py-3 px-4">Temperature Window</th>
+                    <th className="py-3 px-4">Sanitary Standards</th>
+                    <th className="py-3 px-4">Application Suitability</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-150">
+                  {ELASTOMER_GUIDE.map((e, idx) => (
+                    <tr key={idx} className="hover:bg-slate-50/60 transition-colors">
+                      <td className="py-3.5 px-4 font-semibold text-slate-900">{e.material}</td>
+                      <td className="py-3.5 px-4 font-mono font-medium text-amber">{e.tempRange}</td>
+                      <td className="py-3.5 px-4 text-slate-600 font-mono text-xs">{e.standards}</td>
+                      <td className="py-3.5 px-4 text-slate-700">{e.suitability}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. Technical Specifications Matrix ── */}
+      <section className="py-20 md:py-28 bg-white border-b border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-12">
+            <Eyebrow label="Audit Reference Table" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              Manufacturing &amp; Quality Engineering Matrix
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Core fabrication parameters verified on every mechanical manufacturing and skid assembly project.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50 text-xs font-mono text-slate-600 uppercase">
+                    <th className="py-4 px-6 w-1/3">Engineering Parameter</th>
+                    <th className="py-4 px-6">Shop Capability &amp; Quality Execution Standard</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-150">
+                  {SPEC_TABLE_DATA.map((row, i) => (
+                    <tr key={i} className="hover:bg-slate-50/60 transition-colors">
+                      <td className="py-4 px-6 font-semibold text-slate-900">{row.parameter}</td>
+                      <td className="py-4 px-6 text-slate-700 font-mono text-xs md:text-sm">{row.spec}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. Complete 8-Deliverable Turnover Package (TOP) ── */}
+      <section className="py-20 md:py-28 bg-[#F8FAFC]">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-12">
+            <Eyebrow label="Quality Turnover Dossier" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              Turnover Package (TOP) for Multinational Audits
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-600">
+              Every skid, vessel, and piping spool is accompanied by a structured handover dossier ensuring compliance with client corporate quality audits.
+            </p>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {TOP_DELIVERABLES.map((doc) => (
+              <div key={doc.code} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+                <div className="font-mono text-xs font-semibold text-amber">{doc.code}</div>
+                <div className="mt-2 text-base font-semibold text-slate-900">{doc.title}</div>
+                <p className="mt-2 text-sm leading-relaxed text-slate-600">{doc.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 9. 4-Stage Fabrication Process Workflow ── */}
+      <section className="py-20 md:py-28 bg-white border-t border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-12">
+            <Eyebrow label="Lifecycle Execution" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              4-Stage Fabrication &amp; Commissioning Workflow
+            </h2>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {FAT_STEPS.map((s) => (
+              <div key={s.step} className="rounded-xl border border-slate-200 bg-slate-50/60 p-6 md:p-8">
+                <div className="font-mono text-3xl font-bold text-amber">{s.step}</div>
+                <div className="mt-3 text-base font-semibold text-slate-900">{s.title}</div>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 10. Engineering Technical FAQs ── */}
+      <section className="py-20 md:py-28 bg-[#F8FAFC] border-t border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-12">
+            <Eyebrow label="Engineering Knowledge Base" />
+            <h2 className="mt-3 text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">
+              Frequently Asked Technical Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4 max-w-4xl">
+            {ENGINEERING_FAQS.map((faq, i) => (
+              <div key={i} className="rounded-xl border border-slate-200 bg-white p-6 md:p-8 shadow-sm">
+                <h3 className="text-base font-semibold text-slate-900">{faq.q}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 11. Mission Statement & Turnkey Integration Anchor (Page 04) ── */}
+      <section className="py-20 md:py-28 bg-white border-t border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="rounded-2xl border border-slate-800 bg-[#0D1B2E] p-8 md:p-14 text-white shadow-xl overflow-hidden">
+            <div className="grid items-center gap-10 md:grid-cols-[1.2fr_0.8fr]">
+              <div>
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                  MBH SOLUTIONS · MISSION STATEMENT
+                </span>
+                <blockquote className="mt-4 text-xl font-normal leading-relaxed text-white sm:text-2xl" style={{ fontStyle: "italic" }}>
+                  &ldquo;To deliver end-to-end engineering solutions — spanning process systems, industrial automation, and mechanical fabrication — that enable manufacturers to build, modernise, and optimise their production operations with confidence, quality, and long-term reliability.&rdquo;
+                </blockquote>
+
+                <div className="mt-8 border-t border-slate-700/80 pt-6">
+                  <h4 className="text-xs font-semibold text-white uppercase tracking-wider font-mono">
+                    The Single-Source Advantage: Mechanical Fabrication + Siemens Automation
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
+                    Conventional projects require managing separate mechanical vessel builders and control system software integrators, leading to vendor finger-pointing during line commissioning. MBH Solutions fabricates the physical vessels, orbital piping skids, and conveyor lines while our in-house Siemens automation team programs the S7 PLCs, WinCC SCADA dashboards, and control panels under a single turnkey contract.
+                  </p>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="#contact"
+                    className="inline-block bg-amber px-6 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:bg-amber-light rounded"
+                  >
+                    Request Fabrication Proposal
+                  </a>
+                  <Link
+                    href="/catalogue"
+                    className="inline-block border border-slate-700 bg-slate-900 px-6 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-white transition-colors hover:border-amber rounded"
+                  >
+                    Browse Catalogue Skids
+                  </Link>
+                </div>
+              </div>
+
+              {/* Conveyor CAD Render Feature Visual */}
+              <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-slate-700 bg-slate-950 p-4">
+                <Image
+                  src="/images/sections/sanitary-curved-conveyor.jpg"
+                  alt="3D CAD render of curved sanitary modular belt conveyor with drive motor"
+                  fill
+                  className="object-contain p-4"
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                />
+                <div className="absolute bottom-3 left-3 right-3 text-center">
+                  <span className="font-mono text-xs text-slate-300 bg-slate-900/90 px-3 py-1 border border-slate-700 rounded">
+                    CAD MODEL: MODULAR CURVE CONVEYOR (SERIES C-90)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 12. Verified References Strip ── */}
+      <section className="py-20 md:py-24 bg-[#F8FAFC] border-t border-slate-200">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="mb-8 flex items-center justify-between">
+            <h2 className="text-2xl font-medium text-slate-900">Fabrication Case Studies &amp; Commissioning</h2>
+            <Link href="/references" className="text-xs text-amber font-mono font-semibold hover:underline">
+              View all project references →
+            </Link>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <Link href="/references/coca-cola-multan-line-automation" className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="font-mono text-xs font-semibold text-amber">Coca-Cola Multan</div>
+              <div className="mt-2 text-base font-semibold text-slate-900">Continuous Sugar Dissolving Skid &amp; Syrup Room</div>
+              <p className="mt-2 text-sm text-slate-600">Sanitary 316L orbital piping, continuous dissolving skids, and automated CIP manifold erection.</p>
+            </Link>
+
+            <Link href="/references/fauji-foods-syrup-room-modernization" className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="font-mono text-xs font-semibold text-amber">Fauji Foods Ltd</div>
+              <div className="mt-2 text-base font-semibold text-slate-900">Sanitary Mixproof Valve Matrix &amp; Dairy Batching</div>
+              <p className="mt-2 text-sm text-slate-600">Automated GEA double-seat valve manifold, recipe dosing skids, and complete CIP integration.</p>
+            </Link>
+
+            <Link href="/references/beverage-cip-recovery-modernization" className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="font-mono text-xs font-semibold text-amber">Enterprise Beverage Client</div>
+              <div className="mt-2 text-base font-semibold text-slate-900">Multi-Circuit CIP Skids &amp; Pigging Recovery</div>
+              <p className="mt-2 text-sm text-slate-600">Shop-fabricated modular CIP skid with automated chemical dosing and chemical recovery loops.</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Contact />
-
       <Footer />
     </div>
   );
