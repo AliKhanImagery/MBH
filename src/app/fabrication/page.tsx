@@ -10,7 +10,7 @@ import Footer from "@/components/Footer";
 import { ORG_ID, toJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Mechanical Fabrication & Modular Process Engineering | MBH Solutions",
+  title: "Mechanical Fabrication & Modular Process Engineering",
   description:
     "End-to-end mechanical fabrication, sanitary process piping, pressure vessels, modular skids, and conveyor automation. ISO 9001:2015 certified with 1 µm machining tolerance.",
   alternates: {
