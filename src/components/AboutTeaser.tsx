@@ -19,8 +19,8 @@ export default function AboutTeaser() {
               }}
             >
               <Image
-                src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=80"
-                alt="MBH Solutions industrial engineering and automation team"
+                src="/images/sections/plc-cabinet-mbh.webp"
+                alt="Siemens PLC modules and wiring inside a control cabinet"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
