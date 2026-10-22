@@ -13,6 +13,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.mbhsol.com/industries",
   },
+  // TEC-16: thin page (sector names only). Keep out of the index until
+  // per-sector copy ships (PG-07), then remove this and re-add it to sitemap.ts.
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     images: [DEFAULT_OG_IMAGE],
     title: "Sectors We Serve | MBH Solutions",
