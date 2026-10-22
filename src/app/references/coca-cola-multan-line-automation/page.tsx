@@ -1,3 +1,4 @@
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mbhsol.com/references/coca-cola-multan-line-automation",
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: "Coca-Cola Syrup Room & Process Automation | MBH Solutions",
     description:
       "Turnkey erection and commissioning of continuous sugar dissolving skids, mixproof valve matrices, and automated CIP systems for Coca-Cola.",

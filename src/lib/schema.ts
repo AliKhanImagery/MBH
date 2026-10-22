@@ -91,3 +91,11 @@ export const siteGraph = {
 export function toJsonLd(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
+
+/** Fallback social image for pages that have no route-specific photo yet. */
+export const DEFAULT_OG_IMAGE = {
+  url: "/images/hero/hero.png",
+  width: 1200,
+  height: 630,
+  alt: "MBH Solutions industrial automation and beverage process systems",
+};

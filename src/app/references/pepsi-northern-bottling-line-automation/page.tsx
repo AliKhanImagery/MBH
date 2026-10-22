@@ -1,3 +1,4 @@
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mbhsol.com/references/pepsi-northern-bottling-line-automation",
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: "Pepsi Bottling Line Automation & VFD Control | MBH Solutions",
     description:
       "High-speed line synchronization, Danfoss VFD control cabinets, and Siemens PLC migration for Pepsi Northern Beverages.",

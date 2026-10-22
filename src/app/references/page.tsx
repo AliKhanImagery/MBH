@@ -1,3 +1,4 @@
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mbhsol.com/references",
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: "Projects & References | MBH Solutions",
     description:
       "Commissioned process systems and automation upgrades for leading manufacturers across the region.",

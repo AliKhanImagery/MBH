@@ -24,18 +24,6 @@ export const metadata: Metadata = {
   },
   description:
     "Turnkey beverage process systems, Siemens PLC/SCADA automation, and sanitary stainless fabrication for food, dairy, and FMCG manufacturing plants.",
-  keywords: [
-    "Industrial Automation",
-    "Siemens Integrator",
-    "Siemens S7-1500 PLC",
-    "SCADA WinCC",
-    "Beverage Process Systems",
-    "Turnkey Syrup Rooms",
-    "Sanitary CIP Systems",
-    "Sanitary Stainless Fabrication",
-    "Hygienic Process Engineering",
-    "MBH Solutions",
-  ],
   alternates: {
     canonical: 'https://www.mbhsol.com',
   },
@@ -55,11 +43,11 @@ export const metadata: Metadata = {
       },
     ],
   },
+  // Card type only: title, description and image are left to each page's
+  // openGraph, which X/Twitter falls back to. Setting them here would leak the
+  // homepage values onto every route (metadata merges shallowly).
   twitter: {
     card: 'summary_large_image',
-    title: "MBH Solutions | Industrial Automation & Engineering",
-    description: "End-to-end PLC and SCADA-based automation and beverage process solutions.",
-    images: ['/images/hero/hero.png'],
   },
   robots: {
     index: true,

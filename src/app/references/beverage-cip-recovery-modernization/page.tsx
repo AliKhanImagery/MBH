@@ -1,3 +1,4 @@
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: "Enterprise CIP & Product Recovery Modernization | MBH Solutions",
     description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
     url: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",

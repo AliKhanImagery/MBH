@@ -1,3 +1,4 @@
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mbhsol.com/references/fauji-foods-syrup-room-modernization",
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: "Fauji Foods Dairy & Processing Automation | MBH Solutions",
     description:
       "Full plant-wide control architecture upgrade, automated recipe batching, and mixproof valve manifold integration for Fauji Foods.",

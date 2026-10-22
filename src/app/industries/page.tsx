@@ -1,3 +1,4 @@
+import { DEFAULT_OG_IMAGE } from "@/lib/schema";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mbhsol.com/industries",
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: "Sectors We Serve | MBH Solutions",
     description:
       "Engineering solutions for food and beverage, FMCG, pharmaceutical, and process manufacturing industries.",
