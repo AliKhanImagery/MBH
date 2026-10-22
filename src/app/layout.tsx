@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import { siteGraph, toJsonLd } from "@/lib/schema";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
@@ -69,23 +70,6 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "MBH Solutions",
-    url: "https://www.mbhsol.com",
-    logo: "https://www.mbhsol.com/mbh-logo.png",
-    description: "Providing end-to-end PLC and SCADA-based automation solutions for food and beverage, FMCG, power generation, and process manufacturing industries."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "MBH Solutions",
-    url: "https://www.mbhsol.com"
-  }
-];
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -95,7 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: toJsonLd(siteGraph) }}
         />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>

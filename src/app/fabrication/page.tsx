@@ -7,6 +7,7 @@ import { Eyebrow } from "@/components/Eyebrow";
 import { CtaLink } from "@/components/CtaLink";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { ORG_ID, toJsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Mechanical Fabrication & Modular Process Engineering | MBH Solutions",
@@ -36,14 +37,8 @@ const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Mechanical Fabrication & Industrial Process Engineering",
-  "provider": {
-    "@type": "Organization",
-    "name": "MBH Solutions",
-    "url": "https://www.mbhsol.com",
-    "logo": "https://www.mbhsol.com/mbh-logo.png",
-    "telephone": "+923322007373",
-    "email": "sales@mbhsol.com",
-  },
+  "provider": { "@id": ORG_ID },
+  "url": "https://www.mbhsol.com/fabrication",
   "serviceType": "Mechanical Fabrication, Process Piping, and Skid Assembly",
   "areaServed": "Regional & Worldwide",
   "description":
@@ -327,6 +322,10 @@ const ENGINEERING_FAQS = [
 export default function FabricationPage() {
   return (
     <div className="min-h-screen bg-white text-[#080B0F]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: toJsonLd(serviceSchema) }}
+      />
       <Header />
 
       {/* ── 1. Page Hero (Standard Corporate Subpage Banner) ── */}
