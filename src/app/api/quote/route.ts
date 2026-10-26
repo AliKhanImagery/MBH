@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { resend, isResendConfigured, RECEIVER_EMAIL, SENDER_EMAIL } from "@/lib/resend";
+import { resend, isResendConfigured, RECEIVER_EMAIL, SENDER_EMAIL, LEAD_FALLBACK_MESSAGE } from "@/lib/resend";
 import {
   salesQuoteNotificationEmail,
   clientQuoteConfirmationEmail,
@@ -124,7 +124,11 @@ Submitted: ${payload.date}
       });
 
       if (salesResult.error) {
-        console.error("Resend sales quote notification error:", salesResult.error);
+        console.error("[LEAD_UNDELIVERED:QUOTE] Resend error", JSON.stringify({ error: salesResult.error, lead: payload }));
+        return NextResponse.json(
+          { success: false, error: LEAD_FALLBACK_MESSAGE },
+          { status: 502 }
+        );
       }
 
       // Send auto-confirmation receipt to buyer
@@ -140,19 +144,14 @@ Submitted: ${payload.date}
         console.warn("Client confirmation dispatch error (non-fatal):", clientErr);
       }
     } else {
-      // Development fallback logging
-      console.log("\n=======================================================");
-      console.log("📥 [LEAD CAPTURED: QUOTE REQUEST / RFQ]");
-      console.log(`Item ID:    ${payload.itemId || "General RFQ"}`);
-      console.log(`Item Name:  ${payload.itemName || "N/A"}`);
-      console.log(`Name:       ${payload.name}`);
-      console.log(`Company:    ${payload.company}`);
-      console.log(`Email:      ${payload.email}`);
-      console.log(`Phone:      ${payload.phone || "N/A"}`);
-      console.log(`Attachment: ${payload.fileName || "None"}`);
-      console.log(`Message:    ${payload.message || "N/A"}`);
-      console.log("⚠️  [NOTICE] Set RESEND_API_KEY in .env.local for live email dispatch.");
-      console.log("=======================================================\n");
+      // Email delivery is not configured (RESEND_API_KEY missing). Never report
+      // success for a lead nobody will receive: log it in full and tell the visitor
+      // how to reach sales directly.
+      console.error("[LEAD_UNDELIVERED:QUOTE] RESEND_API_KEY not configured", JSON.stringify({ lead: payload }));
+      return NextResponse.json(
+        { success: false, error: LEAD_FALLBACK_MESSAGE },
+        { status: 503 }
+      );
     }
 
     return NextResponse.json({

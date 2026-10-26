@@ -13,3 +13,6 @@ export const SENDER_EMAIL =
 export function isResendConfigured(): boolean {
   return Boolean(apiKey && apiKey.startsWith("re_"));
 }
+
+export const LEAD_FALLBACK_MESSAGE =
+  "We could not deliver your enquiry automatically. Please email sales@mbhsol.com or WhatsApp +92 332 2007373 and we will respond within one business day.";
