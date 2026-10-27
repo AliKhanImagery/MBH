@@ -710,8 +710,8 @@ export default function FabricationPage() {
             {/* Left: tall orbital welding image spanning both rows */}
             <div className="group relative aspect-[4/5] md:aspect-auto md:row-span-2 overflow-hidden rounded-xl">
               <Image
-                src="/images/sections/orbital-welding-station.jpg"
-                alt="Technician operating automated orbital TIG welding machine on stainless steel pipe under argon purge in MBH Solutions fabrication facility"
+                src="/images/sections/mbh-orbital-welding-automated-tig-pipe.png"
+                alt="MBH Solutions fabrication engineer operating automated orbital TIG welding machine on stainless steel pipe with argon gas cylinder and digital parameter controller — sanitary process piping fabrication Pakistan"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 45vw"
@@ -732,8 +732,8 @@ export default function FabricationPage() {
             {/* Top-right: shop floor aerial */}
             <div className="group relative aspect-[16/10] overflow-hidden rounded-xl">
               <Image
-                src="/images/sections/shopfloor-skid-integration.jpg"
-                alt="Aerial view of MBH Solutions fabrication shop floor with technicians assembling modular stainless steel process skids with integrated piping and pumps"
+                src="/images/sections/mbh-process-skid-shopfloor-integration.png"
+                alt="Elevated view of MBH Solutions fabrication shop floor showing three engineers assembling multiple stainless steel modular process skids with sanitary piping manifolds and blue centrifugal pump motors — Factory Acceptance Testing Pakistan"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 55vw"
@@ -754,8 +754,8 @@ export default function FabricationPage() {
             {/* Bottom-right: vessel assembly */}
             <div className="group relative aspect-[16/10] overflow-hidden rounded-xl">
               <Image
-                src="/images/sections/vessel-skid-assembly.jpg"
-                alt="Welder performing TIG welding on sanitary stainless steel process vessels mounted on fabricated skid frame with piping manifold"
+                src="/images/sections/mbh-sanitary-vessel-skid-piping-assembly.png"
+                alt="MBH Solutions welder in protective gear assembling sanitary stainless steel process vessels on structural skid frame — jacketed storage tanks with tri-clamp piping manifold and blue UV welding arc, modular skid fabrication Pakistan"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 55vw"
