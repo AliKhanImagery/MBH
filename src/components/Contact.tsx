@@ -5,7 +5,7 @@ import { type FormEvent, useState } from "react";
 const OFFICES = [
   {
     name: "Lahore — Head Office",
-    lines: ["Industrial Area, Lahore, Pakistan", "+92 332 2007373", "sales@mbhsol.com"],
+    lines: ["Industrial Area, Lahore, Pakistan", "+92 303 4447818", "sales@mbhsol.com"],
   },
 ];
 
@@ -118,7 +118,7 @@ export default function Contact() {
                 <div className="mb-6 rounded-md border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-300">
                   <p className="font-medium">{errorMessage}</p>
                   <p className="mt-1 text-xs text-red-400">
-                    You can also email us directly at <a href="mailto:sales@mbhsol.com" className="underline font-semibold">sales@mbhsol.com</a> or WhatsApp <a href="https://wa.me/923322007373" className="underline font-semibold">+92 332 2007373</a>.
+                    You can also email us directly at <a href="mailto:sales@mbhsol.com" className="underline font-semibold">sales@mbhsol.com</a> or WhatsApp <a href="https://wa.me/923034447818" target="_blank" rel="noopener noreferrer" className="underline font-semibold">+92 303 4447818</a>.
                   </p>
                 </div>
               )}

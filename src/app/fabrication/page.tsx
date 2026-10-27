@@ -693,6 +693,114 @@ export default function FabricationPage() {
         </div>
       </section>
 
+      {/* ── Inside Our Fabrication Facility (Visual Bento) ── */}
+      <section className="py-20 md:py-28 bg-[#0B1120]">
+        <div className="mx-auto max-w-[1360px] px-6 md:px-12">
+          <div className="max-w-2xl mb-10">
+            <h2 className="text-3xl font-medium tracking-tight text-white sm:text-4xl">
+              Inside Our Fabrication Facility
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-slate-400">
+              Every stainless steel vessel, orbital-welded piping spool, and modular process skid is fabricated in-house under controlled workshop conditions. From automated TIG welding stations to full-scale Factory Acceptance Testing, each system ships audit-ready and commission-ready.
+            </p>
+          </div>
+
+          {/* Asymmetric Bento Grid */}
+          <div className="grid gap-4 md:grid-cols-[1fr_1.2fr]">
+            {/* Left: tall orbital welding image spanning both rows */}
+            <div className="group relative aspect-[4/5] md:aspect-auto md:row-span-2 overflow-hidden rounded-xl">
+              <Image
+                src="/images/sections/orbital-welding-station.jpg"
+                alt="Technician operating automated orbital TIG welding machine on stainless steel pipe under argon purge in MBH Solutions fabrication facility"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 45vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="inline-block rounded border-l-4 border-amber bg-black/70 px-4 py-2.5 backdrop-blur-sm">
+                  <div className="font-mono text-[11px] font-semibold tracking-wide text-amber uppercase">
+                    Automated Orbital TIG Welding
+                  </div>
+                  <div className="mt-0.5 text-xs text-slate-300">
+                    Microprocessor-controlled weld heads under continuous argon purge
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Top-right: shop floor aerial */}
+            <div className="group relative aspect-[16/10] overflow-hidden rounded-xl">
+              <Image
+                src="/images/sections/shopfloor-skid-integration.jpg"
+                alt="Aerial view of MBH Solutions fabrication shop floor with technicians assembling modular stainless steel process skids with integrated piping and pumps"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 55vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="inline-block rounded border-l-4 border-amber bg-black/70 px-4 py-2.5 backdrop-blur-sm">
+                  <div className="font-mono text-[11px] font-semibold tracking-wide text-amber uppercase">
+                    Modular Process Skid Integration
+                  </div>
+                  <div className="mt-0.5 text-xs text-slate-300">
+                    Pre-piped, pre-wired skid systems undergo Factory Acceptance Testing
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom-right: vessel assembly */}
+            <div className="group relative aspect-[16/10] overflow-hidden rounded-xl">
+              <Image
+                src="/images/sections/vessel-skid-assembly.jpg"
+                alt="Welder performing TIG welding on sanitary stainless steel process vessels mounted on fabricated skid frame with piping manifold"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 55vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <div className="inline-block rounded border-l-4 border-amber bg-black/70 px-4 py-2.5 backdrop-blur-sm">
+                  <div className="font-mono text-[11px] font-semibold tracking-wide text-amber uppercase">
+                    Sanitary Vessel &amp; Skid Assembly
+                  </div>
+                  <div className="mt-0.5 text-xs text-slate-300">
+                    Shop fabrication of jacketed process tanks with integrated piping
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stat Strip */}
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="rounded-lg border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm">
+              <div className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                Automated Orbital Welding
+              </div>
+              <div className="mt-1.5 text-xl font-bold text-white">{"< 20 ppm O₂"}</div>
+              <div className="mt-1 text-xs text-slate-400">Closed-chamber argon purge on every joint</div>
+            </div>
+            <div className="rounded-lg border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm">
+              <div className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                Vessel Fabrication Range
+              </div>
+              <div className="mt-1.5 text-xl font-bold text-white">500 L – 100,000 L</div>
+              <div className="mt-1 text-xs text-slate-400">Atmospheric tanks through jacketed pressure vessels</div>
+            </div>
+            <div className="rounded-lg border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm">
+              <div className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
+                Off-Site Pre-Assembly
+              </div>
+              <div className="mt-1.5 text-xl font-bold text-white">80% Shop-Built</div>
+              <div className="mt-1 text-xs text-slate-400">Minimizes on-site shutdown to 48–72 hours</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── 6. Technical Engineering Deep-Dives: Metallurgy & Elastomers ── */}
       <section className="py-20 md:py-28 bg-[#F8FAFC] border-t border-slate-200">
         <div className="mx-auto max-w-[1360px] px-6 md:px-12">

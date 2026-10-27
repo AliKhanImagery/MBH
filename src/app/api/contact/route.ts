@@ -87,7 +87,7 @@ Submitted: ${payload.date}
           from: SENDER_EMAIL,
           to: [payload.email],
           subject: "We've received your project parameters · MBH Solutions",
-          text: `Dear ${payload.name},\n\nThank you for contacting MBH Solutions. Our process engineering desk has received your project scope. We will review your parameters and respond within one business day.\n\nDirect WhatsApp: +92 332 2007373\nWebsite: https://www.mbhsol.com\n\nSubmitted Scope:\n${payload.details}`,
+          text: `Dear ${payload.name},\n\nThank you for contacting MBH Solutions. Our process engineering desk has received your project scope. We will review your parameters and respond within one business day.\n\nDirect WhatsApp: +92 303 4447818\nWebsite: https://www.mbhsol.com\n\nSubmitted Scope:\n${payload.details}`,
           html: clientContactConfirmationEmail(payload),
         });
       } catch (clientErr) {

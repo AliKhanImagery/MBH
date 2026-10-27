@@ -9,7 +9,7 @@
   --color-amber: #c87d00;
   --color-amber-light: #e8a020;
   --color-steel-signal: #2e9cc8;
-  --color-steel-text: #9baab5;
+  --color-steel-text: #b8c7d4;
   --color-off-white: #f5f5f5;
 
   --font-sans: var(--font-ibm-plex-sans);
@@ -45,7 +45,7 @@
   --color-surface-card: #0D1B2E;
   --color-surface-card-hover: #1E3352;
   --color-surface-forge: #080B0F;
-  --color-ink-steel: #9BAAB5;
+  --color-ink-steel: #b8c7d4;
   --color-ink-inverse: #ffffff;
 
   /* Spacing scale — 8px base.
@@ -69,12 +69,12 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Type scale utilities per brand spec — size + tracking carry hierarchy, never weight */
+/* Type scale utilities per brand spec — size + tracking carry hierarchy, reinforced for Windows/96-DPI displays */
 .text-eyebrow {
   font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 10px;
-  letter-spacing: 0.5px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -100,9 +100,9 @@ body {
 }
 
 .text-subtitle {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .text-body {
@@ -112,20 +112,20 @@ body {
 }
 
 .text-nav-link {
-  font-weight: 400;
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 14px;
   letter-spacing: 0.01em;
 }
 
 .text-cta {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
 }
 
 .text-data {
   font-family: var(--font-mono);
-  font-weight: 400;
-  font-size: 11px;
+  font-weight: 500;
+  font-size: 12px;
   letter-spacing: 0.04em;
 }
 

@@ -390,7 +390,7 @@ export default function QuoteDrawer({ open, mode, item, onClose }: Props) {
                   </div>
                 )}
 
-                <span className="mt-1 block font-mono text-[11px] text-slate-500">
+                <span className="mt-1 block font-mono text-xs text-slate-600">
                   Supports PDF, Word, or Excel up to 10MB.
                 </span>
               </div>

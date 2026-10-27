@@ -23,9 +23,9 @@ export default function ProductsTeaser() {
               {/* Eyebrow */}
               <p style={{
                 fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 10,
-                letterSpacing: "0.5px",
+                fontWeight: 600,
+                fontSize: 12,
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 color: "#C87D00",
                 marginBottom: 20,
@@ -49,7 +49,7 @@ export default function ProductsTeaser() {
                 fontWeight: 400,
                 fontSize: 15,
                 lineHeight: 1.7,
-                color: "#9BAAB5",
+                color: "#B8C7D4",
                 marginTop: 24,
               }}>
                 Procuring and delivering flow components, automation hardware,

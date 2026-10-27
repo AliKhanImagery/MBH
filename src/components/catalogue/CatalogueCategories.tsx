@@ -40,9 +40,9 @@ export default function CatalogueCategories() {
             className="text-amber"
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
-              fontWeight: 500,
-              fontSize: 10,
-              letterSpacing: "0.12em",
+              fontWeight: 600,
+              fontSize: 12,
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
               marginBottom: 16,
             }}

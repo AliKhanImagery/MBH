@@ -137,7 +137,7 @@ Submitted: ${payload.date}
           from: SENDER_EMAIL,
           to: [payload.email],
           subject: `Quote Request Registered: ${payload.itemId ? `${payload.itemId}` : "MBH Solutions Proposal"}`,
-          text: `Dear ${payload.name},\n\nThank you for requesting a technical proposal from MBH Solutions on behalf of ${payload.company}.\n\nTarget Item: ${payload.itemId || "Custom RFQ"}\nOur process engineering team is preparing the scope draft and indicative pricing. You will receive the technical proposal within one business day.\n\nDirect WhatsApp: +92 332 2007373\nWebsite: https://www.mbhsol.com`,
+          text: `Dear ${payload.name},\n\nThank you for requesting a technical proposal from MBH Solutions on behalf of ${payload.company}.\n\nTarget Item: ${payload.itemId || "Custom RFQ"}\nOur process engineering team is preparing the scope draft and indicative pricing. You will receive the technical proposal within one business day.\n\nDirect WhatsApp: +92 303 4447818\nWebsite: https://www.mbhsol.com`,
           html: clientQuoteConfirmationEmail(payload),
         });
       } catch (clientErr) {

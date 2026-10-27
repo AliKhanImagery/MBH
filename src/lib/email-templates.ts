@@ -212,12 +212,12 @@ function directActionsSection() {
       <table style="margin: 0 auto; border-collapse: separate; border-spacing: 10px 0;">
         <tr>
           <td>
-            <a href="https://wa.me/923322007373" style="display: inline-block; background-color: #25D366; color: #ffffff; padding: 10px 18px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 13px;">
-              💬 Chat on WhatsApp (+92 332 2007373)
+            <a href="https://wa.me/923034447818" style="display: inline-block; background-color: #25D366; color: #ffffff; padding: 10px 18px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 13px;">
+              💬 Chat on WhatsApp (+92 303 4447818)
             </a>
           </td>
           <td>
-            <a href="tel:+923322007373" style="display: inline-block; background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #ffffff; padding: 10px 18px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 13px;">
+            <a href="tel:+923034447818" style="display: inline-block; background-color: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); color: #ffffff; padding: 10px 18px; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 13px;">
               📞 Call Operations Desk
             </a>
           </td>

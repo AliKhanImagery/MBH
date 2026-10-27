@@ -12,7 +12,7 @@ export default function Clients() {
   return (
     <section className="bg-white">
       <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12">
-        <p className="text-eyebrow text-center text-steel-text">
+        <p className="text-eyebrow text-center text-slate-500 font-semibold">
           Trusted By Manufacturers Across Pakistan
         </p>
 
@@ -23,8 +23,8 @@ export default function Clients() {
               className="flex h-16 items-center justify-center rounded-md border border-black/5 bg-off-white px-3 text-center"
             >
               <span
-                className="text-[#6A7A9A]"
-                style={{ fontWeight: 500, fontSize: 12 }}
+                className="text-slate-700"
+                style={{ fontWeight: 500, fontSize: 13 }}
               >
                 {name}
               </span>

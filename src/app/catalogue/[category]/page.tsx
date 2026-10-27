@@ -128,7 +128,8 @@ export default async function CategoryPage({
           <nav
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
-              fontSize: 11,
+              fontSize: 12,
+              fontWeight: 500,
               letterSpacing: "0.04em",
               marginBottom: 24,
             }}
@@ -136,7 +137,7 @@ export default async function CategoryPage({
             <Link
               href="/catalogue"
               style={{
-                color: "rgba(255,255,255,0.5)",
+                color: "rgba(255,255,255,0.75)",
                 textDecoration: "none",
                 transition: "color 200ms",
               }}
@@ -144,10 +145,10 @@ export default async function CategoryPage({
             >
               Catalogue
             </Link>
-            <span style={{ color: "rgba(255,255,255,0.3)", margin: "0 8px" }}>
+            <span style={{ color: "rgba(255,255,255,0.4)", margin: "0 8px" }}>
               /
             </span>
-            <span style={{ color: "#C87D00" }}>{cat.title}</span>
+            <span style={{ color: "#E8A020" }}>{cat.title}</span>
           </nav>
 
           {/* Amber bar + eyebrow */}
@@ -170,9 +171,9 @@ export default async function CategoryPage({
             <span
               style={{
                 fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 500,
-                fontSize: 10,
-                letterSpacing: "0.5px",
+                fontWeight: 600,
+                fontSize: 12,
+                letterSpacing: "0.08em",
                 textTransform: "uppercase",
                 color: "#C87D00",
               }}
@@ -219,8 +220,8 @@ export default async function CategoryPage({
             <h2
               style={{
                 fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 400,
-                fontSize: 11,
+                fontWeight: 600,
+                fontSize: 12,
                 letterSpacing: "0.04em",
                 textTransform: "uppercase",
                 color: "#080B0F",
@@ -231,10 +232,10 @@ export default async function CategoryPage({
             <span
               style={{
                 fontFamily: "var(--font-ibm-plex-mono)",
-                fontWeight: 400,
-                fontSize: 11,
+                fontWeight: 500,
+                fontSize: 12,
                 letterSpacing: "0.04em",
-                color: "#6A7A8A",
+                color: "#475569",
               }}
             >
               {items.length} {items.length === 1 ? "item" : "items"}
@@ -253,10 +254,10 @@ export default async function CategoryPage({
                 <div
                   style={{
                     fontFamily: "var(--font-ibm-plex-mono)",
-                    fontWeight: 400,
-                    fontSize: 11,
+                    fontWeight: 500,
+                    fontSize: 12,
                     letterSpacing: "0.04em",
-                    color: "#6A7A8A",
+                    color: "#475569",
                     paddingTop: 4,
                   }}
                 >
@@ -269,12 +270,12 @@ export default async function CategoryPage({
                     <span
                       style={{
                         fontFamily: "var(--font-ibm-plex-mono)",
-                        fontWeight: 400,
-                        fontSize: 11,
+                        fontWeight: 600,
+                        fontSize: 12,
                         letterSpacing: "0.04em",
                         textTransform: "uppercase",
                         color:
-                          item.badge === "SIGNATURE" ? "#C87D00" : "#6A7A8A",
+                          item.badge === "SIGNATURE" ? "#C87D00" : "#475569",
                       }}
                     >
                       {item.badge}
@@ -318,10 +319,10 @@ export default async function CategoryPage({
                   <span
                     style={{
                       fontFamily: "var(--font-ibm-plex-mono)",
-                      fontWeight: 400,
-                      fontSize: 11,
+                      fontWeight: 500,
+                      fontSize: 12,
                       letterSpacing: "0.04em",
-                      color: "#6A7A8A",
+                      color: "#475569",
                     }}
                   >
                     ID · {item.id}
@@ -329,10 +330,10 @@ export default async function CategoryPage({
                   <span
                     style={{
                       fontFamily: "var(--font-ibm-plex-mono)",
-                      fontWeight: 400,
-                      fontSize: 11,
+                      fontWeight: 500,
+                      fontSize: 12,
                       letterSpacing: "0.04em",
-                      color: "#9BAAB5",
+                      color: "#64748B",
                     }}
                   >
                     {item.category}

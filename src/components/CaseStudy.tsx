@@ -79,9 +79,9 @@ export default function CaseStudy() {
               <p
                 style={{
                   fontFamily: "var(--font-ibm-plex-mono)",
-                  fontWeight: 500,
-                  fontSize: 10,
-                  letterSpacing: "0.5px",
+                  fontWeight: 600,
+                  fontSize: 12,
+                  letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   color: "#C87D00",
                   marginBottom: 20,
@@ -158,10 +158,10 @@ export default function CaseStudy() {
                       <div
                         style={{
                           fontFamily: "var(--font-ibm-plex-mono)",
-                          fontWeight: 400,
-                          fontSize: 11,
+                          fontWeight: 500,
+                          fontSize: 12,
                           textTransform: "uppercase",
-                          color: "#9BAAB5",
+                          color: "#64748B",
                           letterSpacing: "0.04em",
                           marginTop: 4,
                         }}
@@ -187,9 +187,9 @@ export default function CaseStudy() {
           <p
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
-              fontWeight: 500,
-              fontSize: 10,
-              letterSpacing: "0.5px",
+              fontWeight: 600,
+              fontSize: 12,
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
               color: "#C87D00",
               marginTop: 64,
@@ -271,10 +271,10 @@ export default function CaseStudy() {
                 <p
                   style={{
                     fontFamily: "var(--font-ibm-plex-mono)",
-                    fontWeight: 400,
-                    fontSize: 11,
+                    fontWeight: 500,
+                    fontSize: 12,
                     textTransform: "uppercase",
-                    color: "#9BAAB5",
+                    color: "#64748B",
                     letterSpacing: "0.04em",
                     marginTop: 12,
                   }}

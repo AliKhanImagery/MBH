@@ -64,9 +64,9 @@ export default function PageHero({ eyebrow, title, subtitle, image, imageAlt = "
           <span
             style={{
               fontFamily: "var(--font-ibm-plex-mono)",
-              fontWeight: 500,
-              fontSize: 10,
-              letterSpacing: "0.5px",
+              fontWeight: 600,
+              fontSize: 12,
+              letterSpacing: "0.08em",
               textTransform: "uppercase",
               color: "#C87D00",
             }}

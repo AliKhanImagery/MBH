@@ -9,7 +9,7 @@ const SOLUTIONS = [
   {
     title: "Juice Process Systems",
     href: "/solutions",
-    img: "/images/sections/Juice-processing.png",
+    img: "/images/sections/juice-system-poster.jpg",
   },
   {
     title: "Industrial Automation",
@@ -19,7 +19,7 @@ const SOLUTIONS = [
   {
     title: "CIP Systems",
     href: "/solutions",
-    img: "/images/sections/cip-valves.png",
+    img: "/images/sections/cip-system-poster.jpg",
   },
 ];
 
@@ -32,9 +32,9 @@ export default function SolutionsShowcase() {
           className="text-amber"
           style={{
             fontFamily: "var(--font-ibm-plex-mono)",
-            fontWeight: 500,
-            fontSize: 10,
-            letterSpacing: "0.12em",
+            fontWeight: 600,
+            fontSize: 12,
+            letterSpacing: "0.08em",
             textTransform: "uppercase",
             marginBottom: 16,
           }}
@@ -85,12 +85,12 @@ export default function SolutionsShowcase() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
 
-              {/* Gradient overlay */}
+              {/* Gradient overlay — boosted contrast for high readability on any monitor */}
               <div
                 className="absolute inset-0"
                 style={{
                   background:
-                    "linear-gradient(to top, rgba(13,27,46,0.92) 0%, rgba(13,27,46,0.3) 50%, transparent 100%)",
+                    "linear-gradient(to top, rgba(8,11,15,0.95) 0%, rgba(13,27,46,0.60) 40%, rgba(13,27,46,0.15) 75%, transparent 100%)",
                 }}
               />
 
@@ -104,7 +104,7 @@ export default function SolutionsShowcase() {
               <div className="absolute bottom-0 left-0" style={{ padding: 24 }}>
                 <span
                   className="text-white"
-                  style={{ fontWeight: 500, fontSize: 18 }}
+                  style={{ fontWeight: 600, fontSize: 20, letterSpacing: "-0.2px" }}
                 >
                   {sol.title}
                 </span>

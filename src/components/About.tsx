@@ -96,11 +96,11 @@ export default function About() {
                 </div>
                 <h3
                   className="mt-4 text-[#1A2F6A]"
-                  style={{ fontWeight: 500, fontSize: 13 }}
+                  style={{ fontWeight: 600, fontSize: 15 }}
                 >
                   {item.title}
                 </h3>
-                <p className="mt-2 text-[#6A7A9A]" style={{ fontWeight: 400, fontSize: 12, lineHeight: 1.6 }}>
+                <p className="mt-2 text-[#475569]" style={{ fontWeight: 400, fontSize: 13, lineHeight: 1.6 }}>
                   {item.desc}
                 </p>
               </div>

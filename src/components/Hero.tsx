@@ -14,15 +14,15 @@ const SLIDES = [
     alt: "Siemens PLC and SCADA control panels in an industrial setting",
   },
   {
-    src: "/images/sections/CSD_processing.png",
-    alt: "Carbonated soft drink (CSD) turnkey processing line",
+    src: "/images/sections/cip-system-poster.jpg",
+    alt: "Automated Clean-in-Place (CIP) sanitary valve matrix and process equipment",
   },
   {
     src: "/images/sections/fabrication-welding.jpeg",
     alt: "Stainless steel hygienic fabrication and orbital welding",
   },
   {
-    src: "/images/sections/Juice-processing.png",
+    src: "/images/sections/juice-system-poster.jpg",
     alt: "Industrial juice processing and pasteurisation equipment",
   },
 ];
@@ -72,7 +72,7 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(to right, rgba(21,38,84,0.80) 0%, rgba(21,38,84,0.65) 40%, rgba(21,38,84,0.35) 65%, rgba(8,11,15,0.50) 100%)",
+            "linear-gradient(to right, rgba(21,38,84,0.85) 0%, rgba(21,38,84,0.72) 40%, rgba(21,38,84,0.40) 65%, rgba(8,11,15,0.55) 100%)",
           zIndex: 1,
         }}
       />
@@ -82,7 +82,7 @@ export default function Hero() {
           <div className="max-w-3xl">
             <div className="mb-4 flex items-center gap-2">
               <span className="h-[2px] w-6 bg-amber" />
-              <span className="text-eyebrow text-amber">
+              <span className="text-eyebrow text-amber font-semibold">
                 Siemens Integrator Company
               </span>
             </div>
@@ -95,7 +95,7 @@ export default function Hero() {
             </h1>
 
             <p
-              className="text-subtitle mt-6 text-white/75"
+              className="text-subtitle mt-6 text-white/90"
               style={{ textShadow: "0 1px 2px rgba(8,11,15,0.40), 0 4px 16px rgba(8,11,15,0.25)" }}
             >
               Delivering turnkey syrup rooms, CSD and juice process lines, and
