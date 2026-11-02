@@ -7,15 +7,15 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Beverage CIP & Product Recovery Modernization Case Study",
-  description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+  title: "Product Recovery and CIP Integration",
+  description: "Product recovery runs before CIP: pigging or a water push returns product from the lines, then CIP cleans them. How MBH modernizes beverage lines.",
   alternates: {
     canonical: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",
   },
   openGraph: {
     images: [DEFAULT_OG_IMAGE],
-    title: "Enterprise CIP & Product Recovery Modernization | MBH Solutions",
-    description: "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+    title: "Product Recovery and CIP Integration | MBH Solutions",
+    description: "Product recovery runs before CIP: pigging or a water push returns product from the lines, then CIP cleans them. How MBH modernizes beverage lines.",
     url: "https://www.mbhsol.com/references/beverage-cip-recovery-modernization",
     siteName: "MBH Solutions",
     type: "article",
@@ -30,7 +30,7 @@ const techArticleSchema = {
     "@id": "https://www.mbhsol.com/references/beverage-cip-recovery-modernization"
   },
   "headline": "Enterprise CIP & Product Recovery Modernization",
-  "description": "Technical case study on full-line installation, modernization, and control migrations for Coca-Cola, Pepsi, Meezan, and Dalda Foods.",
+  "description": "Product recovery runs before CIP: pigging or a water push returns product from the lines, then CIP cleans them. How MBH modernizes beverage lines.",
   "author": {
     "@type": "Organization",
     "name": "MBH Solutions",
@@ -44,6 +44,14 @@ const techArticleSchema = {
   "mainEntity": {
     "@type": "FAQPage",
     "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do product recovery systems integrate with CIP operations?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Product recovery runs as the first step of the cleaning sequence. Pigging or a water push clears product from pipes and tanks, back to process or to a recovery tank. The CIP system then starts its rinse, caustic and acid steps. In an integrated system one PLC sequence controls both, so cleaning never starts while product is still in the line."
+        }
+      },
       {
         "@type": "Question",
         "name": "How does automated pigging improve yield recovery in beverage processing?",
@@ -134,6 +142,10 @@ export default function CIPRecoveryCaseStudy() {
         <section>
           <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Frequently Asked Questions</h2>
           <div className="space-y-6">
+            <div className="border border-gray-800 p-6 rounded-lg bg-white/5">
+              <h3 className="text-lg font-medium text-white mb-2" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>How do product recovery systems integrate with CIP operations?</h3>
+              <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>Product recovery runs as the first step of the cleaning sequence. Pigging or a water push clears product from pipes and tanks, back to process or to a recovery tank. The CIP system then starts its rinse, caustic and acid steps. In an integrated system one PLC sequence controls both, so cleaning never starts while product is still in the line.</p>
+            </div>
             <div className="border border-gray-800 p-6 rounded-lg bg-white/5">
               <h3 className="text-lg font-medium text-white mb-2" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>How does automated pigging improve yield recovery in beverage processing?</h3>
               <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>Automated pigging systems recover residual product from pipelines before the CIP cycle begins, drastically reducing product loss and minimizing the biological load sent to wastewater treatment. This can increase yield recovery up to 98%.</p>
