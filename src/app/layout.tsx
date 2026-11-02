@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { siteGraph, toJsonLd } from "@/lib/schema";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
-const ibmPlexSans = IBM_Plex_Sans({
+// IBM Plex is bundled (OFL-1.1, via @fontsource) so builds never depend on a
+// live Google Fonts download — that fetch was failing production builds.
+const ibmPlexSans = localFont({
   variable: "--font-ibm-plex-sans",
-  subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
+  display: "swap",
+  src: [
+    { path: "../fonts/ibm-plex-sans-latin-300-normal.woff2", weight: "300", style: "normal" },
+    { path: "../fonts/ibm-plex-sans-latin-300-italic.woff2", weight: "300", style: "italic" },
+    { path: "../fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/ibm-plex-sans-latin-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/ibm-plex-sans-latin-500-italic.woff2", weight: "500", style: "italic" },
+  ],
 });
 
-const ibmPlexMono = IBM_Plex_Mono({
+const ibmPlexMono = localFont({
   variable: "--font-ibm-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  display: "swap",
+  src: [
+    { path: "../fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
