@@ -56,7 +56,7 @@ export default function Footer() {
             <p className="text-body mt-3 text-slate-300" style={{ fontSize: 14 }}>
               Industrial Automation &amp; Process Systems<br />
               <a href="mailto:sales@mbhsol.com" className="hover:text-white transition-colors">sales@mbhsol.com</a><br />
-              <a href="https://wa.me/923034441878" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+92 303 4441878</a>
+              <a href="https://wa.me/923034447818" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+92 303 4447818</a>
             </p>
           </div>
 

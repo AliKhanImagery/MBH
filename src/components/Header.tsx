@@ -53,7 +53,7 @@ export default function Header() {
             sales@mbhsol.com
           </a>
           <a
-            href="https://wa.me/923034441878"
+            href="https://wa.me/923034447818"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with MBH Solutions on WhatsApp"
@@ -151,7 +151,7 @@ export default function Header() {
               sales@mbhsol.com
             </a>
             <a
-              href="https://wa.me/923034441878"
+              href="https://wa.me/923034447818"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
