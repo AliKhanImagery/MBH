@@ -17,7 +17,7 @@ const LAST_UPDATED: Record<string, string> = {
   '/solutions/cip-systems': '2026-11-11',
   '/fabrication': '2026-09-26',
   '/references': '2026-09-18',
-  '/references/beverage-cip-recovery-modernization': '2026-11-02',
+  '/references/beverage-cip-recovery-modernization': '2026-11-11',
   '/references/coca-cola-multan-line-automation': '2026-09-26',
   '/references/fauji-foods-syrup-room-modernization': '2026-09-18',
   '/references/edible-oil-processing-automation': '2026-09-18',

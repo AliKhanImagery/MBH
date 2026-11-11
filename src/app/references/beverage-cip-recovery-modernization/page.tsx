@@ -1,4 +1,4 @@
-import { DEFAULT_OG_IMAGE } from "@/lib/schema";
+import { DEFAULT_OG_IMAGE, ORG_ID } from "@/lib/schema";
 import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
@@ -31,16 +31,10 @@ const techArticleSchema = {
   },
   "headline": "Enterprise CIP & Product Recovery Modernization",
   "description": "Product recovery runs before CIP: pigging or a water push returns product from the lines, then CIP cleans them. How MBH modernizes beverage lines.",
-  "author": {
-    "@type": "Organization",
-    "name": "MBH Solutions",
-    "url": "https://www.mbhsol.com"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "MBH Solutions",
-    "url": "https://www.mbhsol.com"
-  },
+  "author": { "@id": ORG_ID },
+  "publisher": { "@id": ORG_ID },
+  "dateModified": "2026-11-11",
+  "about": { "@id": "https://www.mbhsol.com/solutions/cip-systems#service" },
   "mainEntity": {
     "@type": "FAQPage",
     "mainEntity": [
@@ -57,7 +51,7 @@ const techArticleSchema = {
         "name": "How does automated pigging improve yield recovery in beverage processing?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Automated pigging systems recover residual product from pipelines before the CIP cycle begins, drastically reducing product loss and minimizing the biological load sent to wastewater treatment. This can increase yield recovery up to 98%."
+          "text": "Automated pigging recovers residual product from pipelines before the CIP cycle begins. Product that would otherwise be flushed to drain is returned to process or a recovery tank, which reduces product loss and lowers the organic load sent to wastewater treatment."
         }
       },
       {
@@ -79,7 +73,7 @@ export default function CIPRecoveryCaseStudy() {
       <PageHero
         eyebrow="Case Study"
         title="Enterprise CIP & Product Recovery Modernization"
-        subtitle="Highlighting full-line installation, modernization, and control migrations across Coca-Cola, Pepsi, Meezan, and Dalda Foods (Cup Shup)."
+        subtitle="Integrating product recovery, multi-circuit CIP and Siemens PLC control migration on existing beverage lines."
       />
       
       <main className="mx-auto max-w-[1000px] px-6 py-16 md:px-12" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>
@@ -106,15 +100,15 @@ export default function CIPRecoveryCaseStudy() {
         <section className="mb-16">
           <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Technical Architecture</h2>
           <p className="leading-relaxed mb-4" style={{ color: "#C7D0DA" }}>
-            Our modernization strategy for enterprise food and beverage clients involves end-to-end automation of product recovery and Cleaning-in-Place (CIP) systems. We implement highly efficient, multi-circuit CIP stations capable of handling flow rates up to 80,000 L/h, integrated with advanced automated pigging systems to maximize yield and minimize waste.
+            MBH Solutions modernises product recovery and Cleaning-in-Place (CIP) on existing food and beverage lines as one integrated system. Multi-circuit CIP stations are combined with pigging or water-push product recovery, so product is returned to process before the cleaning sequence begins and less product is lost to drain.
           </p>
           <p className="leading-relaxed" style={{ color: "#C7D0DA" }}>
-            A critical component of this architecture is the seamless migration of legacy control systems to modern Siemens PLC infrastructure. By upgrading from S7-300 to S7-1200 and S7-1500 controllers, and standardizing them into a central SCADA network, we deliver enhanced real-time telemetry, precise parameter control, and extensive diagnostic capabilities.
+            Control migration is part of the same scope: legacy Siemens S7-300 controllers are upgraded to S7-1200 or S7-1500 and brought into a central SCADA system, giving operators real-time process data, recipe-driven cleaning sequences and plant-wide diagnostics.
           </p>
         </section>
 
         <section className="mb-16">
-          <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Specifications & Results</h2>
+          <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Before and After Modernisation</h2>
           <div className="overflow-x-auto rounded-lg border border-gray-800">
             <table className="w-full text-left border-collapse">
               <thead>
@@ -128,12 +122,12 @@ export default function CIPRecoveryCaseStudy() {
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="px-6 py-4 border-b border-gray-800 font-medium text-white">Yield Recovery</td>
                   <td className="px-6 py-4 border-b border-gray-800">Manual draining, high product loss</td>
-                  <td className="px-6 py-4 border-b border-gray-800">Automated pigging, up to 98% recovery</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Pigging or water-push recovery before CIP</td>
                 </tr>
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="px-6 py-4 border-b border-gray-800 font-medium text-white">CIP Cycle Automation</td>
-                  <td className="px-6 py-4 border-b border-gray-800">Manual intervention, 4-6 hours downtime</td>
-                  <td className="px-6 py-4 border-b border-gray-800">Multi-circuit stations, &lt; 2 hours downtime</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Manual valve changes and operator-timed steps</td>
+                  <td className="px-6 py-4 border-b border-gray-800">Recipe-driven multi-circuit CIP stations</td>
                 </tr>
                 <tr className="hover:bg-white/5 transition-colors">
                   <td className="px-6 py-4 border-gray-800 font-medium text-white">PLC Infrastructure & Telemetry</td>
@@ -154,7 +148,7 @@ export default function CIPRecoveryCaseStudy() {
             </div>
             <div className="border border-gray-800 p-6 rounded-lg bg-white/5">
               <h3 className="text-lg font-medium text-white mb-2" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>How does automated pigging improve yield recovery in beverage processing?</h3>
-              <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>Automated pigging systems recover residual product from pipelines before the CIP cycle begins, drastically reducing product loss and minimizing the biological load sent to wastewater treatment. This can increase yield recovery up to 98%.</p>
+              <p className="leading-relaxed" style={{ color: "#C7D0DA", fontSize: "15px" }}>Automated pigging recovers residual product from pipelines before the CIP cycle begins. Product that would otherwise be flushed to drain is returned to process or a recovery tank, which reduces product loss and lowers the organic load sent to wastewater treatment.</p>
             </div>
             <div className="border border-gray-800 p-6 rounded-lg bg-white/5">
               <h3 className="text-lg font-medium text-white mb-2" style={{ fontFamily: "var(--font-ibm-plex-sans)" }}>What are the benefits of migrating from Siemens S7-300 to S7-1500?</h3>
