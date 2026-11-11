@@ -12,7 +12,7 @@ import { ORG_ID, toJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Mechanical Fabrication & Modular Process Engineering",
   description:
-    "End-to-end mechanical fabrication, sanitary process piping, pressure vessels, modular skids, and conveyor automation. ISO 9001:2015 certified with 1 µm machining tolerance.",
+    "End-to-end food-grade mechanical fabrication, sanitary process piping, process tanks, modular skids, and conveyor automation. ISO 9001:2015 certified with 1 µm machining tolerance.",
   alternates: {
     canonical: "https://www.mbhsol.com/fabrication",
   },
@@ -42,7 +42,7 @@ const serviceSchema = {
   "serviceType": "Mechanical Fabrication, Process Piping, and Skid Assembly",
   "areaServed": "Regional & Worldwide",
   "description":
-    "Turnkey engineering, shop fabrication, automated orbital welding, and on-site mechanical installation of sanitary process tanks, pressure vessels, modular skids, and material handling conveyors.",
+    "Turnkey engineering, shop fabrication, automated orbital welding, and on-site mechanical installation of food-grade sanitary process tanks, jacketed process vessels, modular skids, and material handling conveyors.",
 };
 
 /* ── 4 Custom Fabrication Services (Page 02 of Profile) ── */
@@ -293,6 +293,10 @@ const FAT_STEPS = [
 
 /* ── Technical Engineering FAQs ── */
 const ENGINEERING_FAQS = [
+  {
+    q: "Does MBH fabricate ASME code-stamped pressure vessels?",
+    a: "No. MBH fabricates food-grade hygienic equipment to conventional food and beverage industry practice: atmospheric process tanks, jacketed blending vessels, sanitary process piping, and modular skids. MBH does not take on ASME code-stamped (U stamp) pressure vessels or equipment for explosive service.",
+  },
   {
     q: "What is the operational advantage of automated orbital welding over manual sanitary TIG?",
     a: "Manual TIG welding relies on human hand speed and torch angle, which can result in inconsistent internal weld penetration, micro-crevices, and excess heat-tint oxidation. Automated closed-chamber orbital welding regulates current, pulse frequency, and travel speed with computerized precision. Under continuous argon purge (< 20 ppm O2), it delivers a perfectly flush, crevice-free internal weld bead that resists bacterial biofilm formation and ensures 100% cleanability during CIP sanitization.",
@@ -788,7 +792,7 @@ export default function FabricationPage() {
                 Vessel Fabrication Range
               </div>
               <div className="mt-1.5 text-xl font-bold text-white">500 L – 100,000 L</div>
-              <div className="mt-1 text-xs text-slate-400">Atmospheric tanks through jacketed pressure vessels</div>
+              <div className="mt-1 text-xs text-slate-400">Atmospheric tanks through jacketed process vessels</div>
             </div>
             <div className="rounded-lg border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm">
               <div className="font-mono text-xs font-semibold uppercase tracking-wider text-amber">
