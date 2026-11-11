@@ -6,10 +6,16 @@ MBH Solutions provides end-to-end PLC and SCADA-based automation solutions for f
 
 We design, fabricate, and install turnkey syrup rooms, CSD and juice process lines, and plant-wide control systems — from new installations to the modernisation and retrofit of existing production facilities.
 
+MBH Solutions is the sole representative in Pakistan of SSP – Stainless Steel Processing GmbH (Bobingen, Germany), its principal for syrup room and beverage process systems.
+
+MBH Solutions supplies central CIP stations and skids (1 to 4 circuits as standard, expandable to 6 or 8), mobile CIP trolleys on demand, and product recovery systems for beverage, dairy and food plants, delivered turnkey or as a retrofit on Siemens S7 / WinCC.
+
 ## Key Resources
 - [Full Context & Catalogue](/llms-full.txt)
 - [Main Website](https://www.mbhsol.com)
 - [Online Catalogue](https://www.mbhsol.com/catalogue)
+- [CIP Systems](https://www.mbhsol.com/solutions/cip-systems)
+- [Technology Partners and SSP](https://www.mbhsol.com/partners)
 
 ## Contact Information
 - **Email**: sales@mbhsol.com

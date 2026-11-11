@@ -16,11 +16,11 @@ export type CipPage = {
 
 export const CIP_PAGE: CipPage = {
   "metaTitle": "CIP Systems for Beverage and Food Plants in Pakistan",
-  "metaDescription": "Automated and manual CIP skids for beverage and food plants, built in Pakistan: 1 to 4 circuits, expandable to 6 or 8, on Siemens S7, standalone or retrofit.",
+  "metaDescription": "Central CIP stations and skids for beverage, dairy and food plants in Pakistan: 1 to 4 circuits, expandable to 6 or 8, Siemens S7 control, turnkey or retrofit.",
   "eyebrow": "Solutions · CIP Systems",
   "h1": "Automated CIP Systems for Beverage and Food Plants",
-  "heroSubtitle": "Delivering automated and manual CIP skids for beverage and food plants, fabricated in Pakistan and supplied standalone or as a retrofit.",
-  "answerBlock": "MBH Solutions, an engineering company in Lahore, Pakistan, supplies automated and manual CIP skids for beverage and food plants: 1 to 4 circuits as standard, expandable to 6 or 8. Automated skids run multi-detergent recipes on Siemens S7 and WinCC SCADA. MBH builds them in its own workshop, standalone or for retrofit, and works with SSP (Germany) as principal.",
+  "heroSubtitle": "Delivering central CIP stations, skids and mobile CIP trolleys for beverage, dairy and food plants, turnkey or as a retrofit.",
+  "answerBlock": "MBH Solutions, a Lahore engineering company and SSP's sole representative in Pakistan, supplies central CIP stations and skids for beverage, dairy and food plants, with mobile CIP trolleys on demand: 1 to 4 circuits as standard, expandable to 6 or 8. Automated systems run multi-detergent recipes on Siemens S7 and WinCC, delivered turnkey or as a retrofit.",
   "lastUpdated": "2026-11-11",
   "areaServed": [
     "Pakistan",
@@ -30,6 +30,10 @@ export const CIP_PAGE: CipPage = {
   "specHeading": "Specification Summary",
   "specTable": [
     {
+      "parameter": "Configurations",
+      "value": "Central CIP stations and skids; mobile CIP trolleys on demand"
+    },
+    {
       "parameter": "Circuits",
       "value": "1 to 4 as standard, expandable to 6 or 8"
     },
@@ -38,12 +42,24 @@ export const CIP_PAGE: CipPage = {
       "value": "Multi-detergent"
     },
     {
+      "parameter": "Instrumentation",
+      "value": "Typically conductivity, temperature and flow measurement"
+    },
+    {
       "parameter": "Control Platform",
       "value": "Siemens S7 PLC, WinCC SCADA/HMI, TIA Portal, recipe management"
     },
     {
+      "parameter": "Electrical",
+      "value": "Control and distribution panels built by MBH Solutions"
+    },
+    {
       "parameter": "Delivery",
-      "value": "Automated or manual; standalone or retrofit"
+      "value": "Turnkey, or retrofit to an existing CIP set; automated or manual"
+    },
+    {
+      "parameter": "Services",
+      "value": "Site survey, FAT, SAT, installation and commissioning"
     },
     {
       "parameter": "Fabrication",
@@ -55,7 +71,7 @@ export const CIP_PAGE: CipPage = {
     },
     {
       "parameter": "Applications",
-      "value": "Single line, multiple lines or tanks in beverage and food plants"
+      "value": "Beverage, dairy and food plants: single line, multiple lines or tanks"
     }
   ],
   "sections": [
@@ -82,7 +98,7 @@ export const CIP_PAGE: CipPage = {
       "paragraphs": [
         "A CIP circuit is one cleaning route with its own supply and return path, typically serving a process line or a group of tanks. The number of circuits needed depends on how many lines and vessels must be cleaned independently at overlapping times.",
         "Single-use CIP makes up the solution for one cycle and then discharges it, which suits heavily soiled circuits and circuits where carry-over must be excluded. Recovery (reuse) CIP returns detergent to its tank for concentration and temperature correction and commonly keeps final rinse water for the next pre-rinse.",
-        "MBH Solutions supplies skids that clean a single line, multiple lines or tanks, with 1 to 4 circuits as standard, expandable to 6 or 8; related process systems are listed under Solutions."
+        "MBH Solutions supplies central CIP stations and skids that clean a single line, multiple lines or tanks, with 1 to 4 circuits as standard, expandable to 6 or 8, and provides mobile CIP trolleys on demand."
       ],
       "bullets": [],
       "links": [
@@ -97,7 +113,8 @@ export const CIP_PAGE: CipPage = {
       "heading": "Automation and Control",
       "paragraphs": [
         "MBH Solutions automates CIP on Siemens S7 PLCs and WinCC SCADA/HMI, engineered in TIA Portal with recipe management, so each circuit runs its cleaning sequence as a stored recipe, on new lines or as a retrofit, as a Siemens Integrator Company.",
-        "In general practice, automated CIP measures conductivity to confirm detergent concentration and detect the detergent-water interface, temperature to confirm the set point, and supply flow to confirm mechanical action. Return-line measurement confirms the whole circuit was covered and gives QA a consistent record for line release."
+        "In general practice, automated CIP measures conductivity to confirm detergent concentration and detect the detergent-water interface, temperature to confirm the set point, and supply flow to confirm mechanical action. Return-line measurement confirms the whole circuit was covered and gives QA a consistent record for line release.",
+        "MBH Solutions' automated CIP systems are typically fitted with conductivity, temperature and flow measurement, and the company builds the control and distribution panels in-house."
       ],
       "bullets": [],
       "links": [
@@ -112,7 +129,7 @@ export const CIP_PAGE: CipPage = {
       "heading": "Product Recovery Before CIP",
       "paragraphs": [
         "Product recovery, by pigging or a water push, runs before CIP and returns product held in the lines to process or to a recovery tank; CIP then cleans the emptied circuit.",
-        "MBH Solutions modernises lines with both product recovery and CIP, as described in the case study Beverage CIP and Product Recovery Modernisation."
+        "MBH Solutions supplies product recovery systems and integrates them with CIP under one control sequence, as described in the case study Beverage CIP and Product Recovery Modernisation."
       ],
       "bullets": [],
       "links": [
@@ -127,16 +144,30 @@ export const CIP_PAGE: CipPage = {
       "heading": "Retrofitting an Existing CIP System",
       "paragraphs": [
         "Manually operated CIP sets make results shift-dependent and leave little record. Automating one generally starts with a survey of existing tanks, pumps, valves, instruments and piping, then circuit and recipe definition, added instrumentation and commissioning.",
-        "MBH Solutions supplies its CIP skids as a retrofit as well as standalone, with Siemens S7 and WinCC recipe automation for existing lines."
+        "MBH Solutions supplies its CIP systems as a retrofit as well as new, with Siemens S7 and WinCC recipe automation for existing lines. Site surveys, factory acceptance testing (FAT), site acceptance testing (SAT), installation and commissioning are standard MBH services."
       ],
       "bullets": [],
       "links": []
     },
     {
+      "id": "turnkey-delivery",
+      "heading": "Turnkey CIP Delivery",
+      "paragraphs": [
+        "MBH Solutions delivers CIP as a complete turnkey scope: circuit and recipe design, fabrication of skids and process piping, control and distribution panels, Siemens automation, installation, FAT, SAT and commissioning, under a single point of responsibility."
+      ],
+      "bullets": [],
+      "links": [
+        {
+          "text": "Siemens PLC",
+          "href": "/catalogue/siemens-plc"
+        }
+      ]
+    },
+    {
       "id": "fabrication-and-scope",
       "heading": "Fabrication and Scope",
       "paragraphs": [
-        "MBH Solutions fabricates food-grade sanitary process tanks, sanitary process piping and modular skids in AISI 304 and 316L stainless steel in its own workshop in Pakistan, with orbital and manual TIG welding and passivation. Valves, pumps and heat exchangers are manufactured in the company's own OEM facility.",
+        "MBH Solutions fabricates food-grade sanitary process tanks, sanitary process piping and modular skids in AISI 304 and 316L stainless steel in its own workshop in Pakistan, with orbital and manual TIG welding and passivation. Pumps, valves and heat exchangers for CIP circuits are supplied through MBH's product catalogue.",
         "MBH Solutions builds to conventional food-grade hygienic practice and does not build ASME code-stamped (U stamp) pressure vessels or equipment for explosive service."
       ],
       "bullets": [],
@@ -161,9 +192,9 @@ export const CIP_PAGE: CipPage = {
     },
     {
       "id": "working-with-ssp-germany",
-      "heading": "Working With SSP (Germany)",
+      "heading": "Sole Representative of SSP (Germany) in Pakistan",
       "paragraphs": [
-        "MBH Solutions works with SSP – Stainless Steel Processing GmbH of Bobingen, Germany, as its principal and is SSP's partner in Pakistan.",
+        "MBH Solutions is the sole representative in Pakistan of SSP – Stainless Steel Processing GmbH of Bobingen, Germany, and works with SSP as its principal.",
         "SSP supplies processing systems for food and drink production, including syrup rooms, dissolving, filtration and pasteurisation, tanks, dosing and blending, CIP cleaning systems and control. Its brochure describes a CIP system with four circuits, expandable to six to eight."
       ],
       "bullets": [],
@@ -185,7 +216,7 @@ export const CIP_PAGE: CipPage = {
   "faqs": [
     {
       "q": "Who builds CIP systems for beverage plants in Pakistan?",
-      "a": "MBH Solutions, a Lahore engineering company, builds automated and manual CIP skids for beverage and food plants in its own workshop, in AISI 304 and 316L stainless steel. Automated skids run on Siemens S7 and WinCC, standalone or as a retrofit. MBH works with SSP (Germany) as its principal; its CIP reference is Coca-Cola Tehran, where it erected and commissioned a syrup room and CIP system."
+      "a": "MBH Solutions, a Lahore engineering company and the sole representative of SSP (Germany) in Pakistan, supplies central CIP stations, skids and, on demand, mobile CIP trolleys for beverage, dairy and food plants. Automated systems run on Siemens S7 and WinCC and are delivered turnkey or as a retrofit. Its CIP reference is Coca-Cola Tehran, where it erected and commissioned a syrup room and CIP system."
     },
     {
       "q": "What are the steps of a CIP cycle?",
@@ -205,15 +236,15 @@ export const CIP_PAGE: CipPage = {
     },
     {
       "q": "How does product recovery work with CIP?",
-      "a": "Product recovery runs before CIP: a pig or a water push drives product held in the lines back to process or to a recovery tank, and CIP then cleans the emptied circuit. Recovering product first returns usable product to process instead of sending it to drain with the pre-rinse. MBH Solutions modernises lines with both product recovery and CIP."
+      "a": "Product recovery runs before CIP: a pig or a water push drives product held in the lines back to process or to a recovery tank, and CIP then cleans the emptied circuit. Recovering product first returns usable product to process instead of sending it to drain with the pre-rinse. MBH Solutions supplies product recovery systems and integrates them with CIP."
     },
     {
       "q": "What makes a CIP system efficient and reliable for a beverage plant?",
-      "a": "An efficient and reliable CIP system holds flow, temperature, concentration and contact time at set point on every circuit and verifies them each cycle. In general that depends on correctly sized supply and return pumps, spray devices matched to each vessel, drainable piping and conductivity and temperature measurement. MBH Solutions builds its automated skids multi-detergent and recipe-driven on Siemens S7 and WinCC."
+      "a": "An efficient and reliable CIP system holds flow, temperature, concentration and contact time at set point on every circuit and verifies them each cycle. In general that depends on correctly sized supply and return pumps, spray devices matched to each vessel, drainable piping and conductivity, temperature and flow measurement. MBH Solutions' automated systems typically carry that instrumentation and run multi-detergent recipes on Siemens S7 and WinCC."
     },
     {
       "q": "Is CIP for a beverage plant different from CIP for a dairy?",
-      "a": "Yes, the principle is the same but the soils and recipes differ. Dairy circuits, especially heated sections, form protein films and milkstone that make a regular acid step routine. Soft drink, juice and water lines deal mainly with sugars, flavours, pulp and microbial risk, so acid and sanitising steps follow the product and the hygiene plan."
+      "a": "Yes, the principle is the same but the soils and recipes differ. Dairy circuits, especially heated sections, form protein films and milkstone that make a regular acid step routine. Soft drink, juice and water lines deal mainly with sugars, flavours, pulp and microbial risk, so acid and sanitising steps follow the product and the hygiene plan. MBH Solutions supplies CIP for both beverage and dairy plants."
     }
   ]
 };

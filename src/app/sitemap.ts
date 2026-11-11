@@ -11,7 +11,7 @@ const LAST_UPDATED: Record<string, string> = {
   '/catalogue': '2026-09-18',
   '/catalogue/*': '2026-09-18',
   '/industries': '2026-09-18',
-  '/partners': '2026-09-18',
+  '/partners': '2026-11-11',
   '/products': '2026-09-18',
   '/solutions': '2026-09-18',
   '/solutions/cip-systems': '2026-11-11',
