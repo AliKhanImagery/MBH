@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import ProcessSpineStepper from "@/components/ProcessSpineStepper";
@@ -103,6 +104,25 @@ export default function SolutionsPage() {
         ctaHref="/contact"
         imagePlaceholderTag="CTRL.SYS · IMG"
       />
+      <section className="bg-white">
+        <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12">
+          <p className="font-mono text-xs font-medium uppercase tracking-wider text-[#C87D00]">System Pages</p>
+          <h2 className="mt-2 text-h2 text-[#080B0F]">Detailed System Engineering</h2>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <li>
+              <Link
+                href="/solutions/cip-systems"
+                className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
+              >
+                <span className="text-h3 text-[#080B0F]">Automated CIP Systems</span>
+                <span className="mt-2 block text-sm text-slate-600">
+                  Multi-circuit clean-in-place systems for beverage and food plants, standalone or retrofit.
+                </span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </section>
       <FabricationSection />
       <Contact />
       <Footer />

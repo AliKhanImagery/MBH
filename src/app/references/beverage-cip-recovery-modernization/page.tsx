@@ -95,8 +95,14 @@ export default function CIPRecoveryCaseStudy() {
           >
             ← Back to all projects &amp; references
           </Link>
+          <p className="mt-4 text-sm" style={{ color: "#C7D0DA" }}>
+            Related solution:{" "}
+            <Link href="/solutions/cip-systems" className="text-amber hover:underline">
+              Automated CIP Systems for Beverage and Food Plants
+            </Link>
+          </p>
         </div>
-        
+
         <section className="mb-16">
           <h2 className="text-3xl font-medium mb-6 text-white" style={{ fontFamily: "var(--font-ibm-plex-mono)" }}>Technical Architecture</h2>
           <p className="leading-relaxed mb-4" style={{ color: "#C7D0DA" }}>
