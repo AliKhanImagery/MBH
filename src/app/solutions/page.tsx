@@ -111,6 +111,17 @@ export default function SolutionsPage() {
           <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <li>
               <Link
+                href="/solutions/syrup-rooms"
+                className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
+              >
+                <span className="text-h3 text-[#080B0F]">Syrup Room Systems</span>
+                <span className="mt-2 block text-sm text-slate-600">
+                  Sugar handling, dissolving, filtration, pasteurisation, blending and control, turnkey or retrofit.
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/solutions/cip-systems"
                 className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
               >
