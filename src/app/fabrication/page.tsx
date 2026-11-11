@@ -12,7 +12,7 @@ import { ORG_ID, toJsonLd } from "@/lib/schema";
 export const metadata: Metadata = {
   title: "Mechanical Fabrication & Modular Process Engineering",
   description:
-    "End-to-end food-grade mechanical fabrication, sanitary process piping, process tanks, modular skids, and conveyor automation. ISO 9001:2015 certified with 1 µm machining tolerance.",
+    "End-to-end food-grade mechanical fabrication, sanitary process piping, process tanks, modular skids, and conveyor automation for food and beverage plants.",
   alternates: {
     canonical: "https://www.mbhsol.com/fabrication",
   },
@@ -63,7 +63,7 @@ const CUSTOM_FABRICATION_SERVICES = [
       },
       {
         heading: "Thermal Transfer Jacketing",
-        text: "Precision laser-welded dimple jackets and half-pipe coils designed for operating pressures up to 10 bar. Optimized for high-velocity chilled glycol, cooling tower water, or culinary steam with zoned heat-transfer manifolds.",
+        text: "Precision-welded dimple jackets and half-pipe coils for high-velocity chilled glycol, cooling tower water, or culinary steam with zoned heat-transfer manifolds.",
       },
       {
         heading: "Agitation & Homogenization",
@@ -99,7 +99,7 @@ const CUSTOM_FABRICATION_SERVICES = [
       },
       {
         heading: "Cleanroom Prefabricated Spooling",
-        text: "Complex piping geometries extracted from 3D laser models and prefabricated into modular spool assemblies in our clean facility. Each spool is hydrostatically tested, numbered, and passivated.",
+        text: "Complex piping geometries extracted from 3D laser models and prefabricated into modular spool assemblies in our clean facility. Each spool is numbered and passivated.",
       },
     ],
   },
@@ -217,10 +217,9 @@ const SPEC_TABLE_DATA = [
   { parameter: "Design Standards", spec: "Sanitary Process Guidelines, EHEDG & 3-A Sanitary Design Principles" },
   { parameter: "Welding Technology", spec: "Automated Closed-Chamber Orbital TIG (GTAW) & Manual Sanitary TIG" },
   { parameter: "Inert Purge Quality", spec: "99.999% Ultra-High Purity Argon with real-time digital oxygen monitoring (< 20 ppm O2)" },
-  { parameter: "Machining Tolerance", spec: "1 µm dimensional verification with calibrated Mitutoyo inspection tooling" },
   { parameter: "Surface Treatment", spec: "Sanitary Mechanical Polish, Chemical Pickling & ASTM A967 Citric/Nitric Passivation" },
-  { parameter: "Non-Destructive Testing (NDT)", spec: "100% Video Boroscopy, Hydrostatic Pressure Testing (1.5x Design Pressure), Dye Penetrant (PT)" },
-  { parameter: "Turnover Documentation (TOP)", spec: "Complete Audit Dossier: MTRs, 3D Weld Maps, Boroscope Video Logs, Hydro-Test Charts, O&M Manuals" },
+  { parameter: "Non-Destructive Testing (NDT)", spec: "100% Video Boroscopy, Dye Penetrant (PT)" },
+  { parameter: "Turnover Documentation (TOP)", spec: "Complete Audit Dossier: MTRs, 3D Weld Maps, Boroscope Video Logs, O&M Manuals" },
 ];
 
 /* ── 8-Item Turnover Package (TOP) Deliverables ── */
@@ -232,36 +231,26 @@ const TOP_DELIVERABLES = [
   },
   {
     code: "DOC-02",
-    title: "Weld Procedures & Qualifications",
-    description: "Complete Welding Procedure Specifications (WPS), Procedure Qualification Records (PQR), and Welder Performance Qualifications (WPQ).",
-  },
-  {
-    code: "DOC-03",
     title: "Weld Identification Map & Joint Log",
     description: "Detailed 3D isometric drawing linking every physical joint to its assigned weld ID, welder number, date of execution, and boroscopic pass status.",
   },
   {
-    code: "DOC-04",
+    code: "DOC-03",
     title: "100% Video Boroscopy Digital Package",
     description: "High-definition video files of all internal orbital welds provided on digital media, showing full 360-degree internal bead profiles.",
   },
   {
-    code: "DOC-05",
-    title: "Hydrostatic Pressure Test Certificates",
-    description: "Certified test chart logs recording test pressures held at 1.5x design ratings for 60+ minutes with calibrated test gauge serials.",
-  },
-  {
-    code: "DOC-06",
+    code: "DOC-04",
     title: "Dimensional & Surface Inspection Sheets",
-    description: "Inspection reports verifying 1 µm machining tolerances and sanitary internal surface finishes at critical vessel and piping measurement points.",
+    description: "Inspection records of critical dimensions and sanitary internal surface finishes at key vessel and piping points.",
   },
   {
-    code: "DOC-07",
+    code: "DOC-05",
     title: "Passivation Certificate of Compliance",
     description: "Verification records detailing acid chemistry, exposure durations, rinse water pH neutralization, and negative ferroxyl test results per ASTM A967.",
   },
   {
-    code: "DOC-08",
+    code: "DOC-06",
     title: "As-Built P&IDs & General Arrangement CAD",
     description: "Final red-line updated Process & Instrumentation Diagrams (P&ID) and 3D CAD models detailing all final tie-in dimensions and nozzle coordinates.",
   },
@@ -281,8 +270,8 @@ const FAT_STEPS = [
   },
   {
     step: "03",
-    title: "Factory Acceptance Testing (FAT) & Hydro-Testing",
-    desc: "Complete skid systems undergo simulated water runs, automated valve sequencing, and hydrostatic pressure testing at 1.5x design limits in our testing bay.",
+    title: "Factory Acceptance Testing (FAT)",
+    desc: "Complete skid systems undergo simulated water runs and automated valve sequencing in our testing bay.",
   },
   {
     step: "04",
@@ -319,7 +308,7 @@ const ENGINEERING_FAQS = [
   },
   {
     q: "What documents are included in the Turnover Package (TOP) for multinational audits?",
-    a: "Every project is accompanied by an audit-ready Turnover Package containing EN 10204 3.1 Mill Test Reports (chemical & mechanical properties), Welder Qualifications (WPQ/WPS), 3D isometric weld identification maps, digital video boroscopy recordings of internal joints, certified hydrostatic test chart logs, dimensional inspection sheets verifying 1 µm tolerance, and ASTM A967 Passivation Certificates.",
+    a: "Every project is accompanied by an audit-ready Turnover Package containing EN 10204 3.1 Mill Test Reports (chemical & mechanical properties), 3D isometric weld identification maps, digital video boroscopy recordings of internal joints, dimensional inspection sheets, and ASTM A967 Passivation Certificates.",
   },
 ];
 
@@ -363,15 +352,15 @@ export default function FabricationPage() {
             {/* 4 Quantitative Metrics (Page 03 of Profile) */}
             <div className="grid grid-cols-2 divide-y divide-slate-150 sm:grid-cols-4 sm:divide-y-0 sm:divide-x divide-slate-150 bg-white">
               <div className="p-6 md:p-8">
-                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Quality Certification</div>
-                <div className="mt-2 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">ISO 9001:2015</div>
-                <div className="mt-2 text-xs text-slate-600">Certified Quality Management System</div>
+                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Build Standard</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">Food-Grade</div>
+                <div className="mt-2 text-xs text-slate-600">Hygienic Design for Beverage &amp; Dairy</div>
               </div>
 
               <div className="p-6 md:p-8">
-                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Machining Tolerance</div>
-                <div className="mt-2 text-2xl font-bold tracking-tight text-amber md:text-3xl">1 µm</div>
-                <div className="mt-2 text-xs text-slate-600">Calibrated Stylus &amp; Micrometer Verified</div>
+                <div className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-500">Primary Material</div>
+                <div className="mt-2 text-2xl font-bold tracking-tight text-amber md:text-3xl">AISI 316L</div>
+                <div className="mt-2 text-xs text-slate-600">Sanitary Stainless Steel</div>
               </div>
 
               <div className="p-6 md:p-8">
@@ -394,9 +383,6 @@ export default function FabricationPage() {
                   Statutory Registrations &amp; Corporate Seals:
                 </div>
                 <div className="flex flex-wrap items-center gap-2 md:gap-3">
-                  <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-800 shadow-sm">
-                    ★ ISO 9001:2015 Certified
-                  </span>
                   <span className="rounded-md border border-slate-200 bg-white px-3 py-1.5 font-mono text-xs font-medium text-slate-800 shadow-sm">
                     🏛 SECP Incorporated
                   </span>
@@ -465,7 +451,7 @@ export default function FabricationPage() {
                 80% of assembly occurs in our controlled fabrication facility, collapsing on-site plant disruption into scheduled 48-to-72-hour turnaround shutdown windows.
               </p>
               <div className="mt-6 flex flex-wrap gap-2 pt-4 border-t border-slate-200">
-                {["Shop Pre-Piped & Wired", "FAT Hydro-Testing", "48–72 Hr Fast-Track Tie-In", "Plug-and-Play Skids"].map((tag) => (
+                {["Shop Pre-Piped & Wired", "Factory Water Runs", "48–72 Hr Fast-Track Tie-In", "Plug-and-Play Skids"].map((tag) => (
                   <span key={tag} className="rounded border border-slate-200 bg-white px-3 py-1 font-mono text-xs text-slate-700">
                     {tag}
                   </span>
@@ -602,15 +588,7 @@ export default function FabricationPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-amber font-bold">―</span>
-                    <span>Dimensional inspection reports issued with every delivered assembly to <strong>1 µm</strong> tolerance.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber font-bold">―</span>
                     <span>Non-destructive testing (dye penetrant, radiographic) on critical welds.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber font-bold">―</span>
-                    <span>Hydrostatic and pressure testing prior to dispatch held at 1.5x design ratings.</span>
                   </li>
                 </ul>
               </div>
@@ -628,15 +606,7 @@ export default function FabricationPage() {
                 <ul className="mt-6 space-y-3.5 text-sm text-slate-700">
                   <li className="flex items-start gap-3">
                     <span className="text-amber font-bold">―</span>
-                    <span>Welding procedures and welder qualifications maintained (WPS &amp; WPQR).</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber font-bold">―</span>
                     <span>Orbital and manual TIG welding for sanitary and hygienic piping systems.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber font-bold">―</span>
-                    <span>ISO 9001:2015 certified quality management system governing all shop processes.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-amber font-bold">―</span>
@@ -914,7 +884,7 @@ export default function FabricationPage() {
         </div>
       </section>
 
-      {/* ── 8. Complete 8-Deliverable Turnover Package (TOP) ── */}
+      {/* ── 8. Complete Turnover Package (TOP) ── */}
       <section className="py-20 md:py-28 bg-[#F8FAFC]">
         <div className="mx-auto max-w-[1360px] px-6 md:px-12">
           <div className="max-w-2xl mb-12">
