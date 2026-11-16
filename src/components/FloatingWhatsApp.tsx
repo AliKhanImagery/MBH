@@ -19,10 +19,10 @@ export default function FloatingWhatsApp() {
 
       {/* Floating Action Button */}
       <a
-        href="https://wa.me/923034447818"
+        href="https://wa.me/923322007373"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Direct WhatsApp Chat: +92 303 4447818"
+        aria-label="Direct WhatsApp Chat: +92 332 2007373"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_4px_20px_rgba(37,211,102,0.45)] transition-all duration-300 hover:scale-110 hover:bg-[#20ba59] hover:shadow-[0_6px_24px_rgba(37,211,102,0.6)] focus:outline-none focus:ring-4 focus:ring-[#25D366]/30 active:scale-95"
