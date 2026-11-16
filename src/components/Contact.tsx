@@ -5,7 +5,7 @@ import { type FormEvent, useState } from "react";
 const OFFICES = [
   {
     name: "Lahore — Head Office",
-    lines: ["Industrial Area, Lahore, Pakistan", "+92 303 4447818", "sales@mbhsol.com"],
+    lines: ["TIP 243, Main Boulevard, Khayaban-e-Amin, Lahore, Pakistan", "+92 303 4447818", "sales@mbhsol.com"],
   },
 ];
 

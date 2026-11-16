@@ -240,7 +240,7 @@ function emailFooter() {
               Siemens Integrator Company · Hygienic Process Lines · Industrial SCADA
             </div>
             <div style="color: #94a3b8; font-size: 11px; margin-top: 4px;">
-              Head Office: Industrial Area, Lahore, Pakistan · Worldwide Project Delivery
+              Head Office: TIP 243, Main Boulevard, Khayaban-e-Amin, Lahore, Pakistan · Worldwide Project Delivery
             </div>
           </td>
           <td style="text-align: right; vertical-align: top;">

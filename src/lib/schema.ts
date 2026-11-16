@@ -18,6 +18,7 @@ export const SITE_ENTITY = {
   logo: `${SITE_URL}/mbh-logo.png`,
   email: "sales@mbhsol.com",
   telephone: "+92-332-2007373",
+  streetAddress: "TIP 243, Main Boulevard, Khayaban-e-Amin",
   addressLocality: "Lahore",
   addressCountry: "PK",
   founderName: "Hammad Alvi",
@@ -41,6 +42,7 @@ const organization = {
   telephone: SITE_ENTITY.telephone,
   address: {
     "@type": "PostalAddress",
+    streetAddress: SITE_ENTITY.streetAddress,
     addressLocality: SITE_ENTITY.addressLocality,
     addressCountry: SITE_ENTITY.addressCountry,
   },
