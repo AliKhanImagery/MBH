@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  // Hidden from search until Hammad approves the client scope and figures (Gate 0, 20 Nov 2026).
+  robots: { index: false, follow: true },
   title: "Pepsi Bottling Line Automation & VFD Control Case Study",
   description:
     "Technical case study on high-speed bottling line synchronization, custom control panel fabrication, and Danfoss VFD automation for Pepsi Northern Beverages.",

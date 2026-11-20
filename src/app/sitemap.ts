@@ -17,12 +17,15 @@ const LAST_UPDATED: Record<string, string> = {
   '/solutions/cip-systems': '2026-11-11',
   '/solutions/syrup-rooms': '2026-11-20',
   '/solutions/sugar-dissolving': '2026-11-20',
+  '/solutions/industrial-automation': '2026-11-20',
   '/fabrication': '2026-11-11',
   '/references': '2026-09-18',
   '/references/beverage-cip-recovery-modernization': '2026-11-11',
+  // '/references/coca-cola-multan-line-automation': noindexed 20 Nov 2026 (Gate 0)
   '/references/coca-cola-multan-line-automation': '2026-09-26',
   '/references/fauji-foods-syrup-room-modernization': '2026-09-18',
   '/references/edible-oil-processing-automation': '2026-09-18',
+  // '/references/pepsi-northern-bottling-line-automation': noindexed 20 Nov 2026 (Gate 0)
   '/references/pepsi-northern-bottling-line-automation': '2026-09-18',
 }
 
@@ -52,14 +55,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/solutions', changeFreq: 'monthly', priority: 0.9 },
     { path: '/solutions/syrup-rooms', changeFreq: 'monthly', priority: 0.9 },
     { path: '/solutions/sugar-dissolving', changeFreq: 'monthly', priority: 0.9 },
+    { path: '/solutions/industrial-automation', changeFreq: 'monthly', priority: 0.9 },
     { path: '/solutions/cip-systems', changeFreq: 'monthly', priority: 0.9 },
     { path: '/fabrication', changeFreq: 'monthly', priority: 0.9 },
     { path: '/references', changeFreq: 'monthly', priority: 0.8 },
     { path: '/references/beverage-cip-recovery-modernization', changeFreq: 'monthly', priority: 0.85 },
-    { path: '/references/coca-cola-multan-line-automation', changeFreq: 'monthly', priority: 0.85 },
     { path: '/references/fauji-foods-syrup-room-modernization', changeFreq: 'monthly', priority: 0.85 },
     { path: '/references/edible-oil-processing-automation', changeFreq: 'monthly', priority: 0.85 },
-    { path: '/references/pepsi-northern-bottling-line-automation', changeFreq: 'monthly', priority: 0.85 },
   ]
 
   return routes.map((r) => {

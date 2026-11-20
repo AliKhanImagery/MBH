@@ -10,6 +10,8 @@ MBH Solutions is the sole representative in Pakistan of SSP – Stainless Steel 
 
 MBH Solutions delivers complete syrup rooms with SSP equipment (sugar handling, continuous or batch dissolving, filtration, pasteurisation, blending and dosing, storage, CIP and Siemens recipe control), turnkey or as a modernisation of existing plants, with site survey, FAT, SAT, installation, commissioning and spare parts supply.
 
+MBH Solutions engineers Siemens S7-1200 and S7-1500 automation in TIA Portal, migrates legacy S5, S7-300 and S7-400 systems to S7-1500, and delivers WinCC SCADA/HMI, control, MCC and PCC panels, VFD and instrumentation integration, remote monitoring and telemetry, with erection and commissioning, for beverage, dairy, edible oil, food and FMCG, and power generation plants.
+
 MBH Solutions supplies central CIP stations and skids (1 to 4 circuits as standard, expandable to 6 or 8), mobile CIP trolleys on demand, and product recovery systems for beverage, dairy and food plants, delivered turnkey or as a retrofit on Siemens S7 / WinCC.
 
 ## Key Resources
@@ -19,6 +21,7 @@ MBH Solutions supplies central CIP stations and skids (1 to 4 circuits as standa
 - [Syrup Room Systems](https://www.mbhsol.com/solutions/syrup-rooms)
 - [Sugar Dissolving Systems](https://www.mbhsol.com/solutions/sugar-dissolving)
 - [CIP Systems](https://www.mbhsol.com/solutions/cip-systems)
+- [Industrial Automation](https://www.mbhsol.com/solutions/industrial-automation)
 - [Technology Partners and SSP](https://www.mbhsol.com/partners)
 
 ## Contact Information

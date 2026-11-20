@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+  // Hidden from search until Hammad approves the client scope and figures (Gate 0, 20 Nov 2026).
+  robots: { index: false, follow: true },
   title: "Coca-Cola Syrup Room & Process Automation Case Study",
   description:
     "Technical case study on turnkey continuous sugar dissolving, sanitary 316L process piping, and automated CIP commissioning for Coca-Cola bottling facilities.",

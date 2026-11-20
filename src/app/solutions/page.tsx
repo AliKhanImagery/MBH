@@ -133,6 +133,17 @@ export default function SolutionsPage() {
             </li>
             <li>
               <Link
+                href="/solutions/industrial-automation"
+                className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
+              >
+                <span className="text-h3 text-[#080B0F]">Industrial Automation</span>
+                <span className="mt-2 block text-sm text-slate-600">
+                  Siemens S7-1200/1500 systems, legacy PLC migration, WinCC SCADA, control and MCC panels, remote monitoring.
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/solutions/cip-systems"
                 className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
               >

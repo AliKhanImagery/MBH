@@ -18,6 +18,7 @@ const COLUMNS = [
       { label: "Syrup Rooms", href: "/solutions/syrup-rooms" },
       { label: "Sugar Dissolving", href: "/solutions/sugar-dissolving" },
       { label: "CIP Systems", href: "/solutions/cip-systems" },
+      { label: "Industrial Automation", href: "/solutions/industrial-automation" },
     ],
   },
   {
