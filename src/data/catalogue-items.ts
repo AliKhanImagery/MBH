@@ -37,8 +37,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Carbonated soft drink processing line",
     description:
-      "Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. 2–40 m³/h at upto 70°. Available turnkey. Siemens + MBH fabrication.",
-    spec: "2–40 m³/h · upto 70° · Turnkey",
+      "Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. Available turnkey. Siemens + MBH fabrication.",
+    spec: "Turnkey · Siemens control",
     badge: "SIGNATURE",
     tags: ["pumps", "valves", "heat-exchangers", "siemens-plc", "ifm-sensors", "vfd"],
   },
@@ -58,8 +58,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Turnkey syrup room",
     description:
-      "Standalone syrup manufacturing module. Plugs into existing filling line. 2–40 m³/h continuous. Available turnkey. Complete stages in line with MBH.",
-    spec: "2–40 m³/h continuous · Turnkey",
+      "Standalone syrup manufacturing module. Plugs into existing filling line. Available turnkey. Complete stages in line with MBH.",
+    spec: "Continuous · Turnkey",
   },
   {
     seq: 4,
@@ -67,8 +67,8 @@ export const CATALOGUE_ITEMS: CatalogueItem[] = [
     category: "Process Systems",
     name: "Sugar handling and dissolving system",
     description:
-      "Big-bag receiving through continuous dissolving to finished simple syrup. 2–40 m³/h at upto 70°. Available as standalone module.",
-    spec: "2–40 m³/h · upto 70° · Standalone",
+      "Big-bag receiving through continuous dissolving to finished simple syrup. Available as standalone module.",
+    spec: "Continuous · Standalone",
   },
   {
     seq: 5,

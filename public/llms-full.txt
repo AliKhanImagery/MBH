@@ -18,20 +18,20 @@ We design, fabricate, and install turnkey syrup rooms, CSD and juice process lin
 ## Process Systems
 
 ### 1. Carbonated soft drink processing line [SIGNATURE]
-Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. 2–40 m³/h at upto 70°. Available turnkey. Siemens + MBH fabrication.
-**Specs**: 2–40 m³/h · upto 70° · Turnkey
+Cola, lemon-lime, flavoured sparkling. Complete syrup room through CIP. Available turnkey. Siemens + MBH fabrication.
+**Specs**: Turnkey · Siemens control
 
 ### 2. Juice processing line
 Concentrate handling, pasteurisation, blending, storage. Configurable capacity. Available turnkey or as retrofit. Tubular heat exchangers, MASTERMIXX blender.
 **Specs**: Configurable capacity · Turnkey or retrofit
 
 ### 3. Turnkey syrup room
-Standalone syrup manufacturing module. Plugs into existing filling line. 2–40 m³/h continuous. Available turnkey. Complete stages in line with MBH.
-**Specs**: 2–40 m³/h continuous · Turnkey
+Standalone syrup manufacturing module. Plugs into existing filling line. Available turnkey. Complete stages in line with MBH.
+**Specs**: Continuous · Turnkey
 
 ### 4. Sugar handling and dissolving system
-Big-bag receiving through continuous dissolving to finished simple syrup. 2–40 m³/h at upto 70°. Available as standalone module.
-**Specs**: 2–40 m³/h · upto 70° · Standalone
+Big-bag receiving through continuous dissolving to finished simple syrup. Available as standalone module.
+**Specs**: Continuous · Standalone
 
 ### 5. Batch dissolving station
 Batch sugar dissolving for smaller runs or specialty syrups. Configurable tank sizes. Available standalone. Manual or automated recipe control.

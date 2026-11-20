@@ -31,17 +31,17 @@ const ibmPlexMono = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.mbhsol.com'),
   title: {
-    default: "MBH Solutions | Industrial Automation & Engineering",
+    default: "Process Systems & Industrial Automation | MBH Solutions",
     template: "%s | MBH Solutions"
   },
   description:
-    "Turnkey beverage process systems, Siemens PLC/SCADA automation, and sanitary stainless fabrication for food, dairy, and FMCG manufacturing plants.",
+    "Beverage process systems, syrup rooms, CIP and Siemens PLC/SCADA industrial automation from Lahore. SSP's sole representative in Pakistan. Turnkey or retrofit.",
   alternates: {
     canonical: 'https://www.mbhsol.com',
   },
   openGraph: {
-    title: "MBH Solutions | Industrial Automation & Engineering",
-    description: "End-to-end PLC and SCADA-based automation and beverage process solutions.",
+    title: "Process Systems & Industrial Automation | MBH Solutions",
+    description: "Beverage process systems, syrup rooms, CIP and Siemens PLC/SCADA industrial automation. SSP's sole representative in Pakistan.",
     url: 'https://www.mbhsol.com',
     siteName: 'MBH Solutions',
     locale: 'en_US',
