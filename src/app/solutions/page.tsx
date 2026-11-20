@@ -122,6 +122,17 @@ export default function SolutionsPage() {
             </li>
             <li>
               <Link
+                href="/solutions/sugar-dissolving"
+                className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
+              >
+                <span className="text-h3 text-[#080B0F]">Sugar Dissolving Systems</span>
+                <span className="mt-2 block text-sm text-slate-600">
+                  Batch and continuous dissolving, cold or hot, from sugar intake to simple syrup at target °Brix.
+                </span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/solutions/cip-systems"
                 className="block rounded-lg border border-slate-200 p-6 transition-colors hover:border-[#C87D00]"
               >
