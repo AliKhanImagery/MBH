@@ -6,7 +6,7 @@ import { PRODUCT_CATEGORIES } from '@/data/catalogue-categories'
 // content, update its date here — engines only trust lastmod that stays accurate.
 // Metadata-only or styling changes do not count.
 const LAST_UPDATED: Record<string, string> = {
-  '': '2026-09-25',
+  '': '2026-11-20',
   '/about': '2026-09-25',
   '/catalogue': '2026-09-18',
   '/catalogue/*': '2026-09-18',
