@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "if [ \"$VERCEL_ENV\" = \"production\" ]; then exit 1; fi; if git log -1 --pretty=%s | grep -qiE '^wip'; then echo 'Skipping build: work-in-progress commit'; exit 0; fi; exit 1"
+}
